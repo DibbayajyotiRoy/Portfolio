@@ -1,8 +1,8 @@
 {
   "/_not-found": "app/_not-found.js",
-  "/page": "app/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
   "/tailwind/page": "app/tailwind/page.js",
-  "/opengraph-image/route": "app/opengraph-image/route.js",
+  "/opengraph-image.png/route": "app/opengraph-image.png/route.js",
   "/twitter-image/route": "app/twitter-image/route.js"
 }

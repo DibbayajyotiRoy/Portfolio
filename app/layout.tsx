@@ -10,26 +10,6 @@ import { Analytics } from "@vercel/analytics/react"
 export const metadata: Metadata = {
   title: "Dibbayajyoti Roy",
   description: "design engineering, and comms",
-  metadataBase: new URL(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`),
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`,
-    siteName: "Dibbayajyoti Roy",
-    images: [
-      {
-        url: `/opengraph-image`,
-        width: 1200,
-        height: 630,
-        alt: "Dibbayajyoti Roy - Design Engineer",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: [`/twitter-image`],
-  },
 };
 
 export default async function RootLayout({
