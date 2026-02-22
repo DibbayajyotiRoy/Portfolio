@@ -7,9 +7,30 @@ import Footer from "@/components/footer";
 import Nav from "@/components/nav";
 import { Analytics } from "@vercel/analytics/react"
 
+const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL 
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "https://dibbayajyoti.com";
+
 export const metadata: Metadata = {
   title: "Dibbayajyoti Roy",
   description: "design engineering, and comms",
+  metadataBase: new URL(baseUrl),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: baseUrl,
+    siteName: "Dibbayajyoti Roy",
+    title: "Dibbayajyoti Roy",
+    description: "design engineering, and comms",
+    images: [
+      {
+        url: `/opengraph-image.png`,
+        width: 1536,
+        height: 1024,
+        alt: "Dibbayajyoti Roy",
+      },
+    ],
+  },
 };
 
 export default async function RootLayout({
