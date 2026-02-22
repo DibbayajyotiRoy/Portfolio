@@ -15,7 +15,7 @@ const TwitchBanner = async () => {
   if (stream) {
     return (
       <Link
-        href="https://twitch.tv/philguin"
+        href="https://twitch.tv/your-channel"
         target="_blank"
         rel="noopener noreferrer"
         className="relative pointer-events-auto transition-all animate-in slide-in-from-top-36"

@@ -55,7 +55,7 @@ const Footer = ({}: FooterProps) => {
                 className="transition-opacity opacity-75 hover:opacity-100"
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://bsky.app/profile/philparzer.com"
+                href="https://bsky.app/profile/example.com"
               >
                 Bluesky
               </Link>
@@ -293,7 +293,7 @@ const Footer = ({}: FooterProps) => {
             {/* this site is{" "}
             <Link
               className="underline decoration-2 text-whiteout/75 hover:text-whiteout/100"
-              href="https://github.com/philparzer/website-v3"
+              href="https://github.com/DibbayajyotiRoy/Portfolio"
             >
               open source
             </Link> */}

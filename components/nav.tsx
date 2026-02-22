@@ -74,9 +74,9 @@ const Nav = () => {
             {/* <li>
               <Link href="https://twitch.com/philguin">twitch</Link>
             </li>
-            <li>
-              <Link href="https://bsky.app/profile/philparzer.com">bluesky</Link>
-            </li> */}
+            {/* <li>
+              <Link href="https://bsky.app/profile/example.com">bluesky</Link>
+            </li> */} */}
           </ul>
         </PopoverContent>
       </Popover>
