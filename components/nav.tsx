@@ -76,7 +76,7 @@ const Nav = () => {
             </li>
             {/* <li>
               <Link href="https://bsky.app/profile/example.com">bluesky</Link>
-            </li> */} */}
+            </li> */}
           </ul>
         </PopoverContent>
       </Popover>
