@@ -99,7 +99,9 @@ const Footer = ({}: FooterProps) => {
             <li>
               <Link
                 className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="/rust#ems"
+                href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 EMS (Rust/React)
               </Link>
@@ -107,7 +109,9 @@ const Footer = ({}: FooterProps) => {
             <li>
               <Link
                 className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="/rust#lunarsite"
+                href="https://github.com/DibbayajyotiRoy/LunarSite"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 LunarSite
               </Link>
@@ -115,7 +119,9 @@ const Footer = ({}: FooterProps) => {
             <li>
               <Link
                 className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="/rust#bloodlink"
+                href="https://github.com/DibbayajyotiRoy/BloodLink"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 BloodLink
               </Link>
@@ -123,7 +129,9 @@ const Footer = ({}: FooterProps) => {
             <li>
               <Link
                 className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="/rust#carbonfootprinttracker"
+                href="https://github.com/DibbayajyotiRoy/Carbon-Tracker"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 CarbonFootprintTracker
               </Link>

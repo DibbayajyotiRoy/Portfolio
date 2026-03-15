@@ -51,10 +51,10 @@ const Nav = () => {
       </Suspense> */}
       <div className="flex items-center gap-6 md:gap-10 md:mr-10">
         <Link
-          href="/rust"
+          href="/work"
           className="pointer-events-auto underline underline-offset-[3px] opacity-100 decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base"
         >
-          rust
+          work
         </Link>
         <Popover>
           <PopoverTrigger

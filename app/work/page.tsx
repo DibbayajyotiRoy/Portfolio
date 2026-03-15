@@ -52,10 +52,10 @@ const Page = ({}: PageProps) => {
                   Currently shipping production-grade SaaS platforms at Yupcha Softwares.
                 </p>
                 <p>Some projects you can check out:{" "}
-                  <span className="font-semibold">LunarSite</span> (AI Lunar Mineral Prediction), {" "}
-                  <span className="font-semibold">BloodLink</span> (Donor-Seeker Matching), {" "}
-                  <span className="font-semibold">CarbonFootprintTracker</span> (AI Sustainability App), {" "}
-                  <span className="font-semibold">EMS</span> (Real-Time Employee Management System in Rust/React).
+                  <Link href="https://github.com/DibbayajyotiRoy/LunarSite" target="_blank" rel="noopener noreferrer" className="font-semibold underline">LunarSite</Link> (AI Lunar Mineral Prediction), {" "}
+                  <Link href="https://github.com/DibbayajyotiRoy/BloodLink" target="_blank" rel="noopener noreferrer" className="font-semibold underline">BloodLink</Link> (Donor-Seeker Matching), {" "}
+                  <Link href="https://github.com/DibbayajyotiRoy/Carbon-Tracker" target="_blank" rel="noopener noreferrer" className="font-semibold underline">CarbonFootprintTracker</Link> (AI Sustainability App), {" "}
+                  <Link href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App" target="_blank" rel="noopener noreferrer" className="font-semibold underline">EMS</Link> (Real-Time Employee Management System in Rust/React).
                 </p>
                 <p>
                   B.Tech in Computer Science candidate (2026). Winner of several national hackathons including NITA Arjuna 2.0.
@@ -85,16 +85,16 @@ const Page = ({}: PageProps) => {
               <TitledParagraph title="projects">
                 <div className="flex flex-col gap-5">
                   <p>
-                    <span className="font-semibold">LunarSite:</span> Built an AI-based prediction system for lunar mineral composition using ML pipelines during a NITA-ISRO hackathon.
+                    <Link href="https://github.com/DibbayajyotiRoy/LunarSite" target="_blank" rel="noopener noreferrer" className="font-semibold underline">LunarSite</Link>: Built an AI-based prediction system for lunar mineral composition using ML pipelines during a NITA-ISRO hackathon.
                   </p>
                   <p>
-                    <span className="font-semibold">BloodLink:</span> Developed a matching platform for blood donors and seekers with real-time discovery and registration workflows.
+                    <Link href="https://github.com/DibbayajyotiRoy/BloodLink" target="_blank" rel="noopener noreferrer" className="font-semibold underline">BloodLink</Link>: Developed a matching platform for blood donors and seekers with real-time discovery and registration workflows.
                   </p>
                   <p>
-                    <span className="font-semibold">CarbonFootprintTracker:</span> An AI-powered sustainability app that calculates individual emissions and provides smart recommendations.
+                    <Link href="https://github.com/DibbayajyotiRoy/Carbon-Tracker" target="_blank" rel="noopener noreferrer" className="font-semibold underline">CarbonFootprintTracker</Link>: An AI-powered sustainability app that calculates individual emissions and provides smart recommendations.
                   </p>
                   <p>
-                    <span className="font-semibold">EMS:</span> A real-time Employee Management System built with <span className="italic">Rust and React</span>, featuring payroll and policy-based management.
+                    <Link href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App" target="_blank" rel="noopener noreferrer" className="font-semibold underline">EMS</Link>: A real-time Employee Management System built with <span className="italic">Rust and React</span>, featuring payroll and policy-based management.
                   </p>
                 </div>
               </TitledParagraph>

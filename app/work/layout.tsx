@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Rust & Systems Programming | Dibbayajyoti Roy",
   description: "Explore Dibbayajyoti's passion for Rust, from low-level systems and hardware to high-performance web applications and games.",
   alternates: {
-    canonical: "/rust",
+    canonical: "/work",
   },
   openGraph: {
     title: "Rust & Systems Programming | Dibbayajyoti Roy",
