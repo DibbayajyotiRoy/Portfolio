@@ -91,17 +91,6 @@ const Footer = ({}: FooterProps) => {
                 Discord
               </Link>
             </li>
-            {/* <li>
-              <Link
-                className="transition-opacity opacity-75 hover:opacity-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://twitch.tv/philguin"
-              >
-                Twitch
-              </Link>
-            </li> */}
-           
           </ul>
         </div>
         {/* <div className="w-[200px] flex flex-col text-center md:items-start md:text-start">
