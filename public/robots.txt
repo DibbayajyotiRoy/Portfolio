@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: 
+Allow: /
 
-User-agent: *
-Disallow: /tailwind/
+Sitemap: https://dibbayajyoti.com/sitemap.xml
