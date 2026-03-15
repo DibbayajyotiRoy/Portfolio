@@ -19,8 +19,8 @@ const Page = ({}: PageProps) => {
           application
         </h2>
         <h1 className="flex items-baseline flex-wrap sm:gap-3 my-2 sm:my-4 text-3xl sm:text-[32px] font-semibold">
-          <span className="sm:w-auto w-full">Design Engineer</span>
-          <span className="opacity-50 w-full sm:w-auto text-[18px] sm:text-[22px]">Tailwind Labs</span>
+          <span className="sm:w-auto w-full">Full Stack Software Engineer</span>
+          <span className="opacity-50 w-full sm:w-auto text-[18px] sm:text-[22px]">Rust Enthusiast</span>
         </h1>
         <button
           onClick={() => {
@@ -61,7 +61,7 @@ const Page = ({}: PageProps) => {
                   B.Tech in Computer Science candidate (2026). Winner of several national hackathons including NITA Arjuna 2.0.
                 </p>
                 <p>
-                  I love building blazingly fast tools and landing pages. I&apos;d love to help Tailwind Labs with components or the 4.0 docs!
+                  I love building blazingly fast tools and infrastructure. I&apos;m always looking for opportunities to contribute to the Rust ecosystem or build production-grade systems that push the boundaries of performance!
                 </p>
               </div>
             </TitledParagraph>
@@ -113,10 +113,10 @@ const Page = ({}: PageProps) => {
                 </p>
               </TitledParagraph>
 
-              <TitledParagraph title="this job">
+              <TitledParagraph title="My Focus">
                 <p>
-                  Working for Tailwind Labs would be a dream. I use Tailwind CSS literally every day—it has completely transformed my design-to-code workflow. 
-                  I&apos;d love to contribute to the 4.0 docs, build out high-performance components, or tackle any challenge you throw at me!
+                  My goal is to build software that is both robust and efficient. Rust has completely transformed my approach to engineering, moving me from just building &quot;web apps&quot; to designing reliable systems. 
+                  I&apos;d love to contribute to core infrastructure projects, high-performance engines, or any challenge that requires deep technical precision.
                 </p>
               </TitledParagraph>
               
@@ -126,6 +126,19 @@ const Page = ({}: PageProps) => {
                 <p>
                   I started my journey with a curiosity for how things are built, which led me to a B.Tech in Computer Science at ICFAI University Tripura. 
                   Web development allows me to design things and share them with anyone, anywhere, instantly. Web always wins.
+                </p>
+              </TitledParagraph>
+
+              <hr className="border-blackout dark:border-whiteout opacity-25" />
+
+              <TitledParagraph title="Why Rust?">
+                <p>
+                  I have a deep appreciation for <span className="font-semibold">Rust</span> as a systems programming language. 
+                  It&apos;s truly a Swiss Army knife—whether it&apos;s low-level hardware control, building high-performance 3D game engines, or developing blazingly fast backend services, Rust delivers both safety and speed without compromise.
+                </p>
+                <p className="mt-4">
+                  The strict compiler, the ownership model, and the zero-cost abstractions make it a joy to work with once you master it. 
+                  I believe Rust is the future of infrastructure, and I&apos;m constantly exploring its potential in edge computing and real-time systems.
                 </p>
               </TitledParagraph>
             </>

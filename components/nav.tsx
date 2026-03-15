@@ -49,12 +49,19 @@ const Nav = () => {
       {/* <Suspense fallback={null}>
         <TwitchBanner />
       </Suspense> */}
-      <Popover>
-        <PopoverTrigger
-          className={`pointer-events-auto underline underline-offset-[3px] opacity-100  decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 md:mr-10 font-medium`}
+      <div className="flex items-center gap-6 md:gap-10 md:mr-10">
+        <Link
+          href="/rust"
+          className="pointer-events-auto underline underline-offset-[3px] opacity-100 decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base"
         >
-          contact
-        </PopoverTrigger>
+          rust
+        </Link>
+        <Popover>
+          <PopoverTrigger
+            className={`pointer-events-auto underline underline-offset-[3px] opacity-100  decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base`}
+          >
+            contact
+          </PopoverTrigger>
         <PopoverContent>
           <ul className="flex pointer-events-auto font-medium flex-col gap-4 font-base">
             <li>
@@ -79,7 +86,8 @@ const Nav = () => {
             </li> */}
           </ul>
         </PopoverContent>
-      </Popover>
+        </Popover>
+      </div>
     </nav>
   );
 };

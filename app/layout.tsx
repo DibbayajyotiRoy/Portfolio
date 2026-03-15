@@ -17,8 +17,8 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Dibbayajyoti – Full Stack Developer Portfolio",
-  description: "Portfolio of Dibbayajyoti, a full stack developer building fast and scalable web applications using React, Next.js and Node.js.",
+  title: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
+  description: "Portfolio of Dibbayajyoti Roy, a Full Stack Software Engineer specializing in high-performance systems with Rust and modern web apps with React/Next.js.",
   metadataBase: new URL(baseUrl),
   alternates: {
     canonical: "/",
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseUrl,
     siteName: "Dibbayajyoti Portfolio",
-    title: "Dibbayajyoti – Developer Portfolio",
-    description: "Building scalable web applications with modern technologies.",
+    title: "Dibbayajyoti Roy – Developer Portfolio",
+    description: "Full Stack Software Engineer & Rust Enthusiast. Building high-performance systems and scalable web apps.",
     images: [
       {
         url: `/opengraph-image.png`,
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dibbayajyoti – Developer Portfolio",
-    description: "Full stack developer building scalable apps.",
+    title: "Dibbayajyoti Roy – Developer Portfolio",
+    description: "Full Stack Software Engineer specializing in Rust and modern web technologies.",
     images: [`/opengraph-image.png`],
   },
 };
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Dibbayajyoti",
+  "name": "Dibbayajyoti Roy",
   "url": "https://dibbayajyoti.com",
   "sameAs": [
     "https://github.com/YOUR_GITHUB",

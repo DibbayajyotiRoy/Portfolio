@@ -93,153 +93,43 @@ const Footer = ({}: FooterProps) => {
             </li>
           </ul>
         </div>
-        {/* <div className="w-[200px] flex flex-col text-center md:items-start md:text-start">
+        <div className="w-[200px] flex flex-col text-center md:items-start md:text-start">
           <h2 className="text-lg font-semibold">Some of my work</h2>
           <ul className="font-light gap-1 flex flex-col items-center md:items-start mt-2">
             <li>
               <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://adlerlagune.com"
+                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
+                href="/rust#ems"
               >
-                <div className="w-[20px] h-[20px] flex items-center justify-center">
-                  <Image
-                    alt="adlerlagune"
-                    className=""
-                    src="/logos/adlerlagune.png"
-                    width={19}
-                    height={19}
-                  ></Image>
-                </div>
-                adlerlagune
+                EMS (Rust/React)
               </Link>
             </li>
             <li>
               <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://0cred.com"
+                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
+                href="/rust#lunarsite"
               >
-                <div className="w-[20px] h-[20px] flex items-center justify-center">
-                  <Image
-                    alt="0cre"
-                    src="/logos/0cred.png"
-                    width={20}
-                    height={20}
-                  ></Image>
-                </div>
-                0cred
+                LunarSite
               </Link>
             </li>
             <li>
               <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://thesentproject.com"
+                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
+                href="/rust#bloodlink"
               >
-                <div className="w-[20px] h-[20px] flex items-center justify-center">
-                  <Image
-                    alt="thesentproject chat bubble logo"
-                    className=""
-                    src="/logos/tsp.png"
-                    width={19}
-                    height={19}
-                  ></Image>
-                </div>
-                thesentproject
+                BloodLink
               </Link>
             </li>
             <li>
               <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://undeaddomains.com"
+                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
+                href="/rust#carbonfootprinttracker"
               >
-                <Image
-                  alt="undead domains"
-                  src="/logos/undead.png"
-                  width={20}
-                  height={20}
-                ></Image>
-                undead domains
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://buoy-productivity.com"
-              >
-                <Image
-                  alt="buoy"
-                  src="/logos/buoy.webp"
-                  width={20}
-                  height={20}
-                ></Image>
-                buoy
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://mypoca.com"
-              >
-                <div className="w-[20px] h-[20px] flex items-center justify-center">
-                  <Image
-                    alt="poca"
-                    className=""
-                    src="/logos/poca.gif"
-                    width={18}
-                    height={18}
-                  ></Image>
-                </div>
-                poca
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://jotlog.app"
-              >
-                <div className="w-[20px] h-[20px] flex items-center justify-center">
-                  <Image
-                    alt="jotlog"
-                    src="/logos/jotlog.png"
-                    width={16}
-                    height={16}
-                  ></Image>
-                </div>
-                jotlog
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://ampass.at"
-              >
-                <Image
-                  alt="ampass"
-                  src="/logos/ampass.png"
-                  width={20}
-                  height={20}
-                ></Image>
-                ampass
+                CarbonFootprintTracker
               </Link>
             </li>
           </ul>
-        </div> */}
+        </div>
 
         <div className="col-span-2 flex justify-end text-center md:items-start md:text-start">
           <div className="flex flex-col">
