@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rust & Systems Programming | Dibbayajyoti Roy",
     description: "Deep dive into systems programming and building high-performance software with Rust.",
-    url: `${baseUrl}/rust`,
+    url: `${baseUrl}/work`,
   },
   twitter: {
     title: "Rust & Systems Programming | Dibbayajyoti Roy",

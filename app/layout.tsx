@@ -60,10 +60,10 @@ const jsonLd = {
   "name": "Dibbayajyoti Roy",
   "url": "https://dibbayajyoti.com",
   "sameAs": [
-    "https://github.com/YOUR_GITHUB",
+    "https://github.com/DibbayajyotiRoy",
     "https://linkedin.com/in/dibbayajyoti-roy/"
   ],
-  "jobTitle": "Full Stack Developer"
+  "jobTitle": "Full Stack Software Engineer"
 };
 
 export default async function RootLayout({
