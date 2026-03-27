@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Dibbayajyoti Roy - Design Engineer';
+export const alt = 'Dibbayajyoti Roy - Full Stack Software Engineer & Rust Enthusiast';
 export const size = {
   width: 1200,
   height: 675,
@@ -39,7 +39,7 @@ export default async function Image() {
             Dibbayajyoti Roy
           </div>
           <div style={{ fontSize: '48px', color: '#9ca3af' }}>
-            design engineering and comms
+            Full Stack Engineer · Rust · React · Next.js
           </div>
         </div>
       </div>

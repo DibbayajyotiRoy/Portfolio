@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { FramerProvider } from "@/components/framer-provider";
 
 export const viewport: Viewport = {
@@ -24,33 +25,52 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  verification: {
-    google: "YOUR_VERIFICATION_CODE",
-  },
+  keywords: [
+    "Dibbayajyoti Roy",
+    "Full Stack Developer",
+    "Rust Developer",
+    "Software Engineer India",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript",
+    "Systems Programming",
+    "Web Developer Portfolio",
+    "Agartala Developer",
+  ],
+  creator: "Dibbayajyoti Roy",
+  publisher: "Dibbayajyoti Roy",
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: baseUrl,
-    siteName: "Dibbayajyoti Portfolio",
-    title: "Dibbayajyoti Roy – Developer Portfolio",
+    siteName: "Dibbayajyoti Roy",
+    title: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
     description: "Full Stack Software Engineer & Rust Enthusiast. Building high-performance systems and scalable web apps.",
     images: [
       {
         url: `/opengraph-image.png`,
         width: 1200,
         height: 630,
-        alt: "Dibbayajyoti Roy",
+        alt: "Dibbayajyoti Roy – Full Stack Software Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dibbayajyoti Roy – Developer Portfolio",
-    description: "Full Stack Software Engineer specializing in Rust and modern web technologies.",
+    title: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
+    description: "Full Stack Software Engineer specializing in Rust, React, and Next.js. Building high-performance systems.",
+    creator: "@DibbayajyotiRoy",
     images: [`/opengraph-image.png`],
   },
 };
@@ -60,11 +80,32 @@ const jsonLd = {
   "@type": "Person",
   "name": "Dibbayajyoti Roy",
   "url": "https://dibbayajyoti.com",
+  "image": "https://dibbayajyoti.com/opengraph-image.png",
+  "description": "Full Stack Software Engineer specializing in Rust, React, and Next.js.",
   "sameAs": [
     "https://github.com/DibbayajyotiRoy",
-    "https://linkedin.com/in/dibbayajyoti-roy/"
+    "https://linkedin.com/in/dibbayajyoti-roy/",
+    "https://x.com/DibbayajyotiRoy"
   ],
-  "jobTitle": "Full Stack Software Engineer"
+  "jobTitle": "Full Stack Software Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Yupcha Softwares Pvt. Ltd"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "ICFAI University Tripura"
+  },
+  "knowsAbout": [
+    "Rust", "TypeScript", "React", "Next.js", "Node.js",
+    "Systems Programming", "Web Development", "Docker"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Agartala",
+    "addressRegion": "Tripura",
+    "addressCountry": "IN"
+  }
 };
 
 export default async function RootLayout({
@@ -92,6 +133,7 @@ export default async function RootLayout({
           </FramerProvider>
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

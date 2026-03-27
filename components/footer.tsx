@@ -223,7 +223,7 @@ const Footer = ({}: FooterProps) => {
             <p className="text-whiteout/50 md:w-auto w-full">
               if you have questions or inquiries,{" "}
               <Link
-                href="mailto:hi@adlerlagune.com"
+                href="mailto:dibbayajyoti@gmail.com"
                 className="underline decoration-2 text-whiteout/75 hover:text-whiteout/100"
               >
                 reach out
