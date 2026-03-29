@@ -107,7 +107,7 @@ const jsonLd = {
   "sameAs": [
     "https://github.com/DibbayajyotiRoy",
     "https://linkedin.com/in/dibbayajyoti-roy/",
-    "https://x.com/DibbayajyotiRoy"
+    "https://x.com/dibbayajyoti"
   ],
   "jobTitle": "Full Stack Software Engineer",
   "worksFor": {

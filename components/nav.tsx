@@ -76,7 +76,7 @@ const Nav = () => {
               </Link>
             </li>
             <li>
-              <Link href="https://x.com/DibbayajyotiRoy">x.com</Link>
+              <Link href="https://x.com/dibbayajyoti">x.com</Link>
             </li>
             {/* <li>
               <Link href="https://twitch.com/philguin">twitch</Link>
