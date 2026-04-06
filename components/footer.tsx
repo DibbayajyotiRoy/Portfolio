@@ -230,7 +230,7 @@ const Footer = ({}: FooterProps) => {
               </Link>
             </p>
             <p className="text-xs opacity-50 text-center w-full mt-10 md:mt-0 md:w-auto">
-              last update: SUMMER2025
+              last update: SPRING2026
             </p>
           </div>
         </div>

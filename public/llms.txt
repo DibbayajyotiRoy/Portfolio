@@ -1,0 +1,32 @@
+# Dibbayajyoti Roy — Personal Portfolio
+
+> Full Stack Software Engineer specializing in Rust, React, and Next.js. Based in Agartala, Tripura, India.
+
+## Pages
+
+- [Homepage](https://dibbayajyoti.com): Personal landing page with interactive hero section showcasing engineering skills and approach.
+- [Work](https://dibbayajyoti.com/work): Full professional profile — experience, projects, technical skills, hackathon wins, and career philosophy.
+
+## About
+
+Dibbayajyoti Roy is a Full Stack Software Engineer currently working at Yupcha Softwares Pvt. Ltd. He builds production-grade SaaS platforms, integrates REST APIs, and creates user-facing dashboards. He is a B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026).
+
+He specializes in TypeScript, React, Next.js, Node.js, and Rust for systems programming. Notable hackathon wins include the NITA Arjuna 2.0 National Hackathon (2025) and 1st Runner-Up at the NITA–ISRO Space Hackathon (2024).
+
+## Projects
+
+- **EMS**: Real-time Employee Management System built with Rust and React (payroll, policy management)
+- **LunarSite**: AI-based lunar mineral prediction system using ML pipelines (NITA-ISRO hackathon)
+- **BloodLink**: Matching platform for blood donors and seekers with real-time discovery
+- **CarbonFootprintTracker**: AI-powered sustainability app calculating individual emissions
+
+## Contact
+
+- Email: dibbayajyoti@gmail.com
+- LinkedIn: https://linkedin.com/in/dibbayajyoti-roy/
+- GitHub: https://github.com/DibbayajyotiRoy
+- X/Twitter: https://x.com/dibbayajyoti
+
+## Extended Info
+
+See [llms-full.txt](https://dibbayajyoti.com/llms-full.txt) for complete professional details.

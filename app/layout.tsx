@@ -20,33 +20,11 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
 
 export const metadata: Metadata = {
   title: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
-  description: "Portfolio of Dibbayajyoti Roy, a Full Stack Software Engineer specializing in high-performance systems with Rust and modern web apps with React/Next.js.",
+  description: "Dibbayajyoti Roy — hackathon winner and Full Stack Engineer at Yupcha Softwares. Rust, React, Next.js. Explore projects and experience.",
   metadataBase: new URL(baseUrl),
   alternates: {
     canonical: "/",
   },
-  keywords: [
-    "Dibbayajyoti Roy",
-    "Dibyajyoti",
-    "Dibyojyoti",
-    "Dibyajyoti Roy",
-    "Dibyojyoti Roy",
-    "dibyajyoti",
-    "dibayajyoti",
-    "dibbayajyoti",
-    "dibyojyoti",
-    "dibyajyoti roy",
-    "dibyojyoti roy",
-    "Full Stack Developer",
-    "Rust Developer",
-    "Software Engineer India",
-    "React Developer",
-    "Next.js Developer",
-    "TypeScript",
-    "Systems Programming",
-    "Web Developer Portfolio",
-    "Agartala Developer",
-  ],
   creator: "Dibbayajyoti Roy",
   publisher: "Dibbayajyoti Roy",
   robots: {
@@ -66,68 +44,105 @@ export const metadata: Metadata = {
     url: baseUrl,
     siteName: "Dibbayajyoti Roy",
     title: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
-    description: "Full Stack Software Engineer & Rust Enthusiast. Building high-performance systems and scalable web apps.",
+    description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, React, and Next.js. Based in Agartala, India.",
     images: [
       {
         url: `/opengraph-image.png`,
         width: 1200,
         height: 630,
-        alt: "Dibbayajyoti Roy – Full Stack Software Engineer",
+        alt: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
-    description: "Full Stack Software Engineer specializing in Rust, React, and Next.js. Building high-performance systems.",
+    description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, React, and Next.js. Based in Agartala, India.",
     creator: "@DibbayajyotiRoy",
     images: [`/opengraph-image.png`],
   },
 };
 
-const jsonLd = {
+const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://dibbayajyoti.com/#person",
   "name": "Dibbayajyoti Roy",
   "alternateName": [
-    "Dibyajyoti",
-    "Dibyojyoti",
     "Dibyajyoti Roy",
     "Dibyojyoti Roy",
-    "dibyajyoti",
-    "dibayajyoti",
-    "dibbayajyoti",
-    "dibyojyoti",
-    "dibyajyoti roy",
-    "dibyojyoti roy"
+    "Dibayajyoti Roy"
   ],
   "url": "https://dibbayajyoti.com",
   "image": "https://dibbayajyoti.com/opengraph-image.png",
-  "description": "Full Stack Software Engineer specializing in Rust, React, and Next.js.",
+  "description": "Full Stack Software Engineer specializing in Rust, React, and Next.js. Building high-performance systems and production-grade SaaS platforms at Yupcha Softwares.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dibbayajyoti.com"
+  },
   "sameAs": [
     "https://github.com/DibbayajyotiRoy",
     "https://linkedin.com/in/dibbayajyoti-roy/",
-    "https://x.com/dibbayajyoti"
+    "https://x.com/dibbayajyoti",
+    "https://discord.com/users/om165_"
   ],
   "jobTitle": "Full Stack Software Engineer",
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Full Stack Software Engineer",
+    "occupationalCategory": "15-1252.00",
+    "skills": "Rust, TypeScript, React, Next.js, Node.js, Docker, Systems Programming"
+  },
   "worksFor": {
     "@type": "Organization",
-    "name": "Yupcha Softwares Pvt. Ltd"
+    "name": "Yupcha Softwares Pvt. Ltd",
+    "url": "https://yupcha.com"
   },
   "alumniOf": {
     "@type": "CollegeOrUniversity",
     "name": "ICFAI University Tripura"
   },
+  "nationality": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "knowsLanguage": ["English", "Hindi", "Bengali"],
   "knowsAbout": [
     "Rust", "TypeScript", "React", "Next.js", "Node.js",
-    "Systems Programming", "Web Development", "Docker"
+    "Systems Programming", "Web Development", "Docker",
+    "HonoJS", "ElysiaJS", "REST APIs", "SaaS Development"
   ],
+  "award": [
+    "Winner — NITA Arjuna 2.0 National Hackathon (2025)",
+    "Winner — Technovate Project Exhibition",
+    "1st Runner-Up — NITA–ISRO Space Hackathon (2024)"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "dibbayajyoti@gmail.com",
+    "telephone": "+918731953807",
+    "contactType": "personal"
+  },
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Dashamighat",
     "addressLocality": "Agartala",
     "addressRegion": "Tripura",
     "addressCountry": "IN"
   }
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://dibbayajyoti.com/#website",
+  "name": "Dibbayajyoti Roy",
+  "url": "https://dibbayajyoti.com",
+  "description": "Personal portfolio of Dibbayajyoti Roy — Full Stack Software Engineer & Rust Enthusiast.",
+  "publisher": {
+    "@id": "https://dibbayajyoti.com/#person"
+  },
+  "inLanguage": "en-US"
 };
 
 export default async function RootLayout({
@@ -141,7 +156,11 @@ export default async function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body
@@ -150,6 +169,28 @@ export default async function RootLayout({
         <ThemeProvider attribute="class">
           <FramerProvider>
             <Nav/>
+            <noscript>
+              <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+                <h1>Dibbayajyoti Roy — Full Stack Software Engineer & Rust Enthusiast</h1>
+                <p>Full Stack Software Engineer based in Agartala, India, currently at Yupcha Softwares Pvt. Ltd. Specializing in Rust, TypeScript, React, and Next.js for building high-performance systems and production-grade SaaS platforms.</p>
+                <h2>Key Skills</h2>
+                <p>Rust, TypeScript, React, Next.js, Node.js, Docker, HonoJS, ElysiaJS, REST APIs, Systems Programming</p>
+                <h2>Notable Projects</h2>
+                <ul>
+                  <li>EMS — Real-time Employee Management System built with Rust and React</li>
+                  <li>LunarSite — AI-based lunar mineral prediction (NITA-ISRO hackathon)</li>
+                  <li>BloodLink — Blood donor-seeker matching platform</li>
+                  <li>CarbonFootprintTracker — AI-powered sustainability app</li>
+                </ul>
+                <h2>Awards</h2>
+                <ul>
+                  <li>Winner — NITA Arjuna 2.0 National Hackathon (2025)</li>
+                  <li>Winner — Technovate Project Exhibition</li>
+                  <li>1st Runner-Up — NITA–ISRO Space Hackathon (2024)</li>
+                </ul>
+                <p>Contact: dibbayajyoti@gmail.com | LinkedIn: linkedin.com/in/dibbayajyoti-roy/ | GitHub: github.com/DibbayajyotiRoy</p>
+              </div>
+            </noscript>
             {children}
             <Footer />
           </FramerProvider>

@@ -1,0 +1,84 @@
+# Dibbayajyoti Roy — Full Professional Profile
+
+## Identity
+
+- **Name**: Dibbayajyoti Roy
+- **Also known as**: Dibyajyoti Roy, Dibyojyoti Roy
+- **Role**: Full Stack Software Engineer
+- **Employer**: Yupcha Softwares Pvt. Ltd (since July 2025)
+- **Location**: Agartala, West Tripura, India
+- **Education**: B.Tech in Computer Science, ICFAI University Tripura (Class of 2026)
+- **Website**: https://dibbayajyoti.com
+
+## Technical Skills
+
+### Primary Stack
+- **Languages**: TypeScript, JavaScript, Rust, Python
+- **Frontend**: React, Next.js, Tailwind CSS, Framer Motion
+- **Backend**: Node.js, HonoJS, ElysiaJS, Rust (Actix/Axum)
+- **Infrastructure**: Docker, Linux, Git
+- **Databases**: PostgreSQL, Redis
+- **Architecture**: REST APIs, microservices, SaaS platforms
+
+### Areas of Focus
+- High-performance systems programming with Rust
+- Production-grade SaaS platform development
+- Web performance optimization and Core Web Vitals
+- Modern design systems and UI engineering
+- AI/ML pipeline integration
+
+## Professional Experience
+
+### Full Stack Software Engineer — Yupcha Softwares Pvt. Ltd (July 2025–Present)
+- Building production-grade SaaS platforms
+- Automating operational workflows across engineering teams
+- Building systems for HR, employee management, and AI-driven interviewing
+- Integrating REST APIs and creating user-facing dashboards
+
+## Projects
+
+### EMS (Employee Management System)
+- **Stack**: Rust, React
+- **Description**: Real-time employee management system with payroll and policy-based management
+- **Repository**: https://github.com/DibbayajyotiRoy/Rust-FullStack-App
+
+### LunarSite
+- **Stack**: Python, ML pipelines
+- **Description**: AI-based prediction system for lunar mineral composition, built during NITA-ISRO hackathon
+- **Repository**: https://github.com/DibbayajyotiRoy/LunarSite
+
+### BloodLink
+- **Stack**: Full Stack Web
+- **Description**: Matching platform for blood donors and seekers with real-time discovery and registration workflows
+- **Repository**: https://github.com/DibbayajyotiRoy/BloodLink
+
+### CarbonFootprintTracker
+- **Stack**: AI/ML, Web
+- **Description**: AI-powered sustainability app that calculates individual emissions and provides smart recommendations
+- **Repository**: https://github.com/DibbayajyotiRoy/Carbon-Tracker
+
+## Awards & Honors
+
+- **Winner** — NITA Arjuna 2.0 National Hackathon (2025)
+- **Winner** — Technovate Project Exhibition
+- **1st Runner-Up** — NITA–ISRO Space Hackathon (2024)
+
+## Philosophy
+
+Dibbayajyoti's engineering philosophy centers on building software that is both robust and efficient. Rust has been transformative for his approach — moving from building web apps to designing reliable systems. He values performance, safety, and developer experience equally.
+
+He is particularly interested in:
+- Contributing to core infrastructure projects
+- Building high-performance engines and tools
+- Edge computing and real-time systems
+- The Rust ecosystem and community
+
+## Contact
+
+- **Email**: dibbayajyoti@gmail.com
+- **Phone**: +91 8731953807
+- **LinkedIn**: https://linkedin.com/in/dibbayajyoti-roy/
+- **GitHub**: https://github.com/DibbayajyotiRoy
+- **X/Twitter**: https://x.com/dibbayajyoti
+- **Discord**: om165_
+- **Address**: Dashamighat, Agartala, West Tripura, India
