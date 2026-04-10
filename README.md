@@ -27,4 +27,4 @@ npm i
 npm run dev
 ```
 
-Also, if you're using it as a template, would be awesome if you could give credit by linking to [GitHub](https://github.com/DibbayajyotiRoy) or [x.com](https://x.com/DibbayajyotiRoy).
+Also, if you're using it as a template, would be awesome if you could give credit by linking to [GitHub](https://github.com/DibbayajyotiRoy) or [x.com](https://x.com/dibbayajyoti).
