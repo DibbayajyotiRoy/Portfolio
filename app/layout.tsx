@@ -91,7 +91,7 @@ const personJsonLd = {
     "@type": "Occupation",
     "name": "Full Stack Software Engineer",
     "occupationalCategory": "15-1252.00",
-    "skills": "Rust, TypeScript, React, Next.js, Node.js, Docker, Systems Programming"
+    "skills": "Rust, TypeScript, React, Next.js, Node.js, Python, FastAPI, Go, Docker, Android, Systems Programming"
   },
   "worksFor": {
     "@type": "Organization",
@@ -109,8 +109,9 @@ const personJsonLd = {
   "knowsLanguage": ["English", "Hindi", "Bengali"],
   "knowsAbout": [
     "Rust", "TypeScript", "React", "Next.js", "Node.js",
-    "Systems Programming", "Web Development", "Docker",
-    "HonoJS", "ElysiaJS", "REST APIs", "SaaS Development"
+    "Python", "FastAPI", "Go", "Golang",
+    "Systems Programming", "Web Development", "Android Development",
+    "Docker", "HonoJS", "ElysiaJS", "REST APIs", "SaaS Development"
   ],
   "award": [
     "Winner — NITA Arjuna 2.0 National Hackathon (2025)",

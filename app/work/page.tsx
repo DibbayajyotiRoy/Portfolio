@@ -101,8 +101,8 @@ const Page = ({}: PageProps) => {
 
               <TitledParagraph title="skills">
                 <p>
-                  I&apos;m proficient in TypeScript, React, Next.js, and Node.js. I also explore high-performance backend tools like HonoJS, ElysiaJS, and Rust. 
-                  I use Docker for containerization and Git/Linux for my daily development workflow. I believe that a new framework a day keeps stagnation away.
+                  I&apos;m proficient in TypeScript, React, Next.js, and Node.js. On the backend I work with Rust, Python (FastAPI), and Go for performance-critical and scalable services.
+                  I also explore HonoJS and ElysiaJS, use Docker for containerization, and Git/Linux daily. I believe that a new framework a day keeps stagnation away.
                 </p>
               </TitledParagraph>
 
