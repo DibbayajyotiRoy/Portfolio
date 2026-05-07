@@ -48,12 +48,18 @@ B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026). E
 - **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd, Full Stack Software Engineer, since July 2025, Agartala, India.
 - **How to contact Dibbayajyoti Roy?** Email: dibbayajyoti@gmail.com, LinkedIn: linkedin.com/in/dibbayajyoti-roy/, GitHub: github.com/DibbayajyotiRoy.
 
+## Writing
+
+- **How I Fixed a Redis Polling Bottleneck That Was Timing Out in Production** (2026): A production incident — naive SCAN over remote Redis timed out at 100s. Batched fetching + client-side filtering yielded ~90% efficiency improvement. https://medium.com/p/afae306668ba
+- **Next.js SEO in 2026: A Developer's Practical Guide** (2026): Structured data, llms.txt for AI crawlers, zero-click optimization, and what actually moves the needle for Next.js sites. https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22
+
 ## Contact
 
 - Email: dibbayajyoti@gmail.com
 - LinkedIn: https://linkedin.com/in/dibbayajyoti-roy/
 - GitHub: https://github.com/DibbayajyotiRoy
 - X/Twitter: https://x.com/dibbayajyoti
+- Medium: https://medium.com/@dibbayajyoti
 
 ## Extended Info
 

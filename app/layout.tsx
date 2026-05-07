@@ -84,6 +84,7 @@ const personJsonLd = {
     "https://github.com/DibbayajyotiRoy",
     "https://linkedin.com/in/dibbayajyoti-roy/",
     "https://x.com/dibbayajyoti",
+    "https://medium.com/@dibbayajyoti",
     "https://discord.com/users/om165_"
   ],
   "jobTitle": "Full Stack Software Engineer",

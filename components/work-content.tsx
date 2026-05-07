@@ -109,6 +109,19 @@ const WorkContent = ({}: WorkContentProps) => {
               </p>
             </TitledParagraph>
 
+            <TitledParagraph title="writing">
+              <div className="flex flex-col gap-4">
+                <p>
+                  <Link href="https://medium.com/p/afae306668ba" target="_blank" rel="noopener noreferrer" className="font-semibold underline">How I Fixed a Redis Polling Bottleneck That Was Timing Out in Production</Link>{" "}
+                  — A production incident where naive SCAN over a remote Redis timed out at 100s. Switched to batched fetching with client-side filtering, resulting in ~90% efficiency improvement.
+                </p>
+                <p>
+                  <Link href="https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Next.js SEO in 2026: A Developer&apos;s Practical Guide</Link>{" "}
+                  — Structured data, llms.txt for AI crawlers, zero-click optimization, and what actually moves the needle for a Next.js site in 2026.
+                </p>
+              </div>
+            </TitledParagraph>
+
             <TitledParagraph title="My Focus">
               <p>
                 My goal is to build software that is both robust and efficient. Rust has completely transformed my approach to engineering, moving me from just building &quot;web apps&quot; to designing reliable systems. 

@@ -86,6 +86,16 @@ const Footer = ({}: FooterProps) => {
                 className="transition-opacity opacity-75 hover:opacity-100"
                 rel="noopener noreferrer"
                 target="_blank"
+                href="https://medium.com/@dibbayajyoti"
+              >
+                Medium
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="transition-opacity opacity-75 hover:opacity-100"
+                rel="noopener noreferrer"
+                target="_blank"
                 href="https://discord.com/users/om165_"
               >
                 Discord
@@ -99,21 +109,21 @@ const Footer = ({}: FooterProps) => {
             <li>
               <Link
                 className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App"
+                href="https://klinder-oss.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                EMS (Rust/React)
+                Klinder-OSS
               </Link>
             </li>
             <li>
               <Link
                 className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="https://github.com/DibbayajyotiRoy/LunarSite"
+                href="https://ai-for-bharat.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LunarSite
+                Learning Copilot
               </Link>
             </li>
             <li>
@@ -129,17 +139,43 @@ const Footer = ({}: FooterProps) => {
             <li>
               <Link
                 className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="https://github.com/DibbayajyotiRoy/Carbon-Tracker"
+                href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                CarbonFootprintTracker
+                EMS (Rust/React)
               </Link>
             </li>
           </ul>
         </div>
 
-        <div className="col-span-2 flex justify-end text-center md:items-start md:text-start">
+        <div className="w-[200px] flex flex-col text-center md:items-start md:text-start">
+          <h2 className="text-lg font-semibold">Writing</h2>
+          <ul className="font-light gap-1 flex flex-col items-center md:items-start mt-2">
+            <li>
+              <Link
+                className="transition-opacity opacity-75 hover:opacity-100"
+                href="https://medium.com/p/afae306668ba"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Redis Polling Bottleneck
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="transition-opacity opacity-75 hover:opacity-100"
+                href="https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Next.js SEO in 2026
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="flex justify-end text-center md:items-start md:text-start">
           <div className="flex flex-col">
             <h2 className="text-lg font-semibold">Contact</h2>
             <div className=" font-light mt-2">

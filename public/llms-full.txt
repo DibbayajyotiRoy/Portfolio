@@ -86,6 +86,16 @@ Location: Agartala, India
 - **Repository**: https://github.com/DibbayajyotiRoy/Carbon-Tracker
 - **Description**: AI-powered sustainability app that calculates individual emissions and provides smart recommendations.
 
+## Writing & Articles
+
+### How I Fixed a Redis Polling Bottleneck That Was Timing Out in Production (2026)
+- **URL**: https://medium.com/p/afae306668ba
+- **Summary**: A real production incident — polling tasks from a poorly-designed Redis schema with no indexing. Naive SCAN + deserialize + check over a remote Redis host timed out at ~100 seconds. Fixed by batching MGET requests and filtering idle tasks client-side, resulting in ~90% efficiency improvement and zero timeouts.
+
+### Next.js SEO in 2026: A Developer's Practical Guide (2026)
+- **URL**: https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22
+- **Summary**: Practical guide covering structured data (JSON-LD), llms.txt for AI crawlers, zero-click optimization, sitemap configuration, and Core Web Vitals for Next.js apps in 2026.
+
 ## Awards & Honors
 
 - **Winner** — NITA Arjuna 2.0 National Hackathon (2025), among 200+ teams
@@ -125,5 +135,6 @@ Dibbayajyoti's engineering philosophy centers on building software that is both 
 - **LinkedIn**: https://linkedin.com/in/dibbayajyoti-roy/
 - **GitHub**: https://github.com/DibbayajyotiRoy
 - **X/Twitter**: https://x.com/dibbayajyoti
+- **Medium**: https://medium.com/@dibbayajyoti
 - **Discord**: om165_
 - **Address**: Dashamighat, Agartala, West Tripura, India
