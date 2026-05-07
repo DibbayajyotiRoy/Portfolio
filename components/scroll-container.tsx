@@ -21,6 +21,7 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
     <div className="relative w-full md:mb-[200px] max-w-screen flex flex-col items-center">
       <div className="relative">
         <div className="sticky z-20 top-[33vh] left-0 pl-4 md:pl-0 translate-x-0 lg:translate-x-[100px] md:translate-x-[130px] max-w-[792px] w-full flex justify-center">
+          <h1 className="sr-only">Dibbayajyoti Roy — Full Stack Software Engineer &amp; Rust Enthusiast</h1>
           <div className="flex gap-1.5 md:gap-4 relative md:-translate-x-[230px] w-full text-[22px] md:text-[32px] font-semibold items-baseline left-0 ">
             <div className="flex md:gap-4 gap-1.5 items-baseline">
               Dibbayajyoti{" "}

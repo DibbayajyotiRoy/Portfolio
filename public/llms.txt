@@ -1,6 +1,6 @@
 # Dibbayajyoti Roy — Personal Portfolio
 
-> Full Stack Software Engineer specializing in Rust, React, and Next.js. Based in Agartala, Tripura, India.
+> Full Stack Software Engineer specializing in TypeScript, Rust, and Linux Infrastructure. Based in Agartala, Tripura, India.
 
 ## Pages
 
@@ -9,16 +9,44 @@
 
 ## About
 
-Dibbayajyoti Roy is a Full Stack Software Engineer currently working at Yupcha Softwares Pvt. Ltd. He builds production-grade SaaS platforms, integrates REST APIs, and creates user-facing dashboards. He is a B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026).
+Dibbayajyoti Roy is a Full Stack Software Engineer currently working at Yupcha Softwares Pvt. Ltd (since July 2025). He builds production-grade SaaS platforms, deploys Node.js and Next.js services to Proxmox-hosted Ubuntu VMs with nginx, systemd, and TLS via Let's Encrypt, and designs REST APIs with PostgreSQL.
 
-He specializes in TypeScript, React, Next.js, Node.js, and Rust for systems programming. Notable hackathon wins include the NITA Arjuna 2.0 National Hackathon (2025) and 1st Runner-Up at the NITA–ISRO Space Hackathon (2024).
+He is the creator of Klinder-OSS, an open-source product analytics SDK on Cloudflare Workers + Neon Postgres with a Rust ingestion port in progress. He also shipped Learning Copilot, an AWS Bedrock-powered AI learning assistant that placed top 500 in the AI for Bharat hackathon.
+
+B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026). Eligible for Germany Opportunity Card / EU Blue Card and Netherlands Highly Skilled Migrant programme.
+
+## Technical Skills
+
+- **Languages**: TypeScript, JavaScript (ES2023), Rust, SQL, Python
+- **Frontend**: React, Next.js, TanStack Query, Tailwind CSS
+- **Backend**: Node.js, Hono, Express, REST APIs, Server-Sent Events, Zod, OAuth, JWT
+- **Infrastructure**: Linux, Proxmox VE, nginx, systemd, Docker, Cloudflare Workers, Cloudflare Queues, AWS (Bedrock, DynamoDB, CloudWatch)
+- **Databases**: PostgreSQL (Neon, RLS, partitioning), DynamoDB, MongoDB, Redis
+- **AI/ML**: AWS Bedrock (Nova Pro, Nova Lite), multi-model orchestration, streaming inference, agent design
 
 ## Projects
 
-- **EMS**: Real-time Employee Management System built with Rust and React (payroll, policy management)
-- **LunarSite**: AI-based lunar mineral prediction system using ML pipelines (NITA-ISRO hackathon)
-- **BloodLink**: Matching platform for blood donors and seekers with real-time discovery
-- **CarbonFootprintTracker**: AI-powered sustainability app calculating individual emissions
+- **Klinder-OSS** (2026): Open-source product analytics SDK — TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS) + Hono. Rust port in progress targeting sub-10ms p95 latency. Live: https://klinder-oss.vercel.app
+- **Learning Copilot** (2026): AWS Bedrock AI learning assistant (Nova Pro / Nova Lite multi-model fallback). Top 500, AI for Bharat hackathon. Live: https://ai-for-bharat.vercel.app
+- **BloodLink** (2024): Blood donor-seeker matching platform. Next.js + PostgreSQL geolocation. ~100 pilot users. https://github.com/DibbayajyotiRoy/BloodLink
+- **EMS**: Real-time Employee Management System in Rust and React. https://github.com/DibbayajyotiRoy/Rust-FullStack-App
+
+## Honors & Awards
+
+- Winner — NITA Arjuna 2.0 National Hackathon (2025), 200+ teams
+- Winner — Technovate Project Exhibition (2025)
+- 1st Runner-Up — NITA–ISRO Space Hackathon (2024)
+- Top 500 — AI for Bharat Hackathon (2026)
+
+## FAQ
+
+- **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd, Agartala, India. Creator of Klinder-OSS. Specializes in TypeScript, Rust, React, Next.js, AWS Bedrock.
+- **Does Dibbayajyoti Roy have AI engineering experience?** Yes — built Learning Copilot using AWS Bedrock (Nova Pro / Nova Lite), multi-model fallback, streaming inference, DynamoDB memory, and cost-aware token budgets. Top 500 AI for Bharat hackathon.
+- **What is Klinder-OSS?** Open-source product analytics SDK by Dibbayajyoti Roy. Cloudflare Workers edge ingestion, Neon Postgres with RLS, TypeScript SDK, Rust port in progress.
+- **What hackathons has Dibbayajyoti Roy won?** NITA Arjuna 2.0 National Hackathon (2025, 200+ teams), Technovate Project Exhibition (2025), 1st Runner-Up NITA–ISRO Space Hackathon (2024), Top 500 AI for Bharat (2026).
+- **Is Dibbayajyoti Roy eligible to work in Europe?** Yes — Germany Opportunity Card / EU Blue Card and Netherlands HSM.
+- **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd, Full Stack Software Engineer, since July 2025, Agartala, India.
+- **How to contact Dibbayajyoti Roy?** Email: dibbayajyoti@gmail.com, LinkedIn: linkedin.com/in/dibbayajyoti-roy/, GitHub: github.com/DibbayajyotiRoy.
 
 ## Contact
 
@@ -29,4 +57,4 @@ He specializes in TypeScript, React, Next.js, Node.js, and Rust for systems prog
 
 ## Extended Info
 
-See [llms-full.txt](https://dibbayajyoti.com/llms-full.txt) for complete professional details.
+See [llms-full.txt](https://dibbayajyoti.com/llms-full.txt) for complete professional details including all projects, metrics, and infrastructure experience.

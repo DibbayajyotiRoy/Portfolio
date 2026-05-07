@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
-import TwitchBanner from "./twitch-banner";
-import { Suspense } from "react";
 
 const Nav = () => {
   return (

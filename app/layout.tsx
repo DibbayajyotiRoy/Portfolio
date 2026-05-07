@@ -108,10 +108,15 @@ const personJsonLd = {
   },
   "knowsLanguage": ["English", "Hindi", "Bengali"],
   "knowsAbout": [
-    "Rust", "TypeScript", "React", "Next.js", "Node.js",
-    "Python", "FastAPI", "Go", "Golang",
-    "Systems Programming", "Web Development", "Android Development",
-    "Docker", "HonoJS", "ElysiaJS", "REST APIs", "SaaS Development"
+    "Rust", "TypeScript", "JavaScript", "React", "Next.js", "Node.js",
+    "Hono", "Express.js", "REST APIs", "Server-Sent Events", "Zod",
+    "Systems Programming", "Web Development", "Docker",
+    "AWS Bedrock", "AWS DynamoDB", "AWS CloudWatch",
+    "Cloudflare Workers", "Cloudflare Queues",
+    "Neon Postgres", "PostgreSQL", "Redis", "MongoDB",
+    "nginx", "systemd", "Proxmox VE", "Linux Infrastructure",
+    "SaaS Development", "Multi-tenant Architecture", "Edge Computing",
+    "AI Engineering", "Multi-model Orchestration", "Streaming Inference"
   ],
   "award": [
     "Winner — NITA Arjuna 2.0 National Hackathon (2025)",
@@ -146,7 +151,79 @@ const websiteJsonLd = {
   "inLanguage": "en-US"
 };
 
-export default async function RootLayout({
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dibbayajyoti.com/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is Dibbayajyoti Roy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dibbayajyoti Roy is a Full Stack Software Engineer based in Agartala, India, specializing in TypeScript, Rust, React, and Next.js. He works at Yupcha Softwares Pvt. Ltd building production-grade SaaS platforms and is the creator of Klinder-OSS, an open-source product analytics SDK."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What programming languages does Dibbayajyoti Roy use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TypeScript, JavaScript (ES2023), Rust, SQL, and Python. His primary stack is React and Next.js on the frontend, Node.js and Hono on the backend, and Rust for high-performance systems. He also works with AWS Bedrock, Cloudflare Workers, and Neon Postgres."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What hackathons has Dibbayajyoti Roy won?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Winner of NITA Arjuna 2.0 National Hackathon (2025, among 200+ teams), Winner of Technovate Project Exhibition (2025), 1st Runner-Up at NITA–ISRO Space Hackathon (2024), and top 500 in the AI for Bharat hackathon (2026)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Klinder-OSS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Klinder-OSS is an open-source product analytics SDK built by Dibbayajyoti Roy. It uses a TypeScript SDK for typed event tracking, Cloudflare Workers for edge event ingestion, Cloudflare Queues, Neon Postgres with Row-Level Security for multi-tenant isolation, and Hono for the API layer. A Rust port using workers-rs is in progress targeting sub-10ms p95 latency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Learning Copilot by Dibbayajyoti Roy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Learning Copilot is an AI-powered learning assistant built by Dibbayajyoti Roy using AWS Bedrock (Nova Pro and Nova Lite), Next.js, and DynamoDB. It generates structured, level-adaptive explanations with auto-generated D2 diagrams and real-time streaming responses. It placed in the top 500 of the AI for Bharat hackathon and is live at ai-for-bharat.vercel.app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Dibbayajyoti Roy have AI and machine learning experience?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Dibbayajyoti Roy has hands-on AI engineering experience including: AWS Bedrock multi-model orchestration (Nova Pro and Nova Lite) with fallback and graceful degradation, streaming inference, prompt engineering, cost-aware architecture with per-mode token budgets, and agent design. He built and shipped a production AI learning assistant placed in the top 500 of the AI for Bharat hackathon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Dibbayajyoti Roy's notable projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Klinder-OSS (open-source product analytics SDK on Cloudflare Workers and Neon Postgres), Learning Copilot (AWS Bedrock AI assistant, top 500 AI for Bharat hackathon), BloodLink (blood donor-seeker matching platform with ~100 pilot users), and EMS (real-time Employee Management System in Rust and React)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Dibbayajyoti Roy eligible to work in Europe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Dibbayajyoti Roy is eligible for the Germany Opportunity Card, EU Blue Card, and Netherlands Highly Skilled Migrant (HSM) programme."
+      }
+    }
+  ]
+};
+
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -163,9 +240,13 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
       </head>
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} 68e50d59-88e6-47d8-be3b-7aec8eb9f8af b5b5cc2f-bcfa-4b34-b5eb-419b51477b34 relative font-sans bg-whiteout selection:text-white 24576e23-44f4-4174-a049-9a0ebd609e65 selection:bg-pink-400 dark:bg-zinc-900 text-blackout dark:text-zinc-100`}
+        className={`${GeistSans.variable} ${GeistMono.variable} relative font-sans bg-whiteout selection:text-white selection:bg-pink-400 dark:bg-zinc-900 text-blackout dark:text-zinc-100`}
       >
         <ThemeProvider attribute="class">
           <FramerProvider>
@@ -203,4 +284,3 @@ export default async function RootLayout({
   );
 }
 
-export const revalidate = 300;

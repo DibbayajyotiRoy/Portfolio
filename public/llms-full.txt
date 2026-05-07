@@ -3,75 +3,120 @@
 ## Identity
 
 - **Name**: Dibbayajyoti Roy
-- **Also known as**: Dibyajyoti Roy, Dibyojyoti Roy
+- **Also known as**: Dibyajyoti Roy, Dibyojyoti Roy, Dibayajyoti Roy
 - **Role**: Full Stack Software Engineer
+- **Specialization**: TypeScript, Rust, Linux Infrastructure
 - **Employer**: Yupcha Softwares Pvt. Ltd (since July 2025)
 - **Location**: Agartala, West Tripura, India
-- **Education**: B.Tech in Computer Science, ICFAI University Tripura (Class of 2026)
+- **Education**: B.Tech in Computer Science, ICFAI University Tripura (Expected 2026)
 - **Website**: https://dibbayajyoti.com
+- **Work eligibility**: Germany Opportunity Card / EU Blue Card, Netherlands Highly Skilled Migrant (HSM) programme
 
 ## Technical Skills
 
-### Primary Stack
-- **Languages**: TypeScript, JavaScript, Rust, Python
-- **Frontend**: React, Next.js, Tailwind CSS, Framer Motion
-- **Backend**: Node.js, HonoJS, ElysiaJS, Rust (Actix/Axum)
-- **Infrastructure**: Docker, Linux, Git
-- **Databases**: PostgreSQL, Redis
-- **Architecture**: REST APIs, microservices, SaaS platforms
+### Languages
+TypeScript, JavaScript (ES2023), Rust, SQL, Python, HTML5, CSS3
 
-### Areas of Focus
-- High-performance systems programming with Rust
-- Production-grade SaaS platform development
-- Web performance optimization and Core Web Vitals
-- Modern design systems and UI engineering
-- AI/ML pipeline integration
+### Frontend
+React, Next.js (App Router), TanStack Query, Tailwind CSS, Framer Motion
+
+### Backend
+Node.js, Hono, Express.js, REST APIs, Server-Sent Events, Webhooks, Zod schema validation, OAuth, JWT
+
+### Infrastructure
+Linux (Ubuntu/Debian), Proxmox VE, AWS (Bedrock, DynamoDB, CloudWatch, Amplify, IAM), Cloudflare Workers, Cloudflare Queues, nginx (reverse proxy, TLS termination, rate limiting), systemd (unit files, journald), Docker, Vercel, Let's Encrypt / certbot, Git, CI/CD
+
+### Databases
+PostgreSQL (Neon, Row-Level Security, partitioning, indexing), DynamoDB, MongoDB, Redis
+
+### AI / ML
+AWS Bedrock (Nova Pro, Nova Lite), multi-model orchestration with fallback, prompt engineering, streaming inference, agent design, cost-aware architecture, per-mode token budgets
+
+### Concepts
+Multi-tenant SaaS, event-driven architecture, edge compute, observability, distributed systems fundamentals, Core Web Vitals
 
 ## Professional Experience
 
 ### Full Stack Software Engineer — Yupcha Softwares Pvt. Ltd (July 2025–Present)
-- Building production-grade SaaS platforms
-- Automating operational workflows across engineering teams
-- Building systems for HR, employee management, and AI-driven interviewing
-- Integrating REST APIs and creating user-facing dashboards
+Location: Agartala, India
+
+- Shipped HR SaaS modules including employee records, leave workflow, and role-based access controls used across partner organisations.
+- Designed 12+ REST endpoints in Node.js/Express with PostgreSQL for CRUD, authentication, and reporting queries.
+- Deployed Node.js and Next.js services to Ubuntu VMs on a Proxmox cluster: authored systemd unit files with Restart=on-failure and After= ordering, configured nginx reverse proxies with TLS termination via Let's Encrypt (automated renewal via certbot), and set up journald for structured log inspection.
+- Cut page load time from 3.4s to 1.9s (~44% improvement) by eliminating N+1 queries, adding composite indexes, and splitting bundle routes in Next.js.
+- Containerised services with Docker and standardised local/staging environments, eliminating deployment inconsistencies.
+- Participated in sprint planning, code review, pair programming, and release planning; authored unit tests for critical data-mutation paths.
 
 ## Projects
 
-### EMS (Employee Management System)
-- **Stack**: Rust, React
-- **Description**: Real-time employee management system with payroll and policy-based management
-- **Repository**: https://github.com/DibbayajyotiRoy/Rust-FullStack-App
+### Klinder-OSS — Open-Source Product Analytics SDK (private beta, waitlist live, 2026)
+- **Live**: https://klinder-oss.vercel.app
+- **Stack**: TypeScript SDK, Cloudflare Workers, Cloudflare Queues, Neon Postgres (RLS), Hono, Next.js, Better Auth
+- **Description**: A single TypeScript SDK for typed event tracking with Zod schema validation, unified customer timelines, and lifecycle email orchestration — replacing the typical stack of 5+ disparate analytics, CDP, and email tools.
+- Edge event ingestion on Cloudflare Workers fronting a Cloudflare Queue, writing to Neon Postgres with Row-Level Security for multi-tenant isolation and monthly partitioning for query performance at scale.
+- Real-time dashboard via Server-Sent Events, background jobs on Trigger.dev, authentication with Better Auth, transactional email via Resend.
+- Rust port of the ingestion worker in progress using workers-rs and serde, targeting sub-10ms p95 handler latency with published benchmarks on GitHub.
 
-### LunarSite
-- **Stack**: Python, ML pipelines
-- **Description**: AI-based prediction system for lunar mineral composition, built during NITA-ISRO hackathon
-- **Repository**: https://github.com/DibbayajyotiRoy/LunarSite
+### Learning Copilot — AI Concept Explainer on AWS (2026)
+- **Live**: https://ai-for-bharat.vercel.app
+- **Stack**: TypeScript, Next.js, Hono, AWS Bedrock (Nova Pro / Nova Lite), DynamoDB, CloudWatch
+- **Achievement**: Top 500 in the AI for Bharat hackathon (thousands of teams)
+- **Description**: AI-powered learning assistant that generates structured, level-adaptive explanations of technical concepts with auto-generated D2 system diagrams and real-time streaming responses; currently live and operational.
+- Engineered multi-model fallback across AWS Bedrock (Nova Pro → Nova Lite) for resilience under rate limits and outages, with graceful degradation and structured error recovery across the request pipeline.
+- Designed cost-aware architecture with DynamoDB conversation memory (30-day TTL), CloudWatch logging and metrics dashboard, and per-mode token budgets to control inference cost.
 
-### BloodLink
-- **Stack**: Full Stack Web
-- **Description**: Matching platform for blood donors and seekers with real-time discovery and registration workflows
+### BloodLink — Donor Matching Platform (2024)
+- **Stack**: Next.js, PostgreSQL, Geolocation
 - **Repository**: https://github.com/DibbayajyotiRoy/BloodLink
+- **Description**: Full-stack web application connecting blood donors to requesters by blood group and location radius. ~100 registered users during pilot.
+- Proximity search in PostgreSQL using indexed latitude/longitude filtering, reducing donor query response time compared with naive full-scan search.
+
+### EMS — Employee Management System
+- **Stack**: Rust, React
+- **Repository**: https://github.com/DibbayajyotiRoy/Rust-FullStack-App
+- **Description**: Real-time employee management system built with Rust and React, featuring payroll and policy-based management.
+
+### LunarSite — AI Lunar Mineral Prediction (NITA-ISRO Hackathon)
+- **Stack**: Python, ML pipelines
+- **Repository**: https://github.com/DibbayajyotiRoy/LunarSite
+- **Description**: AI-based prediction system for lunar mineral composition using ML pipelines, built during NITA-ISRO hackathon.
 
 ### CarbonFootprintTracker
 - **Stack**: AI/ML, Web
-- **Description**: AI-powered sustainability app that calculates individual emissions and provides smart recommendations
 - **Repository**: https://github.com/DibbayajyotiRoy/Carbon-Tracker
+- **Description**: AI-powered sustainability app that calculates individual emissions and provides smart recommendations.
 
 ## Awards & Honors
 
-- **Winner** — NITA Arjuna 2.0 National Hackathon (2025)
-- **Winner** — Technovate Project Exhibition
+- **Winner** — NITA Arjuna 2.0 National Hackathon (2025), among 200+ teams
+- **Winner** — Technovate Project Exhibition (2025)
 - **1st Runner-Up** — NITA–ISRO Space Hackathon (2024)
+- **Top 500** — AI for Bharat Hackathon (2026), thousands of teams
+
+## Education
+
+Bachelor of Technology, Computer Science — ICFAI University Tripura (Expected 2026)
+Relevant coursework: Data Structures & Algorithms, Operating Systems, DBMS, Computer Networks, Distributed Systems.
+
+## Languages
+
+- English (Professional working proficiency)
+- Bengali (Native)
+- Hindi (Fluent)
 
 ## Philosophy
 
-Dibbayajyoti's engineering philosophy centers on building software that is both robust and efficient. Rust has been transformative for his approach — moving from building web apps to designing reliable systems. He values performance, safety, and developer experience equally.
+Dibbayajyoti's engineering philosophy centers on building software that is both robust and efficient. He values performance, safety, and developer experience equally. He is particularly interested in AI engineering, edge computing, open-source infrastructure, and high-performance systems with Rust.
 
-He is particularly interested in:
-- Contributing to core infrastructure projects
-- Building high-performance engines and tools
-- Edge computing and real-time systems
-- The Rust ecosystem and community
+## Frequently Asked Questions
+
+- **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd, based in Agartala, India. Specializes in TypeScript, Rust, React, Next.js, and AI engineering with AWS Bedrock.
+- **Does Dibbayajyoti Roy have AI experience?** Yes. He built and shipped Learning Copilot — a production AWS Bedrock AI assistant with multi-model fallback (Nova Pro → Nova Lite), real-time streaming, and cost-aware architecture. Top 500 in AI for Bharat hackathon.
+- **What is Klinder-OSS?** An open-source product analytics SDK by Dibbayajyoti Roy. TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS), with a Rust port in progress targeting sub-10ms p95 latency.
+- **Is Dibbayajyoti Roy eligible to work in Europe?** Yes — eligible for Germany Opportunity Card / EU Blue Card and Netherlands Highly Skilled Migrant programme.
+- **What is Dibbayajyoti Roy's tech stack?** TypeScript, Rust, React, Next.js, Node.js, Hono, AWS Bedrock, Cloudflare Workers, Neon Postgres, Docker, Linux/nginx/systemd.
+- **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd as Full Stack Software Engineer since July 2025, Agartala, India.
+- **How to contact Dibbayajyoti Roy?** Email: dibbayajyoti@gmail.com, LinkedIn: linkedin.com/in/dibbayajyoti-roy/, GitHub: github.com/DibbayajyotiRoy.
 
 ## Contact
 
