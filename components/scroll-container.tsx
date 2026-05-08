@@ -16,6 +16,11 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
   useFaviconAnimation();
   const [activeContentBoxIndex, setActiveContentBoxIndex] = useState(0);
   const debouncedActiveContentIndex = useDebounce(activeContentBoxIndex, 300);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   return (
     <div className="relative w-full md:mb-[200px] max-w-screen flex flex-col items-center">
@@ -38,13 +43,13 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                             <motion.div
                               className="absolute left-0 top-0  rounded-lg"
                               key={word + i}
-                              initial={{
+                              initial={hasMounted ? {
                                 x: -20,
                                 y: -12,
                                 rotate: 0,
                                 opacity: 0,
                                 scale: 0.95,
-                              }}
+                              } : false}
                               animate={{
                                 x: [-10, 6, 0],
                                 y: [-6, 4, 0],
