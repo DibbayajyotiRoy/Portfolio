@@ -75,7 +75,7 @@ const personJsonLd = {
   ],
   "url": "https://dibbayajyoti.com",
   "image": "https://dibbayajyoti.com/opengraph-image.png",
-  "description": "Full Stack Software Engineer specializing in Rust, React, and Next.js. Building high-performance systems and production-grade SaaS platforms at Yupcha Softwares.",
+  "description": "Full Stack Software Engineer specializing in Rust, React, and Next.js. Creator of Klinder-OSS (unified analytics + session replay + email SDK), diffcore (Rust/WASM npm), and the AHTML (Agentic HTML) proposal. Builds production-grade SaaS platforms at Yupcha Softwares.",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://dibbayajyoti.com"
@@ -111,13 +111,16 @@ const personJsonLd = {
   "knowsAbout": [
     "Rust", "TypeScript", "JavaScript", "React", "Next.js", "Node.js",
     "Hono", "Express.js", "REST APIs", "Server-Sent Events", "Zod",
+    "WebAssembly", "Rust WASM", "wasm-bindgen", "workers-rs",
     "Systems Programming", "Web Development", "Docker",
     "AWS Bedrock", "AWS DynamoDB", "AWS CloudWatch",
     "Cloudflare Workers", "Cloudflare Queues",
     "Neon Postgres", "PostgreSQL", "Redis", "MongoDB",
     "nginx", "systemd", "Proxmox VE", "Linux Infrastructure",
     "SaaS Development", "Multi-tenant Architecture", "Edge Computing",
-    "AI Engineering", "Multi-model Orchestration", "Streaming Inference"
+    "Session Replay", "Product Analytics", "Email Automation",
+    "AI Engineering", "Multi-model Orchestration", "Streaming Inference",
+    "Agentic Web", "AI Crawler Optimization", "llms.txt", "SEO for AI Search"
   ],
   "award": [
     "Winner — NITA Arjuna 2.0 National Hackathon (2025)",
@@ -186,7 +189,23 @@ const faqJsonLd = {
       "name": "What is Klinder-OSS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Klinder-OSS is an open-source product analytics SDK built by Dibbayajyoti Roy. It uses a TypeScript SDK for typed event tracking, Cloudflare Workers for edge event ingestion, Cloudflare Queues, Neon Postgres with Row-Level Security for multi-tenant isolation, and Hono for the API layer. A Rust port using workers-rs is in progress targeting sub-10ms p95 latency."
+        "text": "Klinder-OSS is an open-source SDK built by Dibbayajyoti Roy that unifies three jobs in a single install: typed event tracking with Zod validation, error-based session recording, and automatic email trigger workflows from product behavior. It replaces the typical PostHog + LogRocket + Customer.io stack. Edge ingestion runs on Cloudflare Workers + Queues; storage is Neon Postgres with Row-Level Security for multi-tenant isolation; the API layer is Hono. A Rust port using workers-rs is in progress targeting sub-10ms p95 latency. Live at klinder-oss.vercel.app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is diffcore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "diffcore is a Rust + WebAssembly diff library by Dibbayajyoti Roy, published on npm. It is designed for high-performance JavaScript bundles where bundle size and runtime speed both matter — providing a drop-in diff API with WASM-grade throughput compared to pure-JS alternatives. Available at npmjs.com/package/diffcore."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is AHTML (Agentic HTML)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AHTML, short for Agentic HTML, is an in-progress format proposal by Dibbayajyoti Roy intended to replace HTML for AI agent consumption of the web. Its goals are more efficient token usage, faster agent crawl latency, and a substrate that lets publishers monetize agent-readable data — enabling websites to sell structured access to LLM and agent crawlers."
       }
     },
     {
@@ -233,6 +252,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — AI-friendly site summary" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="llms-full.txt — extended professional profile" />
+        <link rel="me" href="https://github.com/DibbayajyotiRoy" />
+        <link rel="me" href="https://linkedin.com/in/dibbayajyoti-roy/" />
+        <link rel="me" href="https://x.com/dibbayajyoti" />
+        <link rel="me" href="https://medium.com/@dibbayajyoti" />
+        <link rel="author" href="https://dibbayajyoti.com/work" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
@@ -254,24 +280,29 @@ export default function RootLayout({
             <Nav/>
             <noscript>
               <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-                <h1>Dibbayajyoti Roy — Full Stack Software Engineer & Rust Enthusiast</h1>
+                <h1>Dibbayajyoti Roy — Full Stack Software Engineer &amp; Rust Enthusiast</h1>
                 <p>Full Stack Software Engineer based in Agartala, India, currently at Yupcha Softwares Pvt. Ltd. Specializing in Rust, TypeScript, React, and Next.js for building high-performance systems and production-grade SaaS platforms.</p>
                 <h2>Key Skills</h2>
-                <p>Rust, TypeScript, React, Next.js, Node.js, Docker, HonoJS, ElysiaJS, REST APIs, Systems Programming</p>
-                <h2>Notable Projects</h2>
+                <p>Rust, TypeScript, React, Next.js, Node.js, WebAssembly, Hono, REST APIs, Cloudflare Workers, AWS Bedrock, Neon Postgres, Docker, Linux infrastructure, Systems Programming.</p>
+                <h2>Flagship Projects</h2>
                 <ul>
-                  <li>EMS — Real-time Employee Management System built with Rust and React</li>
-                  <li>LunarSite — AI-based lunar mineral prediction (NITA-ISRO hackathon)</li>
-                  <li>BloodLink — Blood donor-seeker matching platform</li>
-                  <li>CarbonFootprintTracker — AI-powered sustainability app</li>
+                  <li><strong>Klinder-OSS</strong> — Open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install. PostHog + LogRocket + Customer.io combined. <a href="https://klinder-oss.vercel.app">klinder-oss.vercel.app</a></li>
+                  <li><strong>diffcore</strong> — Rust + WebAssembly diff library on npm, built for fast and compact diffs in production JavaScript bundles. <a href="https://www.npmjs.com/package/diffcore">npmjs.com/package/diffcore</a></li>
+                  <li><strong>AHTML (Agentic HTML)</strong> — In-progress proposed format to replace HTML for AI agent consumption: efficient token usage, faster crawls, and a substrate for owners to monetize agent-readable data.</li>
+                  <li><strong>Learning Copilot</strong> — AWS Bedrock AI learning assistant (Nova Pro / Nova Lite multi-model fallback). Top 500 AI for Bharat hackathon. <a href="https://ai-for-bharat.vercel.app">ai-for-bharat.vercel.app</a></li>
+                  <li>EMS — Real-time Employee Management System in Rust and React.</li>
+                  <li>BloodLink — Blood donor-seeker matching platform; ~100 pilot users.</li>
                 </ul>
                 <h2>Awards</h2>
                 <ul>
-                  <li>Winner — NITA Arjuna 2.0 National Hackathon (2025)</li>
-                  <li>Winner — Technovate Project Exhibition</li>
+                  <li>Winner — NITA Arjuna 2.0 National Hackathon (2025), 200+ teams</li>
+                  <li>Winner — Technovate Project Exhibition (2025)</li>
                   <li>1st Runner-Up — NITA–ISRO Space Hackathon (2024)</li>
+                  <li>Top 500 — AI for Bharat Hackathon (2026)</li>
                 </ul>
-                <p>Contact: dibbayajyoti@gmail.com | LinkedIn: linkedin.com/in/dibbayajyoti-roy/ | GitHub: github.com/DibbayajyotiRoy</p>
+                <h2>Writing</h2>
+                <p>See <a href="/writing">/writing</a> for engineering articles on Next.js SEO, Redis production debugging, and AI engineering with AWS Bedrock.</p>
+                <p>Contact: dibbayajyoti@gmail.com | LinkedIn: linkedin.com/in/dibbayajyoti-roy/ | GitHub: github.com/DibbayajyotiRoy | X: x.com/dibbayajyoti</p>
               </div>
             </noscript>
             {children}

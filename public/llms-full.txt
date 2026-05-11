@@ -49,13 +49,23 @@ Location: Agartala, India
 
 ## Projects
 
-### Klinder-OSS — Open-Source Product Analytics SDK (private beta, waitlist live, 2026)
+### Klinder-OSS — Unified Analytics + Session Replay + Email SDK (private beta, waitlist live, 2026)
 - **Live**: https://klinder-oss.vercel.app
 - **Stack**: TypeScript SDK, Cloudflare Workers, Cloudflare Queues, Neon Postgres (RLS), Hono, Next.js, Better Auth
-- **Description**: A single TypeScript SDK for typed event tracking with Zod schema validation, unified customer timelines, and lifecycle email orchestration — replacing the typical stack of 5+ disparate analytics, CDP, and email tools.
+- **Description**: A single open-source SDK that unifies three jobs normally split across PostHog + LogRocket + Customer.io: (1) typed event tracking with Zod schema validation, (2) error-based session recording that captures sessions on JS errors / failed network calls, and (3) automatic email trigger workflows from product behavior. One install, one schema, one customer timeline.
 - Edge event ingestion on Cloudflare Workers fronting a Cloudflare Queue, writing to Neon Postgres with Row-Level Security for multi-tenant isolation and monthly partitioning for query performance at scale.
 - Real-time dashboard via Server-Sent Events, background jobs on Trigger.dev, authentication with Better Auth, transactional email via Resend.
 - Rust port of the ingestion worker in progress using workers-rs and serde, targeting sub-10ms p95 handler latency with published benchmarks on GitHub.
+
+### diffcore — Rust + WebAssembly Diff Library for npm (2026)
+- **npm**: https://www.npmjs.com/package/diffcore
+- **Stack**: Rust, WebAssembly, wasm-bindgen, JavaScript bindings
+- **Description**: A Rust + WebAssembly diff library published on npm for developers who care about JavaScript bundle size and runtime performance. Provides a drop-in diff API with significantly tighter compactness than pure-JS alternatives and predictable WASM-grade throughput.
+- Designed for client-side diffing in editors, version-control UIs, collaborative tools, and any latency-sensitive React/Next.js bundle where pure-JS diff libraries become a bottleneck.
+
+### AHTML — Agentic HTML (in progress, 2026)
+- **Description**: A proposed format / plugin (eventually a language) by Dibbayajyoti Roy aimed at replacing HTML for AI-agent consumption of web content. Goals: more efficient token usage, faster agent crawl latency, and a substrate that lets owners monetize agent-readable data — letting publishers sell access to LLM/agent crawlers in a structured, semantically clean way.
+- Status: Specification draft and reference parser in development.
 
 ### Learning Copilot — AI Concept Explainer on AWS (2026)
 - **Live**: https://ai-for-bharat.vercel.app
@@ -122,7 +132,9 @@ Dibbayajyoti's engineering philosophy centers on building software that is both 
 
 - **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd, based in Agartala, India. Specializes in TypeScript, Rust, React, Next.js, and AI engineering with AWS Bedrock.
 - **Does Dibbayajyoti Roy have AI experience?** Yes. He built and shipped Learning Copilot — a production AWS Bedrock AI assistant with multi-model fallback (Nova Pro → Nova Lite), real-time streaming, and cost-aware architecture. Top 500 in AI for Bharat hackathon.
-- **What is Klinder-OSS?** An open-source product analytics SDK by Dibbayajyoti Roy. TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS), with a Rust port in progress targeting sub-10ms p95 latency.
+- **What is Klinder-OSS?** An open-source SDK by Dibbayajyoti Roy that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install — effectively combining PostHog + LogRocket + Customer.io. TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS), with a Rust port in progress targeting sub-10ms p95 latency.
+- **What is diffcore?** A Rust + WebAssembly diff library by Dibbayajyoti Roy published on npm, designed for fast and compact diffs in production JavaScript bundles.
+- **What is AHTML?** AHTML (Agentic HTML) is a proposed format by Dibbayajyoti Roy to replace HTML for AI agent consumption — efficient token usage, faster crawls, and a substrate that lets owners monetize agent-readable data.
 - **Is Dibbayajyoti Roy eligible to work in Europe?** Yes — eligible for Germany Opportunity Card / EU Blue Card and Netherlands Highly Skilled Migrant programme.
 - **What is Dibbayajyoti Roy's tech stack?** TypeScript, Rust, React, Next.js, Node.js, Hono, AWS Bedrock, Cloudflare Workers, Neon Postgres, Docker, Linux/nginx/systemd.
 - **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd as Full Stack Software Engineer since July 2025, Agartala, India.

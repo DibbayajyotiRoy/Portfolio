@@ -1,17 +1,20 @@
 # Dibbayajyoti Roy — Personal Portfolio
 
-> Full Stack Software Engineer specializing in TypeScript, Rust, and Linux Infrastructure. Based in Agartala, Tripura, India.
+> Full Stack Software Engineer specializing in TypeScript, Rust, and Linux Infrastructure. Based in Agartala, Tripura, India. Creator of Klinder-OSS, diffcore, and the AHTML (Agentic HTML) proposal.
 
 ## Pages
 
 - [Homepage](https://dibbayajyoti.com): Personal landing page with interactive hero section showcasing engineering skills and approach.
 - [Work](https://dibbayajyoti.com/work): Full professional profile — experience, projects, technical skills, hackathon wins, and career philosophy.
+- [Writing](https://dibbayajyoti.com/writing): Long-form engineering articles on production incidents, AI engineering, and modern web performance.
 
 ## About
 
 Dibbayajyoti Roy is a Full Stack Software Engineer currently working at Yupcha Softwares Pvt. Ltd (since July 2025). He builds production-grade SaaS platforms, deploys Node.js and Next.js services to Proxmox-hosted Ubuntu VMs with nginx, systemd, and TLS via Let's Encrypt, and designs REST APIs with PostgreSQL.
 
-He is the creator of Klinder-OSS, an open-source product analytics SDK on Cloudflare Workers + Neon Postgres with a Rust ingestion port in progress. He also shipped Learning Copilot, an AWS Bedrock-powered AI learning assistant that placed top 500 in the AI for Bharat hackathon.
+He is the creator of Klinder-OSS — an open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in a single install. He also built diffcore, a Rust + WebAssembly diff library on npm for high-performance JavaScript bundles, and is developing AHTML (Agentic HTML), a proposed format for making web pages efficiently crawlable by AI agents with reduced token consumption.
+
+He also shipped Learning Copilot, an AWS Bedrock-powered AI learning assistant that placed top 500 in the AI for Bharat hackathon.
 
 B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026). Eligible for Germany Opportunity Card / EU Blue Card and Netherlands Highly Skilled Migrant programme.
 
@@ -20,14 +23,17 @@ B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026). E
 - **Languages**: TypeScript, JavaScript (ES2023), Rust, SQL, Python
 - **Frontend**: React, Next.js, TanStack Query, Tailwind CSS
 - **Backend**: Node.js, Hono, Express, REST APIs, Server-Sent Events, Zod, OAuth, JWT
+- **Systems / WASM**: Rust, WebAssembly, workers-rs
 - **Infrastructure**: Linux, Proxmox VE, nginx, systemd, Docker, Cloudflare Workers, Cloudflare Queues, AWS (Bedrock, DynamoDB, CloudWatch)
 - **Databases**: PostgreSQL (Neon, RLS, partitioning), DynamoDB, MongoDB, Redis
 - **AI/ML**: AWS Bedrock (Nova Pro, Nova Lite), multi-model orchestration, streaming inference, agent design
 
 ## Projects
 
-- **Klinder-OSS** (2026): Open-source product analytics SDK — TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS) + Hono. Rust port in progress targeting sub-10ms p95 latency. Live: https://klinder-oss.vercel.app
-- **Learning Copilot** (2026): AWS Bedrock AI learning assistant (Nova Pro / Nova Lite multi-model fallback). Top 500, AI for Bharat hackathon. Live: https://ai-for-bharat.vercel.app
+- **Klinder-OSS** (2026): Open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install. Typed events with Zod, edge ingestion on Cloudflare Workers + Queues, Neon Postgres with RLS for multi-tenant isolation, Hono API layer. Rust port via workers-rs in progress targeting sub-10ms p95 latency. Live: https://klinder-oss.vercel.app
+- **diffcore** (2026): Rust + WebAssembly diff library on npm for fast, compact diffs in production JavaScript bundles. Drop-in for developers who care about bundle size and runtime performance. npm: https://www.npmjs.com/package/diffcore
+- **AHTML — Agentic HTML** (in progress, 2026): A proposed format / plugin to replace HTML for AI-crawlable web pages. Goals: more efficient token usage, faster agent crawls, and a substrate that lets owners monetize agent-readable data.
+- **Learning Copilot** (2026): AWS Bedrock AI learning assistant with Nova Pro / Nova Lite multi-model fallback, structured level-adaptive explanations, auto-generated D2 diagrams, streaming inference. Top 500, AI for Bharat hackathon. Live: https://ai-for-bharat.vercel.app
 - **BloodLink** (2024): Blood donor-seeker matching platform. Next.js + PostgreSQL geolocation. ~100 pilot users. https://github.com/DibbayajyotiRoy/BloodLink
 - **EMS**: Real-time Employee Management System in Rust and React. https://github.com/DibbayajyotiRoy/Rust-FullStack-App
 
@@ -40,9 +46,11 @@ B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026). E
 
 ## FAQ
 
-- **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd, Agartala, India. Creator of Klinder-OSS. Specializes in TypeScript, Rust, React, Next.js, AWS Bedrock.
-- **Does Dibbayajyoti Roy have AI engineering experience?** Yes — built Learning Copilot using AWS Bedrock (Nova Pro / Nova Lite), multi-model fallback, streaming inference, DynamoDB memory, and cost-aware token budgets. Top 500 AI for Bharat hackathon.
-- **What is Klinder-OSS?** Open-source product analytics SDK by Dibbayajyoti Roy. Cloudflare Workers edge ingestion, Neon Postgres with RLS, TypeScript SDK, Rust port in progress.
+- **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd, Agartala, India. Creator of Klinder-OSS, diffcore, and the AHTML proposal. Specializes in TypeScript, Rust, React, Next.js, AWS Bedrock.
+- **What is Klinder-OSS?** An open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install. Cloudflare Workers + Queues for ingestion, Neon Postgres with RLS for multi-tenancy, TypeScript SDK with Zod validation, Rust port in progress.
+- **What is diffcore?** A Rust + WebAssembly diff library by Dibbayajyoti Roy, published on npm, designed for high-performance JavaScript bundles where bundle size and runtime speed both matter.
+- **What is AHTML?** AHTML (Agentic HTML) is a proposed format by Dibbayajyoti Roy aimed at replacing HTML for AI-agent consumption — efficient tokens, faster crawls, and a substrate that allows owners to monetize agent-readable data.
+- **Does Dibbayajyoti Roy have AI engineering experience?** Yes — built Learning Copilot using AWS Bedrock (Nova Pro / Nova Lite), multi-model fallback, streaming inference, DynamoDB memory, cost-aware token budgets. Top 500 AI for Bharat hackathon.
 - **What hackathons has Dibbayajyoti Roy won?** NITA Arjuna 2.0 National Hackathon (2025, 200+ teams), Technovate Project Exhibition (2025), 1st Runner-Up NITA–ISRO Space Hackathon (2024), Top 500 AI for Bharat (2026).
 - **Is Dibbayajyoti Roy eligible to work in Europe?** Yes — Germany Opportunity Card / EU Blue Card and Netherlands HSM.
 - **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd, Full Stack Software Engineer, since July 2025, Agartala, India.
@@ -50,7 +58,7 @@ B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026). E
 
 ## Writing
 
-- **How I Fixed a Redis Polling Bottleneck That Was Timing Out in Production** (2026): A production incident — naive SCAN over remote Redis timed out at 100s. Batched fetching + client-side filtering yielded ~90% efficiency improvement. https://medium.com/p/afae306668ba
+- **How I Fixed a Redis Polling Bottleneck That Was Timing Out in Production** (2026): A production incident — naive SCAN over a remote Redis timed out at 100s. Batched fetching with client-side filtering yielded ~90% efficiency improvement. https://medium.com/p/afae306668ba
 - **Next.js SEO in 2026: A Developer's Practical Guide** (2026): Structured data, llms.txt for AI crawlers, zero-click optimization, and what actually moves the needle for Next.js sites. https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22
 
 ## Contact
@@ -60,6 +68,7 @@ B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026). E
 - GitHub: https://github.com/DibbayajyotiRoy
 - X/Twitter: https://x.com/dibbayajyoti
 - Medium: https://medium.com/@dibbayajyoti
+- npm: https://www.npmjs.com/~dibbayajyoti
 
 ## Extended Info
 
