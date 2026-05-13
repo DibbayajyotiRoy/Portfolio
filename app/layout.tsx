@@ -7,7 +7,6 @@ import Footer from "@/components/footer";
 import Nav from "@/components/nav";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { FramerProvider } from "@/components/framer-provider";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -112,6 +111,8 @@ const personJsonLd = {
     "Rust", "TypeScript", "JavaScript", "React", "Next.js", "Node.js",
     "Hono", "Express.js", "REST APIs", "Server-Sent Events", "Zod",
     "WebAssembly", "Rust WASM", "wasm-bindgen", "workers-rs",
+    "JSON Diff", "JSON Patch", "RFC 6902", "RFC 6901", "JSON Pointer",
+    "State Synchronization", "Optimistic UI", "Undo Redo", "Diff Algorithms",
     "Systems Programming", "Web Development", "Docker",
     "AWS Bedrock", "AWS DynamoDB", "AWS CloudWatch",
     "Cloudflare Workers", "Cloudflare Queues",
@@ -197,7 +198,7 @@ const faqJsonLd = {
       "name": "What is diffcore?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "diffcore is a Rust + WebAssembly diff library by Dibbayajyoti Roy, published on npm. It is designed for high-performance JavaScript bundles where bundle size and runtime speed both matter — providing a drop-in diff API with WASM-grade throughput compared to pure-JS alternatives. Available at npmjs.com/package/diffcore."
+        "text": "diffcore is a fast WebAssembly JSON diff engine for JavaScript and TypeScript, built by Dibbayajyoti Roy in Rust and published on npm. It returns real JSON Pointer paths (RFC 6901) and decoded values — not opaque hashes — and emits standard RFC 6902 JSON Patch output, interoperable with fast-json-patch, jsondiffpatch, and any IETF-compliant consumer. It ships applyPatch and revertPatch for state sync, undo/redo, and optimistic UI, includes a React useDiff hook and a CLI, plus a streaming engine for multi-GB files. Benchmarks at 3.3 to 4.1 times optimized pure-JS diff (360–490 MB/s sustained). Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, and Tauri. Install: npm install diffcore. Live demo: rust-wasm-library.vercel.app."
       }
     },
     {
@@ -276,9 +277,8 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${GeistMono.variable} relative font-sans bg-whiteout selection:text-white selection:bg-pink-400 dark:bg-zinc-900 text-blackout dark:text-zinc-100`}
       >
         <ThemeProvider attribute="class">
-          <FramerProvider>
-            <Nav/>
-            <noscript>
+          <Nav/>
+          <noscript>
               <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
                 <h1>Dibbayajyoti Roy — Full Stack Software Engineer &amp; Rust Enthusiast</h1>
                 <p>Full Stack Software Engineer based in Agartala, India, currently at Yupcha Softwares Pvt. Ltd. Specializing in Rust, TypeScript, React, and Next.js for building high-performance systems and production-grade SaaS platforms.</p>
@@ -304,10 +304,9 @@ export default function RootLayout({
                 <p>See <a href="/writing">/writing</a> for engineering articles on Next.js SEO, Redis production debugging, and AI engineering with AWS Bedrock.</p>
                 <p>Contact: dibbayajyoti@gmail.com | LinkedIn: linkedin.com/in/dibbayajyoti-roy/ | GitHub: github.com/DibbayajyotiRoy | X: x.com/dibbayajyoti</p>
               </div>
-            </noscript>
-            {children}
-            <Footer />
-          </FramerProvider>
+          </noscript>
+          {children}
+          <Footer />
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

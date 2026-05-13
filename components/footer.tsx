@@ -113,7 +113,35 @@ const Footer = ({}: FooterProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <div className="w-[20px] h-[20px] flex items-center justify-center">
+                  <Image
+                    alt="Klinder-OSS favicon"
+                    src="https://www.google.com/s2/favicons?domain=klinder-oss.vercel.app&sz=64"
+                    width={18}
+                    height={18}
+                    unoptimized
+                  />
+                </div>
                 Klinder-OSS
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
+                href="https://rust-wasm-library.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="w-[20px] h-[20px] flex items-center justify-center">
+                  <Image
+                    alt="Diffcore favicon"
+                    src="https://www.google.com/s2/favicons?domain=rust-wasm-library.vercel.app&sz=64"
+                    width={18}
+                    height={18}
+                    unoptimized
+                  />
+                </div>
+                Diffcore
               </Link>
             </li>
             <li>
@@ -123,27 +151,27 @@ const Footer = ({}: FooterProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <div className="w-[20px] h-[20px] flex items-center justify-center">
+                  <Image
+                    alt="Learning Copilot favicon"
+                    src="https://www.google.com/s2/favicons?domain=ai-for-bharat.vercel.app&sz=64"
+                    width={18}
+                    height={18}
+                    unoptimized
+                  />
+                </div>
                 Learning Copilot
               </Link>
             </li>
             <li>
               <Link
                 className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="https://github.com/DibbayajyotiRoy/BloodLink"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/work"
               >
-                BloodLink
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                EMS (Rust/React)
+                <div className="w-[20px] h-[20px] flex items-center justify-center text-xs opacity-60">
+                  →
+                </div>
+                All projects
               </Link>
             </li>
           </ul>
@@ -155,9 +183,7 @@ const Footer = ({}: FooterProps) => {
             <li>
               <Link
                 className="transition-opacity opacity-75 hover:opacity-100"
-                href="https://medium.com/p/afae306668ba"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/writing"
               >
                 Redis Polling Bottleneck
               </Link>
@@ -165,11 +191,17 @@ const Footer = ({}: FooterProps) => {
             <li>
               <Link
                 className="transition-opacity opacity-75 hover:opacity-100"
-                href="https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/writing"
               >
                 Next.js SEO in 2026
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="transition-opacity opacity-75 hover:opacity-100 font-medium"
+                href="/writing"
+              >
+                All writing →
               </Link>
             </li>
           </ul>

@@ -7,7 +7,8 @@
       "dependencies": {
         "@radix-ui/react-popover": "^1.0.7",
         "@radix-ui/react-tooltip": "^1.0.7",
-        "@rive-app/react-canvas": "^4.8.4",
+        "@rive-app/canvas": "2.12.0",
+        "@rive-app/react-canvas": "4.8.4",
         "@uidotdev/usehooks": "^2.4.1",
         "@vercel/analytics": "^1.2.2",
         "@vercel/speed-insights": "^2.0.0",
@@ -159,9 +160,9 @@
 
     "@radix-ui/rect": ["@radix-ui/rect@1.1.1", "", {}, "sha512-HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw=="],
 
-    "@rive-app/canvas": ["@rive-app/canvas@2.35.4", "", {}, "sha512-Blyi0jeBnRvgU9JQsFW3MZkmAdhKakSmqp6lZeOupFENjd8OGt4YrR1E0btH7soO9lae7m8N76MtnBwupNzxSw=="],
+    "@rive-app/canvas": ["@rive-app/canvas@2.12.0", "", {}, "sha512-icOLOibDARYSGPWzxqe/VrqjpajzPNcL9NUs0Rhtso+cheZLDCf/Sap3GI7/7FVAcvTvMt01e2nUPy6uu0Uhvg=="],
 
-    "@rive-app/react-canvas": ["@rive-app/react-canvas@4.27.3", "", { "dependencies": { "@rive-app/canvas": "2.35.4" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0" } }, "sha512-DpxtvuRAtXWmS6sM+thuatKrRy1fT79GpShPe6sXxzKRLI1ZhNEOk+VRqawCZxNfedTf5B03ZDoEFxtCeRYphg=="],
+    "@rive-app/react-canvas": ["@rive-app/react-canvas@4.8.4", "", { "dependencies": { "@rive-app/canvas": "2.12.0" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0" } }, "sha512-lAHrzoeQYOsY1F8kIKJWWGJRWYte6c59p6tV5Z0g6wIPMQOYcZzA8IgkgvouhO0UvBV1cHC/jfpSmchInwjpqw=="],
 
     "@rtsao/scc": ["@rtsao/scc@1.1.0", "", {}, "sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g=="],
 

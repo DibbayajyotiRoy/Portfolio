@@ -57,11 +57,19 @@ Location: Agartala, India
 - Real-time dashboard via Server-Sent Events, background jobs on Trigger.dev, authentication with Better Auth, transactional email via Resend.
 - Rust port of the ingestion worker in progress using workers-rs and serde, targeting sub-10ms p95 handler latency with published benchmarks on GitHub.
 
-### diffcore — Rust + WebAssembly Diff Library for npm (2026)
+### diffcore — Fast WebAssembly JSON Diff Engine for npm (v1.1, 2026)
 - **npm**: https://www.npmjs.com/package/diffcore
-- **Stack**: Rust, WebAssembly, wasm-bindgen, JavaScript bindings
-- **Description**: A Rust + WebAssembly diff library published on npm for developers who care about JavaScript bundle size and runtime performance. Provides a drop-in diff API with significantly tighter compactness than pure-JS alternatives and predictable WASM-grade throughput.
-- Designed for client-side diffing in editors, version-control UIs, collaborative tools, and any latency-sensitive React/Next.js bundle where pure-JS diff libraries become a bottleneck.
+- **Demo**: https://rust-wasm-library.vercel.app
+- **Repo**: https://github.com/DibbayajyotiRoy/rust-wasm-Library
+- **License**: MIT
+- **Stack**: Rust, WebAssembly, wasm-bindgen, TypeScript bindings
+- **Description**: A fast WebAssembly JSON diff engine for JavaScript and TypeScript. Returns real JSON Pointer paths (RFC 6901) and decoded values — not opaque hashes — and emits standard RFC 6902 JSON Patch output, interoperable with fast-json-patch, jsondiffpatch, and any IETF-compliant consumer.
+- Ships `applyPatch` and `revertPatch` for state sync, undo/redo, and optimistic UI. Round-trips work for primitives, leaf changes, and whole-array-element additions.
+- Includes a React `useDiff` hook (`diffcore/react`), a CLI (`npx diffcore before.json after.json` with `--json` and `--silent` modes for CI), and a streaming engine (`createEngine` + `pushLeft` / `pushRight`) for multi-GB files.
+- Embedded WASM via Base64 — zero config, no toolchain or extra files required. Auto memory cleanup via `FinalizationRegistry`.
+- **Performance**: 3.3–4.1× faster than optimized pure-JS diff. Throughput: 100 KB → ~490 MB/s, 1 MB → ~460 MB/s, 5 MB → ~415 MB/s, 10 MB → ~360 MB/s.
+- **Runs on**: Node 18+, Chrome 89+, Firefox 89+, Safari 15+, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
+- **Use cases**: client/server state sync (`diff(a,b)` + `toJsonPatch()` over the wire), undo/redo stacks, "review changes" UI in React, colored diffs in CLI/CI logs, JSON Patch HTTP APIs, replaying diffs against alternate documents, diffing multi-GB files without loading them fully.
 
 ### AHTML — Agentic HTML (in progress, 2026)
 - **Description**: A proposed format / plugin (eventually a language) by Dibbayajyoti Roy aimed at replacing HTML for AI-agent consumption of web content. Goals: more efficient token usage, faster agent crawl latency, and a substrate that lets owners monetize agent-readable data — letting publishers sell access to LLM/agent crawlers in a structured, semantically clean way.
@@ -133,7 +141,7 @@ Dibbayajyoti's engineering philosophy centers on building software that is both 
 - **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd, based in Agartala, India. Specializes in TypeScript, Rust, React, Next.js, and AI engineering with AWS Bedrock.
 - **Does Dibbayajyoti Roy have AI experience?** Yes. He built and shipped Learning Copilot — a production AWS Bedrock AI assistant with multi-model fallback (Nova Pro → Nova Lite), real-time streaming, and cost-aware architecture. Top 500 in AI for Bharat hackathon.
 - **What is Klinder-OSS?** An open-source SDK by Dibbayajyoti Roy that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install — effectively combining PostHog + LogRocket + Customer.io. TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS), with a Rust port in progress targeting sub-10ms p95 latency.
-- **What is diffcore?** A Rust + WebAssembly diff library by Dibbayajyoti Roy published on npm, designed for fast and compact diffs in production JavaScript bundles.
+- **What is diffcore?** A fast WebAssembly JSON diff engine by Dibbayajyoti Roy, written in Rust and published on npm (v1.1). Returns real JSON Pointer paths (RFC 6901) and decoded values, emits standard RFC 6902 JSON Patch, ships applyPatch / revertPatch for state sync / undo-redo / optimistic UI, plus a React useDiff hook, a CLI, and a streaming engine for multi-GB files. 3.3–4.1× faster than optimized pure-JS diff. Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
 - **What is AHTML?** AHTML (Agentic HTML) is a proposed format by Dibbayajyoti Roy to replace HTML for AI agent consumption — efficient token usage, faster crawls, and a substrate that lets owners monetize agent-readable data.
 - **Is Dibbayajyoti Roy eligible to work in Europe?** Yes — eligible for Germany Opportunity Card / EU Blue Card and Netherlands Highly Skilled Migrant programme.
 - **What is Dibbayajyoti Roy's tech stack?** TypeScript, Rust, React, Next.js, Node.js, Hono, AWS Bedrock, Cloudflare Workers, Neon Postgres, Docker, Linux/nginx/systemd.

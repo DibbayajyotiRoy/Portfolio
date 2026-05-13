@@ -1,8 +1,7 @@
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { useMotionValueEvent } from "framer-motion";
-import dynamic from "next/dynamic";
-const RiveAnimation = dynamic(() => import("./rive-animation"), { ssr: false });
+import RiveAnimation from "./rive-animation";
 
 interface ContentBoxProps {
   children?: React.ReactNode;

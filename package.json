@@ -11,7 +11,8 @@
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "@rive-app/react-canvas": "^4.8.4",
+    "@rive-app/canvas": "2.12.0",
+    "@rive-app/react-canvas": "4.8.4",
     "@uidotdev/usehooks": "^2.4.1",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^2.0.0",

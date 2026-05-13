@@ -44,10 +44,9 @@ const WorkContent = ({}: WorkContentProps) => {
                 Currently shipping production-grade SaaS platforms at Yupcha Softwares.
               </p>
               <p>Some projects you can check out:{" "}
-                <Link href="https://klinder-oss.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Klinder-OSS</Link> (open-source product analytics SDK on Cloudflare Workers + Neon Postgres), {" "}
-                <Link href="https://ai-for-bharat.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Learning Copilot</Link> (AWS Bedrock AI assistant, top 500 AI for Bharat hackathon), {" "}
-                <Link href="https://github.com/DibbayajyotiRoy/BloodLink" target="_blank" rel="noopener noreferrer" className="font-semibold underline">BloodLink</Link> (Donor-Seeker Matching, ~100 pilot users), {" "}
-                <Link href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App" target="_blank" rel="noopener noreferrer" className="font-semibold underline">EMS</Link> (Real-Time Employee Management System in Rust/React).
+                <Link href="https://klinder-oss.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Klinder-OSS</Link> (unified event tracking + session recording + email triggers SDK on Cloudflare Workers + Neon Postgres),{" "}
+                <Link href="https://www.npmjs.com/package/diffcore" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Diffcore</Link> (fast WebAssembly JSON diff for JS/TS — RFC 6902 Patch, React hook, CLI),{" "}
+                <Link href="https://ai-for-bharat.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Learning Copilot</Link> (AWS Bedrock AI assistant, top 500 AI for Bharat hackathon).
               </p>
               <p>
                 B.Tech in Computer Science candidate (2026). Winner of several national hackathons including NITA Arjuna 2.0.
@@ -81,18 +80,22 @@ const WorkContent = ({}: WorkContentProps) => {
                   <Link href="https://klinder-oss.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Klinder-OSS</Link>: An open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install — replacing what teams normally stitch together with PostHog, LogRocket, and Customer.io. Typed events with Zod validation, edge ingestion on Cloudflare Workers + Queues, Neon Postgres with Row-Level Security for multi-tenant isolation, and a Rust port via workers-rs in progress targeting sub-10ms p95 latency.
                 </p>
                 <p>
-                  <Link href="https://www.npmjs.com/package/diffcore" target="_blank" rel="noopener noreferrer" className="font-semibold underline">diffcore</Link>: A Rust + WebAssembly diff library on npm built for production JavaScript bundles — significantly smaller and faster than pure-JS alternatives, drop-in API for developers who care about bundle size and runtime performance.
+                  <Link href="https://www.npmjs.com/package/diffcore" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Diffcore</Link>: A fast WebAssembly JSON diff engine on npm — written in Rust, returns real <span className="font-mono text-sm">JSON Pointer</span> paths and decoded values (not opaque hashes), emits standard <span className="font-mono text-sm">RFC 6902 JSON Patch</span>, and ships <span className="font-mono text-sm">applyPatch</span> / <span className="font-mono text-sm">revertPatch</span> for state sync, undo/redo, and optimistic UI. Includes a React hook (<span className="font-mono text-sm">useDiff</span>), a CLI, and a streaming engine for multi-GB files. Benchmarks at <span className="italic">3.3–4.1×</span> over optimized pure-JS diff (360–490 MB/s sustained). Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, and Tauri. Live at{" "}
+                  <Link href="https://rust-wasm-library.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">rust-wasm-library.vercel.app</Link>.
                 </p>
                 <p>
                   <Link href="https://ai-for-bharat.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Learning Copilot</Link>: An AWS Bedrock-powered AI learning assistant with structured, level-adaptive explanations, auto-generated D2 diagrams, and real-time streaming responses. Engineered multi-model fallback (Nova Pro → Nova Lite) for resilience under rate limits. Cost-aware architecture with DynamoDB conversation memory (30-day TTL) and per-mode token budgets. Selected top 500 in the AI for Bharat hackathon.
                 </p>
-                <p>
-                  <Link href="https://github.com/DibbayajyotiRoy/BloodLink" target="_blank" rel="noopener noreferrer" className="font-semibold underline">BloodLink</Link>: A full-stack platform connecting blood donors to requesters by blood group and location radius. Proximity search in PostgreSQL via indexed lat/lng filtering. ~100 registered users during pilot.
-                </p>
-                <p>
-                  <Link href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App" target="_blank" rel="noopener noreferrer" className="font-semibold underline">EMS</Link>: A real-time Employee Management System built with <span className="italic">Rust and React</span>, featuring payroll and policy-based management.
-                </p>
               </div>
+            </TitledParagraph>
+
+            <TitledParagraph title="older work">
+              <p className="text-sm sm:text-base opacity-80">
+                <Link href="https://github.com/DibbayajyotiRoy/BloodLink" target="_blank" rel="noopener noreferrer" className="underline">BloodLink</Link> — blood donor / seeker matching platform with PostgreSQL geolocation, ~100 pilot users (2024).{" "}
+                <Link href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App" target="_blank" rel="noopener noreferrer" className="underline">EMS</Link> — real-time Employee Management System in Rust and React.{" "}
+                <Link href="https://github.com/DibbayajyotiRoy/LunarSite" target="_blank" rel="noopener noreferrer" className="underline">LunarSite</Link> — ML pipeline for lunar mineral prediction (NITA–ISRO 2024).{" "}
+                <Link href="https://github.com/DibbayajyotiRoy/Carbon-Tracker" target="_blank" rel="noopener noreferrer" className="underline">CarbonFootprintTracker</Link> — sustainability calculator with smart recommendations.
+              </p>
             </TitledParagraph>
 
             <TitledParagraph title="skills">

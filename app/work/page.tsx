@@ -3,13 +3,13 @@ import WorkContent from "@/components/work-content";
 
 export const metadata: Metadata = {
   title: "Work & Projects – Dibbayajyoti Roy",
-  description: "Full Stack Engineer at Yupcha Softwares. Built Klinder-OSS (open-source analytics SDK on Cloudflare Workers), Learning Copilot (AWS Bedrock AI assistant, top 500 AI for Bharat hackathon), and BloodLink. Winner NITA Arjuna 2.0 hackathon 2025.",
-  alternates: {
-    canonical: "/work",
-  },
+  description:
+    "Full Stack Engineer at Yupcha Softwares. Built Klinder-OSS (unified event tracking + session recording + email SDK), diffcore (Rust/WASM JSON diff for npm with RFC 6902 Patch, React hook, CLI), and Learning Copilot (AWS Bedrock AI assistant, top 500 AI for Bharat). Winner NITA Arjuna 2.0 hackathon 2025.",
+  alternates: { canonical: "/work" },
   openGraph: {
     title: "Work & Projects – Dibbayajyoti Roy",
-    description: "Full Stack Engineer at Yupcha Softwares. Projects: Klinder-OSS, Learning Copilot (AWS Bedrock), BloodLink. Hackathon winner. TypeScript, Rust, React, Next.js.",
+    description:
+      "Projects: Klinder-OSS (analytics + session replay + email SDK), diffcore (Rust/WASM JSON diff on npm), Learning Copilot (AWS Bedrock). Hackathon winner. TypeScript, Rust, React, Next.js.",
     url: "https://dibbayajyoti.com/work",
   },
 };

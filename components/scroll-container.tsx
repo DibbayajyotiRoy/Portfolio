@@ -4,13 +4,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import ContentBox from "./content-box";
 import { useDebounce } from "@uidotdev/usehooks";
-import Link from "next/link";
 import useFaviconAnimation from "@/lib/use-favicon-animation";
-import { ExternalLink } from "lucide-react";
 
 interface ScrollContainerProps {}
 
-const WORDS = ["aware", "cutting-edge", "proficient", "daring"];
+const WORDS = ["aware", "cutting-edge", "proficient" /* , "bold" */];
 
 const ScrollContainer = ({}: ScrollContainerProps) => {
   useFaviconAnimation();
@@ -156,21 +154,15 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                 artboard="DARING"
                 riveSource="/rive/main.riv"
                 riveStateMachine="4"
-                keywords={["entrepreneur", "agency"]}
+                keywords={["agentic web", "spec", "category"]}
               >
                 <p className="text-lg  leading-normal md:text-[22px] max-w-[500px] dark:text-zinc-100/50 text-blackout/50 font-medium">
-                  I&lsquo;m the co-founder of{" "}
+                  I&lsquo;m proposing{" "}
                   <span className="dark:text-zinc-100 text-blackout whitespace-nowrap">
-                    <Link
-                      href="https://adlerlagune.com"
-                      target="_blank"
-                      className="underline inline-flex dark:text-whiteout/100 gap-1 items-center font-semibold text-blackout/100"
-                    >
-                      adlerlagune
-                      <ExternalLink strokeWidth={3} width={20} />
-                    </Link>
+                    AHTML
                   </span>{" "}
-                  a digital agency that also dabbles in original products
+                  — a format to replace HTML for AI agents. Efficient token usage,
+                  faster crawls, and a substrate to monetize agent-readable data.
                 </p>
               </ContentBox> */}
             </ul>
