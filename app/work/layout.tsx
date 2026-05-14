@@ -155,18 +155,92 @@ const learningCopilotJsonLd = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
 };
 
-const ahtmlJsonLd = {
+const ahtmlBase = {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "@id": "https://dibbayajyoti.com/work#ahtml",
-  "name": "AHTML — Agentic HTML",
-  "alternateName": ["Agentic HTML", "AHTML"],
+  "@type": ["SoftwareSourceCode", "SoftwareApplication"],
+  "programmingLanguage": ["TypeScript", "JavaScript"],
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Cross-platform",
+  "license": "https://opensource.org/licenses/MIT",
+  "softwareVersion": "0.2.0",
+  "codeRepository": "https://github.com/DibbayajyotiRoy/AHTML",
+  "author": { "@id": "https://dibbayajyoti.com/#person" },
+  "creator": { "@id": "https://dibbayajyoti.com/#person" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@id": "https://dibbayajyoti.com/work#ahtml-scope" },
+} as const;
+
+const ahtmlScopeJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWorkSeries",
+  "@id": "https://dibbayajyoti.com/work#ahtml-scope",
+  "name": "AHTML — Agentic HTML (@ahtmljs scope)",
+  "alternateName": ["Agentic HTML", "AHTML", "@ahtmljs", "@ahtmljs npm scope"],
+  "url": "https://www.npmjs.com/org/ahtmljs",
+  "sameAs": [
+    "https://github.com/DibbayajyotiRoy/AHTML",
+    "https://www.npmjs.com/org/ahtmljs",
+  ],
   "creator": { "@id": "https://dibbayajyoti.com/#person" },
   "author": { "@id": "https://dibbayajyoti.com/#person" },
   "description":
-    "AHTML (Agentic HTML) is an in-progress proposed format / plugin by Dibbayajyoti Roy to replace HTML for AI agent consumption of the web. Goals: efficient token usage, faster agent crawl latency, and a substrate that lets publishers monetize agent-readable data.",
-  "keywords": ["AHTML", "Agentic HTML", "AI crawlable HTML", "LLM-optimized markup", "agentic web"],
+    "AHTML (Agentic HTML) is a shipped five-package npm scope by Dibbayajyoti Roy for making web content cheaply consumable by AI agents — canonical semantic snapshot, Next.js + Vite plugins, agent client SDK, and LangChain.js loader. All packages live at @ahtmljs/* v0.2.0.",
+  "keywords": ["AHTML", "Agentic HTML", "@ahtmljs", "AI crawlable HTML", "LLM-optimized markup", "agentic web", "MCP", "llms.txt"],
+  "numberOfItems": 5,
   "inLanguage": "en",
+};
+
+const ahtmlSchemaJsonLd = {
+  ...ahtmlBase,
+  "@id": "https://dibbayajyoti.com/work#ahtmljs-schema",
+  "name": "@ahtmljs/schema",
+  "url": "https://www.npmjs.com/package/@ahtmljs/schema",
+  "description":
+    "Canonical semantic snapshot schema for AHTML. TypeScript types + JSON Schema + validator + dual serializers (lossless JSON and token-optimal compact text). Ships the Document.chunks primitive for deterministic RAG-ready IDs and byte ranges. 63 passing tests including property-fuzzing 100–500 cases per invariant.",
+  "keywords": ["@ahtmljs/schema", "AHTML schema", "RAG schema", "JSON Schema", "agent snapshot", "document chunks"],
+};
+
+const ahtmlNextJsonLd = {
+  ...ahtmlBase,
+  "@id": "https://dibbayajyoti.com/work#ahtmljs-next",
+  "name": "@ahtmljs/next",
+  "url": "https://www.npmjs.com/package/@ahtmljs/next",
+  "runtimePlatform": ["Next.js 14+", "Node.js"],
+  "description":
+    "Next.js plugin for AHTML. One route handler emits MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot from a single extractor pipeline; auto-discovers routes from App or Pages Router. Zero migration. Reachable at /.well-known/ahtml.json. 38 passing tests.",
+  "keywords": ["@ahtmljs/next", "AHTML Next.js plugin", "agent-friendly Next.js", "MCP server Next.js", "well-known agent endpoint"],
+};
+
+const ahtmlAgentJsonLd = {
+  ...ahtmlBase,
+  "@id": "https://dibbayajyoti.com/work#ahtmljs-agent",
+  "name": "@ahtmljs/agent",
+  "url": "https://www.npmjs.com/package/@ahtmljs/agent",
+  "description":
+    "Client SDK for AI agents consuming any AHTML-emitting site. ETag-cached snapshot fetch, structured action dispatch, dry-run safety gates, and optional tokenizer adapters (OpenAI o200k_base, Anthropic) for exact prompt cost. Hardened with hostile-agent regression tests. 28 passing tests.",
+  "keywords": ["@ahtmljs/agent", "AI agent SDK", "agent action dispatch", "agent safety gate", "tokenizer cost"],
+};
+
+const ahtmlViteJsonLd = {
+  ...ahtmlBase,
+  "@id": "https://dibbayajyoti.com/work#ahtmljs-vite",
+  "name": "@ahtmljs/vite",
+  "url": "https://www.npmjs.com/package/@ahtmljs/vite",
+  "runtimePlatform": ["Vite 5+", "SvelteKit", "SolidStart", "Astro"],
+  "description":
+    "Vite plugin counterpart to @ahtmljs/next. Same handler as middleware; one config-line opt-in for any Vite-based framework (SvelteKit, SolidStart, Astro, vanilla Vite). Byte-identical output to the Next.js plugin for true cross-framework parity. 9 passing tests.",
+  "keywords": ["@ahtmljs/vite", "AHTML Vite plugin", "SvelteKit agent", "SolidStart agent", "Astro agent"],
+};
+
+const ahtmlLangchainJsonLd = {
+  ...ahtmlBase,
+  "@id": "https://dibbayajyoti.com/work#ahtmljs-langchain",
+  "name": "@ahtmljs/langchain",
+  "url": "https://www.npmjs.com/package/@ahtmljs/langchain",
+  "runtimePlatform": ["@langchain/core 0.3+"],
+  "description":
+    "LangChain.js document loader for AHTML. Fetches any AHTML-emitting site and returns Document[] ready for vector stores; splits at Document.chunks boundaries with citation anchors, byte ranges, and source URLs preserved per chunk. URL → embeddings in three lines. 5 passing tests.",
+  "keywords": ["@ahtmljs/langchain", "LangChain document loader", "RAG loader", "vector store ingest", "citation metadata"],
 };
 
 const projectsItemListJsonLd = {
@@ -185,17 +259,17 @@ const projectsItemListJsonLd = {
     {
       "@type": "ListItem",
       "position": 2,
-      "item": { "@id": "https://dibbayajyoti.com/work#diffcore", "name": "Diffcore", "url": "https://www.npmjs.com/package/diffcore" },
+      "item": { "@id": "https://dibbayajyoti.com/work#ahtml-scope", "name": "AHTML — @ahtmljs npm scope", "url": "https://www.npmjs.com/org/ahtmljs" },
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "item": { "@id": "https://dibbayajyoti.com/work#learning-copilot", "name": "Learning Copilot", "url": "https://ai-for-bharat.vercel.app" },
+      "item": { "@id": "https://dibbayajyoti.com/work#diffcore", "name": "Diffcore", "url": "https://rust-wasm-library.vercel.app" },
     },
     {
       "@type": "ListItem",
       "position": 4,
-      "item": { "@id": "https://dibbayajyoti.com/work#ahtml", "name": "AHTML — Agentic HTML" },
+      "item": { "@id": "https://dibbayajyoti.com/work#learning-copilot", "name": "Learning Copilot", "url": "https://ai-for-bharat.vercel.app" },
     },
   ],
 };
@@ -208,7 +282,12 @@ export default function WorkLayout({ children }: { children: React.ReactNode }) 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(klinderJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(diffcoreJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(learningCopilotJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlScopeJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlSchemaJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlNextJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlAgentJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlViteJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlLangchainJsonLd) }} />
       {children}
     </>
   );

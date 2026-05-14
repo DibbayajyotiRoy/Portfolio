@@ -2,14 +2,16 @@
 
 import TitledParagraph from "@/components/titled-paragraph";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ExternalLink } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-interface WorkContentProps {}
+interface WorkContentProps {
+  npmStatsSlot?: ReactNode;
+}
 
-const WorkContent = ({}: WorkContentProps) => {
+const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
   const [isTLDRShown, setIsTLDRShown] = useState(false);
 
   return (
@@ -44,8 +46,9 @@ const WorkContent = ({}: WorkContentProps) => {
                 Currently shipping production-grade SaaS platforms at Yupcha Softwares.
               </p>
               <p>Some projects you can check out:{" "}
-                <Link href="https://klinder-oss.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Klinder-OSS</Link> (unified event tracking + session recording + email triggers SDK on Cloudflare Workers + Neon Postgres),{" "}
-                <Link href="https://www.npmjs.com/package/diffcore" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Diffcore</Link> (fast WebAssembly JSON diff for JS/TS — RFC 6902 Patch, React hook, CLI),{" "}
+                <Link href="https://klinder-oss.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Klinder-OSS</Link> (unified event tracking + session recording + email triggers SDK),{" "}
+                <Link href="https://www.npmjs.com/org/ahtmljs" target="_blank" rel="noopener noreferrer" className="font-semibold underline">AHTML</Link> (5-package @ahtmljs npm scope for AI-agent-friendly web),{" "}
+                <Link href="https://rust-wasm-library.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Diffcore</Link> (fast WebAssembly JSON diff — RFC 6902 Patch, React hook, CLI),{" "}
                 <Link href="https://ai-for-bharat.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Learning Copilot</Link> (AWS Bedrock AI assistant, top 500 AI for Bharat hackathon).
               </p>
               <p>
@@ -80,14 +83,29 @@ const WorkContent = ({}: WorkContentProps) => {
                   <Link href="https://klinder-oss.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Klinder-OSS</Link>: An open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install — replacing what teams normally stitch together with PostHog, LogRocket, and Customer.io. Typed events with Zod validation, edge ingestion on Cloudflare Workers + Queues, Neon Postgres with Row-Level Security for multi-tenant isolation, and a Rust port via workers-rs in progress targeting sub-10ms p95 latency.
                 </p>
                 <p>
-                  <Link href="https://www.npmjs.com/package/diffcore" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Diffcore</Link>: A fast WebAssembly JSON diff engine on npm — written in Rust, returns real <span className="font-mono text-sm">JSON Pointer</span> paths and decoded values (not opaque hashes), emits standard <span className="font-mono text-sm">RFC 6902 JSON Patch</span>, and ships <span className="font-mono text-sm">applyPatch</span> / <span className="font-mono text-sm">revertPatch</span> for state sync, undo/redo, and optimistic UI. Includes a React hook (<span className="font-mono text-sm">useDiff</span>), a CLI, and a streaming engine for multi-GB files. Benchmarks at <span className="italic">3.3–4.1×</span> over optimized pure-JS diff (360–490 MB/s sustained). Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, and Tauri. Live at{" "}
-                  <Link href="https://rust-wasm-library.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">rust-wasm-library.vercel.app</Link>.
+                  <Link href="https://www.npmjs.com/org/ahtmljs" target="_blank" rel="noopener noreferrer" className="font-semibold underline">AHTML</Link>: A shipped five-package npm scope (<span className="font-mono text-sm">@ahtmljs/*</span>) at v0.2.0 for making web content cheaply consumable by AI agents.{" "}
+                  <Link href="https://www.npmjs.com/package/@ahtmljs/schema" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/schema</Link> defines the canonical snapshot with RAG-ready <span className="font-mono text-sm">Document.chunks</span>;{" "}
+                  <Link href="https://www.npmjs.com/package/@ahtmljs/next" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/next</Link> and{" "}
+                  <Link href="https://www.npmjs.com/package/@ahtmljs/vite" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/vite</Link> emit MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot at <span className="font-mono text-sm">/.well-known/ahtml.json</span> with one config line;{" "}
+                  <Link href="https://www.npmjs.com/package/@ahtmljs/agent" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/agent</Link> is the client SDK with ETag caching, dry-run safety gates, and hostile-agent regression tests;{" "}
+                  <Link href="https://www.npmjs.com/package/@ahtmljs/langchain" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/langchain</Link> turns any AHTML site into a LangChain.js <span className="font-mono text-sm">Document[]</span> with citation metadata. 143 passing tests across the scope. Repo:{" "}
+                  <Link href="https://github.com/DibbayajyotiRoy/AHTML" target="_blank" rel="noopener noreferrer" className="underline">github.com/DibbayajyotiRoy/AHTML</Link>.
+                </p>
+                <p>
+                  <Link href="https://rust-wasm-library.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Diffcore</Link>: A fast WebAssembly JSON diff engine on npm — written in Rust, returns real <span className="font-mono text-sm">JSON Pointer</span> paths and decoded values (not opaque hashes), emits standard <span className="font-mono text-sm">RFC 6902 JSON Patch</span>, and ships <span className="font-mono text-sm">applyPatch</span> / <span className="font-mono text-sm">revertPatch</span>, three-way merge, undo/redo, a React hook, and a CLI. <span className="italic">3.3–4.1×</span> faster than optimized pure-JS diff. The wedge: two of the four leaders in the JSON-diff market (<span className="font-mono text-sm">fast-json-patch</span> last shipped 2022, <span className="font-mono text-sm">deep-diff</span> last 2018) are effectively stale — Diffcore is the actively-shipped, RFC-6902-compliant alternative. npm:{" "}
+                  <Link href="https://www.npmjs.com/package/diffcore" target="_blank" rel="noopener noreferrer" className="underline">diffcore</Link>.
                 </p>
                 <p>
                   <Link href="https://ai-for-bharat.vercel.app" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Learning Copilot</Link>: An AWS Bedrock-powered AI learning assistant with structured, level-adaptive explanations, auto-generated D2 diagrams, and real-time streaming responses. Engineered multi-model fallback (Nova Pro → Nova Lite) for resilience under rate limits. Cost-aware architecture with DynamoDB conversation memory (30-day TTL) and per-mode token budgets. Selected top 500 in the AI for Bharat hackathon.
                 </p>
               </div>
             </TitledParagraph>
+
+            {npmStatsSlot && (
+              <TitledParagraph title="npm">
+                {npmStatsSlot}
+              </TitledParagraph>
+            )}
 
             <TitledParagraph title="older work">
               <p className="text-sm sm:text-base opacity-80">

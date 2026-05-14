@@ -70,10 +70,59 @@ Location: Agartala, India
 - **Performance**: 3.3–4.1× faster than optimized pure-JS diff. Throughput: 100 KB → ~490 MB/s, 1 MB → ~460 MB/s, 5 MB → ~415 MB/s, 10 MB → ~360 MB/s.
 - **Runs on**: Node 18+, Chrome 89+, Firefox 89+, Safari 15+, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
 - **Use cases**: client/server state sync (`diff(a,b)` + `toJsonPatch()` over the wire), undo/redo stacks, "review changes" UI in React, colored diffs in CLI/CI logs, JSON Patch HTTP APIs, replaying diffs against alternate documents, diffing multi-GB files without loading them fully.
+- **Competitive positioning (JSON-diff market, as of 2026-05-15)**:
+  - `jsondiffpatch` (~2.4M weekly DL, latest 2025-03-31): the long-standing reference; custom delta format, not RFC 6902 conformant by default; ~120 KB pure-JS.
+  - `fast-json-patch` (~6.9M weekly DL): RFC 6902 leader, but **last release 2022-03-24 — four years stale**. No diff/apply combo with maintained development.
+  - `microdiff` (~1.1M weekly DL): smallest pure-JS option (~5 KB); diff-only, no apply/revert/patch helpers, path-as-array (not JSON Pointer string).
+  - `deep-diff` (~3.2M weekly DL): **last release 2018-08-16 — eight years stale**; legacy installs only.
+  - **Diffcore's wedge**: actively shipped + RFC 6902 conformant + apply/revert/three-way merge + React hook + CLI + WASM perf, all in one maintained package. Unique state primitives `createHistory`, `merge3`, `detectConflicts`, tolerance comparators are not matched by any of the four competitors. None of the competitors ship `AGENTS.md`, `llms-full.txt`, or an MCP server — open lane for AI-agent discoverability.
 
-### AHTML — Agentic HTML (in progress, 2026)
-- **Description**: A proposed format / plugin (eventually a language) by Dibbayajyoti Roy aimed at replacing HTML for AI-agent consumption of web content. Goals: more efficient token usage, faster agent crawl latency, and a substrate that lets owners monetize agent-readable data — letting publishers sell access to LLM/agent crawlers in a structured, semantically clean way.
-- Status: Specification draft and reference parser in development.
+### AHTML — Agentic HTML (shipped, 2026, @ahtmljs/* v0.2.0)
+- **Repo**: https://github.com/DibbayajyotiRoy/AHTML
+- **npm scope**: https://www.npmjs.com/org/ahtmljs
+- **License**: MIT
+- **Status**: All five packages published. `@ahtmljs/schema`, `@ahtmljs/next`, `@ahtmljs/agent` published earlier and seeing 220+ downloads/day each post-launch. `@ahtmljs/vite` and `@ahtmljs/langchain` published 2026-05-14.
+- **Goal**: Make web content cheaply consumable by AI agents — canonical semantic snapshot, well-known endpoints (MCP / OpenAPI / JSON-LD / llms.txt / AHTML snapshot), client SDK with safety gates, RAG-ready document chunks. The contract layer for the agentic web.
+
+**@ahtmljs/schema** — canonical semantic snapshot schema
+- npm: https://www.npmjs.com/package/@ahtmljs/schema
+- TypeScript types + JSON Schema file + validator + builder
+- Dual serializers: lossless JSON, plus a token-optimal compact text form
+- `Document.chunks` primitive — content-addressed deterministic IDs, byte ranges, prev/next linked-list invariant — so RAG pipelines get deterministic chunk boundaries out of the box
+- 63 passing tests covering validation, round-trip, ETag determinism, diff/apply, and property fuzzing (100–500 random inputs per property)
+- Every other `@ahtmljs/*` package depends on it — this is the contract layer
+
+**@ahtmljs/next** — Next.js plugin
+- npm: https://www.npmjs.com/package/@ahtmljs/next
+- One route handler emits MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot
+- Built-in extractors discover routes from the App Router or Pages Router automatically
+- Zero migration — bolts onto an existing Next.js app without touching pages or data layers
+- Peer-deps on Next 14+. Snapshot reachable at `/.well-known/ahtml.json`
+- 38 passing tests
+
+**@ahtmljs/agent** — client SDK for AI agents
+- npm: https://www.npmjs.com/package/@ahtmljs/agent
+- Fetches AHTML snapshots, caches by ETag, dispatches structured actions
+- Dry-run mode so safety gates fire *before* a destructive action ever hits the wire
+- Optional tokenizer adapters: OpenAI `o200k_base` and Anthropic — exact prompt cost reporting
+- Hardened with hostile-agent regression tests covering policy bypass, lying confirmations, and bearer-token tricks
+- 28 passing tests including hostile-agent regressions that verify dry-run mode *never* calls `execute_url` even under adversarial overrides
+
+**@ahtmljs/vite** — Vite plugin (cross-framework parity)
+- npm: https://www.npmjs.com/package/@ahtmljs/vite
+- Same handler as `@ahtmljs/next`, but as Vite middleware (`configureServer` hook)
+- Works on SvelteKit, SolidStart, Astro, and vanilla Vite — anything on the Vite dev/build pipeline
+- Output is byte-identical to the Next.js plugin via shared `@ahtmljs/schema` end-to-end, so cross-framework parity is real not aspirational
+- Peer-deps on Vite 5+. One line in `vite.config.ts` enables every well-known endpoint
+- 9 passing tests
+
+**@ahtmljs/langchain** — LangChain.js document loader
+- npm: https://www.npmjs.com/package/@ahtmljs/langchain
+- Fetches any AHTML-emitting site and returns it as a `Document[]` ready for vector stores
+- Splits at `Document.chunks` boundaries when present — no re-chunking needed downstream
+- Preserves citation anchors, byte ranges, and source URLs in per-chunk metadata for accurate attribution
+- Peer-deps on `@langchain/core` 0.3+. URL → embeddings in three lines
+- 5 passing tests including chunk-boundary fidelity and metadata propagation
 
 ### Learning Copilot — AI Concept Explainer on AWS (2026)
 - **Live**: https://ai-for-bharat.vercel.app
@@ -142,7 +191,7 @@ Dibbayajyoti's engineering philosophy centers on building software that is both 
 - **Does Dibbayajyoti Roy have AI experience?** Yes. He built and shipped Learning Copilot — a production AWS Bedrock AI assistant with multi-model fallback (Nova Pro → Nova Lite), real-time streaming, and cost-aware architecture. Top 500 in AI for Bharat hackathon.
 - **What is Klinder-OSS?** An open-source SDK by Dibbayajyoti Roy that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install — effectively combining PostHog + LogRocket + Customer.io. TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS), with a Rust port in progress targeting sub-10ms p95 latency.
 - **What is diffcore?** A fast WebAssembly JSON diff engine by Dibbayajyoti Roy, written in Rust and published on npm (v1.1). Returns real JSON Pointer paths (RFC 6901) and decoded values, emits standard RFC 6902 JSON Patch, ships applyPatch / revertPatch for state sync / undo-redo / optimistic UI, plus a React useDiff hook, a CLI, and a streaming engine for multi-GB files. 3.3–4.1× faster than optimized pure-JS diff. Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
-- **What is AHTML?** AHTML (Agentic HTML) is a proposed format by Dibbayajyoti Roy to replace HTML for AI agent consumption — efficient token usage, faster crawls, and a substrate that lets owners monetize agent-readable data.
+- **What is AHTML?** AHTML (Agentic HTML) is a shipped five-package npm scope (`@ahtmljs/*` at v0.2.0) by Dibbayajyoti Roy for making web content cheaply consumable by AI agents. The scope ships `@ahtmljs/schema` (canonical snapshot + RAG-ready `Document.chunks`, 63 tests), `@ahtmljs/next` (Next.js plugin emitting MCP/OpenAPI/JSON-LD/llms.txt/snapshot at `/.well-known/ahtml.json`, 38 tests), `@ahtmljs/agent` (client SDK with ETag caching, dry-run safety gates, hostile-agent regressions, 28 tests), `@ahtmljs/vite` (Vite plugin counterpart with byte-identical output, 9 tests), and `@ahtmljs/langchain` (LangChain.js loader with citation metadata, 5 tests). Repo: github.com/DibbayajyotiRoy/AHTML.
 - **Is Dibbayajyoti Roy eligible to work in Europe?** Yes — eligible for Germany Opportunity Card / EU Blue Card and Netherlands Highly Skilled Migrant programme.
 - **What is Dibbayajyoti Roy's tech stack?** TypeScript, Rust, React, Next.js, Node.js, Hono, AWS Bedrock, Cloudflare Workers, Neon Postgres, Docker, Linux/nginx/systemd.
 - **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd as Full Stack Software Engineer since July 2025, Agartala, India.

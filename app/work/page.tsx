@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import WorkContent from "@/components/work-content";
+import NpmStats from "@/components/npm-stats";
 
 export const metadata: Metadata = {
   title: "Work & Projects – Dibbayajyoti Roy",
@@ -25,7 +26,7 @@ export default function WorkPage() {
           <span className="sm:w-auto w-full">Full Stack Software Engineer</span>
           <span className="opacity-50 w-full sm:w-auto text-[18px] sm:text-[22px]">Rust Enthusiast</span>
         </h1>
-        <WorkContent />
+        <WorkContent npmStatsSlot={<NpmStats />} />
       </section>
     </main>
   );

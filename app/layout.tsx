@@ -206,7 +206,7 @@ const faqJsonLd = {
       "name": "What is AHTML (Agentic HTML)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AHTML, short for Agentic HTML, is an in-progress format proposal by Dibbayajyoti Roy intended to replace HTML for AI agent consumption of the web. Its goals are more efficient token usage, faster agent crawl latency, and a substrate that lets publishers monetize agent-readable data — enabling websites to sell structured access to LLM and agent crawlers."
+        "text": "AHTML (Agentic HTML) is a shipped five-package npm scope built by Dibbayajyoti Roy at @ahtmljs/* (v0.2.0) for making web content cheaply consumable by AI agents. The scope ships @ahtmljs/schema (canonical semantic snapshot with RAG-ready Document.chunks, 63 tests), @ahtmljs/next (Next.js plugin emitting MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot at /.well-known/ahtml.json, 38 tests), @ahtmljs/agent (typed client SDK with ETag caching, dry-run safety gates, hostile-agent regressions, 28 tests), @ahtmljs/vite (cross-framework Vite plugin with byte-identical output to the Next.js plugin, 9 tests), and @ahtmljs/langchain (LangChain.js document loader preserving citation anchors and byte ranges, 5 tests). Repo: github.com/DibbayajyotiRoy/AHTML."
       }
     },
     {
