@@ -134,16 +134,10 @@ const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
             </TitledParagraph>
 
             <TitledParagraph title="writing">
-              <div className="flex flex-col gap-4">
-                <p>
-                  <Link href="https://medium.com/p/afae306668ba" target="_blank" rel="noopener noreferrer" className="font-semibold underline">How I Fixed a Redis Polling Bottleneck That Was Timing Out in Production</Link>{" "}
-                  — A production incident where naive SCAN over a remote Redis timed out at 100s. Switched to batched fetching with client-side filtering, resulting in ~90% efficiency improvement.
-                </p>
-                <p>
-                  <Link href="https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Next.js SEO in 2026: A Developer&apos;s Practical Guide</Link>{" "}
-                  — Structured data, llms.txt for AI crawlers, zero-click optimization, and what actually moves the needle for a Next.js site in 2026.
-                </p>
-              </div>
+              <p>
+                Long-form engineering notes on production incidents, AI engineering with AWS Bedrock, Next.js SEO, and Rust + WebAssembly performance — read at{" "}
+                <Link href="/writing" className="font-semibold underline">/writing</Link>.
+              </p>
             </TitledParagraph>
 
             <TitledParagraph title="My Focus">
