@@ -60,6 +60,12 @@ const Nav = () => {
         >
           writing
         </Link>
+        <Link
+          href="/about"
+          className="pointer-events-auto hidden sm:inline underline underline-offset-[3px] opacity-100 decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base"
+        >
+          about
+        </Link>
         <Popover>
           <PopoverTrigger
             className={`pointer-events-auto underline underline-offset-[3px] opacity-100  decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base`}
@@ -68,6 +74,9 @@ const Nav = () => {
           </PopoverTrigger>
         <PopoverContent>
           <ul className="flex pointer-events-auto font-medium flex-col gap-4 font-base">
+            <li>
+              <Link href="/contact" className="underline">all channels</Link>
+            </li>
             <li>
               <Link href="mailto:dibbayajyoti@gmail.com">email</Link>
             </li>
@@ -82,12 +91,6 @@ const Nav = () => {
             <li>
               <Link href="https://x.com/dibbayajyoti">x.com</Link>
             </li>
-            {/* <li>
-              <Link href="https://twitch.com/philguin">twitch</Link>
-            </li>
-            {/* <li>
-              <Link href="https://bsky.app/profile/example.com">bluesky</Link>
-            </li> */}
           </ul>
         </PopoverContent>
         </Popover>

@@ -175,6 +175,34 @@ const Footer = ({}: FooterProps) => {
               </Link>
             </li>
           </ul>
+
+          <h2 className="text-lg font-semibold mt-6">Compare</h2>
+          <ul className="font-light gap-1 flex flex-col items-center md:items-start mt-2">
+            <li>
+              <Link
+                className="transition-opacity opacity-75 hover:opacity-100"
+                href="/diffcore-vs-jsondiffpatch"
+              >
+                Diffcore vs jsondiffpatch
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="transition-opacity opacity-75 hover:opacity-100"
+                href="/klinder-vs-posthog"
+              >
+                Klinder vs PostHog
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="transition-opacity opacity-75 hover:opacity-100"
+                href="/ahtml-vs-llms-txt"
+              >
+                AHTML vs llms.txt
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <div className="w-[200px] flex flex-col text-center md:items-start md:text-start">
@@ -202,6 +230,25 @@ const Footer = ({}: FooterProps) => {
                 href="/writing"
               >
                 All writing →
+              </Link>
+            </li>
+          </ul>
+
+          <h2 className="text-lg font-semibold mt-6">More</h2>
+          <ul className="font-light gap-1 flex flex-col items-center md:items-start mt-2">
+            <li>
+              <Link className="transition-opacity opacity-75 hover:opacity-100" href="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link className="transition-opacity opacity-75 hover:opacity-100" href="/contact">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link className="transition-opacity opacity-75 hover:opacity-100" href="/privacy">
+                Privacy
               </Link>
             </li>
           </ul>
