@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
+import { getProject } from "@/lib/content/projects";
 
 const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : "https://dibbayajyoti.com";
+
+// Facts (versions, descriptions, keywords, links) come from lib/content/projects.ts
+// so the JSON-LD here cannot drift from what the rest of the site renders.
+const klinder = getProject("klinder-oss");
+const diffcore = getProject("diffcore");
+const learningCopilot = getProject("learning-copilot");
+const ahtml = getProject("ahtml");
 
 export const metadata: Metadata = {
   title: "Projects & Experience — Dibbayajyoti Roy | Rust, Next.js, AI",
@@ -47,25 +55,16 @@ const klinderJsonLd = {
   "@context": "https://schema.org",
   "@type": ["SoftwareSourceCode", "SoftwareApplication"],
   "@id": "https://dibbayajyoti.com/work#klinder-oss",
-  "name": "Klinder-OSS",
-  "url": "https://klinder-oss.vercel.app",
-  "codeRepository": "https://github.com/DibbayajyotiRoy",
+  "name": klinder.name,
+  "url": klinder.primaryUrl,
+  "codeRepository": klinder.links.github,
   "programmingLanguage": ["TypeScript", "Rust"],
   "runtimePlatform": ["Cloudflare Workers", "Node.js"],
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Cross-platform",
   "license": "https://opensource.org/licenses/MIT",
-  "description":
-    "Open-source SDK unifying event tracking, error-based session recording, and automatic email trigger workflows in one install. Edge ingestion on Cloudflare Workers + Queues, Neon Postgres with RLS for multi-tenant isolation, Hono API. Rust port via workers-rs in progress targeting sub-10ms p95 latency.",
-  "keywords": [
-    "open source posthog alternative",
-    "open source logrocket alternative",
-    "self-hosted session replay",
-    "product analytics SDK",
-    "Cloudflare Workers",
-    "Neon Postgres",
-    "Rust workers-rs",
-  ],
+  "description": klinder.seoDescription,
+  "keywords": klinder.keywords,
   "author": { "@id": "https://dibbayajyoti.com/#person" },
   "creator": { "@id": "https://dibbayajyoti.com/#person" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -75,16 +74,16 @@ const diffcoreJsonLd = {
   "@context": "https://schema.org",
   "@type": ["SoftwareSourceCode", "SoftwareApplication"],
   "@id": "https://dibbayajyoti.com/work#diffcore",
-  "name": "Diffcore",
+  "name": diffcore.name,
   "alternateName": ["diffcore", "diffcore npm", "rust wasm json diff", "diffcore json patch"],
-  "url": "https://www.npmjs.com/package/diffcore",
+  "url": diffcore.primaryUrl,
   "sameAs": [
-    "https://www.npmjs.com/package/diffcore",
-    "https://github.com/DibbayajyotiRoy/rust-wasm-Library",
-    "https://rust-wasm-library.vercel.app",
+    diffcore.links.npm,
+    diffcore.links.github,
+    diffcore.links.demo,
   ],
-  "codeRepository": "https://github.com/DibbayajyotiRoy/rust-wasm-Library",
-  "softwareVersion": "1.1.0",
+  "codeRepository": diffcore.links.github,
+  "softwareVersion": diffcore.version,
   "programmingLanguage": ["Rust", "WebAssembly", "TypeScript", "JavaScript"],
   "runtimePlatform": [
     "WebAssembly",
@@ -100,8 +99,7 @@ const diffcoreJsonLd = {
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Cross-platform",
   "license": "https://opensource.org/licenses/MIT",
-  "description":
-    "Fast WebAssembly JSON diff engine for JavaScript and TypeScript. Returns real JSON Pointer paths (RFC 6901) and decoded values, emits standard RFC 6902 JSON Patch, and ships applyPatch / revertPatch for state sync, undo/redo, and optimistic UI. Includes a React useDiff hook, a CLI, and a streaming engine for multi-GB files. Benchmarks at 3.3–4.1x optimized pure-JS diff (360–490 MB/s sustained).",
+  "description": diffcore.seoDescription,
   "featureList": [
     "RFC 6902 JSON Patch output",
     "RFC 6901 JSON Pointer paths",
@@ -112,29 +110,7 @@ const diffcoreJsonLd = {
     "Auto memory cleanup via FinalizationRegistry",
     "Zero-config embedded WASM (Base64)",
   ],
-  "keywords": [
-    "json diff",
-    "fast json diff",
-    "wasm json diff",
-    "rust wasm diff",
-    "json patch",
-    "rfc 6902",
-    "rfc 6901",
-    "json pointer",
-    "react json diff",
-    "react diff hook",
-    "useDiff hook",
-    "json diff cli",
-    "state sync",
-    "optimistic ui",
-    "undo redo",
-    "object diff",
-    "deep diff",
-    "compare json",
-    "applypatch",
-    "fast-json-patch alternative",
-    "jsondiffpatch alternative",
-  ],
+  "keywords": diffcore.keywords,
   "author": { "@id": "https://dibbayajyoti.com/#person" },
   "creator": { "@id": "https://dibbayajyoti.com/#person" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -144,12 +120,11 @@ const learningCopilotJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": "https://dibbayajyoti.com/work#learning-copilot",
-  "name": "Learning Copilot",
-  "url": "https://ai-for-bharat.vercel.app",
+  "name": learningCopilot.name,
+  "url": learningCopilot.primaryUrl,
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web",
-  "description":
-    "AWS Bedrock-powered AI learning assistant with Nova Pro / Nova Lite multi-model fallback, structured level-adaptive explanations, auto-generated D2 diagrams, and real-time streaming responses. Top 500 in AI for Bharat hackathon.",
+  "description": learningCopilot.seoDescription,
   "author": { "@id": "https://dibbayajyoti.com/#person" },
   "creator": { "@id": "https://dibbayajyoti.com/#person" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -162,8 +137,8 @@ const ahtmlBase = {
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Cross-platform",
   "license": "https://opensource.org/licenses/MIT",
-  "softwareVersion": "0.2.0",
-  "codeRepository": "https://github.com/DibbayajyotiRoy/AHTML",
+  "softwareVersion": ahtml.version,
+  "codeRepository": ahtml.links.github,
   "author": { "@id": "https://dibbayajyoti.com/#person" },
   "creator": { "@id": "https://dibbayajyoti.com/#person" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -176,16 +151,15 @@ const ahtmlScopeJsonLd = {
   "@id": "https://dibbayajyoti.com/work#ahtml-scope",
   "name": "AHTML — Agentic HTML (@ahtmljs scope)",
   "alternateName": ["Agentic HTML", "AHTML", "@ahtmljs", "@ahtmljs npm scope"],
-  "url": "https://www.npmjs.com/org/ahtmljs",
+  "url": ahtml.primaryUrl,
   "sameAs": [
-    "https://github.com/DibbayajyotiRoy/AHTML",
-    "https://www.npmjs.com/org/ahtmljs",
+    ahtml.links.github,
+    ahtml.links.npmOrg,
   ],
   "creator": { "@id": "https://dibbayajyoti.com/#person" },
   "author": { "@id": "https://dibbayajyoti.com/#person" },
-  "description":
-    "AHTML (Agentic HTML) is a shipped five-package npm scope by Dibbayajyoti Roy for making web content cheaply consumable by AI agents — canonical semantic snapshot, Next.js + Vite plugins, agent client SDK, and LangChain.js loader. All packages live at @ahtmljs/* v0.2.0.",
-  "keywords": ["AHTML", "Agentic HTML", "@ahtmljs", "AI crawlable HTML", "LLM-optimized markup", "agentic web", "MCP", "llms.txt"],
+  "description": ahtml.seoDescription,
+  "keywords": ahtml.keywords,
   "numberOfItems": 5,
   "inLanguage": "en",
 };
@@ -254,22 +228,22 @@ const projectsItemListJsonLd = {
     {
       "@type": "ListItem",
       "position": 1,
-      "item": { "@id": "https://dibbayajyoti.com/work#klinder-oss", "name": "Klinder-OSS", "url": "https://klinder-oss.vercel.app" },
+      "item": { "@id": "https://dibbayajyoti.com/work#klinder-oss", "name": klinder.name, "url": klinder.primaryUrl },
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "item": { "@id": "https://dibbayajyoti.com/work#ahtml-scope", "name": "AHTML — @ahtmljs npm scope", "url": "https://www.npmjs.com/org/ahtmljs" },
+      "item": { "@id": "https://dibbayajyoti.com/work#ahtml-scope", "name": "AHTML — @ahtmljs npm scope", "url": ahtml.primaryUrl },
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "item": { "@id": "https://dibbayajyoti.com/work#diffcore", "name": "Diffcore", "url": "https://rust-wasm-library.vercel.app" },
+      "item": { "@id": "https://dibbayajyoti.com/work#diffcore", "name": diffcore.name, "url": diffcore.primaryUrl },
     },
     {
       "@type": "ListItem",
       "position": 4,
-      "item": { "@id": "https://dibbayajyoti.com/work#learning-copilot", "name": "Learning Copilot", "url": "https://ai-for-bharat.vercel.app" },
+      "item": { "@id": "https://dibbayajyoti.com/work#learning-copilot", "name": learningCopilot.name, "url": learningCopilot.primaryUrl },
     },
   ],
 };

@@ -1,19 +1,8 @@
-import type { Metadata } from "next";
 import WorkContent from "@/components/work-content";
 import NpmStats from "@/components/npm-stats";
 
-export const metadata: Metadata = {
-  title: "Work & Projects – Dibbayajyoti Roy",
-  description:
-    "Full Stack Engineer at Yupcha Softwares. Built Klinder-OSS (unified event tracking + session recording + email SDK), diffcore (Rust/WASM JSON diff for npm with RFC 6902 Patch, React hook, CLI), and Learning Copilot (AWS Bedrock AI assistant, top 500 AI for Bharat). Winner NITA Arjuna 2.0 hackathon 2025.",
-  alternates: { canonical: "/work" },
-  openGraph: {
-    title: "Work & Projects – Dibbayajyoti Roy",
-    description:
-      "Projects: Klinder-OSS (analytics + session replay + email SDK), diffcore (Rust/WASM JSON diff on npm), Learning Copilot (AWS Bedrock). Hackathon winner. TypeScript, Rust, React, Next.js.",
-    url: "https://dibbayajyoti.com/work",
-  },
-};
+// Metadata for this route lives in app/work/layout.tsx — a single definition,
+// so the title and description cannot diverge between the page and its layout.
 
 export default function WorkPage() {
   return (
