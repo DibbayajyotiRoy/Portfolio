@@ -18,8 +18,8 @@ const articles: Article[] = [
     date: "March 2026",
     readingTime: "9 min read",
     excerpt:
-      "Structured data (JSON-LD), llms.txt for AI crawlers, zero-click optimization, sitemap configuration, and what actually moves the needle for Next.js sites in 2026.",
-    tags: ["Next.js", "SEO", "JSON-LD", "llms.txt"],
+      "The Next.js Metadata API, structured data (JSON-LD), llms.txt for AI crawlers, Core Web Vitals, sitemap optimization, and what actually moves the needle for Next.js SEO in 2026.",
+    tags: ["Next.js SEO", "Metadata API", "JSON-LD", "llms.txt", "Core Web Vitals"],
   },
   {
     title: "How I Fixed a Redis Polling Bottleneck That Was Timing Out in Production",
@@ -27,8 +27,8 @@ const articles: Article[] = [
     date: "February 2026",
     readingTime: "6 min read",
     excerpt:
-      "Naive SCAN over a remote Redis timed out at 100 seconds in production. Switched to batched MGET with client-side filtering for a ~90% efficiency improvement and zero timeouts.",
-    tags: ["Redis", "Performance", "Debugging", "Node.js"],
+      "A Redis polling bottleneck in a Node.js service: a naive SCAN over a remote Redis timed out at 100 seconds in production. Switched to batched MGET with client-side filtering for a ~90% efficiency improvement and zero timeouts.",
+    tags: ["Redis", "Distributed Systems", "Performance", "Debugging", "Node.js"],
   },
 ];
 
@@ -42,16 +42,35 @@ export default function WritingPage() {
         <h1 className="flex items-baseline flex-wrap sm:gap-3 my-2 sm:my-4 text-3xl sm:text-[32px] font-semibold">
           <span className="sm:w-auto w-full">Writing</span>
           <span className="opacity-50 w-full sm:w-auto text-[18px] sm:text-[22px]">
-            engineering notes
+            Rust, Next.js &amp; AI engineering
           </span>
         </h1>
 
         <div className="flex flex-col gap-6 sm:gap-8 mt-10 text-blackout/90 dark:text-whiteout/90">
           <TitledParagraph title="intro">
             <p>
-              Long-form notes on production incidents, AI engineering with AWS Bedrock,
-              modern Next.js SEO, and Rust + WebAssembly performance work. Articles
-              currently published on Medium; canonical links below.
+              Long-form notes on production incidents,{" "}
+              <Link href="/distributed-systems" className="underline">
+                distributed systems
+              </Link>{" "}
+              debugging,{" "}
+              <Link href="/ai-engineering" className="underline">
+                AI engineering
+              </Link>{" "}
+              with AWS Bedrock, modern{" "}
+              <Link href="/nextjs-seo" className="underline">
+                Next.js SEO
+              </Link>
+              , and{" "}
+              <Link href="/rust" className="underline">
+                Rust
+              </Link>{" "}
+              +{" "}
+              <Link href="/webassembly" className="underline">
+                WebAssembly
+              </Link>{" "}
+              performance work. Articles currently published on Medium;
+              canonical links below.
             </p>
           </TitledParagraph>
 

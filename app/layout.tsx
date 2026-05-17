@@ -18,8 +18,8 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
-  description: "Dibbayajyoti Roy — hackathon winner and Full Stack Engineer at Yupcha Softwares. Rust, React, Next.js. Explore projects and experience.",
+  title: "Dibbayajyoti Roy – Full Stack & Rust Backend Engineer",
+  description: "Dibbayajyoti Roy — hackathon winner and Full Stack Engineer at Yupcha Softwares. Rust backend, WebAssembly, React, and Next.js. Explore projects and experience.",
   metadataBase: new URL(baseUrl),
   alternates: {
     canonical: "/",
@@ -42,21 +42,21 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseUrl,
     siteName: "Dibbayajyoti Roy",
-    title: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
-    description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, React, and Next.js. Based in Agartala, India.",
+    title: "Dibbayajyoti Roy – Full Stack & Rust Backend Engineer",
+    description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, WebAssembly, React, and Next.js. Based in Agartala, India.",
     images: [
       {
         url: `/opengraph-image.png`,
         width: 1200,
         height: 630,
-        alt: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
+        alt: "Dibbayajyoti Roy – Full Stack & Rust Backend Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dibbayajyoti Roy – Full Stack Software Engineer & Rust Enthusiast",
-    description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, React, and Next.js. Based in Agartala, India.",
+    title: "Dibbayajyoti Roy – Full Stack & Rust Backend Engineer",
+    description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, WebAssembly, React, and Next.js. Based in Agartala, India.",
     creator: "@DibbayajyotiRoy",
     images: [`/opengraph-image.png`],
   },
@@ -149,7 +149,7 @@ const websiteJsonLd = {
   "@id": "https://dibbayajyoti.com/#website",
   "name": "Dibbayajyoti Roy",
   "url": "https://dibbayajyoti.com",
-  "description": "Personal portfolio of Dibbayajyoti Roy — Full Stack Software Engineer & Rust Enthusiast.",
+  "description": "Personal portfolio of Dibbayajyoti Roy — Full Stack & Rust backend engineer specializing in WebAssembly, Next.js, and AI engineering.",
   "publisher": {
     "@id": "https://dibbayajyoti.com/#person"
   },
@@ -280,8 +280,8 @@ export default function RootLayout({
           <Nav/>
           <noscript>
               <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-                <h1>Dibbayajyoti Roy — Full Stack Software Engineer &amp; Rust Enthusiast</h1>
-                <p>Full Stack Software Engineer based in Agartala, India, currently at Yupcha Softwares Pvt. Ltd. Specializing in Rust, TypeScript, React, and Next.js for building high-performance systems and production-grade SaaS platforms.</p>
+                <h1>Dibbayajyoti Roy — Full Stack &amp; Rust Backend Engineer</h1>
+                <p>Full Stack Software Engineer and Rust backend engineer based in Agartala, India, currently at Yupcha Softwares Pvt. Ltd. Specializing in Rust, WebAssembly, TypeScript, React, and Next.js for building high-performance systems and production-grade SaaS platforms.</p>
                 <h2>Key Skills</h2>
                 <p>Rust, TypeScript, React, Next.js, Node.js, WebAssembly, Hono, REST APIs, Cloudflare Workers, AWS Bedrock, Neon Postgres, Docker, Linux infrastructure, Systems Programming.</p>
                 <h2>Flagship Projects</h2>

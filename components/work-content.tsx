@@ -70,8 +70,8 @@ const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
             <TitledParagraph title="what I do">
               <p>Hi, I&apos;m <Link href={profile.links.linkedin} target="_blank" className="underline font-semibold">{profile.firstName}</Link>! I&apos;m a {profile.title} based in {profile.location}, currently working at{" "}
                 <span className="font-semibold">{profile.employer.name}</span>.
-                I focus on shipping production-grade SaaS platforms, integrating REST APIs, and building cutting-edge user-facing dashboards.
-                Beyond engineering, I have a deep interest in web performance, Core Web Vitals, and modern design systems.
+                I focus on shipping production-grade SaaS platforms, integrating REST APIs, and building cutting-edge user-facing dashboards in Next.js.
+                Beyond engineering, I have a deep interest in Next.js performance optimization, Core Web Vitals, Rust backend development, and modern design systems.
               </p>
             </TitledParagraph>
 
@@ -119,7 +119,7 @@ const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
 
                 <div className="flex flex-col gap-2">
                   <p>
-                    <Link href={diffcore.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{diffcore.name}</Link>: A fast WebAssembly JSON diff engine on npm — written in Rust, returns real <span className="font-mono text-sm">JSON Pointer</span> paths and decoded values (not opaque hashes), emits standard <span className="font-mono text-sm">RFC 6902 JSON Patch</span>, and ships <span className="font-mono text-sm">applyPatch</span> / <span className="font-mono text-sm">revertPatch</span>, three-way merge, undo/redo, a React hook, and a CLI. In head-to-head benchmarks it is <span className="italic">2.3–3.0×</span> faster than <span className="font-mono text-sm">fast-json-patch</span> and <span className="italic">4–8×</span> faster than <span className="font-mono text-sm">jsondiffpatch</span>. The wedge: two of the four leaders in the JSON-diff market (<span className="font-mono text-sm">fast-json-patch</span> last shipped 2022, <span className="font-mono text-sm">deep-diff</span> last 2018) are effectively stale — Diffcore is the actively-shipped, RFC-6902-compliant alternative.
+                    <Link href={diffcore.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{diffcore.name}</Link>: A fast Rust + WebAssembly JSON diff engine on npm — written in Rust, compiled to WASM, it returns real <span className="font-mono text-sm">JSON Pointer</span> paths and decoded values (not opaque hashes), emits standard <span className="font-mono text-sm">RFC 6902 JSON Patch</span>, and ships <span className="font-mono text-sm">applyPatch</span> / <span className="font-mono text-sm">revertPatch</span>, three-way merge, undo/redo, a React hook, and a CLI. In head-to-head benchmarks it is <span className="italic">2.3–3.0×</span> faster than <span className="font-mono text-sm">fast-json-patch</span> and <span className="italic">4–8×</span> faster than <span className="font-mono text-sm">jsondiffpatch</span>. The wedge: two of the four leaders in the JSON-diff market (<span className="font-mono text-sm">fast-json-patch</span> last shipped 2022, <span className="font-mono text-sm">deep-diff</span> last 2018) are effectively stale — Diffcore is the actively-shipped, RFC-6902-compliant alternative.
                   </p>
                   <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
                     {diffcore.links.npm && (
@@ -184,6 +184,17 @@ const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
               </p>
             </TitledParagraph>
 
+            <TitledParagraph title="topics">
+              <p>
+                Deep dives by area:{" "}
+                <Link href="/rust" className="underline">Rust engineering</Link>,{" "}
+                <Link href="/webassembly" className="underline">WebAssembly</Link>,{" "}
+                <Link href="/ai-engineering" className="underline">AI engineering</Link>,{" "}
+                <Link href="/nextjs-seo" className="underline">Next.js SEO</Link>, and{" "}
+                <Link href="/distributed-systems" className="underline">distributed systems</Link>.
+              </p>
+            </TitledParagraph>
+
             <TitledParagraph title="My Focus">
               <p>
                 My goal is to build software that is both robust and efficient. Rust has completely transformed my approach to engineering, moving me from just building &quot;web apps&quot; to designing reliable systems.
@@ -205,11 +216,11 @@ const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
             <TitledParagraph title="Why Rust?">
               <p>
                 I have a deep appreciation for <span className="font-semibold">Rust</span> as a systems programming language.
-                It&apos;s truly a Swiss Army knife—whether it&apos;s low-level hardware control, building high-performance 3D game engines, or developing blazingly fast backend services, Rust delivers both safety and speed without compromise.
+                It&apos;s truly a Swiss Army knife—whether it&apos;s low-level hardware control, building high-performance 3D game engines, or developing blazingly fast async backend services and microservices, Rust delivers both safety and speed without compromise.
               </p>
               <p className="mt-4">
                 The strict compiler, the ownership model, and the zero-cost abstractions make it a joy to work with once you master it.
-                I believe Rust is the future of infrastructure, and I&apos;m constantly exploring its potential in edge computing and real-time systems.
+                I believe Rust is the future of infrastructure, and I&apos;m constantly exploring its potential in WebAssembly, edge computing on Cloudflare Workers (workers-rs), and real-time systems.
               </p>
             </TitledParagraph>
           </>

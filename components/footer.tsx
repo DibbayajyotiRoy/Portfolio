@@ -203,6 +203,35 @@ const Footer = ({}: FooterProps) => {
               </Link>
             </li>
           </ul>
+
+          <h2 className="text-lg font-semibold mt-6">Topics</h2>
+          <ul className="font-light gap-1 flex flex-col items-center md:items-start mt-2">
+            <li>
+              <Link className="transition-opacity opacity-75 hover:opacity-100" href="/rust">
+                Rust Engineering
+              </Link>
+            </li>
+            <li>
+              <Link className="transition-opacity opacity-75 hover:opacity-100" href="/webassembly">
+                WebAssembly
+              </Link>
+            </li>
+            <li>
+              <Link className="transition-opacity opacity-75 hover:opacity-100" href="/ai-engineering">
+                AI Engineering
+              </Link>
+            </li>
+            <li>
+              <Link className="transition-opacity opacity-75 hover:opacity-100" href="/nextjs-seo">
+                Next.js SEO
+              </Link>
+            </li>
+            <li>
+              <Link className="transition-opacity opacity-75 hover:opacity-100" href="/distributed-systems">
+                Distributed Systems
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <div className="w-[200px] flex flex-col text-center md:items-start md:text-start">

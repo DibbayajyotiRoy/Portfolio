@@ -13,19 +13,20 @@ export default function AboutPage() {
         <h1 className="flex items-baseline flex-wrap sm:gap-3 my-2 sm:my-4 text-3xl sm:text-[32px] font-semibold">
           <span className="sm:w-auto w-full">{profile.name}</span>
           <span className="opacity-50 w-full sm:w-auto text-[18px] sm:text-[22px]">
-            engineer, builder, Rust enthusiast
+            full-stack engineer, Rust systems builder
           </span>
         </h1>
 
         <div className="flex flex-col gap-6 sm:gap-8 mt-10 text-blackout/90 dark:text-whiteout/90">
           <TitledParagraph title="who">
             <p>
-              I&apos;m a {profile.title} from {profile.location}.
+              I&apos;m a {profile.title} and Rust developer from {profile.location}.
               I currently ship production SaaS at{" "}
               <span className="font-semibold">{profile.employer.name}</span>{" "}
               and run a parallel track building open-source developer tools.
-              My day job is HR SaaS — REST APIs, PostgreSQL, Linux infrastructure.
-              My night job is Rust, WebAssembly, and AI agent infrastructure.
+              My day job is HR SaaS — REST APIs, PostgreSQL, Next.js performance
+              optimization, and Linux infrastructure. My night job is Rust backend
+              engineering, Rust + WebAssembly, and RAG / AI agent infrastructure.
             </p>
           </TitledParagraph>
 
@@ -35,7 +36,13 @@ export default function AboutPage() {
                 Three products anchor what I do publicly. Each solves a real
                 problem I hit and could not find a clean answer to — the
                 detailed writeups live on{" "}
-                <Link href="/work" className="font-semibold underline">/work</Link>.
+                <Link href="/work" className="font-semibold underline">/work</Link>,
+                and deeper topic pages cover{" "}
+                <Link href="/rust" className="underline">Rust engineering</Link>,{" "}
+                <Link href="/webassembly" className="underline">WebAssembly</Link>,{" "}
+                <Link href="/ai-engineering" className="underline">AI engineering</Link>,{" "}
+                <Link href="/nextjs-seo" className="underline">Next.js SEO</Link>, and{" "}
+                <Link href="/distributed-systems" className="underline">distributed systems</Link>.
               </p>
               {coreProducts.map((project) => (
                 <p key={project.id}>

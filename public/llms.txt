@@ -7,6 +7,11 @@
 - [Homepage](https://dibbayajyoti.com): Personal landing page with interactive hero section showcasing engineering skills and approach.
 - [Work](https://dibbayajyoti.com/work): Full professional profile — experience, projects, technical skills, hackathon wins, and career philosophy.
 - [Writing](https://dibbayajyoti.com/writing): Long-form engineering articles on production incidents, AI engineering, and modern web performance.
+- [Rust Engineering](https://dibbayajyoti.com/rust): Rust backend engineering, Rust + WebAssembly, workers-rs on Cloudflare Workers, async API development, and systems programming.
+- [WebAssembly](https://dibbayajyoti.com/webassembly): WebAssembly engineering — Rust compiled to WASM and shipped to npm, anchored by the Diffcore JSON diff engine.
+- [AI Engineering](https://dibbayajyoti.com/ai-engineering): AWS Bedrock applications, multi-model fallback, RAG architecture, the MCP protocol, LangChain.js, and AI crawler optimization.
+- [Next.js SEO](https://dibbayajyoti.com/nextjs-seo): Next.js Metadata API, JSON-LD structured data, sitemap optimization, llms.txt for AI crawlers, and Core Web Vitals.
+- [Distributed Systems](https://dibbayajyoti.com/distributed-systems): Edge ingestion on Cloudflare Workers, Redis polling optimization, multi-tenant Postgres with RLS, and backend scaling.
 
 ## About
 
