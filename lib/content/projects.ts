@@ -74,11 +74,11 @@ export const projects: Project[] = [
       github: "https://github.com/DibbayajyotiRoy/AHTML",
     },
     primaryUrl: "https://www.npmjs.com/org/ahtmljs",
-    version: "0.2.0",
+    version: "0.8.1",
     oneLiner:
       "AI agents read websites slowly and expensively, so I built a five-package npm scope (@ahtmljs/*) that emits a canonical, agent-ready snapshot of any site from one config line.",
     seoDescription:
-      "AHTML (Agentic HTML) is a shipped five-package npm scope by Dibbayajyoti Roy for making web content cheaply consumable by AI agents — canonical semantic snapshot, Next.js + Vite plugins, agent client SDK, and LangChain.js loader. All packages live at @ahtmljs/* v0.2.0.",
+      "AHTML (Agentic HTML) is a shipped five-package npm scope by Dibbayajyoti Roy for making web content cheaply consumable by AI agents — canonical semantic snapshot, Next.js + Vite plugins, agent client SDK, and LangChain.js loader. All packages live at @ahtmljs/* v0.8.1.",
     keywords: [
       "AHTML",
       "Agentic HTML",

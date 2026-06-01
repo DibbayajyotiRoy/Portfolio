@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -q 'href=\"/__TRACKED_VAR__\"' .next/server/app/writing.html)"
+    ]
+  }
+}

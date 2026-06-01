@@ -1,93 +1,33 @@
 import { MetadataRoute } from 'next'
 
+// IMPORTANT: do NOT use `new Date()` here. A fresh `lastmod` on every build tells
+// Google every page changed every deploy — it learns to distrust the signal and
+// deprioritizes crawling. Use honest, stable per-page dates and only bump a
+// page's date when its content actually changes.
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://dibbayajyoti.com'
-  const now = new Date()
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/work`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/writing`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: now,
-      changeFrequency: 'yearly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/rust`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/webassembly`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/ai-engineering`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/nextjs-seo`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/distributed-systems`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/diffcore-vs-jsondiffpatch`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/klinder-vs-posthog`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/ahtml-vs-llms-txt`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: now,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
-    },
+  const pages = [
+    { path: '', lastModified: '2026-05-25', changeFrequency: 'monthly' as const, priority: 1 },
+    { path: '/work', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.9 },
+    { path: '/about', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.8 },
+    { path: '/writing', lastModified: '2026-05-31', changeFrequency: 'weekly' as const, priority: 0.8 },
+    { path: '/contact', lastModified: '2026-04-06', changeFrequency: 'yearly' as const, priority: 0.7 },
+    { path: '/rust', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/webassembly', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/ai-engineering', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/nextjs-seo', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/distributed-systems', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/diffcore-vs-jsondiffpatch', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/klinder-vs-posthog', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/ahtml-vs-llms-txt', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/privacy', lastModified: '2026-05-18', changeFrequency: 'yearly' as const, priority: 0.3 },
   ]
+
+  return pages.map((p) => ({
+    url: `${baseUrl}${p.path}`,
+    lastModified: p.lastModified,
+    changeFrequency: p.changeFrequency,
+    priority: p.priority,
+  }))
 }

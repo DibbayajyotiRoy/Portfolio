@@ -37,3 +37,4 @@ next-env.d.ts
 sitemap.xml
 .gitignore
 research
+/seo-report
