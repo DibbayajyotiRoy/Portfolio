@@ -78,6 +78,53 @@ Search Console once you have impressions data.
 
 ---
 
+## whatbroke — Tier 1 (own the category)
+
+| Keyword | Vol | Comp | Intent | Page |
+| --- | --- | --- | --- | --- |
+| local dev crash | 200–500 | low | implementer | `/projects/whatbroke` + new "Capturing local crashes deterministically" article |
+| git-anchored debugging | <50 (new) | very low | category | `/projects/whatbroke` + new "What is git-anchored debugging" article |
+| deterministic bug ranking | <50 (new) | very low | category | `/projects/whatbroke` |
+| which file broke my test | 50–150 | low | implementer | new article: "Intersecting your crash stack with files changed since green" |
+| mcp debugging | 100–300 | low | implementer | new comparison page `/whatbroke-vs-sentry` |
+| mcp claude code | 300–700 | medium | implementer | new article: "A read-only MCP crash server for Claude Code" |
+| node crash capture | 100–250 | low | tooling | `/projects/whatbroke` + repo README |
+| git bisect alternative | 100–300 | low | comparison | new article: "Stop bisecting — anchor to the last green commit" |
+
+## whatbroke — Tier 2
+
+- @whatbroke/whatbroke
+- mcp crash server
+- read-only mcp server
+- last green commit debugging
+- secret redaction crash report
+
+---
+
+## Roy UI — Tier 1 (intercept shadcn intent)
+
+| Keyword | Vol | Comp | Intent | Page |
+| --- | --- | --- | --- | --- |
+| react data table | 2000–5000 | high | implementer | `/projects/roy-ui` + new "Batteries-included React DataTable" article |
+| react datatable nextjs 15 | 200–500 | low | implementer | new article: "Drop-in DataTable for Next.js 15 (RSC-safe)" |
+| shadcn alternative | 1000–3000 | high | comparison | new comparison page `/roy-ui-vs-shadcn` |
+| shadcn data table | 500–1200 | medium | comparison | `/roy-ui-vs-shadcn` |
+| tanstack table alternative | 200–500 | medium | comparison | new comparison page `/roy-ui-vs-tanstack-table` |
+| react date range picker | 1500–3000 | high | implementer | new article: "A date range picker with zero date-fns dependency" |
+| react time picker | 500–1200 | medium | implementer | new article featuring the analog/digital time picker |
+| analog time picker react | 50–150 | low | implementer | `/projects/roy-ui` + demo |
+| next.js 15 components | 300–700 | medium | implementer | `/projects/roy-ui` |
+
+## Roy UI — Tier 2
+
+- @roy-ui/ui
+- zero-config react component library
+- rsc-safe component library
+- tree-shakable react components
+- csv export react table
+
+---
+
 ## Competitor-gap pull
 
 Run this once a quarter:
@@ -93,6 +140,8 @@ Specific competitors to mine:
 - Diffcore → jsondiffpatch.com, fast-json-patch GitHub README, microdiff README, npmtrends comparison pages.
 - Klinder → posthog.com/blog, plausible.io/blog (positioning mining, not keyword steal), logrocket.com/blog.
 - AHTML → llmstxt.org, modelcontextprotocol.io, Anthropic engineering blog, LangChain JS docs.
+- whatbroke → sentry.io/blog, jam.dev, replay.io, modelcontextprotocol.io, git-bisect tutorials.
+- Roy UI → ui.shadcn.com, tanstack.com/table, mui.com/x/react-data-grid, ag-grid.com, react-day-picker docs.
 
 ---
 

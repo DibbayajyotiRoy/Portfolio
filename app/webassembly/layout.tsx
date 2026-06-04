@@ -57,51 +57,10 @@ const collectionPageJsonLd = {
   "inLanguage": "en-US",
 };
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://dibbayajyoti.com/webassembly#faq",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What WebAssembly project has Dibbayajyoti Roy shipped?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Diffcore — a JSON diff engine written in Rust, compiled to WebAssembly, and published on npm. It runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, and Tauri.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Why compile to WebAssembly instead of writing pure JavaScript?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A diff is CPU-bound work over large objects. Running it as Rust compiled to WebAssembly gives several times the throughput of optimized pure-JavaScript while remaining an ordinary npm install — no native addon and no platform-specific binaries.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "How is the WASM module bundled in an npm package?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Diffcore embeds the WASM module as Base64 inside the package, so it is zero-config — there is no separate .wasm file to host, import, or configure a loader for. It works immediately after npm install.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Does WebAssembly work on edge runtimes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Because the engine is WebAssembly, it runs unchanged on Cloudflare Workers and Vercel Edge alongside Node and the browser — one build artifact for every runtime.",
-      },
-    },
-  ],
-};
-
 export default function WebAssemblyLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       {children}
     </>
   );

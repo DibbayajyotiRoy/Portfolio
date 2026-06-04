@@ -15,6 +15,8 @@ interface WorkContentProps {
 const klinder = getProject("klinder-oss");
 const ahtml = getProject("ahtml");
 const diffcore = getProject("diffcore");
+const whatbroke = getProject("whatbroke");
+const royui = getProject("roy-ui");
 const learningCopilot = getProject("learning-copilot");
 
 const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
@@ -52,9 +54,11 @@ const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
                 Currently shipping production-grade SaaS platforms at {profile.employer.name}.
               </p>
               <p>Some projects you can check out:{" "}
-                <Link href={klinder.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{klinder.name}</Link> (unified event tracking + session recording + email triggers SDK),{" "}
-                <Link href={ahtml.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{ahtml.name}</Link> (5-package @ahtmljs npm scope for AI-agent-friendly web),{" "}
-                <Link href={diffcore.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{diffcore.name}</Link> (fast WebAssembly JSON diff — RFC 6902 Patch, React hook, CLI),{" "}
+                <Link href="/projects/whatbroke" className="font-semibold underline">{whatbroke.name}</Link> (git-anchored crash capture for AI coding agents over MCP),{" "}
+                <Link href="/projects/ahtml" className="font-semibold underline">{ahtml.name}</Link> (7-package @ahtmljs npm scope for the agent web),{" "}
+                <Link href="/projects/roy-ui" className="font-semibold underline">{royui.name}</Link> (zero-config React component library),{" "}
+                <Link href="/projects/klinder-oss" className="font-semibold underline">{klinder.name}</Link> (unified analytics + session replay + email SDK),{" "}
+                <Link href="/projects/diffcore" className="font-semibold underline">{diffcore.name}</Link> (fast WebAssembly JSON diff — RFC 6902 Patch, React hook, CLI),{" "}
                 <Link href={learningCopilot.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{learningCopilot.name}</Link> (AWS Bedrock AI assistant, top 500 AI for Bharat hackathon).
               </p>
               <p>
@@ -90,7 +94,8 @@ const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
                     <Link href={klinder.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{klinder.name}</Link>: An open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install — replacing what teams normally stitch together with PostHog, LogRocket, and Customer.io. Typed events with Zod validation, edge ingestion on Cloudflare Workers + Queues, Neon Postgres with Row-Level Security for multi-tenant isolation, and a Rust port via workers-rs in progress targeting sub-10ms p95 latency.
                   </p>
                   <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
-                    <Link href={klinder.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">Open the demo →</Link>
+                    <Link href="/projects/klinder-oss" className="font-semibold underline">Details →</Link>
+                    <Link href={klinder.primaryUrl} target="_blank" rel="noopener noreferrer" className="underline">Open the demo →</Link>
                     {klinder.comparison && (
                       <Link href={klinder.comparison.slug} className="underline">{klinder.comparison.label} →</Link>
                     )}
@@ -99,15 +104,51 @@ const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
 
                 <div className="flex flex-col gap-2">
                   <p>
-                    <Link href={ahtml.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{ahtml.name}</Link>: A shipped five-package npm scope (<span className="font-mono text-sm">@ahtmljs/*</span>) at v{ahtml.version} for making web content cheaply consumable by AI agents.{" "}
+                    <Link href="/projects/whatbroke" className="font-semibold underline">{whatbroke.name}</Link>: An open-source (Apache-2.0) terminal capture layer for local Node/TypeScript crashes. Wrap a dev command — <span className="font-mono text-sm">whatbroke run npm test</span> — and when it dies it packages the error, the diff since the code last worked, and a deterministically-ranked guess at the responsible file, secrets scrubbed by a mandatory redaction gate, then serves it to a coding agent (Claude Code, Cursor) over a read-only MCP server. The ranking intersects the crash stack with files changed since the last green commit — no LLM, no network, byte-identical output.
+                  </p>
+                  <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
+                    <Link href="/projects/whatbroke" className="font-semibold underline">Details →</Link>
+                    {whatbroke.links.npm && (
+                      <Link href={whatbroke.links.npm} target="_blank" rel="noopener noreferrer" className="underline">npm →</Link>
+                    )}
+                    {whatbroke.links.github && (
+                      <Link href={whatbroke.links.github} target="_blank" rel="noopener noreferrer" className="underline">GitHub →</Link>
+                    )}
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <p>
+                    <Link href="/projects/roy-ui" className="font-semibold underline">{royui.name}</Link>: An open-source (MIT) React component library for dashboards, admin panels, and internal tools. It ships a batteries-included <span className="font-mono text-sm">DataTable</span> — search, date-range and time filters, sort, pagination, drag-to-reorder and edge-drag-resize columns, hide/restore, CSV/JSON import-export — plus a custom date range picker with no <span className="font-mono text-sm">date-fns</span> dependency and an analog/digital time picker. TypeScript-first, RSC-safe, tree-shakable ESM, sub-12&nbsp;KB, zero config. A styled, install-don&apos;t-copy-paste alternative to shadcn/ui and TanStack Table for Next.js 15, Vite, Remix, and TanStack Start.
+                  </p>
+                  <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
+                    <Link href="/projects/roy-ui" className="font-semibold underline">Details →</Link>
+                    {royui.links.demo && (
+                      <Link href={royui.links.demo} target="_blank" rel="noopener noreferrer" className="underline">Live docs →</Link>
+                    )}
+                    {royui.links.npm && (
+                      <Link href={royui.links.npm} target="_blank" rel="noopener noreferrer" className="underline">npm →</Link>
+                    )}
+                    {royui.links.github && (
+                      <Link href={royui.links.github} target="_blank" rel="noopener noreferrer" className="underline">GitHub →</Link>
+                    )}
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <p>
+                    <Link href={ahtml.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{ahtml.name}</Link>: A shipped seven-package npm scope (<span className="font-mono text-sm">@ahtmljs/*</span>) at v{ahtml.version} for making web content cheaply consumable by AI agents.{" "}
                     <Link href="https://www.npmjs.com/package/@ahtmljs/schema" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/schema</Link> defines the canonical snapshot with RAG-ready <span className="font-mono text-sm">Document.chunks</span>;{" "}
                     <Link href="https://www.npmjs.com/package/@ahtmljs/next" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/next</Link> and{" "}
                     <Link href="https://www.npmjs.com/package/@ahtmljs/vite" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/vite</Link> emit MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot at <span className="font-mono text-sm">/.well-known/ahtml.json</span> with one config line;{" "}
                     <Link href="https://www.npmjs.com/package/@ahtmljs/agent" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/agent</Link> is the client SDK with ETag caching, dry-run safety gates, and hostile-agent regression tests;{" "}
-                    <Link href="https://www.npmjs.com/package/@ahtmljs/langchain" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/langchain</Link> turns any AHTML site into a LangChain.js <span className="font-mono text-sm">Document[]</span> with citation metadata. 143 passing tests across the scope.
+                    <Link href="https://www.npmjs.com/package/@ahtmljs/langchain" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/langchain</Link> turns any AHTML site into a LangChain.js <span className="font-mono text-sm">Document[]</span> with citation metadata;{" "}
+                    <Link href="https://www.npmjs.com/package/@ahtmljs/hono" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/hono</Link> mounts the same emitter on any Hono runtime (Node, Bun, Deno, Cloudflare Workers, AWS Lambda); and{" "}
+                    <Link href="https://www.npmjs.com/package/@ahtmljs/cli" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/cli</Link> ships <span className="font-mono text-sm">ahtml doctor</span> to validate the discovery chain in CI. 344 passing tests across the scope.
                   </p>
                   <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
-                    <Link href={ahtml.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">npm scope →</Link>
+                    <Link href="/projects/ahtml" className="font-semibold underline">Details →</Link>
+                    <Link href={ahtml.primaryUrl} target="_blank" rel="noopener noreferrer" className="underline">npm scope →</Link>
                     {ahtml.links.github && (
                       <Link href={ahtml.links.github} target="_blank" rel="noopener noreferrer" className="underline">GitHub →</Link>
                     )}
@@ -122,8 +163,9 @@ const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
                     <Link href={diffcore.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{diffcore.name}</Link>: A fast Rust + WebAssembly JSON diff engine on npm — written in Rust, compiled to WASM, it returns real <span className="font-mono text-sm">JSON Pointer</span> paths and decoded values (not opaque hashes), emits standard <span className="font-mono text-sm">RFC 6902 JSON Patch</span>, and ships <span className="font-mono text-sm">applyPatch</span> / <span className="font-mono text-sm">revertPatch</span>, three-way merge, undo/redo, a React hook, and a CLI. In head-to-head benchmarks it is <span className="italic">2.3–3.0×</span> faster than <span className="font-mono text-sm">fast-json-patch</span> and <span className="italic">4–8×</span> faster than <span className="font-mono text-sm">jsondiffpatch</span>. The wedge: two of the four leaders in the JSON-diff market (<span className="font-mono text-sm">fast-json-patch</span> last shipped 2022, <span className="font-mono text-sm">deep-diff</span> last 2018) are effectively stale — Diffcore is the actively-shipped, RFC-6902-compliant alternative.
                   </p>
                   <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
+                    <Link href="/projects/diffcore" className="font-semibold underline">Details →</Link>
                     {diffcore.links.npm && (
-                      <Link href={diffcore.links.npm} target="_blank" rel="noopener noreferrer" className="font-semibold underline">npm install diffcore →</Link>
+                      <Link href={diffcore.links.npm} target="_blank" rel="noopener noreferrer" className="underline">npm install diffcore →</Link>
                     )}
                     {diffcore.links.demo && (
                       <Link href={diffcore.links.demo} target="_blank" rel="noopener noreferrer" className="underline">Live demo →</Link>

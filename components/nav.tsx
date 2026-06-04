@@ -55,6 +55,12 @@ const Nav = () => {
           work
         </Link>
         <Link
+          href="/projects"
+          className="pointer-events-auto hidden sm:inline underline underline-offset-[3px] opacity-100 decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base"
+        >
+          projects
+        </Link>
+        <Link
           href="/writing"
           className="pointer-events-auto underline underline-offset-[3px] opacity-100 decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base"
         >

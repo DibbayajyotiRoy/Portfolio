@@ -222,6 +222,8 @@ await client.dispatch("contact", { dryRun: true });`}
               {" · "}
               <Link href="/klinder-vs-posthog" className="underline">Klinder-OSS vs PostHog</Link>
               {" · "}
+              <Link href="/projects/ahtml" className="underline">About AHTML</Link>
+              {" · "}
               <Link href="/work" className="underline">all projects</Link>
             </p>
           </TitledParagraph>

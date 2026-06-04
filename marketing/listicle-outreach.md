@@ -32,6 +32,24 @@ For each product, run these queries:
 - `"langchain document loaders" "list"`
 - `"how to make site llm-friendly"`
 
+### whatbroke
+
+- `"best mcp servers" 2026`
+- `"best mcp servers for claude code"`
+- `"best ai debugging tools" 2026`
+- `"ai debugging tools" javascript`
+- `"git bisect alternative"`
+- `"node crash reporting tools"`
+
+### Roy UI
+
+- `"best react component libraries" 2026`
+- `"shadcn alternatives" 2026`
+- `"best react data table"`
+- `"react ui library" "data table"`
+- `"best react date picker"`
+- `"next.js 15 component library"`
+
 For each query, capture the top 10 organic results that aren't the
 official tool sites. Those are your outreach list.
 

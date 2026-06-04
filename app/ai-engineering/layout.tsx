@@ -61,51 +61,10 @@ const collectionPageJsonLd = {
   "inLanguage": "en-US",
 };
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://dibbayajyoti.com/ai-engineering#faq",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Does Dibbayajyoti Roy have AI engineering experience?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. He built and shipped Learning Copilot on AWS Bedrock — multi-model fallback across Nova Pro and Nova Lite, streaming inference, and cost-aware token budgets — which placed top 500 in the AI for Bharat hackathon. He also built AHTML, a five-package npm scope for agentic web and RAG infrastructure.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "What is multi-model fallback?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Multi-model fallback is a resilience pattern: when the primary model is rate-limited or unavailable, requests fall back to a secondary model. Learning Copilot falls back from Nova Pro to Nova Lite so the assistant stays responsive under load.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "What is AHTML and how does it relate to RAG?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AHTML (Agentic HTML) is a five-package npm scope that emits a canonical, agent-ready snapshot of any website. Its schema ships RAG-ready document chunks with stable IDs and byte ranges, and a LangChain.js loader turns any AHTML site into vector-store-ready documents.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Does he work on AI search and crawler optimization?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. AHTML emits MCP, OpenAPI, JSON-LD, and llms.txt so AI crawlers and agents can read a site cheaply — work that overlaps directly with AI search optimization and generative-engine visibility.",
-      },
-    },
-  ],
-};
-
 export default function AiEngineeringLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       {children}
     </>
   );

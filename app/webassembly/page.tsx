@@ -119,6 +119,10 @@ export default function WebAssemblyPage() {
                 Rust engineering
               </Link>
               {" · "}
+              <Link href="/projects/diffcore" className="underline">
+                Diffcore (Rust/WASM)
+              </Link>
+              {" · "}
               <Link href="/diffcore-vs-jsondiffpatch" className="underline">
                 Diffcore vs jsondiffpatch
               </Link>

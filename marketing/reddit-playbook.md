@@ -93,6 +93,56 @@ Reply template:
 > it.) Curious whether your use case needs stable chunk identity — if
 > embeddings change every deploy that's exactly what it's for.
 
+### whatbroke
+
+Primary:
+- r/node (240K)
+- r/javascript (1.8M)
+- r/typescript (320K)
+- r/LocalLLaMA (370K) — the coding-agent crowd
+- r/webdev (2M)
+- r/programming (5M — high bar, only meaty content)
+
+Watch for:
+- "local dev crash", "which file broke", "git bisect alternative",
+  "debugging failing test", "MCP server for debugging", "crash capture",
+  "stack trace to file", "Claude Code / Cursor debugging workflow".
+
+Reply template (cold thread):
+> When a local test or process crashes, git bisect is slow and an LLM just
+> guesses. I built whatbroke: it records the last green (passing) commit,
+> then on a crash intersects the stack trace with files changed since that
+> commit to deterministically rank the file that broke — no LLM, no network,
+> byte-identical output, with a secret-redaction gate before anything leaves
+> your machine. It also serves the bundle to Claude Code / Cursor over a
+> read-only MCP server. It's Apache-2.0, free for commercial use.
+> (disclosure: I'm the author.) Complements Sentry/Jam/Replay — this is the
+> local-dev layer.
+
+### Roy UI
+
+Primary:
+- r/reactjs (450K)
+- r/nextjs (210K)
+- r/webdev (2M)
+- r/Frontend (300K)
+- r/javascript (1.8M)
+
+Watch for:
+- "react data table", "shadcn data table", "shadcn alternative",
+  "tanstack table too much boilerplate", "react date range picker",
+  "react time picker", "Next.js 15 component library", "CSV export table".
+
+Reply template:
+> If you want a DataTable that already does search, date-range + time
+> filters, sort, pagination, drag-reorder + resize columns, hide/restore,
+> and CSV/JSON import-export without wiring it all yourself, I built Roy UI.
+> It also ships a date range picker with no date-fns dependency and an
+> analog/digital time picker. RSC-safe, tree-shakable ESM, sub-12 KB, works
+> with Next.js 15 / Vite / Remix / TanStack Start. TanStack Table is still
+> the right call if you want full headless control. (disclosure: I'm the
+> author.) Docs at roy-ui-docs.vercel.app.
+
 ---
 
 ## Weekly cadence

@@ -74,7 +74,7 @@ const personJsonLd = {
   ],
   "url": "https://dibbayajyoti.com",
   "image": "https://dibbayajyoti.com/opengraph-image.png",
-  "description": "Full Stack Software Engineer specializing in Rust, React, and Next.js. Creator of Klinder-OSS (unified analytics + session replay + email SDK), diffcore (Rust/WASM npm), and the AHTML (Agentic HTML) proposal. Builds production-grade SaaS platforms at Yupcha Softwares.",
+  "description": "Full Stack Software Engineer specializing in Rust, React, and Next.js. Creator of Klinder-OSS (unified analytics + session replay + email SDK), diffcore (Rust/WASM npm), AHTML (the seven-package @ahtmljs agentic-web scope), whatbroke (git-anchored crash capture over MCP), and Roy UI (zero-config React component library). Builds production-grade SaaS platforms at Yupcha Softwares.",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://dibbayajyoti.com"
@@ -84,7 +84,14 @@ const personJsonLd = {
     "https://linkedin.com/in/dibbayajyoti-roy/",
     "https://x.com/dibbayajyoti",
     "https://medium.com/@dibbayajyoti",
-    "https://discord.com/users/om165_"
+    "https://discord.com/users/om165_",
+    "https://www.npmjs.com/org/ahtmljs",
+    "https://www.npmjs.com/package/@whatbroke/whatbroke",
+    "https://www.npmjs.com/package/@roy-ui/ui",
+    "https://www.npmjs.com/package/diffcore",
+    "https://github.com/DibbayajyotiRoy/whatbroke",
+    "https://github.com/DibbayajyotiRoy/RoyUI",
+    "https://github.com/DibbayajyotiRoy/AHTML"
   ],
   "jobTitle": "Full Stack Software Engineer",
   "hasOccupation": {

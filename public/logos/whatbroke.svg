@@ -1,0 +1,9 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="whatbroke">
+  <rect width="64" height="64" rx="14" fill="#080808"/>
+  <!-- cracked ring: the broken 'o' -->
+  <path d="M32 16a16 16 0 1 1-11.3 4.7" stroke="#FFB020" stroke-width="5" stroke-linecap="round"/>
+  <!-- the break -->
+  <path d="M20.7 20.7l5.7 5.7" stroke="#080808" stroke-width="5" stroke-linecap="round"/>
+  <!-- terminal block cursor -->
+  <rect x="29" y="29" width="6" height="6" rx="1" fill="#FFB020"/>
+</svg>

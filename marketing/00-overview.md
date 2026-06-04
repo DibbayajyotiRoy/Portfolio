@@ -2,9 +2,10 @@
 
 Goal: 100K monthly organic visitors to dibbayajyoti.com inside 12 months.
 
-Three product hubs anchor the strategy. The portfolio is the entity hub.
-Every piece of content links back to one or more product hubs and one or
-more comparison pages.
+Five product hubs anchor the strategy — Klinder-OSS, Diffcore, AHTML,
+whatbroke (Apache-2.0, fully open source, free for commercial use), and
+Roy UI (MIT). The portfolio is the entity hub. Every piece of content links
+back to one or more product hubs and one or more comparison pages.
 
 ## Site additions shipped this round
 
@@ -26,7 +27,7 @@ The rest of the path needs your hands and your accounts. The other docs
 in this folder are step-by-step playbooks for each:
 
 - [`gsc-setup-checklist.md`](./gsc-setup-checklist.md) — connect Search Console + GA4 + Bing Webmaster
-- [`directory-submissions.md`](./directory-submissions.md) — ~75 backlinks across the three products
+- [`directory-submissions.md`](./directory-submissions.md) — backlinks across the five products
 - [`reddit-playbook.md`](./reddit-playbook.md) — subreddits to monitor + reply templates
 - [`listicle-outreach.md`](./listicle-outreach.md) — listicles to get on + outreach template
 - [`keyword-targets.md`](./keyword-targets.md) — low-comp / high-intent terms + briefs

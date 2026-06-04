@@ -147,6 +147,14 @@ export default function RustPage() {
                 distributed systems
               </Link>
               {" · "}
+              <Link href="/projects/diffcore" className="underline">
+                Diffcore (Rust/WASM)
+              </Link>
+              {" · "}
+              <Link href="/projects/whatbroke" className="underline">
+                whatbroke
+              </Link>
+              {" · "}
               <Link href="/work" className="underline">
                 projects &amp; experience
               </Link>

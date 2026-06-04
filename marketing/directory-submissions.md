@@ -123,6 +123,67 @@ Tagline: *Five-package npm scope (@ahtmljs/*) that turns any site into something
 
 ---
 
+## whatbroke — `https://www.npmjs.com/package/@whatbroke/whatbroke`
+
+Tagline: *Apache-2.0 crash-capture CLI + read-only MCP server that records the last green commit and deterministically ranks the file that broke — no LLM, no network, byte-identical output.*
+
+Note: whatbroke is Apache-2.0 — fully open source, free for commercial use. It belongs in OSI-only awesome lists and can be described as "open source" without qualification.
+
+### Wave 1 — high-impact OSS + agent lists (week 1)
+
+1. **awesome-mcp-servers** — https://github.com/punkpeye/awesome-mcp-servers → PR under "Developer Tools" / "Debugging".
+2. **awesome-ai-agents** — search GitHub for `awesome-ai-agents` (e.g. e2b-dev/awesome-ai-agents) and PR every active one under "Tooling".
+3. **GitHub topics** — set `mcp`, `debugging`, `nodejs`, `typescript`, `crash-reporting` on the whatbroke repo.
+4. **Product Hunt** — https://producthunt.com → launch on a Tuesday with the "git-anchored, deterministic, no-LLM" angle.
+5. **devhunt** — https://devhunt.org → launch; lower bar than PH, dev-native audience.
+6. **lib.rs / npm Advisor** — Snyk Advisor (https://snyk.io/advisor/) + Socket.dev (https://socket.dev/) auto-index the npm package; verify both render.
+7. **Hacker News** (`Show HN: whatbroke — deterministic, git-anchored crash ranking over MCP, no LLM`).
+
+### Wave 2
+
+8. https://github.com/topics/mcp — keep the repo topic + a rich README.
+9. https://www.libhunt.com — under "Developer Tools" / "Debugging".
+10. https://reddit.com/r/node — link to the CLI with a one-paragraph "what it solves".
+11. https://reddit.com/r/LocalLLaMA — angle on the read-only MCP server for coding agents.
+12. https://js.coach — submit under "tool".
+13. dev.to / Hashnode — canonical "How whatbroke ranks the file that broke" post.
+
+### Wave 3 — long tail
+
+14–18. awesome-nodejs niche forks, awesome-claude / Cursor tool lists, awesome-devtools, awesome-cli-apps, MCP server directories as they emerge.
+
+---
+
+## Roy UI — `https://www.npmjs.com/package/@roy-ui/ui`
+
+Tagline: *MIT, zero-config React component library — batteries-included DataTable, a date range picker with no date-fns dependency, and an analog/digital time picker. RSC-safe, tree-shakable, sub-12 KB.*
+
+### Wave 1 — high-impact React/Next lists (week 1)
+
+1. **awesome-react-components (enaqx)** — https://github.com/enaqx/awesome-react → PR under "UI Components".
+2. **awesome-react-components (brillout)** — https://github.com/brillout/awesome-react-components → PR under "Table" / "UI Frameworks".
+3. **awesome-nextjs** — https://github.com/unicodeveloper/awesome-nextjs → PR under "Components / UI".
+4. **bestofjs.org** — https://bestofjs.org → PR under "UI Component Libraries".
+5. **JS.coach** — https://js.coach → submit under "react".
+6. **Socket.dev** — https://socket.dev → auto-indexes the npm package; verify scorecard.
+7. **libraries.io** — https://libraries.io → auto-indexes from npm; verify the listing renders.
+8. **Product Hunt** — https://producthunt.com → launch on a Tuesday with the "shadcn data table, zero config" angle.
+
+### Wave 2
+
+9. https://github.com/topics/react-components — set repo topics `react`, `datatable`, `date-picker`, `time-picker`, `nextjs`.
+10. https://www.libhunt.com — under "React" / "UI".
+11. https://openbase.com — claim the package, fill maintainer profile.
+12. https://reactresources.com — submit under "Components".
+13. https://devhunt.org — launch.
+14. dev.to / Hashnode — tutorial: "A zero-config DataTable for Next.js 15".
+
+### Wave 3 — long tail
+
+15–18. awesome-vite, awesome-remix, awesome-tanstack, component-gallery directories, UI-library comparison/listicle pages.
+
+---
+
 ## Submission etiquette
 
 - One PR per awesome-list, with a clear "fits under X section because Y" justification.

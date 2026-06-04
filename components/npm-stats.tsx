@@ -13,6 +13,8 @@ const PACKAGES: Pkg[] = [
   { name: "@ahtmljs/agent",     blurb: "agent SDK with dry-run safety gates",           npmId: "@ahtmljs/agent",     href: "https://www.npmjs.com/package/@ahtmljs/agent" },
   { name: "@ahtmljs/vite",      blurb: "Vite plugin · byte-parity with next plugin",    npmId: "@ahtmljs/vite",      href: "https://www.npmjs.com/package/@ahtmljs/vite" },
   { name: "@ahtmljs/langchain", blurb: "LangChain.js loader · citation metadata",       npmId: "@ahtmljs/langchain", href: "https://www.npmjs.com/package/@ahtmljs/langchain" },
+  { name: "@ahtmljs/hono",      blurb: "Hono adapter · Node · Bun · Deno · Workers",     npmId: "@ahtmljs/hono",      href: "https://www.npmjs.com/package/@ahtmljs/hono" },
+  { name: "@ahtmljs/cli",       blurb: "ahtml doctor · discovery-chain linter for CI",   npmId: "@ahtmljs/cli",       href: "https://www.npmjs.com/package/@ahtmljs/cli" },
   { name: "diffcore",           blurb: "Rust/WASM JSON diff · RFC 6902 · React + CLI",  npmId: "diffcore",           href: "https://rust-wasm-library.vercel.app" },
 ];
 

@@ -160,7 +160,7 @@ const ahtmlScopeJsonLd = {
   "author": { "@id": "https://dibbayajyoti.com/#person" },
   "description": ahtml.seoDescription,
   "keywords": ahtml.keywords,
-  "numberOfItems": 5,
+  "numberOfItems": 7,
   "inLanguage": "en",
 };
 
@@ -217,6 +217,28 @@ const ahtmlLangchainJsonLd = {
   "keywords": ["@ahtmljs/langchain", "LangChain document loader", "RAG loader", "vector store ingest", "citation metadata"],
 };
 
+const ahtmlHonoJsonLd = {
+  ...ahtmlBase,
+  "@id": "https://dibbayajyoti.com/work#ahtmljs-hono",
+  "name": "@ahtmljs/hono",
+  "url": "https://www.npmjs.com/package/@ahtmljs/hono",
+  "runtimePlatform": ["Hono 4+", "Node.js", "Bun", "Deno", "Cloudflare Workers", "AWS Lambda"],
+  "description":
+    "Hono.js adapter for AHTML. The same emitter handler mounts on any Hono app, so a single config line exposes MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot across every Hono runtime — Node, Bun, Deno, Cloudflare Workers, and AWS Lambda — with byte-identical output to the Next.js and Vite plugins.",
+  "keywords": ["@ahtmljs/hono", "AHTML Hono plugin", "MCP server Hono", "edge agent endpoint", "Cloudflare Workers agent", "Bun Deno agent"],
+};
+
+const ahtmlCliJsonLd = {
+  ...ahtmlBase,
+  "@id": "https://dibbayajyoti.com/work#ahtmljs-cli",
+  "name": "@ahtmljs/cli",
+  "url": "https://www.npmjs.com/package/@ahtmljs/cli",
+  "applicationCategory": "DeveloperApplication",
+  "description":
+    "Command-line doctor for AHTML. `ahtml doctor` walks a site's discovery chain end to end — /.well-known/ahtml.json, the snapshot, MCP, OpenAPI, and llms.txt — validates each against the AHTML lint rules, and exits non-zero on failure so it can be wired straight into CI.",
+  "keywords": ["@ahtmljs/cli", "ahtml doctor", "AHTML validator", "agent endpoint linter", "CI agent check"],
+};
+
 const projectsItemListJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -262,6 +284,8 @@ export default function WorkLayout({ children }: { children: React.ReactNode }) 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlAgentJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlViteJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlLangchainJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlHonoJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlCliJsonLd) }} />
       {children}
     </>
   );

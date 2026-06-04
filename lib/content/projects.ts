@@ -74,11 +74,11 @@ export const projects: Project[] = [
       github: "https://github.com/DibbayajyotiRoy/AHTML",
     },
     primaryUrl: "https://www.npmjs.com/org/ahtmljs",
-    version: "0.8.1",
+    version: "0.9.0",
     oneLiner:
-      "AI agents read websites slowly and expensively, so I built a five-package npm scope (@ahtmljs/*) that emits a canonical, agent-ready snapshot of any site from one config line.",
+      "AI agents read websites slowly and expensively, so I built a seven-package npm scope (@ahtmljs/*) that emits a canonical, agent-ready snapshot of any site from one config line.",
     seoDescription:
-      "AHTML (Agentic HTML) is a shipped five-package npm scope by Dibbayajyoti Roy for making web content cheaply consumable by AI agents — canonical semantic snapshot, Next.js + Vite plugins, agent client SDK, and LangChain.js loader. All packages live at @ahtmljs/* v0.8.1.",
+      "AHTML (Agentic HTML) is a shipped seven-package npm scope by Dibbayajyoti Roy for making web content cheaply consumable by AI agents — canonical semantic snapshot, Next.js + Vite + Hono adapters, agent client SDK, LangChain.js loader, and an `ahtml doctor` CLI. All packages live at @ahtmljs/* v0.9.0.",
     keywords: [
       "AHTML",
       "Agentic HTML",
@@ -134,6 +134,65 @@ export const projects: Project[] = [
       slug: "/diffcore-vs-jsondiffpatch",
       label: "Compare vs jsondiffpatch",
     },
+  },
+  {
+    id: "whatbroke",
+    name: "whatbroke",
+    tier: "product",
+    tagline: "git-anchored crash capture for AI coding agents",
+    links: {
+      npm: "https://www.npmjs.com/package/@whatbroke/whatbroke",
+      github: "https://github.com/DibbayajyotiRoy/whatbroke",
+    },
+    primaryUrl: "https://www.npmjs.com/package/@whatbroke/whatbroke",
+    version: "0.1.1",
+    oneLiner:
+      "When a test or server dies in my terminal I kept losing the context — what changed since it last worked, which file is to blame — so I built a CLI that wraps the command, captures a redacted, git-anchored crash bundle, and hands a ranked suspect to my coding agent over MCP.",
+    seoDescription:
+      "whatbroke is an open-source (Apache-2.0) terminal capture layer for local Node/TypeScript crashes by Dibbayajyoti Roy. It wraps a dev command, and when it crashes packages the error, the diff since the last green commit, and a deterministically-ranked guess at the responsible file — secrets scrubbed by a mandatory redaction gate — then serves it to a coding agent (Claude Code, Cursor) over a read-only MCP server. Ranking is deterministic with no LLM: it intersects the crash stack with files changed since the last passing run.",
+    keywords: [
+      "whatbroke",
+      "local dev crash",
+      "git-anchored debugging",
+      "deterministic bug ranking",
+      "crash context for AI agents",
+      "mcp claude code",
+      "mcp debugging",
+      "node crash capture",
+      "stack trace",
+      "redacted crash logs",
+    ],
+  },
+  {
+    id: "roy-ui",
+    name: "Roy UI",
+    tier: "product",
+    tagline: "zero-config React component library",
+    links: {
+      demo: "https://roy-ui-docs.vercel.app",
+      npm: "https://www.npmjs.com/package/@roy-ui/ui",
+      github: "https://github.com/DibbayajyotiRoy/RoyUI",
+    },
+    primaryUrl: "https://roy-ui-docs.vercel.app",
+    version: "0.0.12",
+    oneLiner:
+      "Every dashboard I built started by re-wiring TanStack Table or copy-pasting shadcn and bolting on filters, so I built one React component library that ships a batteries-included DataTable, a no-dependency date range picker, and an analog/digital time picker — installed, not copy-pasted, with zero config.",
+    seoDescription:
+      "Roy UI (@roy-ui/ui) is an open-source (MIT) React component library by Dibbayajyoti Roy for dashboards, admin panels, and internal tools. It ships a fully-featured DataTable (search, date-range and time filters, sort, pagination, drag-to-reorder and resize columns, CSV/JSON import-export), a custom date range picker with no date-fns dependency, an analog/digital time picker, and animated primitives. TypeScript-first, RSC-safe, tree-shakable ESM, sub-12 KB, zero config — a batteries-included shadcn/ui and TanStack Table alternative for Next.js 15, Vite, Remix, and TanStack Start.",
+    keywords: [
+      "react component library",
+      "react data table",
+      "react data grid",
+      "shadcn alternative",
+      "shadcn data table",
+      "tanstack table alternative",
+      "react date range picker",
+      "react time picker",
+      "analog time picker react",
+      "next.js 15 components",
+      "rsc-safe react library",
+      "zero config react ui",
+    ],
   },
   {
     id: "learning-copilot",

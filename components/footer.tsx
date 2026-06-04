@@ -1,6 +1,15 @@
 import Link from "next/link";
 import ThemeToggle from "./theme-toggle";
 import Image from "next/image";
+import { coreProducts } from "@/lib/content/projects";
+
+const faviconDomain = (url: string) => {
+  try {
+    return new URL(url).host;
+  } catch {
+    return "dibbayajyoti.com";
+  }
+};
 
 interface FooterProps {}
 
@@ -104,69 +113,31 @@ const Footer = ({}: FooterProps) => {
           </ul>
         </div>
         <div className="w-[200px] flex flex-col text-center md:items-start md:text-start">
-          <h2 className="text-lg font-semibold">Some of my work</h2>
+          <h2 className="text-lg font-semibold">Projects</h2>
           <ul className="font-light gap-1 flex flex-col items-center md:items-start mt-2">
+            {coreProducts.map((p) => (
+              <li key={p.id}>
+                <Link
+                  className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
+                  href={`/projects/${p.id}`}
+                >
+                  <div className="w-[20px] h-[20px] flex items-center justify-center">
+                    <Image
+                      alt={`${p.name} favicon`}
+                      src={`https://www.google.com/s2/favicons?domain=${faviconDomain(p.primaryUrl)}&sz=64`}
+                      width={18}
+                      height={18}
+                      unoptimized
+                    />
+                  </div>
+                  {p.name}
+                </Link>
+              </li>
+            ))}
             <li>
               <Link
                 className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="https://klinder-oss.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-[20px] h-[20px] flex items-center justify-center">
-                  <Image
-                    alt="Klinder-OSS favicon"
-                    src="https://www.google.com/s2/favicons?domain=klinder-oss.vercel.app&sz=64"
-                    width={18}
-                    height={18}
-                    unoptimized
-                  />
-                </div>
-                Klinder-OSS
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="https://rust-wasm-library.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-[20px] h-[20px] flex items-center justify-center">
-                  <Image
-                    alt="Diffcore favicon"
-                    src="https://www.google.com/s2/favicons?domain=rust-wasm-library.vercel.app&sz=64"
-                    width={18}
-                    height={18}
-                    unoptimized
-                  />
-                </div>
-                Diffcore
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="https://ai-for-bharat.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-[20px] h-[20px] flex items-center justify-center">
-                  <Image
-                    alt="Learning Copilot favicon"
-                    src="https://www.google.com/s2/favicons?domain=ai-for-bharat.vercel.app&sz=64"
-                    width={18}
-                    height={18}
-                    unoptimized
-                  />
-                </div>
-                Learning Copilot
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
-                href="/work"
+                href="/projects"
               >
                 <div className="w-[20px] h-[20px] flex items-center justify-center text-xs opacity-60">
                   →

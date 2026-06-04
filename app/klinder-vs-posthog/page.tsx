@@ -186,6 +186,8 @@ klinder.track("checkout_failed", {
               {" · "}
               <Link href="/ahtml-vs-llms-txt" className="underline">AHTML vs llms.txt</Link>
               {" · "}
+              <Link href="/projects/klinder-oss" className="underline">About Klinder-OSS</Link>
+              {" · "}
               <Link href="/work" className="underline">all projects</Link>
             </p>
           </TitledParagraph>

@@ -201,6 +201,8 @@ const next = applyPatch(before, patch);  // { user: { name: "Ada", roles: ["admi
               {" · "}
               <Link href="/ahtml-vs-llms-txt" className="underline">AHTML vs llms.txt</Link>
               {" · "}
+              <Link href="/projects/diffcore" className="underline">About Diffcore</Link>
+              {" · "}
               <Link href="/work" className="underline">all projects</Link>
             </p>
           </TitledParagraph>
