@@ -1,22 +1,10 @@
 import Link from "next/link";
+import type { NpmPackage } from "@/lib/content/projects";
 
-type Pkg = {
-  name: string;
-  blurb: string;
-  npmId: string;
-  href: string;
-};
-
-const PACKAGES: Pkg[] = [
-  { name: "@ahtmljs/schema",    blurb: "canonical agent snapshot + RAG chunks",         npmId: "@ahtmljs/schema",    href: "https://www.npmjs.com/package/@ahtmljs/schema" },
-  { name: "@ahtmljs/next",      blurb: "Next.js plugin → /.well-known/ahtml.json",      npmId: "@ahtmljs/next",      href: "https://www.npmjs.com/package/@ahtmljs/next" },
-  { name: "@ahtmljs/agent",     blurb: "agent SDK with dry-run safety gates",           npmId: "@ahtmljs/agent",     href: "https://www.npmjs.com/package/@ahtmljs/agent" },
-  { name: "@ahtmljs/vite",      blurb: "Vite plugin · byte-parity with next plugin",    npmId: "@ahtmljs/vite",      href: "https://www.npmjs.com/package/@ahtmljs/vite" },
-  { name: "@ahtmljs/langchain", blurb: "LangChain.js loader · citation metadata",       npmId: "@ahtmljs/langchain", href: "https://www.npmjs.com/package/@ahtmljs/langchain" },
-  { name: "@ahtmljs/hono",      blurb: "Hono adapter · Node · Bun · Deno · Workers",     npmId: "@ahtmljs/hono",      href: "https://www.npmjs.com/package/@ahtmljs/hono" },
-  { name: "@ahtmljs/cli",       blurb: "ahtml doctor · discovery-chain linter for CI",   npmId: "@ahtmljs/cli",       href: "https://www.npmjs.com/package/@ahtmljs/cli" },
-  { name: "diffcore",           blurb: "Rust/WASM JSON diff · RFC 6902 · React + CLI",  npmId: "diffcore",           href: "https://rust-wasm-library.vercel.app" },
-];
+// Live npm stats are revalidated periodically (ISR) rather than fetched on every
+// request — that keeps the product hub pages statically cached and fast while the
+// download counts still refresh a few times a day.
+const REVALIDATE_SECONDS = 60 * 60 * 6; // 6 hours
 
 type Stats = {
   version: string | null;
@@ -31,8 +19,8 @@ async function fetchStats(id: string): Promise<Stats> {
   const today = new Date().toISOString().slice(0, 10);
   try {
     const [manifestRes, rangeRes] = await Promise.all([
-      fetch(`https://registry.npmjs.org/${enc}`, { cache: "no-store" }),
-      fetch(`https://api.npmjs.org/downloads/range/2010-01-01:${today}/${id}`, { cache: "no-store" }),
+      fetch(`https://registry.npmjs.org/${enc}`, { next: { revalidate: REVALIDATE_SECONDS } }),
+      fetch(`https://api.npmjs.org/downloads/range/2010-01-01:${today}/${id}`, { next: { revalidate: REVALIDATE_SECONDS } }),
     ]);
 
     let version: string | null = null;
@@ -70,27 +58,40 @@ const fmtDate = (iso: string | null) => {
     : d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" });
 };
 
-export default async function NpmStats() {
-  const stats = await Promise.all(PACKAGES.map((p) => fetchStats(p.npmId)));
+export default async function NpmStats({
+  packages,
+}: {
+  packages: NpmPackage[];
+}) {
+  if (!packages || packages.length === 0) return null;
+
+  const stats = await Promise.all(packages.map((p) => fetchStats(p.npmId)));
   const grandTotal = stats.reduce((a, s) => a + (s.total ?? 0), 0);
-  const aggregatedCount = stats.filter((s) => s.total != null).length;
+  const multi = packages.length > 1;
 
   return (
     <div className="flex flex-col gap-5">
       <div className="flex items-baseline justify-between gap-4 flex-wrap">
         <p className="text-sm sm:text-base opacity-70">
-          Live npm stats — fetched fresh on every page load.
+          Live npm stats — refreshed a few times a day.
         </p>
         <p className="text-sm sm:text-base font-mono">
           <span className="font-semibold">{fmtNum(grandTotal)}</span>
-          <span className="opacity-60"> total downloads · </span>
-          <span className="font-semibold">{PACKAGES.length}</span>
-          <span className="opacity-60"> packages</span>
+          <span className="opacity-60">
+            {" "}
+            total downloads{multi ? " · " : ""}
+          </span>
+          {multi && (
+            <>
+              <span className="font-semibold">{packages.length}</span>
+              <span className="opacity-60"> packages</span>
+            </>
+          )}
         </p>
       </div>
 
       <ul className="flex flex-col divide-y divide-blackout/10 dark:divide-whiteout/10 border-y border-blackout/10 dark:border-whiteout/10">
-        {PACKAGES.map((pkg, i) => {
+        {packages.map((pkg, i) => {
           const s = stats[i];
           const date = fmtDate(s.firstPublishedAt);
           const isNew = s.total == null;

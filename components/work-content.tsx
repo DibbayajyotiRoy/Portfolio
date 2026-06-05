@@ -2,13 +2,9 @@
 
 import TitledParagraph from "@/components/titled-paragraph";
 import Link from "next/link";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { profile } from "@/lib/content/profile";
 import { getProject } from "@/lib/content/projects";
-
-interface WorkContentProps {
-  npmStatsSlot?: ReactNode;
-}
 
 // Project facts (links, comparison slugs) come from lib/content/projects.ts.
 // The prose below is this page's own — /about carries the short narrative form.
@@ -19,7 +15,7 @@ const whatbroke = getProject("whatbroke");
 const royui = getProject("roy-ui");
 const learningCopilot = getProject("learning-copilot");
 
-const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
+const WorkContent = () => {
   const [isTLDRShown, setIsTLDRShown] = useState(false);
 
   return (
@@ -187,11 +183,15 @@ const WorkContent = ({ npmStatsSlot }: WorkContentProps) => {
               </div>
             </TitledParagraph>
 
-            {npmStatsSlot && (
-              <TitledParagraph title="npm">
-                {npmStatsSlot}
-              </TitledParagraph>
-            )}
+            <TitledParagraph title="npm">
+              <p className="text-sm sm:text-base opacity-80">
+                Each product&apos;s live npm download counts are on its own page —{" "}
+                <Link href="/projects/whatbroke" className="underline">whatbroke</Link>,{" "}
+                <Link href="/projects/ahtml" className="underline">AHTML</Link>,{" "}
+                <Link href="/projects/roy-ui" className="underline">Roy UI</Link>,{" "}
+                <Link href="/projects/diffcore" className="underline">Diffcore</Link>.
+              </p>
+            </TitledParagraph>
 
             <TitledParagraph title="older work">
               <p className="text-sm sm:text-base opacity-80">

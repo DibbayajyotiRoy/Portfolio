@@ -19,6 +19,14 @@ export interface ProjectLinks {
   github?: string;
 }
 
+/** A published npm package shown in the live-stats block on a product hub. */
+export interface NpmPackage {
+  name: string;
+  blurb: string;
+  npmId: string;
+  href: string;
+}
+
 export interface Project {
   id: string;
   name: string;
@@ -36,6 +44,8 @@ export interface Project {
   seoDescription: string;
   keywords: string[];
   comparison?: { slug: string; label: string };
+  /** Published npm packages — drives the live-stats block on the product hub. */
+  npmPackages?: NpmPackage[];
 }
 
 export const projects: Project[] = [
@@ -90,6 +100,15 @@ export const projects: Project[] = [
       "llms.txt",
     ],
     comparison: { slug: "/ahtml-vs-llms-txt", label: "Compare vs llms.txt" },
+    npmPackages: [
+      { name: "@ahtmljs/schema",    blurb: "canonical agent snapshot + RAG chunks",       npmId: "@ahtmljs/schema",    href: "https://www.npmjs.com/package/@ahtmljs/schema" },
+      { name: "@ahtmljs/next",      blurb: "Next.js plugin → /.well-known/ahtml.json",    npmId: "@ahtmljs/next",      href: "https://www.npmjs.com/package/@ahtmljs/next" },
+      { name: "@ahtmljs/agent",     blurb: "agent SDK with dry-run safety gates",         npmId: "@ahtmljs/agent",     href: "https://www.npmjs.com/package/@ahtmljs/agent" },
+      { name: "@ahtmljs/vite",      blurb: "Vite plugin · byte-parity with next plugin",  npmId: "@ahtmljs/vite",      href: "https://www.npmjs.com/package/@ahtmljs/vite" },
+      { name: "@ahtmljs/langchain", blurb: "LangChain.js loader · citation metadata",     npmId: "@ahtmljs/langchain", href: "https://www.npmjs.com/package/@ahtmljs/langchain" },
+      { name: "@ahtmljs/hono",      blurb: "Hono adapter · Node · Bun · Deno · Workers",   npmId: "@ahtmljs/hono",      href: "https://www.npmjs.com/package/@ahtmljs/hono" },
+      { name: "@ahtmljs/cli",       blurb: "ahtml doctor · discovery-chain linter for CI", npmId: "@ahtmljs/cli",       href: "https://www.npmjs.com/package/@ahtmljs/cli" },
+    ],
   },
   {
     id: "diffcore",
@@ -134,6 +153,9 @@ export const projects: Project[] = [
       slug: "/diffcore-vs-jsondiffpatch",
       label: "Compare vs jsondiffpatch",
     },
+    npmPackages: [
+      { name: "diffcore", blurb: "Rust/WASM JSON diff · RFC 6902 · React + CLI", npmId: "diffcore", href: "https://www.npmjs.com/package/diffcore" },
+    ],
   },
   {
     id: "whatbroke",
@@ -161,6 +183,9 @@ export const projects: Project[] = [
       "node crash capture",
       "stack trace",
       "redacted crash logs",
+    ],
+    npmPackages: [
+      { name: "@whatbroke/whatbroke", blurb: "git-anchored crash bundles over MCP · CLI", npmId: "@whatbroke/whatbroke", href: "https://www.npmjs.com/package/@whatbroke/whatbroke" },
     ],
   },
   {
@@ -192,6 +217,9 @@ export const projects: Project[] = [
       "next.js 15 components",
       "rsc-safe react library",
       "zero config react ui",
+    ],
+    npmPackages: [
+      { name: "@roy-ui/ui", blurb: "zero-config React components · DataTable + pickers", npmId: "@roy-ui/ui", href: "https://www.npmjs.com/package/@roy-ui/ui" },
     ],
   },
   {

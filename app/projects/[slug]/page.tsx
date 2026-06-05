@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import TitledParagraph from "@/components/titled-paragraph";
+import NpmStats from "@/components/npm-stats";
 import { projects, getProject, type Project } from "@/lib/content/projects";
 import { hubs } from "@/lib/content/hubs";
 import { getAccent } from "@/lib/content/brand";
@@ -142,6 +143,12 @@ export default function ProjectHubPage({
               {s.body}
             </TitledParagraph>
           ))}
+
+          {project.npmPackages && project.npmPackages.length > 0 && (
+            <TitledParagraph title="npm">
+              <NpmStats packages={project.npmPackages} />
+            </TitledParagraph>
+          )}
 
           <TitledParagraph title="get it">
             <p className="flex flex-wrap gap-x-4 gap-y-1">

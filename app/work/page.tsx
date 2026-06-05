@@ -1,8 +1,10 @@
 import WorkContent from "@/components/work-content";
-import NpmStats from "@/components/npm-stats";
 
 // Metadata for this route lives in app/work/layout.tsx — a single definition,
 // so the title and description cannot diverge between the page and its layout.
+//
+// Live npm download stats moved to each product's own hub page
+// (/projects/<slug>) — see components/npm-stats.tsx, now per-product.
 
 export default function WorkPage() {
   return (
@@ -15,7 +17,7 @@ export default function WorkPage() {
           <span className="sm:w-auto w-full">Full Stack Software Engineer</span>
           <span className="opacity-50 w-full sm:w-auto text-[18px] sm:text-[22px]">Rust Enthusiast</span>
         </h1>
-        <WorkContent npmStatsSlot={<NpmStats />} />
+        <WorkContent />
       </section>
     </main>
   );
