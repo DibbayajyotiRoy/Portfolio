@@ -183,6 +183,18 @@ const WorkContent = () => {
               </div>
             </TitledParagraph>
 
+            <TitledParagraph title="open source">
+              <div className="flex flex-col gap-2">
+                <p>
+                  <Link href="https://github.com/reductstore/reductstore" target="_blank" rel="noopener noreferrer" className="font-semibold underline">ReductStore</Link> (Rust time-series database) — I contributed replication diagnostics: replication tasks now emit aggregated, status-keyed telemetry into a queryable system bucket, so users can build health dashboards and alerting on replication sync state instead of having no visibility. Reviewed and merged by the maintainer, shipping in v1.20.
+                </p>
+                <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
+                  <Link href="https://github.com/reductstore/reductstore/pull/1417" target="_blank" rel="noopener noreferrer" className="underline">PR #1417 →</Link>
+                  <Link href="https://github.com/reductstore/reductstore" target="_blank" rel="noopener noreferrer" className="underline">ReductStore repo →</Link>
+                </p>
+              </div>
+            </TitledParagraph>
+
             <TitledParagraph title="npm">
               <p className="text-sm sm:text-base opacity-80">
                 Each product&apos;s live npm download counts are on its own page —{" "}

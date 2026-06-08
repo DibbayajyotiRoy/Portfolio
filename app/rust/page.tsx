@@ -97,6 +97,26 @@ export default function RustPage() {
                 — a real-time Employee Management System with a Rust backend and
                 a React frontend, built to learn Rust web services end to end.
               </p>
+              <p>
+                <Link
+                  href="https://github.com/reductstore/reductstore/pull/1417"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline"
+                >
+                  ReductStore
+                </Link>{" "}
+                — I contributed replication diagnostics to ReductStore, a Rust
+                time-series database: status-keyed telemetry emitted to a
+                queryable system bucket so teams can monitor replication sync
+                state and alert on it. Reviewed and merged by the maintainer,
+                shipping in v1.20 — a distributed-systems contribution in the
+                Rust ecosystem. More on{" "}
+                <Link href="/distributed-systems" className="underline">
+                  distributed systems
+                </Link>
+                .
+              </p>
             </div>
           </TitledParagraph>
 
