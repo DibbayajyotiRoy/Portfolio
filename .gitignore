@@ -38,3 +38,4 @@ sitemap.xml
 .gitignore
 research
 /seo-report
+.gstack/

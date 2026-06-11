@@ -186,11 +186,11 @@ const WorkContent = () => {
             <TitledParagraph title="open source">
               <div className="flex flex-col gap-2">
                 <p>
-                  <Link href="https://github.com/reductstore/reductstore" target="_blank" rel="noopener noreferrer" className="font-semibold underline">ReductStore</Link> (Rust time-series database) — I contributed replication diagnostics: replication tasks now emit aggregated, status-keyed telemetry into a queryable system bucket, so users can build health dashboards and alerting on replication sync state instead of having no visibility. Reviewed and merged by the maintainer, shipping in v1.20.
+                  I contribute upstream to tools I use — most recently replication diagnostics for <Link href="/open-source" className="font-semibold underline">ReductStore</Link>, a Rust time-series database: merged by the maintainer, shipping in v1.20.
                 </p>
                 <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
+                  <Link href="/open-source" className="font-semibold underline">Contributions + maintainer endorsement →</Link>
                   <Link href="https://github.com/reductstore/reductstore/pull/1417" target="_blank" rel="noopener noreferrer" className="underline">PR #1417 →</Link>
-                  <Link href="https://github.com/reductstore/reductstore" target="_blank" rel="noopener noreferrer" className="underline">ReductStore repo →</Link>
                 </p>
               </div>
             </TitledParagraph>

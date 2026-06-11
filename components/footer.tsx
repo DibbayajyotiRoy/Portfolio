@@ -145,6 +145,17 @@ const Footer = ({}: FooterProps) => {
                 All projects
               </Link>
             </li>
+            <li>
+              <Link
+                className="transition-opacity flex items-center gap-2 opacity-75 hover:opacity-100 font-medium"
+                href="/open-source"
+              >
+                <div className="w-[20px] h-[20px] flex items-center justify-center text-xs opacity-60">
+                  →
+                </div>
+                Open source
+              </Link>
+            </li>
           </ul>
 
           <h2 className="text-lg font-semibold mt-6">Compare</h2>

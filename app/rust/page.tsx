@@ -111,7 +111,12 @@ export default function RustPage() {
                 queryable system bucket so teams can monitor replication sync
                 state and alert on it. Reviewed and merged by the maintainer,
                 shipping in v1.20 — a distributed-systems contribution in the
-                Rust ecosystem. More on{" "}
+                Rust ecosystem. Full story and the maintainer&apos;s
+                endorsement on{" "}
+                <Link href="/open-source" className="underline">
+                  /open-source
+                </Link>
+                . More on{" "}
                 <Link href="/distributed-systems" className="underline">
                   distributed systems
                 </Link>

@@ -124,9 +124,13 @@ export default function ProjectsIndexPage() {
           <Link href="/work" className="underline">
             /work
           </Link>
-          , or read{" "}
+          , read{" "}
           <Link href="/about" className="underline">
             about the maker
+          </Link>
+          , or see{" "}
+          <Link href="/open-source" className="underline">
+            contributions to other projects
           </Link>
           .
         </p>
