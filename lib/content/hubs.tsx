@@ -32,10 +32,72 @@ export interface HubContent {
 }
 
 const codeBlock = (code: string) => (
-  <pre className="text-sm bg-blackout/5 dark:bg-whiteout/5 rounded-md p-3 overflow-x-auto font-mono leading-relaxed">
+  <pre className="text-sm bg-blackout/5 dark:bg-whiteout/5 rounded-md p-3 font-mono leading-relaxed whitespace-pre-wrap break-all">
     {code}
   </pre>
 );
+
+const CheckIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    width="16"
+    height="16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="inline-block shrink-0 text-emerald-500"
+    role="img"
+    aria-label="yes"
+  >
+    <path d="M5 13l4 4L19 7" />
+  </svg>
+);
+
+const CrossIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    width="16"
+    height="16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="inline-block shrink-0 text-rose-500"
+    role="img"
+    aria-label="no"
+  >
+    <path d="M6 6l12 12M18 6L6 18" />
+  </svg>
+);
+
+/** Cells may be a bare "✅"/"❌" or an icon followed by a qualifier
+ *  ("❌ Wayland-only"). Render the leading mark as an SVG icon. */
+const renderCell = (cell: string): ReactNode => {
+  const yes = cell.replace(/^✅\s*/, "");
+  if (yes !== cell)
+    return yes ? (
+      <span className="inline-flex items-center gap-1.5">
+        <CheckIcon />
+        {yes}
+      </span>
+    ) : (
+      <CheckIcon />
+    );
+  const no = cell.replace(/^❌\s*/, "");
+  if (no !== cell)
+    return no ? (
+      <span className="inline-flex items-center gap-1.5">
+        <CrossIcon />
+        <span className="opacity-70">{no}</span>
+      </span>
+    ) : (
+      <CrossIcon />
+    );
+  return cell;
+};
 
 const Table = ({
   headers,
@@ -69,7 +131,7 @@ const Table = ({
                 key={i}
                 className={`py-2 ${i < r.length - 1 ? "pr-3" : ""} ${i === 0 ? "font-medium" : ""}`}
               >
-                {cell}
+                {renderCell(cell)}
               </td>
             ))}
           </tr>
