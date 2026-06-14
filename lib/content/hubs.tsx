@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import Link from "next/link";
+import { FrescoInstall } from "@/components/fresco-install";
 
 /**
  * Per-product hub content for /projects/<slug>.
@@ -258,31 +259,7 @@ export const hubs: Record<string, HubContent> = {
       },
       {
         title: "install",
-        body: (
-          <>
-            <p className="mb-2">One-liner:</p>
-            {codeBlock(
-              "curl -fsSL https://github.com/DibbayajyotiRoy/fresco/releases/latest/download/install.sh | bash"
-            )}
-            <p className="mt-3">
-              Or download the{" "}
-              <span className="font-mono text-sm">.deb</span> from{" "}
-              <Link
-                href="https://github.com/DibbayajyotiRoy/Fresco/releases/latest"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                Releases
-              </Link>{" "}
-              and double-click it. Then launch <strong>Fresco</strong> →{" "}
-              <span className="font-mono text-sm">+ Add</span> → pick a video →
-              drag a crop frame →{" "}
-              <span className="font-mono text-sm">Set as Wallpaper</span> → close
-              the window.
-            </p>
-          </>
-        ),
+        body: <FrescoInstall />,
       },
       {
         title: "faq",
