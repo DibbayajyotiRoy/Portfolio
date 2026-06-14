@@ -10,14 +10,14 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Projects — Dibbayajyoti Roy | whatbroke, AHTML, Roy UI, Klinder, Diffcore",
+  title: "Projects — Dibbayajyoti Roy | whatbroke, AHTML, Roy UI, Klinder, Diffcore, Fresco",
   description:
-    "Open-source products built by Dibbayajyoti Roy: whatbroke (git-anchored crash capture over MCP), AHTML (the agent-web contract layer), Roy UI (zero-config React components), Klinder-OSS (unified analytics SDK), and Diffcore (Rust/WASM JSON diff).",
+    "Open-source products built by Dibbayajyoti Roy: whatbroke (git-anchored crash capture over MCP), AHTML (the agent-web contract layer), Roy UI (zero-config React components), Klinder-OSS (unified analytics SDK), Diffcore (Rust/WASM JSON diff), and Fresco (live wallpapers for Linux).",
   alternates: { canonical: "/projects" },
   openGraph: {
     title: "Projects — Dibbayajyoti Roy",
     description:
-      "Open-source products: whatbroke, AHTML, Roy UI, Klinder-OSS, and Diffcore.",
+      "Open-source products: whatbroke, AHTML, Roy UI, Klinder-OSS, Diffcore, and Fresco.",
     url: `${baseUrl}/projects`,
     type: "website",
   },

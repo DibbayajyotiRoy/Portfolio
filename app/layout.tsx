@@ -74,7 +74,7 @@ const personJsonLd = {
   ],
   "url": "https://dibbayajyoti.com",
   "image": "https://dibbayajyoti.com/opengraph-image.png",
-  "description": "Full Stack Software Engineer specializing in Rust, React, and Next.js. Creator of Klinder-OSS (unified analytics + session replay + email SDK), diffcore (Rust/WASM npm), AHTML (the seven-package @ahtmljs agentic-web scope), whatbroke (git-anchored crash capture over MCP), and Roy UI (zero-config React component library). Builds production-grade SaaS platforms at Yupcha Softwares.",
+  "description": "Full Stack Software Engineer specializing in Rust, React, and Next.js. Creator of Klinder-OSS (unified analytics + session replay + email SDK), diffcore (Rust/WASM npm), AHTML (the seven-package @ahtmljs agentic-web scope), whatbroke (git-anchored crash capture over MCP), Roy UI (zero-config React component library), and Fresco (a Rust + GTK4 live-wallpaper app for Linux). Builds production-grade SaaS platforms at Yupcha Softwares.",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://dibbayajyoti.com"

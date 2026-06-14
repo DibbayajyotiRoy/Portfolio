@@ -223,6 +223,33 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "fresco",
+    name: "Fresco",
+    tier: "product",
+    tagline: "live wallpapers for Linux",
+    links: {
+      github: "https://github.com/DibbayajyotiRoy/Fresco",
+    },
+    primaryUrl: "https://github.com/DibbayajyotiRoy/Fresco",
+    version: "0.0.3",
+    oneLiner:
+      "Windows has Wallpaper Engine and macOS has Lively, but every Linux option was terminal-only or abandoned, so I built a proper GTK4 desktop app that sets any video, GIF, or image as a hardware-accelerated live wallpaper — install a .deb, pick media, done.",
+    seoDescription:
+      "Fresco is an open-source (GPL-3.0) live-wallpaper app for Linux by Dibbayajyoti Roy, written in Rust with GTK4/libadwaita. It sets looping videos (mp4/webm/mkv), animated GIFs, images, slideshows, and multi-video playlists as your desktop wallpaper on Pop!_OS, Ubuntu, Linux Mint, Debian, and elementary OS (X11), with GPU hardware-accelerated playback (VA-API / NVDEC), a drag-to-crop editor, a searchable wallpaper library, multi-monitor support, and battery-aware pausing. A simple GUI alternative to Wallpaper Engine and Lively for Linux.",
+    keywords: [
+      "live wallpaper linux",
+      "wallpaper engine linux",
+      "wallpaper engine alternative linux",
+      "video wallpaper linux",
+      "animated wallpaper ubuntu",
+      "live wallpaper pop os",
+      "linux desktop wallpaper app",
+      "gtk4 wallpaper",
+      "mpv wallpaper",
+      "lively wallpaper linux",
+    ],
+  },
+  {
     id: "learning-copilot",
     name: "Learning Copilot",
     tier: "hackathon",

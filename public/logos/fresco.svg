@@ -1,0 +1,15 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fresco">
+  <defs>
+    <linearGradient id="fresco" x1="16" y1="16" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10C7B6"/>
+      <stop offset="1" stop-color="#0A8F86"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#050507"/>
+  <!-- desktop / wallpaper frame -->
+  <rect x="14" y="16" width="36" height="26" rx="4" fill="url(#fresco)" fill-opacity="0.16" stroke="url(#fresco)" stroke-width="2"/>
+  <!-- play triangle = live video wallpaper -->
+  <path d="M29 24.5 L40.5 29 L29 33.5 Z" fill="url(#fresco)"/>
+  <!-- monitor stand -->
+  <rect x="28.5" y="46" width="7" height="2.5" rx="1.25" fill="#FFFFFF" fill-opacity="0.22"/>
+</svg>

@@ -13,6 +13,7 @@ const ahtml = getProject("ahtml");
 const diffcore = getProject("diffcore");
 const whatbroke = getProject("whatbroke");
 const royui = getProject("roy-ui");
+const fresco = getProject("fresco");
 const learningCopilot = getProject("learning-copilot");
 
 const WorkContent = () => {
@@ -55,6 +56,7 @@ const WorkContent = () => {
                 <Link href="/projects/roy-ui" className="font-semibold underline">{royui.name}</Link> (zero-config React component library),{" "}
                 <Link href="/projects/klinder-oss" className="font-semibold underline">{klinder.name}</Link> (unified analytics + session replay + email SDK),{" "}
                 <Link href="/projects/diffcore" className="font-semibold underline">{diffcore.name}</Link> (fast WebAssembly JSON diff — RFC 6902 Patch, React hook, CLI),{" "}
+                <Link href="/projects/fresco" className="font-semibold underline">{fresco.name}</Link> (live wallpapers for Linux — a Wallpaper Engine alternative in Rust + GTK4),{" "}
                 <Link href={learningCopilot.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{learningCopilot.name}</Link> (AWS Bedrock AI assistant, top 500 AI for Bharat hackathon).
               </p>
               <p>
@@ -168,6 +170,18 @@ const WorkContent = () => {
                     )}
                     {diffcore.comparison && (
                       <Link href={diffcore.comparison.slug} className="underline">{diffcore.comparison.label} →</Link>
+                    )}
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <p>
+                    <Link href="/projects/fresco" className="font-semibold underline">{fresco.name}</Link>: An open-source (GPL-3.0) live-wallpaper app for Linux, written in Rust with GTK4/libadwaita. It sets looping videos (mp4/webm/mkv), animated GIFs, images, slideshows, and multi-video playlists as your desktop wallpaper on Pop!_OS, Ubuntu, Mint, and Debian (X11), with GPU hardware-accelerated playback (VA-API / NVDEC) that keeps CPU near zero. A two-binary design — a closable GTK4 GUI plus a <span className="font-mono text-sm">frescod</span> daemon that paints a desktop-level X11 window with an embedded <span className="font-mono text-sm">mpv</span> per monitor — adds a drag-to-crop editor, a searchable wallpaper library, multi-monitor support, and battery-aware pausing. The simple GUI alternative to Wallpaper Engine and Lively for Linux.
+                  </p>
+                  <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
+                    <Link href="/projects/fresco" className="font-semibold underline">Details →</Link>
+                    {fresco.links.github && (
+                      <Link href={fresco.links.github} target="_blank" rel="noopener noreferrer" className="underline">GitHub →</Link>
                     )}
                   </p>
                 </div>

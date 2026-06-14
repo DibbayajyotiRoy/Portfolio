@@ -1,10 +1,10 @@
 /**
- * Brand system — one maker, five products, one neutral base, one accent each.
+ * Brand system — one maker, six products, one neutral base, one accent each.
  *
  * The umbrella brand is monochrome (whiteout #F7F7F7 / blackout #080808) with
  * Geist Sans + Geist Mono. `pink-400` is reserved for portfolio chrome only, so
  * no child product uses it. Each product owns exactly one accent; that single
- * rule is the whole brand architecture and is what makes the five read as a set.
+ * rule is the whole brand architecture and is what makes the six read as a set.
  *
  * Keyed by Project.id (see ./projects). Consumed by the project hub pages and by
  * the shared OpenGraph image template (lib/og.tsx).
@@ -25,6 +25,7 @@ export const accents: Record<string, ProductAccent> = {
   "roy-ui": { accent: "#2CCFFF", glyph: "▦", lane: "ui-cyan" },
   "klinder-oss": { accent: "#9D7BFF", glyph: "◉", lane: "analytics-violet" },
   diffcore: { accent: "#FF7A3C", glyph: "±", lane: "diff-rust" },
+  fresco: { accent: "#10C7B6", glyph: "▷", lane: "wallpaper-teal" },
 };
 
 /** Neutral base tokens shared by every surface. */

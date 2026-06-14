@@ -91,6 +91,168 @@ const Faq = ({ items }: { items: { q: string; a: string }[] }) => (
 );
 
 export const hubs: Record<string, HubContent> = {
+  fresco: {
+    metaTitle:
+      "Fresco — live wallpapers for Linux (a Wallpaper Engine alternative)",
+    metaDescription:
+      "Fresco is a free, open-source GTK4 app that sets videos, GIFs, images, slideshows, and playlists as hardware-accelerated live wallpapers on Pop!_OS, Ubuntu, Mint, and Debian (X11). A simple GUI alternative to Wallpaper Engine and Lively for Linux.",
+    kicker: "open-source product · Rust + GTK4 · GPL-3.0",
+    subtitle: "live wallpapers for Linux, made easy",
+    jsonLdType: "SoftwareApplication",
+    applicationCategory: "DesktopEnhancementApplication",
+    operatingSystem: "Linux (X11)",
+    programmingLanguage: ["Rust"],
+    sections: [
+      {
+        title: "tldr",
+        body: (
+          <p>
+            <strong>Fresco</strong> is a live-wallpaper app for Linux. Pick any
+            looping video (mp4/webm/mkv), animated GIF, image, image{" "}
+            <em>slideshow</em>, or multi-video <em>playlist</em>, click{" "}
+            <span className="font-mono text-sm">Set</span>, and close the app —
+            your wallpaper keeps playing and comes back on login. It runs as a
+            proper GTK4/libadwaita desktop app you install from a{" "}
+            <span className="font-mono text-sm">.deb</span>, with GPU
+            hardware-accelerated playback so CPU stays near zero. Windows has
+            Wallpaper Engine and macOS has Lively; Fresco is the simple,
+            open-source equivalent for Linux.
+          </p>
+        ),
+      },
+      {
+        title: "what it does",
+        body: (
+          <ul className="list-disc pl-5 flex flex-col gap-1">
+            <li><strong>Any media</strong> — looping video, animated GIF, static image, image slideshow, or a multi-video playlist.</li>
+            <li><strong>Hardware-accelerated</strong> — GPU video decode (VA-API / NVDEC) keeps CPU near zero without degrading quality.</li>
+            <li><strong>Drag-to-crop editor</strong> — frame exactly the region you want.</li>
+            <li><strong>Wallpaper library</strong> — saved thumbnails, recently-used, and search.</li>
+            <li><strong>Set &amp; forget</strong> — close the app and the wallpaper keeps playing; it&apos;s restored automatically on login.</li>
+            <li><strong>Battery-aware</strong> — pause on battery, or pause and resume any time.</li>
+            <li><strong>Multi-monitor</strong> — a different wallpaper per display.</li>
+          </ul>
+        ),
+      },
+      {
+        title: "how it works",
+        body: (
+          <p>
+            Fresco ships two binaries:{" "}
+            <span className="font-mono text-sm">fresco</span>, the GTK4/libadwaita
+            GUI you can close, and{" "}
+            <span className="font-mono text-sm">frescod</span>, a lightweight
+            daemon that paints a desktop-level X11 window with an embedded{" "}
+            <Link
+              href="https://mpv.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              mpv
+            </Link>{" "}
+            instance per monitor. Because the heavy lifting is mpv with hardware
+            decode, even a 4K video wallpaper costs almost no CPU. Run{" "}
+            <span className="font-mono text-sm">frescod --check</span> any time for
+            hardware-decode diagnostics.
+          </p>
+        ),
+      },
+      {
+        title: "fresco vs other linux options",
+        body: (
+          <Table
+            headers={["", "Fresco", "Hidamari", "mpvpaper", "Wallpaper Engine"]}
+            rows={[
+              ["GUI app (no terminal)", "✅", "✅", "❌", "✅"],
+              ["Works on GNOME / X11", "✅", "✅", "❌ Wayland-only", "❌"],
+              ["Drag-to-crop", "✅", "❌", "❌", "✅"],
+              ["Playlists", "✅", "❌", "manual", "✅"],
+              ["Wallpaper library", "✅", "❌", "❌", "✅"],
+              ["Free & open source", "✅", "✅", "✅", "❌ paid, Windows"],
+            ]}
+          />
+        ),
+      },
+      {
+        title: "supported distributions",
+        body: (
+          <>
+            <Table
+              headers={["Distro", "Versions"]}
+              rows={[
+                ["Pop!_OS", "22.04 (primary target)"],
+                ["Ubuntu", "22.04, 24.04"],
+                ["Linux Mint", "21, 22"],
+                ["Debian", "12 (Bookworm)"],
+                ["elementary OS", "7"],
+              ]}
+            />
+            <p className="text-sm opacity-70 mt-2">
+              An X11 session is required today. Wayland support is on the roadmap.
+            </p>
+          </>
+        ),
+      },
+      {
+        title: "install",
+        body: (
+          <>
+            <p className="mb-2">One-liner:</p>
+            {codeBlock(
+              "curl -fsSL https://github.com/DibbayajyotiRoy/fresco/releases/latest/download/install.sh | bash"
+            )}
+            <p className="mt-3">
+              Or download the{" "}
+              <span className="font-mono text-sm">.deb</span> from{" "}
+              <Link
+                href="https://github.com/DibbayajyotiRoy/Fresco/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                Releases
+              </Link>{" "}
+              and double-click it. Then launch <strong>Fresco</strong> →{" "}
+              <span className="font-mono text-sm">+ Add</span> → pick a video →
+              drag a crop frame →{" "}
+              <span className="font-mono text-sm">Set as Wallpaper</span> → close
+              the window.
+            </p>
+          </>
+        ),
+      },
+      {
+        title: "faq",
+        body: (
+          <Faq
+            items={[
+              {
+                q: "Is there a Wallpaper Engine for Linux?",
+                a: "Yes — Fresco is a free, open-source live-wallpaper app for Linux that works like Wallpaper Engine: pick a video and set it as your animated desktop background.",
+              },
+              {
+                q: "How do I set a video as my wallpaper on Ubuntu, Pop!_OS, or Debian?",
+                a: "Install the Fresco .deb, open it, click + Add, choose your video, and click Set as Wallpaper.",
+              },
+              {
+                q: "Does it work on Wayland or GNOME?",
+                a: "It runs on GNOME and any X11 session today (Pop!_OS, Ubuntu, Mint, Debian). Wayland support is on the roadmap.",
+              },
+              {
+                q: "Will a video wallpaper drain my battery or CPU?",
+                a: "Fresco uses GPU hardware decoding so CPU stays near zero, and it can automatically pause on battery.",
+              },
+              {
+                q: "What media formats are supported?",
+                a: "mp4, webm, mkv, avi, and mov video, plus animated GIFs, static images (jpg/png/webp), folders as slideshows, and multi-video playlists.",
+              },
+            ]}
+          />
+        ),
+      },
+    ],
+  },
   whatbroke: {
     metaTitle:
       "whatbroke — git-anchored crash capture for AI coding agents (CLI + MCP)",

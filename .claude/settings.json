@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(grep -q 'href=\"/__TRACKED_VAR__\"' .next/server/app/writing.html)",
-      "Bash(curl -sS \"https://dibbayajyoti.com/sitemap.xml\")"
+      "Bash(curl -sS \"https://dibbayajyoti.com/sitemap.xml\")",
+      "Bash(git diff-tree *)"
     ]
   }
 }

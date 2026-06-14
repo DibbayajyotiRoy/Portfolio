@@ -14,7 +14,7 @@ export default function OgImage() {
   return renderOgImage({
     kicker: "projects · open source",
     title: "Projects",
-    subtitle: "whatbroke · AHTML · Roy UI · Klinder · Diffcore",
+    subtitle: "whatbroke · AHTML · Roy UI · Klinder · Diffcore · Fresco",
     accent: base.whiteout,
     glyph: "▦",
   });
