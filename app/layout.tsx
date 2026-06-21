@@ -203,7 +203,7 @@ export default function RootLayout({
                 <ul>
                   <li><strong>Klinder-OSS</strong> — Open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install. PostHog + LogRocket + Customer.io combined. <a href="https://klinder-oss.vercel.app">klinder-oss.vercel.app</a></li>
                   <li><strong>diffcore</strong> — Rust + WebAssembly diff library on npm, built for fast and compact diffs in production JavaScript bundles. <a href="https://www.npmjs.com/package/diffcore">npmjs.com/package/diffcore</a></li>
-                  <li><strong>AHTML (Agentic HTML)</strong> — In-progress proposed format to replace HTML for AI agent consumption: efficient token usage, faster crawls, and a substrate for owners to monetize agent-readable data.</li>
+                  <li><strong>AHTML (Agentic HTML)</strong> — Shipped seven-package npm scope (@ahtmljs/*, v0.9.0) that makes web content cheaply consumable by AI agents: a canonical agent snapshot, Next.js / Vite / Hono adapters, an agent SDK with dry-run safety gates, a LangChain.js loader, and an <code>ahtml doctor</code> CLI. <a href="https://www.npmjs.com/org/ahtmljs">npmjs.com/org/ahtmljs</a></li>
                   <li><strong>Learning Copilot</strong> — AWS Bedrock AI learning assistant (Nova Pro / Nova Lite multi-model fallback). Top 500 AI for Bharat hackathon. <a href="https://ai-for-bharat.vercel.app">ai-for-bharat.vercel.app</a></li>
                   <li>EMS — Real-time Employee Management System in Rust and React.</li>
                   <li>BloodLink — Blood donor-seeker matching platform; ~100 pilot users.</li>

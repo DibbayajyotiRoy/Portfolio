@@ -42,61 +42,10 @@ const collectionPageJsonLd = {
   "inLanguage": "en-US",
 };
 
-const redisArticleJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "@id": "https://dibbayajyoti.com/writing#redis-polling-bottleneck",
-  "headline": "How I Fixed a Redis Polling Bottleneck That Was Timing Out in Production",
-  "url": "https://medium.com/p/afae306668ba",
-  "mainEntityOfPage": "https://medium.com/p/afae306668ba",
-  "datePublished": "2026-02-01",
-  "inLanguage": "en",
-  "description":
-    "A production incident — naive SCAN over a remote Redis timed out at 100s. Switched to batched MGET with client-side filtering for ~90% efficiency improvement and zero timeouts.",
-  "keywords": ["Redis", "SCAN", "MGET", "production debugging", "performance", "Node.js"],
-  "author": { "@id": "https://dibbayajyoti.com/#person" },
-  "publisher": { "@id": "https://dibbayajyoti.com/#person" },
-  "isPartOf": { "@id": "https://dibbayajyoti.com/writing#collection" },
-};
-
-const seoArticleJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "@id": "https://dibbayajyoti.com/writing#nextjs-seo-2026",
-  "headline": "Next.js SEO in 2026: A Developer's Practical Guide",
-  "url": "https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22",
-  "mainEntityOfPage":
-    "https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22",
-  "datePublished": "2026-03-01",
-  "inLanguage": "en",
-  "description":
-    "Practical guide covering structured data (JSON-LD), llms.txt for AI crawlers, zero-click optimization, sitemap configuration, and what actually moves the needle for Next.js sites in 2026.",
-  "keywords": ["Next.js", "SEO", "JSON-LD", "llms.txt", "AI crawlers", "Core Web Vitals"],
-  "author": { "@id": "https://dibbayajyoti.com/#person" },
-  "publisher": { "@id": "https://dibbayajyoti.com/#person" },
-  "isPartOf": { "@id": "https://dibbayajyoti.com/writing#collection" },
-};
-
-const itemListJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "@id": "https://dibbayajyoti.com/writing#articles",
-  "name": "Articles by Dibbayajyoti Roy",
-  "itemListOrder": "https://schema.org/ItemListOrderDescending",
-  "numberOfItems": 2,
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "item": { "@id": "https://dibbayajyoti.com/writing#nextjs-seo-2026" } },
-    { "@type": "ListItem", "position": 2, "item": { "@id": "https://dibbayajyoti.com/writing#redis-polling-bottleneck" } },
-  ],
-};
-
 export default function WritingLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(redisArticleJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seoArticleJsonLd) }} />
       {children}
     </>
   );

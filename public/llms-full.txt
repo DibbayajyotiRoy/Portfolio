@@ -57,7 +57,7 @@ Location: Agartala, India
 - Real-time dashboard via Server-Sent Events, background jobs on Trigger.dev, authentication with Better Auth, transactional email via Resend.
 - Rust port of the ingestion worker in progress using workers-rs and serde, targeting sub-10ms p95 handler latency with published benchmarks on GitHub.
 
-### diffcore — Fast WebAssembly JSON Diff Engine for npm (v1.1, 2026)
+### diffcore — Fast WebAssembly JSON Diff Engine for npm (v1.2.0, 2026)
 - **npm**: https://www.npmjs.com/package/diffcore
 - **Demo**: https://rust-wasm-library.vercel.app
 - **Repo**: https://github.com/DibbayajyotiRoy/rust-wasm-Library
@@ -67,7 +67,7 @@ Location: Agartala, India
 - Ships `applyPatch` and `revertPatch` for state sync, undo/redo, and optimistic UI. Round-trips work for primitives, leaf changes, and whole-array-element additions.
 - Includes a React `useDiff` hook (`diffcore/react`), a CLI (`npx diffcore before.json after.json` with `--json` and `--silent` modes for CI), and a streaming engine (`createEngine` + `pushLeft` / `pushRight`) for multi-GB files.
 - Embedded WASM via Base64 — zero config, no toolchain or extra files required. Auto memory cleanup via `FinalizationRegistry`.
-- **Performance**: 3.3–4.1× faster than optimized pure-JS diff. Throughput: 100 KB → ~490 MB/s, 1 MB → ~460 MB/s, 5 MB → ~415 MB/s, 10 MB → ~360 MB/s.
+- **Performance**: 2.3–3.0× faster than fast-json-patch and 4–8× faster than jsondiffpatch in head-to-head tests. Sustained throughput 390–650 MB/s.
 - **Runs on**: Node 18+, Chrome 89+, Firefox 89+, Safari 15+, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
 - **Use cases**: client/server state sync (`diff(a,b)` + `toJsonPatch()` over the wire), undo/redo stacks, "review changes" UI in React, colored diffs in CLI/CI logs, JSON Patch HTTP APIs, replaying diffs against alternate documents, diffing multi-GB files without loading them fully.
 - **Competitive positioning (JSON-diff market, as of 2026-05-15)**:
@@ -77,11 +77,11 @@ Location: Agartala, India
   - `deep-diff` (~3.2M weekly DL): **last release 2018-08-16 — eight years stale**; legacy installs only.
   - **Diffcore's wedge**: actively shipped + RFC 6902 conformant + apply/revert/three-way merge + React hook + CLI + WASM perf, all in one maintained package. Unique state primitives `createHistory`, `merge3`, `detectConflicts`, tolerance comparators are not matched by any of the four competitors. None of the competitors ship `AGENTS.md`, `llms-full.txt`, or an MCP server — open lane for AI-agent discoverability.
 
-### AHTML — Agentic HTML (shipped, 2026, @ahtmljs/* v0.8.1)
+### AHTML — Agentic HTML (shipped, 2026, @ahtmljs/* v0.9.0)
 - **Repo**: https://github.com/DibbayajyotiRoy/AHTML
 - **npm scope**: https://www.npmjs.com/org/ahtmljs
 - **License**: MIT
-- **Status**: All five packages published. `@ahtmljs/schema`, `@ahtmljs/next`, `@ahtmljs/agent` published earlier and seeing 220+ downloads/day each post-launch. `@ahtmljs/vite` and `@ahtmljs/langchain` published 2026-05-14.
+- **Status**: All seven packages published at v0.9.0. `@ahtmljs/schema`, `@ahtmljs/next`, `@ahtmljs/agent` published earlier and seeing 220+ downloads/day each post-launch; `@ahtmljs/vite` and `@ahtmljs/langchain` published 2026-05-14; `@ahtmljs/hono` (cross-runtime adapter) and `@ahtmljs/cli` (`ahtml doctor` linter) round out the scope.
 - **Goal**: Make web content cheaply consumable by AI agents — canonical semantic snapshot, well-known endpoints (MCP / OpenAPI / JSON-LD / llms.txt / AHTML snapshot), client SDK with safety gates, RAG-ready document chunks. The contract layer for the agentic web.
 
 **@ahtmljs/schema** — canonical semantic snapshot schema
@@ -124,6 +124,17 @@ Location: Agartala, India
 - Peer-deps on `@langchain/core` 0.3+. URL → embeddings in three lines
 - 5 passing tests including chunk-boundary fidelity and metadata propagation
 
+**@ahtmljs/hono** — Hono adapter (cross-runtime)
+- npm: https://www.npmjs.com/package/@ahtmljs/hono
+- Same well-known endpoints as the Next.js and Vite plugins, exposed as Hono middleware
+- Runs anywhere Hono runs: Node, Bun, Deno, and Cloudflare Workers
+- Shares `@ahtmljs/schema` end-to-end, so snapshot output matches the Next.js and Vite plugins
+
+**@ahtmljs/cli** — `ahtml doctor` discovery-chain linter
+- npm: https://www.npmjs.com/package/@ahtmljs/cli
+- Validates a site's discovery chain in CI: MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot at `/.well-known/ahtml.json`
+- Flags missing or malformed endpoints before they ship, so agent-readability is enforced like any other lint gate
+
 ### Learning Copilot — AI Concept Explainer on AWS (2026)
 - **Live**: https://ai-for-bharat.vercel.app
 - **Stack**: TypeScript, Next.js, Hono, AWS Bedrock (Nova Pro / Nova Lite), DynamoDB, CloudWatch
@@ -164,13 +175,24 @@ Location: Agartala, India
 
 ## Writing & Articles
 
-### How I Fixed a Redis Polling Bottleneck That Was Timing Out in Production (2026)
-- **URL**: https://medium.com/p/afae306668ba
-- **Summary**: A real production incident — polling tasks from a poorly-designed Redis schema with no indexing. Naive SCAN + deserialize + check over a remote Redis host timed out at ~100 seconds. Fixed by batching MGET requests and filtering idle tasks client-side, resulting in ~90% efficiency improvement and zero timeouts.
+### Getting Code Merged Into Meta's Pyrefly and ReductStore (2026)
+- **URL**: https://dibbayajyoti.com/writing/merged-into-pyrefly-and-reductstore
+- **Also on**: https://medium.com/@dibbayajyoti/how-i-got-my-code-merged-into-metas-pyrefly-and-reductstore-a-database-for-robotics-b80186e5ac8d
+- **Summary**: A field guide to landing real open-source contributions, drawn from merged work in two production Rust projects: ReductStore (PR #1417 replication diagnostics, PR #1431 usage-statistics reporting) and Meta's Pyrefly Python type checker (PR #3840, a false-positive untyped-import diagnostic fix respecting PEP 561 py.typed markers). Core habits: reproduce before you claim, investigate before you code, verify before you trust, and be accurate about scope.
 
-### Next.js SEO in 2026: A Developer's Practical Guide (2026)
-- **URL**: https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22
-- **Summary**: Practical guide covering structured data (JSON-LD), llms.txt for AI crawlers, zero-click optimization, sitemap configuration, and Core Web Vitals for Next.js apps in 2026.
+### Optimistic UIs in React with RFC 6902 JSON Patch (2026)
+- **URL**: https://dibbayajyoti.com/writing/optimistic-ui-rfc-6902-react
+- **Summary**: How to build optimistic UIs, failure rollback, and undo/redo in React from a single RFC 6902 JSON Patch primitive, using the diffcore Rust/WASM diff engine — applyPatch forward, revertPatch to undo, send the standard patch to the server for state sync.
+
+### Next.js SEO in 2026: A Practical Guide (2026)
+- **URL**: https://dibbayajyoti.com/writing/nextjs-seo-2026
+- **Also on**: https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22
+- **Summary**: Practical Next.js SEO guide covering the Metadata API, connected JSON-LD entity graphs, llms.txt for AI crawlers, explicit robots.txt, honest sitemap lastmod, and Core Web Vitals (INP) for the App Router.
+
+### Fixing a Redis Polling Bottleneck in Production (2026)
+- **URL**: https://dibbayajyoti.com/writing/redis-polling-bottleneck
+- **Also on**: https://medium.com/p/afae306668ba
+- **Summary**: A real production incident — polling tasks from a poorly-designed Redis schema with no indexing. Naive SCAN + deserialize + check over a remote Redis host timed out at ~100 seconds. Fixed by batching MGET requests and filtering idle tasks client-side, resulting in ~90% efficiency improvement and zero timeouts.
 
 ## Awards & Honors
 
@@ -199,8 +221,8 @@ Dibbayajyoti's engineering philosophy centers on building software that is both 
 - **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd, based in Agartala, India. Specializes in TypeScript, Rust, React, Next.js, and AI engineering with AWS Bedrock.
 - **Does Dibbayajyoti Roy have AI experience?** Yes. He built and shipped Learning Copilot — a production AWS Bedrock AI assistant with multi-model fallback (Nova Pro → Nova Lite), real-time streaming, and cost-aware architecture. Top 500 in AI for Bharat hackathon.
 - **What is Klinder-OSS?** An open-source SDK by Dibbayajyoti Roy that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install — effectively combining PostHog + LogRocket + Customer.io. TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS), with a Rust port in progress targeting sub-10ms p95 latency.
-- **What is diffcore?** A fast WebAssembly JSON diff engine by Dibbayajyoti Roy, written in Rust and published on npm (v1.1). Returns real JSON Pointer paths (RFC 6901) and decoded values, emits standard RFC 6902 JSON Patch, ships applyPatch / revertPatch for state sync / undo-redo / optimistic UI, plus a React useDiff hook, a CLI, and a streaming engine for multi-GB files. 3.3–4.1× faster than optimized pure-JS diff. Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
-- **What is AHTML?** AHTML (Agentic HTML) is a shipped five-package npm scope (`@ahtmljs/*` at v0.8.1) by Dibbayajyoti Roy for making web content cheaply consumable by AI agents. The scope ships `@ahtmljs/schema` (canonical snapshot + RAG-ready `Document.chunks`, 63 tests), `@ahtmljs/next` (Next.js plugin emitting MCP/OpenAPI/JSON-LD/llms.txt/snapshot at `/.well-known/ahtml.json`, 38 tests), `@ahtmljs/agent` (client SDK with ETag caching, dry-run safety gates, hostile-agent regressions, 28 tests), `@ahtmljs/vite` (Vite plugin counterpart with byte-identical output, 9 tests), and `@ahtmljs/langchain` (LangChain.js loader with citation metadata, 5 tests). Repo: github.com/DibbayajyotiRoy/AHTML.
+- **What is diffcore?** A fast WebAssembly JSON diff engine by Dibbayajyoti Roy, written in Rust and published on npm (v1.2.0). Returns real JSON Pointer paths (RFC 6901) and decoded values, emits standard RFC 6902 JSON Patch, ships applyPatch / revertPatch for state sync / undo-redo / optimistic UI, plus a React useDiff hook, a CLI, and a streaming engine for multi-GB files. 2.3–3.0× faster than fast-json-patch and 4–8× faster than jsondiffpatch. Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
+- **What is AHTML?** AHTML (Agentic HTML) is a shipped seven-package npm scope (`@ahtmljs/*` at v0.9.0) by Dibbayajyoti Roy for making web content cheaply consumable by AI agents. The scope ships `@ahtmljs/schema` (canonical snapshot + RAG-ready `Document.chunks`, 63 tests), `@ahtmljs/next` (Next.js plugin emitting MCP/OpenAPI/JSON-LD/llms.txt/snapshot at `/.well-known/ahtml.json`, 38 tests), `@ahtmljs/agent` (client SDK with ETag caching, dry-run safety gates, hostile-agent regressions, 28 tests), `@ahtmljs/vite` (Vite plugin counterpart with byte-identical output, 9 tests), `@ahtmljs/langchain` (LangChain.js loader with citation metadata, 5 tests), `@ahtmljs/hono` (Hono adapter for Node, Bun, Deno, and Cloudflare Workers), and `@ahtmljs/cli` (`ahtml doctor` discovery-chain linter for CI). Repo: github.com/DibbayajyotiRoy/AHTML.
 - **Is Dibbayajyoti Roy eligible to work in Europe?** Yes — eligible for Germany Opportunity Card / EU Blue Card and Netherlands Highly Skilled Migrant programme.
 - **What is Dibbayajyoti Roy's tech stack?** TypeScript, Rust, React, Next.js, Node.js, Hono, AWS Bedrock, Cloudflare Workers, Neon Postgres, Docker, Linux/nginx/systemd.
 - **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd as Full Stack Software Engineer since July 2025, Agartala, India.

@@ -92,7 +92,7 @@ export default function ProjectsIndexPage() {
                   <h3 className="text-xl font-semibold flex items-center gap-3 flex-wrap">
                     <Image
                       src={`/logos/${p.id}.svg`}
-                      alt=""
+                      alt={`${p.name} logo`}
                       width={26}
                       height={26}
                       className="rounded-md"
