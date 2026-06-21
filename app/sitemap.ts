@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { coreProducts } from '@/lib/content/projects'
+import articles from '@/lib/content/articles'
 
 // IMPORTANT: do NOT use `new Date()` here. A fresh `lastmod` on every build tells
 // Google every page changed every deploy — it learns to distrust the signal and
@@ -19,10 +20,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]
 
+  // Article detail pages — derived from the articles module so the sitemap
+  // can't drift out of sync when an article is added or its date changes.
+  const articlePages = articles.map((a) => ({
+    path: `/writing/${a.slug}`,
+    lastModified: a.dateModified ?? a.datePublished,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   const pages = [
     { path: '', lastModified: '2026-05-25', changeFrequency: 'monthly' as const, priority: 1 },
     { path: '/work', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.9 },
     ...hubPages,
+    ...articlePages,
     { path: '/open-source', lastModified: '2026-06-10', changeFrequency: 'monthly' as const, priority: 0.85 },
     { path: '/about', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.8 },
     { path: '/writing', lastModified: '2026-05-31', changeFrequency: 'weekly' as const, priority: 0.8 },

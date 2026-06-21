@@ -1,40 +1,33 @@
 import Link from "next/link";
 import TitledParagraph from "@/components/titled-paragraph";
-import { ExternalLink } from "lucide-react";
+import articles from "@/lib/content/articles";
 
-type Article = {
-  title: string;
-  url: string;
-  date: string;
-  readingTime: string;
-  excerpt: string;
-  tags: string[];
+const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "https://dibbayajyoti.com";
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${baseUrl}/writing#articles`,
+  name: "Articles by Dibbayajyoti Roy",
+  itemListOrder: "https://schema.org/ItemListOrderDescending",
+  numberOfItems: articles.length,
+  itemListElement: articles.map((a, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: `${baseUrl}/writing/${a.slug}`,
+    name: a.title,
+  })),
 };
-
-const articles: Article[] = [
-  {
-    title: "Next.js SEO in 2026: A Developer's Practical Guide",
-    url: "https://medium.com/@dibbayajyoti/next-js-seo-in-2026-a-developers-practical-guide-63449d44be22",
-    date: "March 2026",
-    readingTime: "9 min read",
-    excerpt:
-      "The Next.js Metadata API, structured data (JSON-LD), llms.txt for AI crawlers, Core Web Vitals, sitemap optimization, and what actually moves the needle for Next.js SEO in 2026.",
-    tags: ["Next.js SEO", "Metadata API", "JSON-LD", "llms.txt", "Core Web Vitals"],
-  },
-  {
-    title: "How I Fixed a Redis Polling Bottleneck That Was Timing Out in Production",
-    url: "https://medium.com/p/afae306668ba",
-    date: "February 2026",
-    readingTime: "6 min read",
-    excerpt:
-      "A Redis polling bottleneck in a Node.js service: a naive SCAN over a remote Redis timed out at 100 seconds in production. Switched to batched MGET with client-side filtering for a ~90% efficiency improvement and zero timeouts.",
-    tags: ["Redis", "Distributed Systems", "Performance", "Debugging", "Node.js"],
-  },
-];
 
 export default function WritingPage() {
   return (
     <main className="flex my-[140px] sm:my-[200px] justify-end sm:justify-center">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <section className="max-w-[626px] pl-9 pr-6 sm:pl-0 sm:pr-0 sm:px-10">
         <h2 className="font-mono uppercase text-sm font-semibold opacity-25">
           archive
@@ -69,30 +62,33 @@ export default function WritingPage() {
               <Link href="/webassembly" className="underline">
                 WebAssembly
               </Link>{" "}
-              performance work. Articles currently published on Medium;
-              canonical links below.
+              performance work. Articles are published here; some are also
+              syndicated to Medium.
             </p>
           </TitledParagraph>
 
           <TitledParagraph title="articles">
             <ol className="flex flex-col gap-7 list-none">
               {articles.map((article) => (
-                <li key={article.url} className="flex flex-col gap-2">
+                <li key={article.slug} className="flex flex-col gap-2">
                   <h3 className="text-lg sm:text-xl font-semibold leading-snug">
                     <Link
-                      href={article.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 inline-flex items-baseline gap-1.5 hover:opacity-80"
+                      href={`/writing/${article.slug}`}
+                      className="underline underline-offset-4 hover:opacity-80"
                     >
                       {article.title}
-                      <ExternalLink className="w-3.5 h-3.5 shrink-0 translate-y-0.5" aria-hidden />
                     </Link>
                   </h3>
                   <p className="text-sm opacity-60 font-mono">
-                    {article.date} · {article.readingTime}
+                    {new Date(article.datePublished).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                    })}{" "}
+                    · {article.readingTime}
                   </p>
-                  <p className="text-base sm:text-lg leading-relaxed">{article.excerpt}</p>
+                  <p className="text-base sm:text-lg leading-relaxed">
+                    {article.excerpt}
+                  </p>
                   <ul className="flex flex-wrap gap-2 mt-1">
                     {article.tags.map((tag) => (
                       <li
@@ -110,9 +106,9 @@ export default function WritingPage() {
 
           <TitledParagraph title="more soon">
             <p>
-              Upcoming: AWS Bedrock streaming patterns, Cloudflare Workers + Neon Postgres
-              RLS for multi-tenant SaaS, and Rust workers-rs latency benchmarks against
-              TypeScript handlers. Follow on{" "}
+              Upcoming: AWS Bedrock streaming patterns, Cloudflare Workers + Neon
+              Postgres RLS for multi-tenant SaaS, and Rust workers-rs latency
+              benchmarks against TypeScript handlers. Follow on{" "}
               <Link
                 href="https://x.com/dibbayajyoti"
                 target="_blank"

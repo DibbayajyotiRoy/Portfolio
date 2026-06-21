@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Long-form article prose. Used by app/writing/[slug] so article bodies can be
+     authored as plain semantic JSX (no @tailwindcss/typography dependency). */
+  .article-body {
+    @apply text-base sm:text-lg leading-relaxed;
+  }
+  .article-body h2 {
+    @apply text-xl sm:text-2xl font-semibold mt-10 mb-3 scroll-mt-24;
+  }
+  .article-body h3 {
+    @apply text-lg font-semibold mt-7 mb-2;
+  }
+  .article-body p {
+    @apply my-4;
+  }
+  .article-body a {
+    @apply underline underline-offset-2 hover:opacity-80;
+  }
+  .article-body ul {
+    @apply list-disc pl-6 my-4 flex flex-col gap-2;
+  }
+  .article-body ol {
+    @apply list-decimal pl-6 my-4 flex flex-col gap-2;
+  }
+  .article-body li {
+    @apply pl-1;
+  }
+  .article-body code {
+    @apply font-mono text-[0.9em] bg-blackout/5 dark:bg-whiteout/10 px-1 py-0.5 rounded;
+  }
+  .article-body pre {
+    @apply text-sm bg-blackout/5 dark:bg-whiteout/5 rounded-md p-3 overflow-x-auto font-mono my-5 leading-relaxed;
+  }
+  .article-body pre code {
+    @apply bg-transparent p-0 text-[1em];
+  }
+  .article-body blockquote {
+    @apply border-l-2 border-blackout/30 dark:border-whiteout/30 pl-4 italic opacity-90 my-5;
+  }
+  .article-body strong {
+    @apply font-semibold;
+  }
+}
