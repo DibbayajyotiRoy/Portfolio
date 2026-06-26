@@ -14,7 +14,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What is AHTML and how does it relate to RAG?",
-    a: "AHTML (Agentic HTML) is a seven-package npm scope that emits a canonical, agent-ready snapshot of any website. Its schema ships RAG-ready document chunks with stable IDs and byte ranges, and a LangChain.js loader turns any AHTML site into vector-store-ready documents.",
+    a: "AHTML (Agentic HTML) is a nine-package npm scope that emits a canonical, agent-ready snapshot of any website. Its schema ships RAG-ready document chunks with stable IDs and byte ranges, and a LangChain.js loader turns any AHTML site into vector-store-ready documents.",
   },
   {
     q: "Does he work on AI search and crawler optimization?",
@@ -78,13 +78,13 @@ export default function AiEngineeringPage() {
               >
                 AHTML (Agentic HTML)
               </Link>{" "}
-              is a shipped seven-package npm scope for making web content cheaply
+              is a shipped nine-package npm scope for making web content cheaply
               consumable by AI agents. It defines a canonical semantic snapshot
               with RAG-ready document chunks, emits MCP, OpenAPI, JSON-LD, and
-              llms.txt from a single pipeline, ships a typed agent client SDK and
-              Next.js / Vite / Hono adapters, includes a LangChain.js document
-              loader that preserves citation anchors and byte ranges, and adds an
-              ahtml doctor CLI for CI. See{" "}
+              llms.txt from a single pipeline, ships a typed agent client SDK,
+              Next.js / Vite / Hono adapters, KV caching backends, a WebMCP bridge,
+              includes a LangChain.js document loader that preserves citation anchors
+              and byte ranges, and adds an ahtml doctor CLI for CI. See{" "}
               <Link href="/ahtml-vs-llms-txt" className="underline">
                 AHTML vs llms.txt
               </Link>{" "}

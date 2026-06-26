@@ -160,7 +160,7 @@ const ahtmlScopeJsonLd = {
   "author": { "@id": "https://dibbayajyoti.com/#person" },
   "description": ahtml.seoDescription,
   "keywords": ahtml.keywords,
-  "numberOfItems": 7,
+  "numberOfItems": 9,
   "inLanguage": "en",
 };
 
@@ -228,6 +228,28 @@ const ahtmlHonoJsonLd = {
   "keywords": ["@ahtmljs/hono", "AHTML Hono plugin", "MCP server Hono", "edge agent endpoint", "Cloudflare Workers agent", "Bun Deno agent"],
 };
 
+const ahtmlKvJsonLd = {
+  ...ahtmlBase,
+  "@id": "https://dibbayajyoti.com/work#ahtmljs-kv",
+  "name": "@ahtmljs/kv",
+  "url": "https://www.npmjs.com/package/@ahtmljs/kv",
+  "runtimePlatform": ["Node.js", "Upstash Redis", "Cloudflare KV"],
+  "description":
+    "Pluggable KV and cache backends for AHTML — in-memory, Upstash Redis, and Cloudflare KV. Drop-in replacements for the AHTMLClient cache and rate-limiting surfaces, so snapshot caching and token-bucket policy work the same on a single server or across an edge fleet.",
+  "keywords": ["@ahtmljs/kv", "AHTML cache backend", "Upstash Redis cache", "Cloudflare KV", "agent rate limiting", "pluggable kv store"],
+};
+
+const ahtmlWebmcpJsonLd = {
+  ...ahtmlBase,
+  "@id": "https://dibbayajyoti.com/work#ahtmljs-webmcp",
+  "name": "@ahtmljs/webmcp",
+  "url": "https://www.npmjs.com/package/@ahtmljs/webmcp",
+  "runtimePlatform": ["Browser", "WebMCP"],
+  "description":
+    "Registers AHTML page actions as WebMCP browser tools — the bridge between AHTML's structured action contracts and the W3C WebML CG WebMCP API, so an in-page agent can discover and invoke a site's typed actions as native browser tools.",
+  "keywords": ["@ahtmljs/webmcp", "WebMCP", "browser agent tools", "page actions", "W3C WebMCP", "in-page agent"],
+};
+
 const ahtmlCliJsonLd = {
   ...ahtmlBase,
   "@id": "https://dibbayajyoti.com/work#ahtmljs-cli",
@@ -285,6 +307,8 @@ export default function WorkLayout({ children }: { children: React.ReactNode }) 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlViteJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlLangchainJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlHonoJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlKvJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlWebmcpJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ahtmlCliJsonLd) }} />
       {children}
     </>

@@ -154,14 +154,14 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                 artboard="DARING"
                 riveSource="/rive/main.riv"
                 riveStateMachine="4"
-                keywords={["@ahtmljs", "7 packages", "shipped"]}
+                keywords={["@ahtmljs", "9 packages", "shipped"]}
               >
                 <p className="text-lg  leading-normal md:text-[22px] max-w-[500px] dark:text-zinc-100/50 text-blackout/50 font-medium">
                   I shipped{" "}
                   <span className="dark:text-zinc-100 text-blackout whitespace-nowrap">
                     AHTML
                   </span>{" "}
-                  — a seven-package @ahtmljs npm scope so any site can serve AI
+                  — a nine-package @ahtmljs npm scope so any site can serve AI
                   agents cheaply. Snapshot schema, Next.js + Vite + Hono adapters,
                   agent SDK, LangChain.js loader, and an ahtml doctor CLI.
                 </p>

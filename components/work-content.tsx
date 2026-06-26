@@ -52,7 +52,7 @@ const WorkContent = () => {
               </p>
               <p>Some projects you can check out:{" "}
                 <Link href="/projects/whatbroke" className="font-semibold underline">{whatbroke.name}</Link> (git-anchored crash capture for AI coding agents over MCP),{" "}
-                <Link href="/projects/ahtml" className="font-semibold underline">{ahtml.name}</Link> (7-package @ahtmljs npm scope for the agent web),{" "}
+                 <Link href="/projects/ahtml" className="font-semibold underline">{ahtml.name}</Link> (9-package @ahtmljs npm scope for the agent web),{" "}
                 <Link href="/projects/roy-ui" className="font-semibold underline">{royui.name}</Link> (zero-config React component library),{" "}
                 <Link href="/projects/klinder-oss" className="font-semibold underline">{klinder.name}</Link> (unified analytics + session replay + email SDK),{" "}
                 <Link href="/projects/diffcore" className="font-semibold underline">{diffcore.name}</Link> (fast WebAssembly JSON diff — RFC 6902 Patch, React hook, CLI),{" "}
@@ -135,14 +135,16 @@ const WorkContent = () => {
 
                 <div className="flex flex-col gap-2">
                   <p>
-                    <Link href={ahtml.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{ahtml.name}</Link>: A shipped seven-package npm scope (<span className="font-mono text-sm">@ahtmljs/*</span>) at v{ahtml.version} for making web content cheaply consumable by AI agents.{" "}
+                    <Link href={ahtml.primaryUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">{ahtml.name}</Link>: A shipped nine-package npm scope (<span className="font-mono text-sm">@ahtmljs/*</span>) at v{ahtml.version} for making web content cheaply consumable by AI agents.{" "}
                     <Link href="https://www.npmjs.com/package/@ahtmljs/schema" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/schema</Link> defines the canonical snapshot with RAG-ready <span className="font-mono text-sm">Document.chunks</span>;{" "}
                     <Link href="https://www.npmjs.com/package/@ahtmljs/next" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/next</Link> and{" "}
                     <Link href="https://www.npmjs.com/package/@ahtmljs/vite" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/vite</Link> emit MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot at <span className="font-mono text-sm">/.well-known/ahtml.json</span> with one config line;{" "}
                     <Link href="https://www.npmjs.com/package/@ahtmljs/agent" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/agent</Link> is the client SDK with ETag caching, dry-run safety gates, and hostile-agent regression tests;{" "}
                     <Link href="https://www.npmjs.com/package/@ahtmljs/langchain" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/langchain</Link> turns any AHTML site into a LangChain.js <span className="font-mono text-sm">Document[]</span> with citation metadata;{" "}
-                    <Link href="https://www.npmjs.com/package/@ahtmljs/hono" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/hono</Link> mounts the same emitter on any Hono runtime (Node, Bun, Deno, Cloudflare Workers, AWS Lambda); and{" "}
-                    <Link href="https://www.npmjs.com/package/@ahtmljs/cli" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/cli</Link> ships <span className="font-mono text-sm">ahtml doctor</span> to validate the discovery chain in CI. 344 passing tests across the scope.
+                    <Link href="https://www.npmjs.com/package/@ahtmljs/hono" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/hono</Link> mounts the emitter on Hono runtimes;{" "}
+                    <Link href="https://www.npmjs.com/package/@ahtmljs/kv" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/kv</Link> provides pluggable caching and KV backends;{" "}
+                    <Link href="https://www.npmjs.com/package/@ahtmljs/webmcp" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/webmcp</Link> binds page actions to browser tools; and{" "}
+                    <Link href="https://www.npmjs.com/package/@ahtmljs/cli" target="_blank" rel="noopener noreferrer" className="underline">@ahtmljs/cli</Link> ships <span className="font-mono text-sm">ahtml doctor</span> to validate the discovery chain in CI. 363 passing tests across the scope.
                   </p>
                   <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
                     <Link href="/projects/ahtml" className="font-semibold underline">Details →</Link>
