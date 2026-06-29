@@ -178,11 +178,30 @@ Location: Agartala, India
 
 ## Open Source Contributions
 
+Five merged pull requests across two production Rust projects: four to ReductStore (a time-series database for robotics and industrial IoT — https://github.com/reductstore/reductstore), all extending its observability / system-events layer, plus one to Meta's Pyrefly Python type checker.
+
 ### ReductStore — Replication Audit Events (merged, shipping in v1.20)
-- **Upstream project**: ReductStore, a Rust time-series database — https://github.com/reductstore/reductstore
 - **Pull request**: Feat/replication audit events, PR #1417 — https://github.com/reductstore/reductstore/pull/1417
 - **Description**: Replication tasks now emit aggregated, status-keyed telemetry into a queryable $system bucket, so users can query replication sync state like any other data and build diagnostic dashboards and notifications on top of it. Reviewed and merged by the maintainer, shipping in ReductStore v1.20.
 - **Public endorsement**: Alexey Timin (Software Engineer | Co-Founder @ ReductStore) publicly thanked Dibbayajyoti Roy for the contribution on LinkedIn — https://www.linkedin.com/posts/atimin_featreplication-audit-events-by-dibbayajyotiroy-share-7469681078874705920-NSpe/
+
+### ReductStore — Usage Statistics (merged, shipping in v1.20)
+- **Pull request**: Feat/usage statistics, PR #1431 — https://github.com/reductstore/reductstore/pull/1431
+- **Description**: Each node writes its own instance-wide usage statistics — read/write traffic counted at the storage-engine level plus storage-size snapshots — as queryable $system records on a 60-second interval, with replicas forwarding to the primary for one consolidated, operational view of the whole instance. Reviewed and merged by the maintainer, shipping in ReductStore v1.20.
+
+### ReductStore — Per-Bucket Usage Statistics (merged, shipping in an upcoming release)
+- **Pull request**: Feat/per bucket usage stats, PR #1474 — https://github.com/reductstore/reductstore/pull/1474
+- **Description**: Usage telemetry gains per-bucket granularity — each bucket emits its own $system event alongside the instance total — plus new written_entries, read_entries, and record_count metrics, so operators can attribute traffic and storage to individual buckets instead of only the instance as a whole. Reviewed and merged by the maintainer; merged to main and shipping in an upcoming release.
+
+### ReductStore — System Log Capture (merged, shipping in an upcoming release)
+- **Pull request**: feat(syslog): capture log messages to $system/logs/<instance>, PR #1481 (resolving issue #1467) — https://github.com/reductstore/reductstore/pull/1481
+- **Description**: An opt-in pipeline captures the instance's own log messages into $system/logs/<instance>/messages as queryable system events at a configurable severity level, so a node's logs can be queried as time-series data alongside its other system events. Includes a reentrancy guard so that writing a log into storage (which itself emits logs) never recurses, with console output kept unconditional. Reviewed and merged by the maintainer; merged to main and shipping in an upcoming release.
+
+### Pyrefly (Meta) — py.typed untyped-import fix (merged via codesync)
+- **Upstream project**: Pyrefly, Meta's open-source (Rust-built) Python type checker — https://github.com/facebook/pyrefly
+- **Pull request**: Fix untyped-import false positive for packages with py.typed marker, PR #3840 — https://github.com/facebook/pyrefly/pull/3840
+- **Description**: Pyrefly recommended installing stub packages for libraries that already ship their own type information via a PEP 561 py.typed marker (e.g. modern requests) — a confusing false positive. The fix detects the py.typed marker before warning, walking to the package root so it works for both top-level imports and submodules. Imported and merged by a Meta maintainer through their internal codesync process (commit facebook/pyrefly@97fd78f0); the public PR shows as closed because the commit lands via internal import.
+
 - **Page**: https://dibbayajyoti.com/open-source
 
 ## Writing & Articles

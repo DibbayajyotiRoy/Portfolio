@@ -8,14 +8,15 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Open Source Contributions — Dibbayajyoti Roy | ReductStore",
+  title:
+    "Open Source Contributions — Dibbayajyoti Roy | ReductStore & Meta's Pyrefly",
   description:
-    "Open-source contributions by Dibbayajyoti Roy: replication audit events for ReductStore (Rust time-series database) — merged PR #1417, shipping in v1.20, publicly endorsed by the project's co-founder.",
+    "Open-source contributions by Dibbayajyoti Roy: five merged pull requests across two production Rust projects — four to ReductStore (a time-series database for robotics & industrial IoT), spanning replication audit events (#1417, shipped in v1.20, endorsed by the co-founder), usage statistics (#1431), per-bucket usage metrics (#1474), and system-log capture (#1481), plus a false-positive diagnostic fix merged into Meta's Pyrefly type checker (#3840).",
   alternates: { canonical: "/open-source" },
   openGraph: {
     title: "Open Source Contributions — Dibbayajyoti Roy",
     description:
-      "Merged upstream work with receipts: ReductStore replication audit events (PR #1417, shipping in v1.20), endorsed by the maintainer.",
+      "Merged upstream work with receipts: four ReductStore PRs across its observability layer (replication audit events, usage statistics, per-bucket metrics, system-log capture — one endorsed by the maintainer) plus a diagnostic fix merged into Meta's Pyrefly type checker.",
     url: `${baseUrl}/open-source`,
     type: "website",
   },
@@ -95,8 +96,10 @@ export default function OpenSourcePage() {
                   <p>
                     <span className="font-mono text-sm">PR #{c.prNumber}</span>{" "}
                     <span className="font-semibold">{c.prTitle}</span> —{" "}
-                    {c.summary}. Reviewed and merged by the maintainer,
-                    shipping in {c.project} {c.shippedIn}.
+                    {c.summary}. Reviewed and merged by the maintainer
+                    {c.shippedIn
+                      ? `, shipping in ${c.project} ${c.shippedIn}.`
+                      : ", shipping in an upcoming release."}
                   </p>
                   <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
                     <Link

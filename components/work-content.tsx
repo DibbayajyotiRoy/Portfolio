@@ -202,7 +202,7 @@ const WorkContent = () => {
             <TitledParagraph title="open source">
               <div className="flex flex-col gap-2">
                 <p>
-                  I contribute upstream to tools I use — most recently replication diagnostics for <Link href="/open-source" className="font-semibold underline">ReductStore</Link>, a Rust time-series database: merged by the maintainer, shipping in v1.20.
+                  I contribute upstream to tools I use — four merged PRs to the observability layer of <Link href="/open-source" className="font-semibold underline">ReductStore</Link>, a Rust time-series database for robotics and industrial IoT (replication diagnostics, instance-wide usage statistics, per-bucket usage metrics, and system-log capture, all emitting queryable $system events), plus a false-positive diagnostic fix merged into Meta&apos;s Pyrefly type checker. Reviewed and merged by the maintainers; the first ReductStore PR shipped in v1.20 with a public endorsement.
                 </p>
                 <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
                   <Link href="/open-source" className="font-semibold underline">Contributions + maintainer endorsement →</Link>

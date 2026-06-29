@@ -12,7 +12,7 @@
 - [AI Engineering](https://dibbayajyoti.com/ai-engineering): AWS Bedrock applications, multi-model fallback, RAG architecture, the MCP protocol, LangChain.js, and AI crawler optimization.
 - [Next.js SEO](https://dibbayajyoti.com/nextjs-seo): Next.js Metadata API, JSON-LD structured data, sitemap optimization, llms.txt for AI crawlers, and Core Web Vitals.
 - [Distributed Systems](https://dibbayajyoti.com/distributed-systems): Edge ingestion on Cloudflare Workers, Redis polling optimization, multi-tenant Postgres with RLS, and backend scaling.
-- [Open Source](https://dibbayajyoti.com/open-source): Merged upstream contributions — ReductStore (Rust time-series database) replication audit events, PR #1417, shipping in v1.20, publicly endorsed by the project's co-founder.
+- [Open Source](https://dibbayajyoti.com/open-source): Five merged pull requests across two production Rust projects — four to ReductStore (time-series database for robotics/IoT) observability layer (replication audit events #1417 shipped in v1.20 and publicly endorsed by the co-founder, usage statistics #1431, per-bucket usage metrics #1474, system-log capture #1481) plus a false-positive diagnostic fix merged into Meta's Pyrefly Python type checker (#3840).
 
 ## About
 
