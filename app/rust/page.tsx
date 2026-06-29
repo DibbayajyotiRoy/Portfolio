@@ -106,13 +106,15 @@ export default function RustPage() {
                 >
                   ReductStore
                 </Link>{" "}
-                — I contributed replication diagnostics to ReductStore, a Rust
-                time-series database: status-keyed telemetry emitted to a
-                queryable system bucket so teams can monitor replication sync
-                state and alert on it. Reviewed and merged by the maintainer,
-                shipping in v1.20 — a distributed-systems contribution in the
-                Rust ecosystem. Full story and the maintainer&apos;s
-                endorsement on{" "}
+                — I contributed to ReductStore&apos;s observability layer across
+                four merged PRs — replication diagnostics, instance-wide usage
+                statistics, per-bucket usage metrics, and system-log capture —
+                each emitting queryable telemetry into a $system bucket so teams
+                can monitor sync state, resource usage, and the node&apos;s own
+                logs as data, and alert on it. Reviewed and merged by the
+                maintainer, the first shipping in v1.20 — a distributed-systems
+                contribution in the Rust ecosystem. Full story and the
+                maintainer&apos;s endorsement on{" "}
                 <Link href="/open-source" className="underline">
                   /open-source
                 </Link>

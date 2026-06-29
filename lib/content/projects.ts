@@ -84,11 +84,11 @@ export const projects: Project[] = [
       github: "https://github.com/DibbayajyotiRoy/AHTML",
     },
     primaryUrl: "https://www.npmjs.com/org/ahtmljs",
-    version: "0.9.0",
+    version: "0.9.5",
     oneLiner:
-      "AI agents read websites slowly and expensively, so I built a seven-package npm scope (@ahtmljs/*) that emits a canonical, agent-ready snapshot of any site from one config line.",
+      "AI agents read websites slowly and expensively, so I built a nine-package npm scope (@ahtmljs/*) that emits a canonical, agent-ready snapshot of any site from one config line.",
     seoDescription:
-      "AHTML (Agentic HTML) is a shipped seven-package npm scope by Dibbayajyoti Roy for making web content cheaply consumable by AI agents — canonical semantic snapshot, Next.js + Vite + Hono adapters, agent client SDK, LangChain.js loader, and an `ahtml doctor` CLI. All packages live at @ahtmljs/* v0.9.0.",
+      "AHTML (Agentic HTML) is a shipped nine-package npm scope by Dibbayajyoti Roy for making web content cheaply consumable by AI agents — canonical semantic snapshot, Next.js + Vite + Hono adapters, agent client SDK, LangChain.js loader, and an `ahtml doctor` CLI. All packages live at @ahtmljs/* v0.9.5.",
     keywords: [
       "AHTML",
       "Agentic HTML",
@@ -107,6 +107,8 @@ export const projects: Project[] = [
       { name: "@ahtmljs/vite",      blurb: "Vite plugin · byte-parity with next plugin",  npmId: "@ahtmljs/vite",      href: "https://www.npmjs.com/package/@ahtmljs/vite" },
       { name: "@ahtmljs/langchain", blurb: "LangChain.js loader · citation metadata",     npmId: "@ahtmljs/langchain", href: "https://www.npmjs.com/package/@ahtmljs/langchain" },
       { name: "@ahtmljs/hono",      blurb: "Hono adapter · Node · Bun · Deno · Workers",   npmId: "@ahtmljs/hono",      href: "https://www.npmjs.com/package/@ahtmljs/hono" },
+      { name: "@ahtmljs/kv",        blurb: "pluggable KV & cache backends · Memory · Upstash · Cloudflare", npmId: "@ahtmljs/kv",     href: "https://www.npmjs.com/package/@ahtmljs/kv" },
+      { name: "@ahtmljs/webmcp",    blurb: "W3C WebMCP bridge · page actions as browser tools",           npmId: "@ahtmljs/webmcp", href: "https://www.npmjs.com/package/@ahtmljs/webmcp" },
       { name: "@ahtmljs/cli",       blurb: "ahtml doctor · discovery-chain linter for CI", npmId: "@ahtmljs/cli",       href: "https://www.npmjs.com/package/@ahtmljs/cli" },
     ],
   },

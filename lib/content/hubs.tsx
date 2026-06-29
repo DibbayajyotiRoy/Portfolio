@@ -522,8 +522,8 @@ import { DataTable, DateRangePicker, TimePicker } from "@roy-ui/ui";
     metaTitle:
       "AHTML — make your site readable by AI agents (MCP, OpenAPI, llms.txt from one config)",
     metaDescription:
-      "AHTML is the contract layer of the agent web — a seven-package @ahtmljs scope (Next.js, Vite, Hono adapters + agent SDK, LangChain loader, CLI) that emits MCP, OpenAPI 3.1, JSON-LD, llms.txt, and a token-optimal signed snapshot from one config line. MIT.",
-    kicker: "open-source product · 7 npm packages · MIT",
+      "AHTML is the contract layer of the agent web — a nine-package @ahtmljs scope (Next.js, Vite, Hono adapters, KV, WebMCP + agent SDK, LangChain loader, CLI) that emits MCP, OpenAPI 3.1, JSON-LD, llms.txt, and a token-optimal signed snapshot from one config line. MIT.",
+    kicker: "open-source product · 9 npm packages · MIT",
     subtitle: "the contract layer of the agent web",
     jsonLdType: "SoftwareSourceCode",
     programmingLanguage: ["TypeScript"],
@@ -537,8 +537,8 @@ import { DataTable, DateRangePicker, TimePicker } from "@roy-ui/ui";
             protocol an AI agent might want: an MCP tool manifest, an OpenAPI 3.1
             document, JSON-LD, an llms.txt shim, and a token-optimal, optionally
             signed snapshot. One config in, every agent-readable protocol out —
-            RSS, but for AI agents. It is a seven-package npm scope (
-            <span className="font-mono text-sm">@ahtmljs/*</span>) at v0.9.0.
+            RSS, but for AI agents. It is a nine-package npm scope (
+            <span className="font-mono text-sm">@ahtmljs/*</span>) at v0.9.5.
           </p>
         ),
       },
@@ -551,11 +551,13 @@ npm install @ahtmljs/hono       # Hono · Node · Bun · Deno · Workers · Lamb
 npm install @ahtmljs/agent      # typed client SDK for agents
 npm install @ahtmljs/langchain  # RAG document loader
 npm install @ahtmljs/schema     # types + JSON Schema + validator
+npm install @ahtmljs/kv         # pluggable KV & cache backends
+npm install @ahtmljs/webmcp     # W3C WebMCP browser tool bridge
 npm install -g @ahtmljs/cli     # ahtml doctor — validate the discovery chain`
         ),
       },
       {
-        title: "the seven packages",
+        title: "the nine packages",
         body: (
           <Table
             headers={["Package", "What it does"]}
@@ -566,6 +568,8 @@ npm install -g @ahtmljs/cli     # ahtml doctor — validate the discovery chain`
               ["@ahtmljs/hono", "Hono adapter — same handler on Node, Bun, Deno, Workers, Lambda."],
               ["@ahtmljs/agent", "Typed client SDK — ETag caching, retries, dry-run gates, tokenizer cost."],
               ["@ahtmljs/langchain", "LangChain.js loader — chunks with citation anchors preserved."],
+              ["@ahtmljs/kv", "Pluggable KV/cache backends — Memory, Upstash Redis, Cloudflare KV."],
+              ["@ahtmljs/webmcp", "WebMCP tool registry & browser bookmarklet for page actions."],
               ["@ahtmljs/cli", "ahtml doctor — walks the discovery chain end to end; CI-wirable."],
             ]}
           />
