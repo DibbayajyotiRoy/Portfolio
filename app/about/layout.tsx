@@ -7,12 +7,12 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
 export const metadata: Metadata = {
   title: "About — Dibbayajyoti Roy | Full Stack Engineer & Rust Builder",
   description:
-    "About Dibbayajyoti Roy — Full Stack Software Engineer based in Agartala, India. Builder behind Klinder-OSS, Diffcore (npm), and the @ahtmljs scope. Rust, Next.js, AWS Bedrock.",
+    "About Dibbayajyoti Roy — Full Stack Software Engineer based in Agartala, India, and a core team member building Yupcha's AI Video Interviewer. Builder behind Klinder-OSS, Diffcore (npm), and the @ahtmljs scope. Rust, Next.js, AWS Bedrock.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About — Dibbayajyoti Roy",
     description:
-      "Full Stack Software Engineer building open source SDKs in Rust and TypeScript. Creator of Klinder-OSS, Diffcore, and AHTML.",
+      "Full Stack Software Engineer and core team member building Yupcha's AI Video Interviewer. Creator of Klinder-OSS, Diffcore, and AHTML in Rust and TypeScript.",
     url: `${baseUrl}/about`,
     type: "profile",
   },

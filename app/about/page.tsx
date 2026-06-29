@@ -30,6 +30,18 @@ export default function AboutPage() {
             </p>
           </TitledParagraph>
 
+          <TitledParagraph title="now">
+            <p>
+              I&apos;m a core team member at{" "}
+              <span className="font-semibold">{profile.employer.name}</span>{" "}
+              building the{" "}
+              <span className="font-semibold">AI Video Interviewer</span> — an
+              AI agent that conducts candidate interviews end to end. Right now
+              my focus is making the agent better and getting it ready for
+              public use.
+            </p>
+          </TitledParagraph>
+
           <TitledParagraph title="what I build">
             <div className="flex flex-col gap-3">
               <p>
