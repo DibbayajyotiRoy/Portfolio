@@ -206,6 +206,10 @@ Five merged pull requests across two production Rust projects: four to ReductSto
 
 ## Writing & Articles
 
+### Building a Linux Live Wallpaper Engine That Proves Its Own Quality (2026)
+- **URL**: https://dibbayajyoti.com/writing/fresco-linux-live-wallpaper-engine
+- **Summary**: How Fresco, Dibbayajyoti Roy's open-source Linux live wallpaper engine written in Rust, works: three rendering backends (X11 embedded libmpv, Wayland layer-shell via a supervised bundled mpvpaper per output, GNOME Wayland static fallback), a dlopen bridge binding 11 libmpv symbols so one binary runs on libmpv1 and libmpv2, a self-healing daemon (cold-boot stall recovery, PipeWire audio race heal with exponential backoff, crash respawn that never paints black), and video quality proven in CI on five headless compositors with no GPU: SSIM 0.74 on an 8K-to-4K zone-plate downscale vs 0.54 with common defaults, 256/256 luma levels, pixel-exact HiDPI checkerboard. 73 automated checks; claims tracked in a PROVEN/UNPROVEN verification ledger.
+
 ### Getting Code Merged Into Meta's Pyrefly and ReductStore (2026)
 - **URL**: https://dibbayajyoti.com/writing/merged-into-pyrefly-and-reductstore
 - **Also on**: https://medium.com/@dibbayajyoti/how-i-got-my-code-merged-into-metas-pyrefly-and-reductstore-a-database-for-robotics-b80186e5ac8d

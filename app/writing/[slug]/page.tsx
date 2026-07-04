@@ -67,6 +67,18 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     ...(article.mediumUrl ? { sameAs: [article.mediumUrl] } : {}),
   };
 
+  const faqJsonLd = article.faq
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: article.faq.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      }
+    : null;
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -87,6 +99,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <article className="max-w-[626px] pl-9 pr-6 sm:pl-0 sm:pr-0 sm:px-10">
         <nav className="font-mono text-sm opacity-50 mb-4">
           <Link href="/writing" className="hover:opacity-100 transition-opacity">
@@ -123,6 +141,17 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
         <div className="article-body mt-10 text-blackout/90 dark:text-whiteout/90">
           {article.body}
+          {article.faq && (
+            <>
+              <h2>FAQ</h2>
+              {article.faq.map((f) => (
+                <div key={f.question}>
+                  <h3>{f.question}</h3>
+                  <p>{f.answer}</p>
+                </div>
+              ))}
+            </>
+          )}
         </div>
 
         {article.mediumUrl && (

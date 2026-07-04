@@ -32,10 +32,505 @@ export interface Article {
   keywords: string[];
   /** Syndicated Medium copy, if one exists. */
   mediumUrl?: string;
+  /**
+   * Optional FAQ. Rendered on-page below the body AND emitted as FAQPage
+   * JSON-LD from the same strings, so the two can never drift apart.
+   */
+  faq?: { question: string; answer: string }[];
   body: ReactNode;
 }
 
 const articles: Article[] = [
+  {
+    slug: "fresco-linux-live-wallpaper-engine",
+    title: "Building a Linux Live Wallpaper Engine That Proves Its Own Quality",
+    subtitle: "three backends, a self-healing daemon, and CI with no GPU",
+    metaTitle: "Fresco: A Linux Live Wallpaper Engine Built in Rust",
+    metaDescription:
+      "How Fresco, an open-source Linux live wallpaper engine in Rust, renders on X11 and Wayland, heals itself, and proves its video quality in CI.",
+    excerpt:
+      "Fresco is an open-source live wallpaper engine for Linux: one Rust daemon, three rendering backends across X11 and Wayland, a self-healing supervisor, and video quality proven by screenshot on five headless compositors in CI.",
+    datePublished: "2026-07-05",
+    readingTime: "12 min read",
+    schemaType: "TechArticle",
+    tags: ["Rust", "Linux", "Fresco", "Wayland", "X11", "GTK4", "libmpv", "Testing"],
+    keywords: [
+      "linux live wallpaper",
+      "wallpaper engine for linux",
+      "video wallpaper linux",
+      "wayland layer-shell",
+      "libmpv rust",
+      "GTK4 rust app",
+      "fresco wallpaper",
+      "fresco vs mpvpaper",
+    ],
+    faq: [
+      {
+        question: "Does Fresco support GNOME on Wayland?",
+        answer:
+          "Partially. GNOME Wayland implements neither layer-shell nor foreign-toplevel protocols, so no live surface exists to render into. Fresco extracts a static frame from your chosen video, sets it as the GNOME background via gsettings, tells you what it did, and idles at 0% CPU. GNOME on X11 gets full live wallpapers.",
+      },
+      {
+        question: "Will a video wallpaper drain my laptop battery?",
+        answer:
+          "Less than you would expect. Fresco uses GPU hardware decoding (VA-API or NVDEC) to keep CPU near zero, pauses automatically when your battery reports Discharging, and pauses per monitor when a fullscreen window covers the wallpaper, because mpv keeps decoding even when the compositor stops rendering an occluded surface.",
+      },
+      {
+        question: "Which is better supported, X11 or Wayland?",
+        answer:
+          "Both are first-class, through different mechanisms. X11 uses an embedded libmpv in a desktop-type window and is verified across the CI matrix. Wayland uses the bundled mpvpaper on layer-shell compositors, verified on Sway, with Hyprland and KDE Plasma 6 marked experimental in the project's verification ledger until on-screen proof lands.",
+      },
+      {
+        question: "Is Fresco free?",
+        answer:
+          "Yes. Fresco is free and open-source software under GPL-3.0, with no paid tier, no accounts, and no telemetry beyond an anonymous install counter with no client identifiers. You install a .deb or use the one-line installer, and the built-in catalog shows the license and author of every wallpaper it offers.",
+      },
+      {
+        question: "How is Fresco's video quality actually verified?",
+        answer:
+          "By screenshot, in CI, on every release. Headless compositors play synthetic test patterns through the real daemon; captures are scored for sharpness with a 1-pixel checkerboard, banding by counting 256 luma levels, and scaling with SSIM against a Lanczos reference. The harnesses ship in-tree, so anyone can reproduce every number.",
+      },
+    ],
+    body: (
+      <>
+        <p>
+          <strong>TL;DR:</strong> Fresco is an open-source live wallpaper engine
+          for Linux, written in Rust by Dibbayajyoti Roy. One daemon drives three
+          rendering backends across X11 and Wayland, heals its own failures, and
+          gates every release on 73 automated checks, including a video fidelity
+          score of SSIM 0.74 measured on headless compositors in CI.
+        </p>
+        <p>
+          "Set a video as your desktop background" sounds like one feature. On
+          Linux it is three different engineering problems wearing one trench
+          coat, because "the desktop background" means a fake root-level window
+          on X11, a layer-shell surface on wlroots Wayland, and nothing at all on
+          GNOME Wayland. I am Dibbayajyoti Roy, and I built{" "}
+          <Link
+            href="https://github.com/DibbayajyotiRoy/fresco"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Fresco
+          </Link>
+          , an open-source live wallpaper engine for Linux, to solve all three
+          behind one Rust daemon. This is the story of how, and of the test
+          infrastructure that ended up being the real product.
+        </p>
+
+        <h2>Why is there no Wallpaper Engine for Linux?</h2>
+        <p>
+          There is no Wallpaper Engine for Linux because Linux has no single
+          "desktop background" API: X11, wlroots Wayland, and GNOME Wayland each
+          expose a different surface, so every Linux live wallpaper tool
+          historically picked one session type and abandoned the rest.
+        </p>
+        <p>
+          Windows applications get one compositor and one window model. A Linux
+          live wallpaper app inherits session fragmentation instead: terminal
+          tools that only work on Wayland, GNOME extensions that break every
+          release cycle, and compositor-specific hacks. Fresco's answer is one
+          binary crate producing two binaries, <code>fresco</code> (a GTK4 GUI)
+          and <code>frescod</code> (a daemon with no GTK and no async runtime),
+          with three rendering backends behind a single{" "}
+          <code>PlayerHandle</code> interface:
+        </p>
+        <ul>
+          <li>
+            <strong>X11:</strong> libmpv embedded in a fake desktop window, one
+            per monitor.
+          </li>
+          <li>
+            <strong>Wayland with layer-shell:</strong> one supervised{" "}
+            <code>mpvpaper</code> process per output.
+          </li>
+          <li>
+            <strong>GNOME Wayland:</strong> an honest static-frame fallback via
+            gsettings.
+          </li>
+        </ul>
+        <p>
+          The daemon does not trust <code>XDG_CURRENT_DESKTOP</code> to pick a
+          backend. It opens a real Wayland connection and round-trips the
+          registry to check whether <code>zwlr_layer_shell_v1</code> actually
+          exists (<code>src/capability.rs</code>), because environment variables
+          describe what a session claims to be, not what it can do.
+        </p>
+        <p>
+          The GUI is optional. It saves a TOML config and sends one JSON command
+          over a Unix socket, then you can close it. The daemon is the product;
+          the GUI is a remote control.
+        </p>
+
+        <h2>How do you put a live wallpaper on X11?</h2>
+        <p>
+          On X11, Fresco creates one desktop-type window per monitor, embeds
+          libmpv into it, and gives the window an empty input shape so every
+          click passes through to the real desktop icons underneath.
+        </p>
+        <p>
+          The window setup (<code>src/daemon/x11win.rs</code>) is a stack of
+          hints that together mean "I am the wallpaper":
+        </p>
+        <pre>
+          <code>{`# simplified from src/daemon/x11win.rs
+type   = _NET_WM_WINDOW_TYPE_DESKTOP
+states = BELOW + STICKY + SKIP_TASKBAR + SKIP_PAGER
+input  = off, and an EMPTY input SHAPE region`}</code>
+        </pre>
+        <p>
+          The empty input shape is the killer detail: every click falls straight
+          through the wallpaper to your desktop icons.
+        </p>
+        <p>
+          Two bugs from this backend shaped the whole project. First, the
+          cold-boot stall: on login, mpv's display-synced output stalls forever
+          if the window is not paint-ready when playback starts, so{" "}
+          <code>wait_until_viewable</code> polls window attributes for up to
+          about 3 seconds before embedding. Second, the ConfigureNotify storm,
+          documented right in the main loop: re-lowering the window in response
+          to X events emits a <code>ConfigureNotify</code> on its own window,
+          which re-enters the handler, which storms the compositor. That
+          feedback loop froze my laptop. The fix is deliberately boring: the
+          daemon drains and discards all X events and re-lowers strictly on a 2
+          second timer. Fullscreen detection is likewise polled through EWMH
+          properties, never event-driven.
+        </p>
+        <p>
+          One more X11 oddity: the wallpaper window is invisible in GNOME's
+          Activities overview and on the lock screen, so the daemon extracts a
+          still frame and temporarily sets it as the{" "}
+          <code>org.gnome.desktop.background</code>, saving and restoring the
+          user's original image.
+        </p>
+
+        <h2>How do live wallpapers work on Wayland?</h2>
+        <p>
+          On Wayland, Fresco supervises one bundled mpvpaper process per
+          monitor, each rendering into a layer-shell background surface, and
+          steers every process through mpv's JSON IPC socket.
+        </p>
+        <p>
+          Layer-shell, formally <code>zwlr_layer_shell_v1</code>, is a Wayland
+          protocol that lets a client place a surface into a compositor layer
+          such as the background, which is exactly where a wallpaper lives (the{" "}
+          <Link
+            href="https://wayland.app/protocols/wlr-layer-shell-unstable-v1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            protocol spec
+          </Link>{" "}
+          is short and worth reading). What Wayland does not allow is embedding
+          a foreign window into your own surface, so the X11 trick is
+          impossible. Instead of reimplementing an EGL video renderer, Fresco
+          spawns the external renderer mpvpaper, one process per output, and
+          controls each through a socket at{" "}
+          <code>$XDG_RUNTIME_DIR/fresco/mpv-&lt;connector&gt;.sock</code>.
+        </p>
+        <p>
+          This directly answers the "Fresco vs mpvpaper" question: Fresco
+          bundles and supervises mpvpaper on Wayland, adding a GUI, crash
+          isolation, scheduling, per-monitor management, and login persistence
+          on top of it. Because mpvpaper is not packaged in any apt repository,
+          the build clones it pinned at v1.4, builds it with meson, and ships it
+          inside the .deb at <code>/usr/lib/fresco/mpvpaper</code>, deliberately
+          not <code>/usr/bin</code>, so it can never collide with a
+          user-installed copy.
+        </p>
+        <p>
+          The Wayland player exposes the exact same <code>&amp;self</code> API
+          as the X11 player, unified behind a <code>PlayerHandle</code> enum.
+          Slideshows, transitions, pause logic, and audio healing are each
+          written once and run on both backends with zero call-site branching.
+          My favorite trap in this backend: you cannot pass{" "}
+          <code>background=#000000</code> to mpvpaper, because options are
+          forwarded through an mpv config file where <code>#</code> starts a
+          comment.
+        </p>
+        <p>
+          GNOME Wayland implements neither layer-shell nor foreign-toplevel
+          protocols. Instead of pretending, Fresco extracts a static frame, sets
+          it via gsettings, tells the user, and idles in a blocking{" "}
+          <code>recv()</code> loop at 0% CPU.
+        </p>
+
+        <h2>How does one binary run on libmpv1 and libmpv2?</h2>
+        <p>
+          Fresco never links libmpv at build time. It loads the library at
+          runtime with dlopen, trying <code>libmpv.so.2</code>, then{" "}
+          <code>.so.1</code>, then <code>.so</code>, and binds only 11 symbols
+          whose signatures are identical across mpv ABI 1 and ABI 2.
+        </p>
+        <p>
+          dlopen is the POSIX call that loads a shared library at runtime
+          instead of at link time, which lets one compiled binary decide which
+          library version to use on the machine it lands on. Fresco's dlopen
+          bridge binds 11 libmpv symbols whose signatures are identical across
+          mpv ABI 1 and ABI 2 (<code>src/daemon/mpv/ffi.rs</code>, 168 lines).
+          That is why one .deb runs on Ubuntu 22.04, which ships libmpv1, and on
+          Debian 12 and Ubuntu 24.04, which ship libmpv2. The bridge never
+          touches the unstable <code>mpv_render_*</code> API; X11 embedding uses
+          the classic <code>wid</code> option documented in the{" "}
+          <Link
+            href="https://mpv.io/manual/stable/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            mpv manual
+          </Link>
+          .
+        </p>
+        <p>
+          The distro side of this is tested, not assumed. A weekly CI workflow
+          builds the .deb inside Ubuntu 22.04 and 24.04, Debian 12, Mint 21 and
+          22, Pop!_OS 22.04, and elementary 7 containers, then a clean container
+          with no dev packages must apt-resolve every declared dependency, pass{" "}
+          <code>ldd -r</code> on both binaries, and run{" "}
+          <code>frescod --check</code>.
+        </p>
+
+        <h2>What does a self-healing daemon look like?</h2>
+        <p>
+          A self-healing daemon detects its own failure modes and repairs them
+          without user action. In Fresco, every heal in the table below started
+          life as a real bug, was reproduced in CI first, and only then fixed.
+        </p>
+        <div className="overflow-x-auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Failure</th>
+                <th>Heal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Wallpaper frozen after reboot (mpv VO stall)</td>
+                <td>
+                  For the first 60s after login, sample <code>time-pos</code>{" "}
+                  every 3s; two identical readings on an unpaused video trigger
+                  a renderer rebuild, up to 5 times
+                </td>
+              </tr>
+              <tr>
+                <td>Silent wallpaper after cold boot (audio track dropped)</td>
+                <td>
+                  Retry with an explicit track id, exponential backoff at
+                  ~5/10/20/40/80/160s
+                </td>
+              </tr>
+              <tr>
+                <td>mpvpaper crashes (GL context died after a driver update)</td>
+                <td>
+                  Respawn, max 5 restarts; past the cap, spawn one paused static
+                  frame so the screen never goes black
+                </td>
+              </tr>
+              <tr>
+                <td>mpvpaper alive but frozen</td>
+                <td>
+                  3 consecutive 2s ticks with no <code>playback-time</code>{" "}
+                  progress means wedged, respawn
+                </td>
+              </tr>
+              <tr>
+                <td>Autostart entry deleted, or a prior run was killed</td>
+                <td>
+                  Rewrite the <code>.desktop</code> entry on start; restore the
+                  saved GNOME background
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          The centerpiece is the PipeWire race. On a cold boot the daemon can
+          start before the audio server. When that happens, mpv permanently
+          drops the audio track, and <code>aid=auto</code> will not bring it
+          back; an explicit track id will. That one sentence cost a test
+          harness. The heal retries with backoff:
+        </p>
+        <pre>
+          <code>{`# simplified from src/daemon/mod.rs (AudioHeal)
+on tick:
+  if audio_track_dropped and now >= next_retry:
+    set_property("aid", explicit_track_id)   # not "auto"
+    next_retry = now + backoff               # ~5,10,20,40,80,160s`}</code>
+        </pre>
+        <p>
+          The discipline matters more than the fix. The repro harness (
+          <code>tests/audio/verify-audio.sh</code>) starts the daemon inside a
+          private runtime directory with no audio server at all, then symlinks
+          the real PipeWire sockets in a moment later, simulating "PipeWire
+          comes up after login." The bug was encoded in CI as{" "}
+          <code>[REPRO-CONFIRMED]</code> before the fix existed, then flipped
+          into a hard release gate. Fresco's crash supervisor follows one rule
+          stated in the code: Fresco never paints black itself; if the renderer
+          crash-loops past 5 restarts, it leaves one paused frame on screen and
+          stops.
+        </p>
+
+        <h2>How do you test video quality in CI without a GPU?</h2>
+        <p>
+          Fresco plays synthetic torture patterns through the real daemon on
+          headless compositors with software rendering, screenshots the
+          composited output, and scores the screenshots with image metrics, so
+          video quality is gated in CI with no GPU at all.
+        </p>
+        <p>
+          The fidelity harness (<code>tests/fidelity/verify-fidelity.sh</code>)
+          captures with <code>grim</code> on Wayland and ImageMagick on X11,
+          then scores three properties:
+        </p>
+        <ul>
+          <li>
+            <strong>Crispness.</strong> A near-lossless 1-pixel checkerboard,
+            scored as RMSE between the capture and itself shifted by one pixel.
+            A perfect checkerboard is maximally anti-correlated, and any
+            interpolation blur collapses the score. Fresco passes this
+            pixel-exactness checkerboard test at HiDPI scale 1x and 2x,
+            verified by screenshot on both X11 and Wayland.
+          </li>
+          <li>
+            <strong>Banding.</strong> An 8-bit smooth gradient, scored by
+            counting unique luma levels in the center band. Fresco renders 256
+            of 256 distinct luma levels on the 8-bit gradient test, up from 220
+            before dithering was enabled on every profile.
+          </li>
+          <li>
+            <strong>Downscale quality.</strong> SSIM, the structural similarity
+            index, is an image metric that scores how closely one image
+            preserves the structure of a reference, where 1.0 is identical. A
+            zone plate is a synthetic sinusoidal test pattern designed to alias
+            under bad scaling. Fresco scores SSIM 0.74 on an 8K to 4K
+            zone-plate downscale, against 0.54 with common player defaults.
+          </li>
+        </ul>
+        <pre>
+          <code>{`# simplified from tests/fidelity/verify-fidelity.sh
+ffmpeg -i capture.png -i lanczos-reference.png \\
+  -lavfi ssim -f null -`}</code>
+        </pre>
+        <p>
+          All metrics are range-tolerant so they survive llvmpipe and pixman
+          software rendering in CI, where exact pixels are nondeterministic.
+          The harness earns its keep: it caught the green-cast bug, where a
+          custom chroma scaler combined with <code>video-rotate</code>{" "}
+          corrupted chroma planes green. The harness measured RGB 90,142,64
+          where neutral gray 126,129,127 should be, so <code>cscale</code> is
+          now skipped on rotated video, and rotation forces{" "}
+          <code>hwdec=auto-copy</code>.
+        </p>
+        <p>
+          The compositor side is a zoo. Fresco's CI boots five headless
+          compositors, Xvfb, Sway, Hyprland, KWin, and Weston, on stock GitHub
+          runners with no GPU, each in a private <code>XDG_RUNTIME_DIR</code>.
+          The release gate requires at least 3 of the 5 to pass: the reliable
+          trio of X11, Sway, and Weston carries it, so a flaky compositor
+          cannot block a release, but a real regression cannot hide either.
+          Fixtures are generated offline in under two minutes and self-verified
+          with ffprobe assertions.
+        </p>
+        <p>
+          Not everything is exotic. The schedule engine (
+          <code>src/schedule.rs</code>) is 380 lines of pure functions with zero
+          I/O, including the full NOAA solar position algorithm implemented
+          inline and dependency-free, tested to within 2 minutes of published
+          NOAA sunrise values for Greenwich solstices, New York, and Svalbard
+          polar night. The user-facing config is plain TOML:
+        </p>
+        <pre>
+          <code>{`# real config from the README: sunrise/sunset mode
+[schedule]
+mode = "solar"
+lat = 26.1
+lon = 91.7
+# [schedule.day] / [schedule.night] = wallpaper blocks`}</code>
+        </pre>
+        <p>
+          In total the project runs 73 automated checks: roughly 40 Rust unit
+          and integration tests plus five shell verification harnesses covering
+          the engine, schedules, downloads, catalog, and EWMH detection. The
+          GUI side, about 5,200 lines of{" "}
+          <Link
+            href="https://docs.gtk.org/gtk4/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GTK4
+          </Link>{" "}
+          and libadwaita, follows one threading idiom throughout: blocking work
+          on <code>std::thread::spawn</code>, results back via{" "}
+          <code>async_channel</code> into the main loop, so the GTK thread
+          never blocks.
+        </p>
+
+        <h2>What is an honesty ledger?</h2>
+        <p>
+          An honesty ledger is a commit-scoped evidence file that tags every
+          claimed capability as PROVEN or UNPROVEN, with screenshots and process
+          ids as evidence, so the project's claims can never silently outrun
+          its tests.
+        </p>
+        <p>
+          Fresco's ledger is <code>docs/WAYLAND_VERIFICATION.md</code>: 22
+          numbered tests, each tagged PROVEN, UNPROVEN, or "UNPROVEN, NOT
+          IMPLEMENTED." According to the project's verification ledger, the
+          renderer-kill test records the actual supervised process ids, pid
+          224482 respawned as pid 224837, as its evidence of crash recovery.
+          According to the project's verification ledger, Hyprland and KDE
+          Plasma support remain tagged experimental until real-session
+          verification lands, and the README's comparison table says the same
+          thing.
+        </p>
+        <p>
+          That last part came from a failure. The project roadmap opens with a
+          self-audit called "honesty debt": the README had claimed Hyprland and
+          KDE support that was never proven on screen, and the fix was to
+          downgrade those claims to "experimental" in the same release. Writing
+          down where your own documentation lied is uncomfortable, and it is
+          the single practice I would carry to every future project.
+        </p>
+        <p>
+          It is also, I think, why the project moved fast rather than despite
+          it. Fresco went from scaffold to 1.0.1 in 31 commits over roughly
+          three weeks, about 12,600 lines of Rust, and that pace was a
+          consequence of the verification infrastructure: with a compositor
+          zoo, a fidelity harness, and repro-before-fix as the default, I could
+          change the renderer on Tuesday and trust Wednesday's release. The
+          tests were not overhead on the sprint. They were the sprint.
+        </p>
+
+        <h2>What generalizes</h2>
+        <p>
+          Three habits transfer to any systems project: probe capabilities
+          instead of trusting environment labels, encode a bug as a failing CI
+          repro before fixing it, and keep a written ledger of which claims are
+          proven. The wallpaper was the excuse; the verification infrastructure
+          was the product. Fresco is GPL-3.0 and the code, harnesses, and
+          ledger are all in{" "}
+          <Link
+            href="https://github.com/DibbayajyotiRoy/fresco"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            the repository
+          </Link>
+          . More of my work is on the{" "}
+          <Link href="/projects">projects page</Link> and in{" "}
+          <Link href="/writing/merged-into-pyrefly-and-reductstore">
+            how my patches landed in Pyrefly and ReductStore
+          </Link>
+          ; background is on the <Link href="/about">about page</Link>.
+        </p>
+        <p>Install:</p>
+        <pre>
+          <code>{`curl -fsSL https://github.com/DibbayajyotiRoy/fresco/releases/latest/download/install.sh | bash`}</code>
+        </pre>
+      </>
+    ),
+  },
   {
     slug: "merged-into-pyrefly-and-reductstore",
     title: "Getting Code Merged Into Meta's Pyrefly and ReductStore",

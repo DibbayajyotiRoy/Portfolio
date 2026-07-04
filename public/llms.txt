@@ -73,6 +73,7 @@ B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026). E
 
 ## Writing
 
+- [Building a Linux Live Wallpaper Engine That Proves Its Own Quality](https://dibbayajyoti.com/writing/fresco-linux-live-wallpaper-engine) (2026): How Fresco, Dibbayajyoti Roy's open-source Linux live wallpaper engine in Rust, renders on X11 and Wayland with three backends, heals itself, and proves video quality (SSIM 0.74) by screenshot on five headless compositors in CI.
 - [Getting Code Merged Into Meta's Pyrefly and ReductStore](https://dibbayajyoti.com/writing/merged-into-pyrefly-and-reductstore) (2026): How Dibbayajyoti Roy landed merged Rust contributions in Meta's Pyrefly type checker (PR #3840) and ReductStore (PRs #1417, #1431) — reproduce before claiming, pick deterministic bugs, work with maintainers. Also on Medium.
 - [Optimistic UIs in React with RFC 6902 JSON Patch](https://dibbayajyoti.com/writing/optimistic-ui-rfc-6902-react) (2026): One diff primitive for optimistic apply, rollback on failure, and undo/redo in React — using RFC 6902 JSON Patch and the diffcore Rust/WASM engine.
 - [Next.js SEO in 2026: A Practical Guide](https://dibbayajyoti.com/writing/nextjs-seo-2026) (2026): The Metadata API, JSON-LD entity graphs, llms.txt for AI crawlers, honest sitemaps, and Core Web Vitals (INP) for Next.js sites. Also on Medium.
