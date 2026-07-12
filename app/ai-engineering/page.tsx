@@ -14,7 +14,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What is AHTML and how does it relate to RAG?",
-    a: "AHTML (Agentic HTML) is a nine-package npm scope that emits a canonical, agent-ready snapshot of any website. Its schema ships RAG-ready document chunks with stable IDs and byte ranges, and a LangChain.js loader turns any AHTML site into vector-store-ready documents.",
+    a: "AHTML (Agentic HTML) is a sixteen-package npm scope plus a Python SDK that emits a canonical, agent-ready snapshot of any website. Its schema ships RAG-ready document chunks with stable IDs and byte ranges, and LangChain loaders in both TypeScript and Python turn any AHTML site into vector-store-ready documents.",
   },
   {
     q: "Does he work on AI search and crawler optimization?",
@@ -78,13 +78,15 @@ export default function AiEngineeringPage() {
               >
                 AHTML (Agentic HTML)
               </Link>{" "}
-              is a shipped nine-package npm scope for making web content cheaply
-              consumable by AI agents. It defines a canonical semantic snapshot
-              with RAG-ready document chunks, emits MCP, OpenAPI, JSON-LD, and
-              llms.txt from a single pipeline, ships a typed agent client SDK,
-              Next.js / Vite / Hono adapters, KV caching backends, a WebMCP bridge,
-              includes a LangChain.js document loader that preserves citation anchors
-              and byte ranges, and adds an ahtml doctor CLI for CI. See{" "}
+              is a shipped sixteen-package npm scope, plus the ahtml Python SDK,
+              for making web content cheaply consumable by AI agents. It defines
+              a canonical semantic snapshot with RAG-ready document chunks, emits
+              MCP, OpenAPI, JSON-LD, llms.txt, RSL, and Markdown from a single
+              pipeline, ships a typed agent client SDK with a dry-run sandbox,
+              Next.js / Astro / SvelteKit / Vite / Hono adapters, KV caching
+              backends, a WebMCP bridge, agent-traffic insights, LangChain
+              loaders that preserve citation anchors and byte ranges, and a CLI
+              that scores any site and turns any URL into MCP tools. See{" "}
               <Link href="/ahtml-vs-llms-txt" className="underline">
                 AHTML vs llms.txt
               </Link>{" "}
