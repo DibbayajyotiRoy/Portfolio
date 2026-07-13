@@ -170,7 +170,7 @@ const ahtmlSchemaJsonLd = {
   "name": "@ahtmljs/schema",
   "url": "https://www.npmjs.com/package/@ahtmljs/schema",
   "description":
-    "Canonical semantic snapshot schema for AHTML. TypeScript types + JSON Schema + validator + dual serializers (lossless JSON and token-optimal compact text). Ships the Document.chunks primitive for deterministic RAG-ready IDs and byte ranges. 63 passing tests including property-fuzzing 100–500 cases per invariant.",
+    "Canonical semantic snapshot schema for AHTML. TypeScript types + JSON Schema + validator + dual serializers (lossless JSON and token-optimal compact text). Ships the Document.chunks primitive for deterministic RAG-ready IDs and byte ranges.",
   "keywords": ["@ahtmljs/schema", "AHTML schema", "RAG schema", "JSON Schema", "agent snapshot", "document chunks"],
 };
 
@@ -181,7 +181,7 @@ const ahtmlNextJsonLd = {
   "url": "https://www.npmjs.com/package/@ahtmljs/next",
   "runtimePlatform": ["Next.js 14+", "Node.js"],
   "description":
-    "Next.js plugin for AHTML. One route handler emits MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot from a single extractor pipeline; auto-discovers routes from App or Pages Router. Zero migration. Reachable at /.well-known/ahtml.json. 38 passing tests.",
+    "Next.js plugin for AHTML. One route handler emits MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot from a single extractor pipeline; auto-discovers routes from App or Pages Router. Zero migration. Reachable at /.well-known/ahtml.json.",
   "keywords": ["@ahtmljs/next", "AHTML Next.js plugin", "agent-friendly Next.js", "MCP server Next.js", "well-known agent endpoint"],
 };
 
@@ -191,7 +191,7 @@ const ahtmlAgentJsonLd = {
   "name": "@ahtmljs/agent",
   "url": "https://www.npmjs.com/package/@ahtmljs/agent",
   "description":
-    "Client SDK for AI agents consuming any AHTML-emitting site. ETag-cached snapshot fetch, structured action dispatch, dry-run safety gates, and optional tokenizer adapters (OpenAI o200k_base, Anthropic) for exact prompt cost. Hardened with hostile-agent regression tests. 28 passing tests.",
+    "Client SDK for AI agents consuming any AHTML-emitting site. ETag-cached snapshot fetch, structured action dispatch, dry-run safety gates, and optional tokenizer adapters (OpenAI o200k_base, Anthropic) for exact prompt cost. Hardened with hostile-agent regression tests.",
   "keywords": ["@ahtmljs/agent", "AI agent SDK", "agent action dispatch", "agent safety gate", "tokenizer cost"],
 };
 
@@ -202,7 +202,7 @@ const ahtmlViteJsonLd = {
   "url": "https://www.npmjs.com/package/@ahtmljs/vite",
   "runtimePlatform": ["Vite 5+", "SvelteKit", "SolidStart", "Astro"],
   "description":
-    "Vite plugin counterpart to @ahtmljs/next. Same handler as middleware; one config-line opt-in for any Vite-based framework (SvelteKit, SolidStart, Astro, vanilla Vite). Byte-identical output to the Next.js plugin for true cross-framework parity. 9 passing tests.",
+    "Vite plugin counterpart to @ahtmljs/next. Same handler as middleware; one config-line opt-in for any Vite-based framework (SvelteKit, SolidStart, Astro, vanilla Vite). Byte-identical output to the Next.js plugin for true cross-framework parity.",
   "keywords": ["@ahtmljs/vite", "AHTML Vite plugin", "SvelteKit agent", "SolidStart agent", "Astro agent"],
 };
 
@@ -213,7 +213,7 @@ const ahtmlLangchainJsonLd = {
   "url": "https://www.npmjs.com/package/@ahtmljs/langchain",
   "runtimePlatform": ["@langchain/core 0.3+"],
   "description":
-    "LangChain.js document loader for AHTML. Fetches any AHTML-emitting site and returns Document[] ready for vector stores; splits at Document.chunks boundaries with citation anchors, byte ranges, and source URLs preserved per chunk. URL → embeddings in three lines. 5 passing tests.",
+    "LangChain.js document loader for AHTML. Fetches any AHTML-emitting site and returns Document[] ready for vector stores; splits at Document.chunks boundaries with citation anchors, byte ranges, and source URLs preserved per chunk. URL → embeddings in three lines.",
   "keywords": ["@ahtmljs/langchain", "LangChain document loader", "RAG loader", "vector store ingest", "citation metadata"],
 };
 

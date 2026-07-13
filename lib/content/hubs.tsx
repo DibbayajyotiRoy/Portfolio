@@ -522,8 +522,8 @@ import { DataTable, DateRangePicker, TimePicker } from "@roy-ui/ui";
     metaTitle:
       "AHTML — make your site readable by AI agents (MCP, OpenAPI, llms.txt from one config)",
     metaDescription:
-      "AHTML is the contract layer of the agent web — a nine-package @ahtmljs scope (Next.js, Vite, Hono adapters, KV, WebMCP + agent SDK, LangChain loader, CLI) that emits MCP, OpenAPI 3.1, JSON-LD, llms.txt, and a token-optimal signed snapshot from one config line. MIT.",
-    kicker: "open-source product · 9 npm packages · MIT",
+      "AHTML is the contract layer of the agent web — sixteen @ahtmljs packages plus a Python SDK (Next.js, Astro, SvelteKit, Vite, Hono adapters, agent SDK with dry-run sandbox, LangChain loaders, insights, conformance corpus, Index, badge, CLI) that emit MCP, OpenAPI 3.1, JSON-LD, llms.txt, RSL, Markdown, and a token-optimal signed snapshot from one config line. MIT.",
+    kicker: "open-source product · 16 npm packages + Python SDK · MIT",
     subtitle: "the contract layer of the agent web",
     jsonLdType: "SoftwareSourceCode",
     programmingLanguage: ["TypeScript"],
@@ -535,42 +535,55 @@ import { DataTable, DateRangePicker, TimePicker } from "@roy-ui/ui";
             <strong>AHTML</strong> (Agentic HTML) lets a website declare a single
             semantic snapshot of a page and emit, from that one source, every
             protocol an AI agent might want: an MCP tool manifest, an OpenAPI 3.1
-            document, JSON-LD, an llms.txt shim, and a token-optimal, optionally
-            signed snapshot. One config in, every agent-readable protocol out —
-            RSS, but for AI agents. It is a nine-package npm scope (
-            <span className="font-mono text-sm">@ahtmljs/*</span>) at v0.9.5.
+            document, JSON-LD, an llms.txt shim, an RSL 1.0 license, a Markdown
+            view, and a token-optimal, optionally signed snapshot with typed,
+            priced actions. One config in, every agent-readable protocol out —
+            RSS, but for AI agents. It is a sixteen-package npm scope (
+            <span className="font-mono text-sm">@ahtmljs/*</span>) at v1.1.0,
+            plus the <span className="font-mono text-sm">ahtml</span> Python SDK
+            — and its universal extractor lets agents consume any site today,
+            with or without adoption.
           </p>
         ),
       },
       {
         title: "install",
         body: codeBlock(
-          `npm install @ahtmljs/next       # Next.js plugin
-npm install @ahtmljs/vite       # Vite / SvelteKit / SolidStart / Astro
+          `npx @ahtmljs/cli init           # detects Next/Astro/SvelteKit/Vite/Hono, wires everything
+npm install @ahtmljs/next       # Next.js plugin
+npm install @ahtmljs/astro      # Astro integration
+npm install @ahtmljs/sveltekit  # SvelteKit hook
+npm install @ahtmljs/vite       # Vite / SolidStart / vanilla Vite
 npm install @ahtmljs/hono       # Hono · Node · Bun · Deno · Workers · Lambda
-npm install @ahtmljs/agent      # typed client SDK for agents
+npm install @ahtmljs/agent      # typed client SDK for agents (dry-run sandbox)
 npm install @ahtmljs/langchain  # RAG document loader
-npm install @ahtmljs/schema     # types + JSON Schema + validator
-npm install @ahtmljs/kv         # pluggable KV & cache backends
-npm install @ahtmljs/webmcp     # W3C WebMCP browser tool bridge
-npm install -g @ahtmljs/cli     # ahtml doctor — validate the discovery chain`
+pip install ahtml               # Python SDK — LangChain loader included
+npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools — no adoption needed`
         ),
       },
       {
-        title: "the nine packages",
+        title: "the sixteen packages (plus Python)",
         body: (
           <Table
             headers={["Package", "What it does"]}
             rows={[
-              ["@ahtmljs/schema", "Canonical snapshot types, validator, dual serializers, emitters. Edge-safe."],
-              ["@ahtmljs/next", "Next.js plugin — one route emits MCP, OpenAPI, JSON-LD, llms.txt, snapshot."],
-              ["@ahtmljs/vite", "Vite plugin — byte-identical output for SvelteKit, SolidStart, Astro."],
+              ["@ahtmljs/schema", "The contract layer — snapshot types, validator, dual serializers, emitters. Edge-safe."],
+              ["@ahtmljs/next", "Next.js plugin — one route emits MCP, OpenAPI, JSON-LD, llms.txt, RSL, snapshot."],
+              ["@ahtmljs/astro", "Astro integration — same five-endpoint surface, zero astro dependency."],
+              ["@ahtmljs/sveltekit", "SvelteKit server hook or per-endpoint handlers, same surface."],
+              ["@ahtmljs/vite", "Vite plugin — byte-identical output for SolidStart and vanilla Vite."],
               ["@ahtmljs/hono", "Hono adapter — same handler on Node, Bun, Deno, Workers, Lambda."],
-              ["@ahtmljs/agent", "Typed client SDK — ETag caching, retries, dry-run gates, tokenizer cost."],
+              ["@ahtmljs/extract", "Framework-neutral extractor pipeline with a plugin API."],
+              ["@ahtmljs/agent", "Typed client SDK — ETag caching, retries, dry-run sandbox, tokenizer cost, HTML fallback."],
+              ["ahtml (PyPI)", "Python consumer SDK — LangChain loader, JWS verification, byte-identical canonical JSON."],
               ["@ahtmljs/langchain", "LangChain.js loader — chunks with citation anchors preserved."],
+              ["@ahtmljs/cli", "init · analyze · score · doctor · benchmark · mcp proxy — works on any URL."],
               ["@ahtmljs/kv", "Pluggable KV/cache backends — Memory, Upstash Redis, Cloudflare KV."],
               ["@ahtmljs/webmcp", "WebMCP tool registry & browser bookmarklet for page actions."],
-              ["@ahtmljs/cli", "ahtml doctor — walks the discovery chain end to end; CI-wirable."],
+              ["@ahtmljs/insights", "Agent-traffic analytics — verified agents vs bots vs humans, zero-PII."],
+              ["@ahtmljs/conformance", "Language-agnostic conformance corpus + certification runner."],
+              ["@ahtmljs/index", "The AHTML Index — registry + crawler with an MCP query surface."],
+              ["@ahtmljs/badge", "Hosted score-badge service — README-embeddable SVG + linked report."],
             ]}
           />
         ),
@@ -582,17 +595,31 @@ npm install -g @ahtmljs/cli     # ahtml doctor — validate the discovery chain`
             <p>
               The moat is not being best at any one protocol — it is being the
               only thing that emits all of them from one source of truth. And it
-              is measured: on a fact-extraction benchmark with real tokenizers
-              and real model calls, the AHTML compact snapshot hits 95% accuracy
-              at roughly half the tokens of raw HTML, and the canonical JSON form
-              hits 100% — versus 91% for plain HTML and 89% for llms.txt.
+              is measured, not estimated: 5.6× fewer tokens than the HTML a
+              browser loads on the flagship benchmark page (4.5–7.3× across the
+              corpus, real OpenAI and Anthropic tokenizers), and in a 146-run
+              multi-model benchmark across gpt-4o-mini, claude-haiku-4.5,
+              gemini-2.5-flash, and llama-3.3-70b, fact-extraction accuracy
+              rises from 91% on raw HTML to 100% on AHTML JSON — versus 89% for
+              llms.txt.
             </p>
             <p>
-              It is framework-native and additive: your existing Next.js, Vite,
-              or Hono app becomes an MCP server at{" "}
+              It is framework-native and additive: your existing Next.js, Astro,
+              SvelteKit, Vite, or Hono app becomes an MCP server at{" "}
               <span className="font-mono text-sm">/ahtml/mcp.json</span> — same
               database, same auth, one deploy — instead of you standing up a
               separate server.
+            </p>
+            <p>
+              And it is safe to act on, not just read: actions carry typed cost,
+              reversibility, auth, and side-effects; sites can require verified
+              agents (RFC 9421 signed requests), price actions over x402, and
+              license content with RSL 1.0 — and agents can rehearse priced or
+              irreversible actions in the SPEC §4.7 dry-run sandbox before real
+              money moves. Snapshots are signable with detached JWS. 700+ tests
+              pass across the sixteen packages and the Python SDK, and both
+              implementations certify 100% against a language-agnostic
+              conformance corpus.
             </p>
           </div>
         ),
@@ -612,7 +639,15 @@ npm install -g @ahtmljs/cli     # ahtml doctor — validate the discovery chain`
               },
               {
                 q: "Does it work outside Next.js?",
-                a: "Yes. @ahtmljs/vite covers SvelteKit, SolidStart, Astro, and vanilla Vite, and @ahtmljs/hono covers Node, Bun, Deno, Cloudflare Workers, and AWS Lambda — all with byte-identical output.",
+                a: "Yes. Dedicated adapters cover Astro (@ahtmljs/astro), SvelteKit (@ahtmljs/sveltekit), and other Vite-based apps like SolidStart (@ahtmljs/vite), and @ahtmljs/hono covers Node, Bun, Deno, Cloudflare Workers, and AWS Lambda — all with byte-identical output. `npx @ahtmljs/cli init` detects your framework and wires everything.",
+              },
+              {
+                q: "Do the sites my agent reads need AHTML installed?",
+                a: "No. The consumer side works on any URL today: @ahtmljs/agent's fetchPage() and the ahtml Python SDK fall back to extracting typed entities from ordinary HTML (schema.org, OpenGraph, microdata), and `npx @ahtmljs/cli mcp <url>` turns any site into MCP tools for Claude, ChatGPT, or Cursor.",
+              },
+              {
+                q: "Can a site charge AI agents or verify who is calling?",
+                a: "Yes. Actions declare typed cost with x402 payment rails behind a standards-compliant HTTP 402 flow, sites can require RFC 9421-signed requests from verified agents, and content licensing ships via an RSL 1.0 file plus Content Signals — with a dry-run sandbox so agents rehearse priced or irreversible actions before paying.",
               },
             ]}
           />

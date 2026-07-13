@@ -44,4 +44,14 @@
   .article-body strong {
     @apply font-semibold;
   }
+  .article-body table {
+    @apply w-full text-sm my-5 border-collapse;
+  }
+  .article-body th,
+  .article-body td {
+    @apply border border-blackout/15 dark:border-whiteout/20 px-3 py-2 text-left align-top;
+  }
+  .article-body th {
+    @apply font-semibold bg-blackout/5 dark:bg-whiteout/5;
+  }
 }
