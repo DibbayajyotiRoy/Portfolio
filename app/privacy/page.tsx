@@ -74,15 +74,15 @@ export default function PrivacyPage() {
             </ul>
           </TitledParagraph>
 
-          <TitledParagraph title="email contact">
+          <TitledParagraph title="contact">
             <p>
-              If you email me at{" "}
-              <Link href="mailto:dibbayajyoti@gmail.com" className="underline font-semibold">
-                dibbayajyoti@gmail.com
+              If you book a call via{" "}
+              <Link href="https://cal.com/dibbayajyoti" target="_blank" rel="noopener noreferrer" className="underline font-semibold">
+                cal.com/dibbayajyoti
               </Link>
-              , the message lives in my Gmail inbox. I do not import contacts
-              into a CRM or marketing tool. To have your message deleted,
-              just reply asking me to remove it.
+              , your booking details are handled by Cal.com per their privacy
+              policy. I do not import contacts into a CRM or marketing tool.
+              To have your details deleted, just ask me during or after the call.
             </p>
           </TitledParagraph>
 
@@ -99,9 +99,9 @@ export default function PrivacyPage() {
             <p>
               This page is updated when the data flow changes. Last updated:{" "}
               <span className="font-mono">2026-05-15</span>. Major changes are
-              dated above. Questions? Email{" "}
-              <Link href="mailto:dibbayajyoti@gmail.com" className="underline font-semibold">
-                dibbayajyoti@gmail.com
+              dated above. Questions? Book a call at{" "}
+              <Link href="https://cal.com/dibbayajyoti" target="_blank" rel="noopener noreferrer" className="underline font-semibold">
+                cal.com/dibbayajyoti
               </Link>
               .
             </p>

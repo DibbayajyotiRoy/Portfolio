@@ -16,7 +16,6 @@ export const profile = {
   name: "Dibbayajyoti Roy",
   firstName: "Dibbayajyoti",
   title: "Full Stack Software Engineer",
-  location: "Agartala, India",
   employer: {
     name: "Yupcha Softwares Pvt. Ltd",
     since: "July 2025",
@@ -27,7 +26,7 @@ export const profile = {
     graduationYear: 2026,
   },
   links: {
-    email: "dibbayajyoti@gmail.com",
+    cal: "https://cal.com/dibbayajyoti",
     linkedin: "https://linkedin.com/in/dibbayajyoti-roy/",
     github: "https://github.com/DibbayajyotiRoy",
     x: "https://x.com/dibbayajyoti",

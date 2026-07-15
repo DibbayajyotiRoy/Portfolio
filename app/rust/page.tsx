@@ -39,8 +39,8 @@ export default function RustPage() {
         <div className="flex flex-col gap-6 sm:gap-8 mt-10 text-blackout/90 dark:text-whiteout/90">
           <TitledParagraph title="overview">
             <p>
-              I&apos;m Dibbayajyoti Roy — a full-stack and Rust backend engineer
-              based in Agartala, India. Rust is the language I reach for when
+              I&apos;m Dibbayajyoti Roy — a full-stack and Rust backend
+              engineer. Rust is the language I reach for when
               correctness and performance both matter: async backend services,
               Rust API development, systems programming, and code that compiles
               to WebAssembly. This page collects the Rust work I do, the
@@ -106,14 +106,16 @@ export default function RustPage() {
                 >
                   ReductStore
                 </Link>{" "}
-                — I contributed to ReductStore&apos;s observability layer across
-                four merged PRs — replication diagnostics, instance-wide usage
-                statistics, per-bucket usage metrics, and system-log capture —
-                each emitting queryable telemetry into a $system bucket so teams
-                can monitor sync state, resource usage, and the node&apos;s own
-                logs as data, and alert on it. Reviewed and merged by the
-                maintainer, the first shipping in v1.20 — a distributed-systems
-                contribution in the Rust ecosystem. Full story and the
+                — I contributed to ReductStore&apos;s observability and
+                replication layers across seven merged PRs — replication
+                diagnostics, instance-wide usage statistics, per-bucket usage
+                metrics, system-log capture, a unified $system event sink,
+                pipelined replication batch sending, and replication payload
+                compression — spanning queryable telemetry that teams can
+                monitor and alert on, plus replication throughput and transfer
+                efficiency. Reviewed and merged by the maintainer, the first
+                shipping in v1.20 — distributed-systems contributions in the
+                Rust ecosystem. Full story and the
                 maintainer&apos;s endorsement on{" "}
                 <Link href="/open-source" className="underline">
                   /open-source

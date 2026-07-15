@@ -7,7 +7,6 @@
 - **Role**: Full Stack Software Engineer
 - **Specialization**: TypeScript, Rust, Linux Infrastructure
 - **Employer**: Yupcha Softwares Pvt. Ltd (since July 2025)
-- **Location**: Agartala, West Tripura, India
 - **Education**: B.Tech in Computer Science, ICFAI University Tripura (Expected 2026)
 - **Website**: https://dibbayajyoti.com
 - **Work eligibility**: Germany Opportunity Card / EU Blue Card, Netherlands Highly Skilled Migrant (HSM) programme
@@ -38,7 +37,6 @@ Multi-tenant SaaS, event-driven architecture, edge compute, observability, distr
 ## Professional Experience
 
 ### Full Stack Software Engineer — Yupcha Softwares Pvt. Ltd (July 2025–Present)
-Location: Agartala, India
 
 - Shipped HR SaaS modules including employee records, leave workflow, and role-based access controls used across partner organisations.
 - Designed 12+ REST endpoints in Node.js/Express with PostgreSQL for CRUD, authentication, and reporting queries.
@@ -178,7 +176,7 @@ Location: Agartala, India
 
 ## Open Source Contributions
 
-Five merged pull requests across two production Rust projects: four to ReductStore (a time-series database for robotics and industrial IoT — https://github.com/reductstore/reductstore), all extending its observability / system-events layer, plus one to Meta's Pyrefly Python type checker.
+Eight merged pull requests across two production Rust projects: seven to ReductStore (a time-series database for robotics and industrial IoT — https://github.com/reductstore/reductstore), extending its observability / system-events layer and its replication pipeline, plus one to Meta's Pyrefly Python type checker.
 
 ### ReductStore — Replication Audit Events (merged, shipping in v1.20)
 - **Pull request**: Feat/replication audit events, PR #1417 — https://github.com/reductstore/reductstore/pull/1417
@@ -196,6 +194,18 @@ Five merged pull requests across two production Rust projects: four to ReductSto
 ### ReductStore — System Log Capture (merged, shipping in an upcoming release)
 - **Pull request**: feat(syslog): capture log messages to $system/logs/<instance>, PR #1481 (resolving issue #1467) — https://github.com/reductstore/reductstore/pull/1481
 - **Description**: An opt-in pipeline captures the instance's own log messages into $system/logs/<instance>/messages as queryable system events at a configurable severity level, so a node's logs can be queried as time-series data alongside its other system events. Includes a reentrancy guard so that writing a log into storage (which itself emits logs) never recurses, with console output kept unconditional. Reviewed and merged by the maintainer; merged to main and shipping in an upcoming release.
+
+### ReductStore — Unified $system Event Sink (merged)
+- **Pull request**: Feat/unify syslog, PR #1496 (resolving issue #1485) — https://github.com/reductstore/reductstore/pull/1496
+- **Description**: Unifies all $system event handling — audit, usage, replication, lifecycle, and log capture — behind one generic sink in a single syslog module. A SystemEventKind routing enum resolves each family's $system/<prefix>/<instance>/<entry> path, and the duplicated writer and path logic is collapsed, with characterization tests pinning the external record format so nothing user-facing changes. Reviewed and merged by the maintainer.
+
+### ReductStore — Pipelined Replication Batch Sending (merged)
+- **Pull request**: Pipeline replication batch sending, PR #1527 (resolving issue #1061, building on #1415) — https://github.com/reductstore/reductstore/pull/1527
+- **Description**: Improves replication throughput by pipelining batch sending — while one entry's batch is in flight over HTTP, the next entry's batch is already being prepared. Transaction acknowledgements happen per entry inside the send task, and a panicked send task is recovered by rebuilding the remote bucket, so an internal bug degrades a single pass instead of crashing the database. Reviewed and merged by the maintainer.
+
+### ReductStore — Replication Payload Compression (merged, shipping in an upcoming release)
+- **Pull request**: Replication: add optional payload compression, PR #1538 (resolving issue #1348) — https://github.com/reductstore/reductstore/pull/1538
+- **Description**: Adds a per-replication-task compression setting (zstd or gzip, default none) that compresses replication batch payloads in transit using standard HTTP Content-Encoding, with transparent request decompression on the receiving router and a version-gated fallback to uncompressed transfer for destination servers too old to decompress requests. Reviewed and merged by the maintainer; merged to main and shipping in an upcoming release.
 
 ### Pyrefly (Meta) — py.typed untyped-import fix (merged via codesync)
 - **Upstream project**: Pyrefly, Meta's open-source (Rust-built) Python type checker — https://github.com/facebook/pyrefly
@@ -253,23 +263,21 @@ Dibbayajyoti's engineering philosophy centers on building software that is both 
 
 ## Frequently Asked Questions
 
-- **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd, based in Agartala, India. Specializes in TypeScript, Rust, React, Next.js, and AI engineering with AWS Bedrock.
+- **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd. Specializes in TypeScript, Rust, React, Next.js, and AI engineering with AWS Bedrock.
 - **Does Dibbayajyoti Roy have AI experience?** Yes. He built and shipped Learning Copilot — a production AWS Bedrock AI assistant with multi-model fallback (Nova Pro → Nova Lite), real-time streaming, and cost-aware architecture. Top 500 in AI for Bharat hackathon.
 - **What is Klinder-OSS?** An open-source SDK by Dibbayajyoti Roy that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install — effectively combining PostHog + LogRocket + Customer.io. TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS), with a Rust port in progress targeting sub-10ms p95 latency.
 - **What is diffcore?** A fast WebAssembly JSON diff engine by Dibbayajyoti Roy, written in Rust and published on npm (v1.2.0). Returns real JSON Pointer paths (RFC 6901) and decoded values, emits standard RFC 6902 JSON Patch, ships applyPatch / revertPatch for state sync / undo-redo / optimistic UI, plus a React useDiff hook, a CLI, and a streaming engine for multi-GB files. 2.3–3.0× faster than fast-json-patch and 4–8× faster than jsondiffpatch. Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
 - **What is AHTML?** AHTML (Agentic HTML) is a shipped seven-package npm scope (`@ahtmljs/*` at v0.9.0) by Dibbayajyoti Roy for making web content cheaply consumable by AI agents. The scope ships `@ahtmljs/schema` (canonical snapshot + RAG-ready `Document.chunks`, 63 tests), `@ahtmljs/next` (Next.js plugin emitting MCP/OpenAPI/JSON-LD/llms.txt/snapshot at `/.well-known/ahtml.json`, 38 tests), `@ahtmljs/agent` (client SDK with ETag caching, dry-run safety gates, hostile-agent regressions, 28 tests), `@ahtmljs/vite` (Vite plugin counterpart with byte-identical output, 9 tests), `@ahtmljs/langchain` (LangChain.js loader with citation metadata, 5 tests), `@ahtmljs/hono` (Hono adapter for Node, Bun, Deno, and Cloudflare Workers), and `@ahtmljs/cli` (`ahtml doctor` discovery-chain linter for CI). Repo: github.com/DibbayajyotiRoy/AHTML.
 - **Is Dibbayajyoti Roy eligible to work in Europe?** Yes — eligible for Germany Opportunity Card / EU Blue Card and Netherlands Highly Skilled Migrant programme.
 - **What is Dibbayajyoti Roy's tech stack?** TypeScript, Rust, React, Next.js, Node.js, Hono, AWS Bedrock, Cloudflare Workers, Neon Postgres, Docker, Linux/nginx/systemd.
-- **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd as Full Stack Software Engineer since July 2025, Agartala, India.
-- **How to contact Dibbayajyoti Roy?** Email: dibbayajyoti@gmail.com, LinkedIn: linkedin.com/in/dibbayajyoti-roy/, GitHub: github.com/DibbayajyotiRoy.
+- **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd as Full Stack Software Engineer since July 2025.
+- **How to contact Dibbayajyoti Roy?** Book a call: cal.com/dibbayajyoti, LinkedIn: linkedin.com/in/dibbayajyoti-roy/, GitHub: github.com/DibbayajyotiRoy.
 
 ## Contact
 
-- **Email**: dibbayajyoti@gmail.com
-- **Phone**: +91 8731953807
+- **Book a call**: https://cal.com/dibbayajyoti
 - **LinkedIn**: https://linkedin.com/in/dibbayajyoti-roy/
 - **GitHub**: https://github.com/DibbayajyotiRoy
 - **X/Twitter**: https://x.com/dibbayajyoti
 - **Medium**: https://medium.com/@dibbayajyoti
 - **Discord**: om165_
-- **Address**: Dashamighat, Agartala, West Tripura, India

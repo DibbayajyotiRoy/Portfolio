@@ -31,14 +31,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const pages = [
     { path: '', lastModified: '2026-05-25', changeFrequency: 'monthly' as const, priority: 1 },
-    { path: '/work', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.9 },
+    { path: '/work', lastModified: '2026-07-15', changeFrequency: 'monthly' as const, priority: 0.9 },
     ...hubPages,
     ...articlePages,
-    { path: '/open-source', lastModified: '2026-06-10', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/open-source', lastModified: '2026-07-15', changeFrequency: 'monthly' as const, priority: 0.85 },
     { path: '/about', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.8 },
     { path: '/writing', lastModified: '2026-05-31', changeFrequency: 'weekly' as const, priority: 0.8 },
     { path: '/contact', lastModified: '2026-04-06', changeFrequency: 'yearly' as const, priority: 0.7 },
-    { path: '/rust', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/rust', lastModified: '2026-07-15', changeFrequency: 'monthly' as const, priority: 0.85 },
     { path: '/webassembly', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
     { path: '/ai-engineering', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },
     { path: '/nextjs-seo', lastModified: '2026-05-31', changeFrequency: 'monthly' as const, priority: 0.85 },

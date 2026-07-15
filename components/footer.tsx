@@ -271,26 +271,12 @@ const Footer = ({}: FooterProps) => {
             <div className=" font-light mt-2">
               <Link
                 className="opacity-50 transition-opacity hover:opacity-100"
-                href="mailto:dibbayajyoti@gmail.com"
-              >
-                dibbayajyoti@gmail.com
-              </Link>
-              <p>
-                <Link
-                  className="opacity-50 transition-opacity hover:opacity-100"
-                  href="tel:+918731953807"
-                >
-                  +918731953807
-                </Link>
-              </p>
-              <div
+                href="https://cal.com/dibbayajyoti"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="opacity-50"
-                
               >
-                <p className="mt-2">Dashamighat, Agartala</p>
-                <p>West Tripura, India</p>
-              </div>
+                cal.com/dibbayajyoti
+              </Link>
             </div>
           </div>
         </div>
@@ -349,10 +335,12 @@ const Footer = ({}: FooterProps) => {
             <p className="text-whiteout/50 md:w-auto w-full">
               if you have questions or inquiries,{" "}
               <Link
-                href="mailto:dibbayajyoti@gmail.com"
+                href="https://cal.com/dibbayajyoti"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="underline decoration-2 text-whiteout/75 hover:text-whiteout/100"
               >
-                reach out
+                book a call
               </Link>
             </p>
             <p className="text-xs opacity-50 text-center w-full mt-10 md:mt-0 md:w-auto">

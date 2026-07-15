@@ -3,7 +3,14 @@
     "allow": [
       "Bash(grep -q 'href=\"/__TRACKED_VAR__\"' .next/server/app/writing.html)",
       "Bash(curl -sS \"https://dibbayajyoti.com/sitemap.xml\")",
-      "Bash(git diff-tree *)"
+      "Bash(git diff-tree *)",
+      "Bash(sed -i 's|Email: dibbayajyoti@gmail.com, LinkedIn|Book a call: cal.com/dibbayajyoti, LinkedIn|; s|- \\\\*\\\\*Email\\\\*\\\\*: dibbayajyoti@gmail.com|- **Book a call**: https://cal.com/dibbayajyoti|; /- \\\\*\\\\*Phone\\\\*\\\\*: +91 8731953807/d; s|- Email: dibbayajyoti@gmail.com|- Book a call: https://cal.com/dibbayajyoti|' public/llms.txt public/llms-full.txt)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(gh pr *)",
+      "Bash(sed -i 's| Based in Agartala, India\\\\.||g' app/layout.tsx)",
+      "Bash(sed -i 's| based in Agartala, India, and| and|' app/about/layout.tsx)",
+      "Bash(sed -i 's| based in Agartala, India\\\\.|.|; s| Based in Agartala, Tripura, India\\\\.||' app/contact/layout.tsx)",
+      "Bash(sed -i 's| based in Agartala, India,| at Yupcha Softwares Pvt. Ltd,|' app/page.tsx)"
     ]
   }
 }

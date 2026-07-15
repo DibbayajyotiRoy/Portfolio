@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     url: baseUrl,
     siteName: "Dibbayajyoti Roy",
     title: "Dibbayajyoti Roy – Full Stack & Rust Backend Engineer",
-    description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, WebAssembly, React, and Next.js. Based in Agartala, India.",
+    description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, WebAssembly, React, and Next.js.",
     images: [
       {
         url: `/opengraph-image.png`,
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Dibbayajyoti Roy – Full Stack & Rust Backend Engineer",
-    description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, WebAssembly, React, and Next.js. Based in Agartala, India.",
+    description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, WebAssembly, React, and Next.js.",
     creator: "@DibbayajyotiRoy",
     images: [`/opengraph-image.png`],
   },
@@ -137,16 +137,8 @@ const personJsonLd = {
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "email": "dibbayajyoti@gmail.com",
-    "telephone": "+918731953807",
+    "url": "https://cal.com/dibbayajyoti",
     "contactType": "personal"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Dashamighat",
-    "addressLocality": "Agartala",
-    "addressRegion": "Tripura",
-    "addressCountry": "IN"
   }
 };
 
@@ -196,7 +188,7 @@ export default function RootLayout({
           <noscript>
               <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
                 <h1>Dibbayajyoti Roy — Full Stack &amp; Rust Backend Engineer</h1>
-                <p>Full Stack Software Engineer and Rust backend engineer based in Agartala, India, currently at Yupcha Softwares Pvt. Ltd. Specializing in Rust, WebAssembly, TypeScript, React, and Next.js for building high-performance systems and production-grade SaaS platforms.</p>
+                <p>Full Stack Software Engineer and Rust backend engineer, currently at Yupcha Softwares Pvt. Ltd. Specializing in Rust, WebAssembly, TypeScript, React, and Next.js for building high-performance systems and production-grade SaaS platforms.</p>
                 <h2>Key Skills</h2>
                 <p>Rust, TypeScript, React, Next.js, Node.js, WebAssembly, Hono, REST APIs, Cloudflare Workers, AWS Bedrock, Neon Postgres, Docker, Linux infrastructure, Systems Programming.</p>
                 <h2>Flagship Projects</h2>
@@ -217,7 +209,7 @@ export default function RootLayout({
                 </ul>
                 <h2>Writing</h2>
                 <p>See <a href="/writing">/writing</a> for engineering articles on Next.js SEO, Redis production debugging, and AI engineering with AWS Bedrock.</p>
-                <p>Contact: dibbayajyoti@gmail.com | LinkedIn: linkedin.com/in/dibbayajyoti-roy/ | GitHub: github.com/DibbayajyotiRoy | X: x.com/dibbayajyoti</p>
+                <p>Contact: cal.com/dibbayajyoti | LinkedIn: linkedin.com/in/dibbayajyoti-roy/ | GitHub: github.com/DibbayajyotiRoy | X: x.com/dibbayajyoti</p>
               </div>
           </noscript>
           {children}

@@ -1,6 +1,6 @@
 # Dibbayajyoti Roy — Personal Portfolio
 
-> Full Stack Software Engineer specializing in TypeScript, Rust, and Linux Infrastructure. Based in Agartala, Tripura, India. Creator of Klinder-OSS, Diffcore (npm), and the AHTML (Agentic HTML) shipped nine-package npm scope (@ahtmljs).
+> Full Stack Software Engineer specializing in TypeScript, Rust, and Linux Infrastructure. Creator of Klinder-OSS, Diffcore (npm), and the AHTML (Agentic HTML) shipped nine-package npm scope (@ahtmljs).
 
 ## Pages
 
@@ -12,7 +12,7 @@
 - [AI Engineering](https://dibbayajyoti.com/ai-engineering): AWS Bedrock applications, multi-model fallback, RAG architecture, the MCP protocol, LangChain.js, and AI crawler optimization.
 - [Next.js SEO](https://dibbayajyoti.com/nextjs-seo): Next.js Metadata API, JSON-LD structured data, sitemap optimization, llms.txt for AI crawlers, and Core Web Vitals.
 - [Distributed Systems](https://dibbayajyoti.com/distributed-systems): Edge ingestion on Cloudflare Workers, Redis polling optimization, multi-tenant Postgres with RLS, and backend scaling.
-- [Open Source](https://dibbayajyoti.com/open-source): Five merged pull requests across two production Rust projects — four to ReductStore (time-series database for robotics/IoT) observability layer (replication audit events #1417 shipped in v1.20 and publicly endorsed by the co-founder, usage statistics #1431, per-bucket usage metrics #1474, system-log capture #1481) plus a false-positive diagnostic fix merged into Meta's Pyrefly Python type checker (#3840).
+- [Open Source](https://dibbayajyoti.com/open-source): Eight merged pull requests across two production Rust projects — seven to ReductStore (time-series database for robotics/IoT) observability and replication layers (replication audit events #1417 shipped in v1.20 and publicly endorsed by the co-founder, usage statistics #1431, per-bucket usage metrics #1474, system-log capture #1481, unified $system event sink #1496, pipelined replication batch sending #1527, replication payload compression #1538) plus a false-positive diagnostic fix merged into Meta's Pyrefly Python type checker (#3840).
 
 ## About
 
@@ -61,15 +61,15 @@ B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026). E
 
 ## FAQ
 
-- **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd, Agartala, India. Creator of Klinder-OSS, Diffcore, and AHTML (shipped nine-package @ahtmljs npm scope). Specializes in TypeScript, Rust, React, Next.js, AWS Bedrock.
+- **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd. Creator of Klinder-OSS, Diffcore, and AHTML (shipped nine-package @ahtmljs npm scope). Specializes in TypeScript, Rust, React, Next.js, AWS Bedrock.
 - **What is Klinder-OSS?** An open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install. Cloudflare Workers + Queues for ingestion, Neon Postgres with RLS for multi-tenancy, TypeScript SDK with Zod validation, Rust port in progress.
 - **What is diffcore?** A fast WebAssembly JSON diff engine by Dibbayajyoti Roy, written in Rust and published on npm. Returns real JSON Pointer (RFC 6901) paths and decoded values, emits standard RFC 6902 JSON Patch, ships applyPatch / revertPatch for state sync, undo/redo, and optimistic UI, plus a React useDiff hook, a CLI, and a streaming engine for multi-GB files. Benchmarks 2.3–3.0× faster than fast-json-patch and 4–8× faster than jsondiffpatch (390–650 MB/s sustained).
 - **What is AHTML?** AHTML (Agentic HTML) is a shipped nine-package npm scope (`@ahtmljs/*` at v0.9.5) by Dibbayajyoti Roy for making web content cheaply consumable by AI agents. Includes `@ahtmljs/schema` (canonical snapshot + RAG-ready `Document.chunks`, 177 tests), `@ahtmljs/next` (Next.js plugin emitting MCP/OpenAPI/JSON-LD/llms.txt/snapshot at `/.well-known/ahtml.json`, 53 tests), `@ahtmljs/agent` (client SDK with ETag caching + dry-run gates + hostile-agent regressions, 57 tests), `@ahtmljs/vite` (Vite plugin counterpart, byte-identical output, 14 tests), `@ahtmljs/langchain` (LangChain.js loader with citation metadata, 5 tests), `@ahtmljs/hono` (Hono adapter, 18 tests), `@ahtmljs/kv` (pluggable KV and cache backends), `@ahtmljs/webmcp` (WebMCP tool registry & browser bookmarklet for page actions), and `@ahtmljs/cli` (`ahtml doctor` discovery-chain linter for CI, 9 tests). Repo: github.com/DibbayajyotiRoy/AHTML.
 - **Does Dibbayajyoti Roy have AI engineering experience?** Yes — built Learning Copilot using AWS Bedrock (Nova Pro / Nova Lite), multi-model fallback, streaming inference, DynamoDB memory, cost-aware token budgets. Top 500 AI for Bharat hackathon.
 - **What hackathons has Dibbayajyoti Roy won?** NITA Arjuna 2.0 National Hackathon (2025, 200+ teams), Technovate Project Exhibition (2025), 1st Runner-Up NITA–ISRO Space Hackathon (2024), Top 500 AI for Bharat (2026).
 - **Is Dibbayajyoti Roy eligible to work in Europe?** Yes — Germany Opportunity Card / EU Blue Card and Netherlands HSM.
-- **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd, Full Stack Software Engineer, since July 2025, Agartala, India.
-- **How to contact Dibbayajyoti Roy?** Email: dibbayajyoti@gmail.com, LinkedIn: linkedin.com/in/dibbayajyoti-roy/, GitHub: github.com/DibbayajyotiRoy.
+- **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd, Full Stack Software Engineer, since July 2025.
+- **How to contact Dibbayajyoti Roy?** Book a call: cal.com/dibbayajyoti, LinkedIn: linkedin.com/in/dibbayajyoti-roy/, GitHub: github.com/DibbayajyotiRoy.
 
 ## Writing
 
@@ -81,7 +81,7 @@ B.Tech Computer Science candidate at ICFAI University Tripura (Class of 2026). E
 
 ## Contact
 
-- Email: dibbayajyoti@gmail.com
+- Book a call: https://cal.com/dibbayajyoti
 - LinkedIn: https://linkedin.com/in/dibbayajyoti-roy/
 - GitHub: https://github.com/DibbayajyotiRoy
 - X/Twitter: https://x.com/dibbayajyoti

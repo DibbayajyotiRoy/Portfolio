@@ -14,7 +14,7 @@ const faqJsonLd = {
       "name": "Who is Dibbayajyoti Roy?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dibbayajyoti Roy is a Full Stack Software Engineer based in Agartala, India, specializing in TypeScript, Rust, React, and Next.js. He works at Yupcha Softwares Pvt. Ltd building production-grade SaaS platforms and is the creator of Klinder-OSS, an open-source product analytics SDK."
+        "text": "Dibbayajyoti Roy is a Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd, specializing in TypeScript, Rust, React, and Next.js. He works at Yupcha Softwares Pvt. Ltd building production-grade SaaS platforms and is the creator of Klinder-OSS, an open-source product analytics SDK."
       }
     },
     {

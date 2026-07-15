@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title:
     "Open Source Contributions — Dibbayajyoti Roy | ReductStore & Meta's Pyrefly",
   description:
-    "Open-source contributions by Dibbayajyoti Roy: five merged pull requests across two production Rust projects — four to ReductStore (a time-series database for robotics & industrial IoT), spanning replication audit events (#1417, shipped in v1.20, endorsed by the co-founder), usage statistics (#1431), per-bucket usage metrics (#1474), and system-log capture (#1481), plus a false-positive diagnostic fix merged into Meta's Pyrefly type checker (#3840).",
+    "Open-source contributions by Dibbayajyoti Roy: eight merged pull requests across two production Rust projects — seven to ReductStore (a time-series database for robotics & industrial IoT), spanning replication audit events (#1417, shipped in v1.20, endorsed by the co-founder), usage statistics (#1431), per-bucket usage metrics (#1474), system-log capture (#1481), a unified $system event sink (#1496), pipelined replication batch sending (#1527), and replication payload compression (#1538), plus a false-positive diagnostic fix merged into Meta's Pyrefly type checker (#3840).",
   alternates: { canonical: "/open-source" },
   openGraph: {
     title: "Open Source Contributions — Dibbayajyoti Roy",
     description:
-      "Merged upstream work with receipts: four ReductStore PRs across its observability layer (replication audit events, usage statistics, per-bucket metrics, system-log capture — one endorsed by the maintainer) plus a diagnostic fix merged into Meta's Pyrefly type checker.",
+      "Merged upstream work with receipts: seven ReductStore PRs across its observability and replication layers (replication audit events, usage statistics, per-bucket metrics, system-log capture, a unified $system event sink, pipelined batch sending, payload compression — one endorsed by the maintainer) plus a diagnostic fix merged into Meta's Pyrefly type checker.",
     url: `${baseUrl}/open-source`,
     type: "website",
   },
