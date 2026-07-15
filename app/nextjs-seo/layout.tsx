@@ -5,9 +5,9 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Next.js SEO — Dibbayajyoti Roy | Metadata API, JSON-LD, llms.txt",
+  title: "Next.js SEO: Dibbayajyoti Roy | Metadata API, JSON-LD, llms.txt",
   description:
-    "Next.js SEO by Dibbayajyoti Roy — the Next.js Metadata API, JSON-LD structured data, sitemap optimization, llms.txt for AI crawlers, and Core Web Vitals performance. This site is the case study.",
+    "Next.js SEO by Dibbayajyoti Roy: the Next.js Metadata API, JSON-LD structured data, sitemap optimization, llms.txt for AI crawlers, and Core Web Vitals performance. This site is the case study.",
   keywords: [
     "nextjs seo",
     "nextjs seo 2026",
@@ -22,16 +22,16 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/nextjs-seo" },
   openGraph: {
-    title: "Next.js SEO — Dibbayajyoti Roy",
+    title: "Next.js SEO: Dibbayajyoti Roy",
     description:
-      "Next.js Metadata API, JSON-LD structured data, llms.txt for AI crawlers, and Core Web Vitals — Next.js SEO done as engineering.",
+      "Next.js Metadata API, JSON-LD structured data, llms.txt for AI crawlers, and Core Web Vitals. Next.js SEO done as engineering.",
     url: `${baseUrl}/nextjs-seo`,
     type: "profile",
   },
   twitter: {
-    title: "Next.js SEO — Dibbayajyoti Roy",
+    title: "Next.js SEO: Dibbayajyoti Roy",
     description:
-      "Next.js Metadata API, JSON-LD, llms.txt, Core Web Vitals — Next.js SEO as engineering.",
+      "Next.js Metadata API, JSON-LD, llms.txt, Core Web Vitals. Next.js SEO as engineering.",
   },
 };
 
@@ -39,10 +39,10 @@ const collectionPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "@id": "https://dibbayajyoti.com/nextjs-seo#collection",
-  "name": "Next.js SEO — Dibbayajyoti Roy",
+  "name": "Next.js SEO: Dibbayajyoti Roy",
   "url": "https://dibbayajyoti.com/nextjs-seo",
   "description":
-    "Next.js SEO by Dibbayajyoti Roy — the Next.js Metadata API, JSON-LD structured data, sitemap optimization, llms.txt for AI crawlers, and Core Web Vitals.",
+    "Next.js SEO by Dibbayajyoti Roy: the Next.js Metadata API, JSON-LD structured data, sitemap optimization, llms.txt for AI crawlers, and Core Web Vitals.",
   "about": [
     { "@type": "Thing", "name": "Next.js" },
     { "@type": "Thing", "name": "Search engine optimization" },

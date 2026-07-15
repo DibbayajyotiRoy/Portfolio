@@ -5,12 +5,12 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "AHTML vs llms.txt — The Two Layers of the Agentic Web",
+  title: "AHTML vs llms.txt: The Two Layers of the Agentic Web",
   description:
     "AHTML vs llms.txt in 2026. Why both exist, what each is for, and how the @ahtmljs/* npm scope ships AHTML, llms.txt, MCP, OpenAPI, and JSON-LD from one extractor.",
   alternates: { canonical: "/ahtml-vs-llms-txt" },
   openGraph: {
-    title: "AHTML vs llms.txt — Two layers of the agentic web",
+    title: "AHTML vs llms.txt: Two layers of the agentic web",
     description:
       "AHTML is the canonical machine-readable snapshot. llms.txt is the human-readable index. They sit at different layers and the @ahtmljs plugin emits both.",
     url: `${baseUrl}/ahtml-vs-llms-txt`,

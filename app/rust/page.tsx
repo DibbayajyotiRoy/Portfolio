@@ -1,16 +1,18 @@
 import Link from "next/link";
 import TitledParagraph from "@/components/titled-paragraph";
+import Reveal from "@/components/reveal";
+import ChapterClose from "@/components/chapter-close";
 
 type FaqItem = { q: string; a: string };
 
 const faq: FaqItem[] = [
   {
     q: "Is Dibbayajyoti Roy available for Rust backend engineer roles?",
-    a: "Yes. He is open to full-time and contract Rust backend roles — async API development, systems programming, and edge runtimes — remote globally and relocation-eligible in the EU.",
+    a: "Yes. He is open to full-time and contract Rust backend roles (async API development, systems programming, and edge runtimes), remote globally and relocation-eligible in the EU.",
   },
   {
     q: "What has Dibbayajyoti Roy built in Rust?",
-    a: "Diffcore — a Rust + WebAssembly JSON diff engine published on npm; the Rust port of Klinder-OSS on workers-rs; and EMS, a real-time Employee Management System written in Rust with a React frontend.",
+    a: "Diffcore, a Rust + WebAssembly JSON diff engine published on npm; the Rust port of Klinder-OSS on workers-rs; and EMS, a real-time Employee Management System written in Rust with a React frontend.",
   },
   {
     q: "Does he do Rust + WebAssembly work?",
@@ -18,7 +20,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "Does he use Rust on Cloudflare Workers?",
-    a: "Yes. The Klinder-OSS analytics ingestion path is being ported to Rust on workers-rs — the Cloudflare Workers runtime for Rust — targeting sub-10ms p95 latency at the edge.",
+    a: "Yes. The Klinder-OSS analytics ingestion path is being ported to Rust on workers-rs, the Cloudflare Workers runtime for Rust, targeting sub-10ms p95 latency at the edge.",
   },
 ];
 
@@ -37,167 +39,175 @@ export default function RustPage() {
         </h1>
 
         <div className="flex flex-col gap-6 sm:gap-8 mt-10 text-blackout/90 dark:text-whiteout/90">
-          <TitledParagraph title="overview">
-            <p>
-              I&apos;m Dibbayajyoti Roy — a full-stack and Rust backend
-              engineer. Rust is the language I reach for when
-              correctness and performance both matter: async backend services,
-              Rust API development, systems programming, and code that compiles
-              to WebAssembly. This page collects the Rust work I do, the
-              problems it solves, and where it fits in a production stack.
-            </p>
-          </TitledParagraph>
-
-          <TitledParagraph title="what I've built in Rust">
-            <div className="flex flex-col gap-3">
+          <Reveal>
+            <TitledParagraph title="overview">
               <p>
-                <Link
-                  href="https://www.npmjs.com/package/diffcore"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold underline"
-                >
-                  Diffcore
-                </Link>{" "}
-                — a JSON diff engine written in Rust and compiled to
-                WebAssembly, published on npm. It returns standard RFC 6902 JSON
-                Patch and benchmarks several times faster than optimized
-                pure-JavaScript diff libraries. The full write-up is on{" "}
+                I&apos;m Dibbayajyoti Roy, a full-stack and Rust backend
+                engineer. Rust is the language I reach for when
+                correctness and performance both matter: async backend services,
+                Rust API development, systems programming, and code that compiles
+                to WebAssembly. This page collects the Rust work I do, the
+                problems it solves, and where it fits in a production stack.
+              </p>
+            </TitledParagraph>
+          </Reveal>
+
+          <Reveal>
+            <TitledParagraph title="what I've built in Rust">
+              <div className="flex flex-col gap-3">
+                <p>
+                  <Link
+                    href="https://www.npmjs.com/package/diffcore"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold underline"
+                  >
+                    Diffcore
+                  </Link>{" "}
+                  is a JSON diff engine written in Rust and compiled to
+                  WebAssembly, published on npm. It returns standard RFC 6902 JSON
+                  Patch and benchmarks several times faster than optimized
+                  pure-JavaScript diff libraries. The full write-up is on{" "}
+                  <Link href="/webassembly" className="underline">
+                    the WebAssembly page
+                  </Link>
+                  .
+                </p>
+                <p>
+                  <Link
+                    href="https://klinder-oss.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold underline"
+                  >
+                    Klinder-OSS
+                  </Link>
+                  &apos;s analytics ingestion path is being ported to Rust on
+                  workers-rs (Rust for Cloudflare Workers) to push p95 latency
+                  under 10ms at the edge. More on{" "}
+                  <Link href="/distributed-systems" className="underline">
+                    distributed systems
+                  </Link>
+                  .
+                </p>
+                <p>
+                  <Link
+                    href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold underline"
+                  >
+                    EMS
+                  </Link>{" "}
+                  is a real-time Employee Management System with a Rust backend and
+                  a React frontend, built to learn Rust web services end to end.
+                </p>
+                <p>
+                  <Link
+                    href="https://github.com/reductstore/reductstore/pull/1417"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold underline"
+                  >
+                    ReductStore
+                  </Link>
+                  : I contributed to ReductStore&apos;s observability and
+                  replication layers across seven merged PRs (replication
+                  diagnostics, instance-wide usage statistics, per-bucket usage
+                  metrics, system-log capture, a unified $system event sink,
+                  pipelined replication batch sending, and replication payload
+                  compression) spanning queryable telemetry that teams can
+                  monitor and alert on, plus replication throughput and transfer
+                  efficiency. Reviewed and merged by the maintainer, the first
+                  shipping in v1.20. These are distributed-systems contributions in the
+                  Rust ecosystem. Full story and the
+                  maintainer&apos;s endorsement on{" "}
+                  <Link href="/open-source" className="underline">
+                    /open-source
+                  </Link>
+                  . More on{" "}
+                  <Link href="/distributed-systems" className="underline">
+                    distributed systems
+                  </Link>
+                  .
+                </p>
+              </div>
+            </TitledParagraph>
+          </Reveal>
+
+          <Reveal>
+            <TitledParagraph title="where Rust fits">
+              <p>
+                I use Rust for the parts of a system that have to be fast and
+                predictable: Rust API development and async backend services,
+                Rust microservices, performance-critical paths compiled to
+                WebAssembly, and worker runtimes like Cloudflare Workers via
+                workers-rs. The strict compiler, the ownership model, and
+                zero-cost abstractions mean Rust performance optimization is
+                mostly a design-time activity, not a profiling fire drill after
+                ship.
+              </p>
+            </TitledParagraph>
+          </Reveal>
+
+          <Reveal>
+            <TitledParagraph title="why Rust">
+              <p>
+                Rust changed how I approach engineering, from building &quot;web
+                apps&quot; to designing reliable systems. It is a genuine Swiss
+                Army knife: low-level control, high-performance engines, and
+                blazingly fast backend services, all without trading safety for
+                speed. I believe Rust is the future of infrastructure, and I keep
+                exploring its edge in WebAssembly, edge computing, and real-time
+                systems.
+              </p>
+            </TitledParagraph>
+          </Reveal>
+
+          <Reveal>
+            <TitledParagraph title="faq">
+              <ul className="flex flex-col gap-4">
+                {faq.map((item) => (
+                  <li key={item.q} className="flex flex-col gap-1">
+                    <h3 className="font-semibold">{item.q}</h3>
+                    <p>{item.a}</p>
+                  </li>
+                ))}
+              </ul>
+            </TitledParagraph>
+          </Reveal>
+
+          <Reveal>
+            <TitledParagraph title="related">
+              <p className="text-sm opacity-80">
+                Keep reading:{" "}
                 <Link href="/webassembly" className="underline">
-                  the WebAssembly page
+                  WebAssembly engineering
                 </Link>
-                .
-              </p>
-              <p>
-                <Link
-                  href="https://klinder-oss.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold underline"
-                >
-                  Klinder-OSS
-                </Link>{" "}
-                — the analytics ingestion path is being ported to Rust on
-                workers-rs (Rust for Cloudflare Workers) to push p95 latency
-                under 10ms at the edge. More on{" "}
+                {" · "}
                 <Link href="/distributed-systems" className="underline">
                   distributed systems
                 </Link>
-                .
-              </p>
-              <p>
-                <Link
-                  href="https://github.com/DibbayajyotiRoy/Rust-FullStack-App"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold underline"
-                >
-                  EMS
-                </Link>{" "}
-                — a real-time Employee Management System with a Rust backend and
-                a React frontend, built to learn Rust web services end to end.
-              </p>
-              <p>
-                <Link
-                  href="https://github.com/reductstore/reductstore/pull/1417"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold underline"
-                >
-                  ReductStore
-                </Link>{" "}
-                — I contributed to ReductStore&apos;s observability and
-                replication layers across seven merged PRs — replication
-                diagnostics, instance-wide usage statistics, per-bucket usage
-                metrics, system-log capture, a unified $system event sink,
-                pipelined replication batch sending, and replication payload
-                compression — spanning queryable telemetry that teams can
-                monitor and alert on, plus replication throughput and transfer
-                efficiency. Reviewed and merged by the maintainer, the first
-                shipping in v1.20 — distributed-systems contributions in the
-                Rust ecosystem. Full story and the
-                maintainer&apos;s endorsement on{" "}
-                <Link href="/open-source" className="underline">
-                  /open-source
+                {" · "}
+                <Link href="/projects/diffcore" className="underline">
+                  Diffcore (Rust/WASM)
                 </Link>
-                . More on{" "}
-                <Link href="/distributed-systems" className="underline">
-                  distributed systems
+                {" · "}
+                <Link href="/projects/whatbroke" className="underline">
+                  whatbroke
                 </Link>
-                .
+                {" · "}
+                <Link href="/work" className="underline">
+                  projects &amp; experience
+                </Link>
               </p>
-            </div>
-          </TitledParagraph>
-
-          <TitledParagraph title="where Rust fits">
-            <p>
-              I use Rust for the parts of a system that have to be fast and
-              predictable: Rust API development and async backend services,
-              Rust microservices, performance-critical paths compiled to
-              WebAssembly, and worker runtimes like Cloudflare Workers via
-              workers-rs. The strict compiler, the ownership model, and
-              zero-cost abstractions mean Rust performance optimization is
-              mostly a design-time activity — not a profiling fire drill after
-              ship.
-            </p>
-          </TitledParagraph>
-
-          <TitledParagraph title="why Rust">
-            <p>
-              Rust changed how I approach engineering — from building &quot;web
-              apps&quot; to designing reliable systems. It is a genuine Swiss
-              Army knife: low-level control, high-performance engines, and
-              blazingly fast backend services, all without trading safety for
-              speed. I believe Rust is the future of infrastructure, and I keep
-              exploring its edge in WebAssembly, edge computing, and real-time
-              systems.
-            </p>
-          </TitledParagraph>
-
-          <TitledParagraph title="faq">
-            <ul className="flex flex-col gap-4">
-              {faq.map((item) => (
-                <li key={item.q} className="flex flex-col gap-1">
-                  <h3 className="font-semibold">{item.q}</h3>
-                  <p>{item.a}</p>
-                </li>
-              ))}
-            </ul>
-          </TitledParagraph>
-
-          <TitledParagraph title="related">
-            <p className="text-sm opacity-80">
-              Keep reading:{" "}
-              <Link href="/webassembly" className="underline">
-                WebAssembly engineering
-              </Link>
-              {" · "}
-              <Link href="/distributed-systems" className="underline">
-                distributed systems
-              </Link>
-              {" · "}
-              <Link href="/projects/diffcore" className="underline">
-                Diffcore (Rust/WASM)
-              </Link>
-              {" · "}
-              <Link href="/projects/whatbroke" className="underline">
-                whatbroke
-              </Link>
-              {" · "}
-              <Link href="/work" className="underline">
-                projects &amp; experience
-              </Link>
-              {" · "}
-              <Link href="/contact" className="underline">
-                hire me for Rust work
-              </Link>
-            </p>
-          </TitledParagraph>
+            </TitledParagraph>
+          </Reveal>
         </div>
 
-        <p className="text-base sm:text-lg my-10 sm:my-20">
-          Thanks for reading. Love your work, keep it up!
-        </p>
+        <Reveal>
+          <ChapterClose line="Got Rust or WASM work on your plate? Let's talk it through." />
+        </Reveal>
       </section>
     </main>
   );

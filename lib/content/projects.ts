@@ -1,13 +1,13 @@
 /**
  * Single source of truth for project facts.
  *
- * The *facts* of each project — name, links, version, keywords, the
- * machine-readable SEO description — live here exactly once. Pages own their
+ * The *facts* of each project (name, links, version, keywords, the
+ * machine-readable SEO description) live here exactly once. Pages own their
  * own prose (a narrative line on /about, a detailed card on /work); they pull
  * the facts from this module so nothing drifts.
  *
  * `version` here is the published npm version. Keep it in sync with the
- * package's package.json — JSON-LD reads it straight from this field.
+ * package's package.json. JSON-LD reads it straight from this field.
  */
 
 export type ProjectTier = "product" | "hackathon";
@@ -31,20 +31,20 @@ export interface Project {
   id: string;
   name: string;
   tier: ProjectTier;
-  /** Short noun phrase — e.g. for nav, chips, og copy. */
+  /** Short noun phrase, e.g. for nav, chips, og copy. */
   tagline: string;
   links: ProjectLinks;
-  /** Canonical single URL — used wherever only one link fits. */
+  /** Canonical single URL, used wherever only one link fits. */
   primaryUrl: string;
   /** Published npm version, when applicable. */
   version?: string;
-  /** First-person "why I built it" line — rendered on /about. */
+  /** First-person "why I built it" line, rendered on /about. */
   oneLiner: string;
-  /** Machine-readable description — rendered into JSON-LD on /work. */
+  /** Machine-readable description, rendered into JSON-LD on /work. */
   seoDescription: string;
   keywords: string[];
   comparison?: { slug: string; label: string };
-  /** Published npm packages — drives the live-stats block on the product hub. */
+  /** Published npm packages. Drives the live-stats block on the product hub. */
   npmPackages?: NpmPackage[];
 }
 
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     id: "ahtml",
     name: "AHTML",
     tier: "product",
-    tagline: "agentic HTML — the @ahtmljs npm scope",
+    tagline: "agentic HTML: the @ahtmljs npm scope",
     links: {
       npmOrg: "https://www.npmjs.com/org/ahtmljs",
       github: "https://github.com/DibbayajyotiRoy/AHTML",
@@ -86,9 +86,9 @@ export const projects: Project[] = [
     primaryUrl: "https://www.npmjs.com/org/ahtmljs",
     version: "1.1.0",
     oneLiner:
-      "AI agents read websites slowly and expensively, so I built a sixteen-package npm scope (@ahtmljs/*) plus a Python SDK that lets any site publish an agent-readable, token-efficient snapshot — and emits MCP, OpenAPI, JSON-LD, llms.txt, RSL, and Markdown from one config.",
+      "AI agents read websites slowly and expensively, so I built a sixteen-package npm scope (@ahtmljs/*) plus a Python SDK that lets any site publish an agent-readable, token-efficient snapshot, and emits MCP, OpenAPI, JSON-LD, llms.txt, RSL, and Markdown from one config.",
     seoDescription:
-      "AHTML (Agentic HTML) is a shipped sixteen-package npm scope by Dibbayajyoti Roy — plus the `ahtml` Python SDK — for making web content cheaply and safely consumable by AI agents: a canonical semantic snapshot with typed, priced actions (x402) and verified-agent auth (RFC 9421), Next.js + Astro + SvelteKit + Vite + Hono adapters, an agent client SDK with a dry-run sandbox, LangChain loaders, agent-traffic insights, a language-agnostic conformance corpus, the AHTML Index registry, and a CLI that scores and converts any URL into MCP tools. All packages at @ahtmljs/* v1.1.0, MIT, 700+ tests. Measured: 4.5–7.3× fewer tokens than raw HTML and fact-extraction accuracy up from 91% to 100%.",
+      "AHTML (Agentic HTML) is a shipped sixteen-package npm scope by Dibbayajyoti Roy, plus the `ahtml` Python SDK, for making web content cheaply and safely consumable by AI agents: a canonical semantic snapshot with typed, priced actions (x402) and verified-agent auth (RFC 9421), Next.js + Astro + SvelteKit + Vite + Hono adapters, an agent client SDK with a dry-run sandbox, LangChain loaders, agent-traffic insights, a language-agnostic conformance corpus, the AHTML Index registry, and a CLI that scores and converts any URL into MCP tools. All packages at @ahtmljs/* v1.1.0, MIT, 700+ tests. Measured: 4.5-7.3× fewer tokens than raw HTML and fact-extraction accuracy up from 91% to 100%.",
     keywords: [
       "AHTML",
       "Agentic HTML",
@@ -136,9 +136,9 @@ export const projects: Project[] = [
     primaryUrl: "https://www.npmjs.com/package/diffcore",
     version: "1.2.0",
     oneLiner:
-      "I needed a JSON diff fast enough for large client–server state sync and found the popular libraries either slow or unmaintained, so I wrote the engine in Rust and ship it to npm as WebAssembly.",
+      "I needed a JSON diff fast enough for large client-server state sync and found the popular libraries either slow or unmaintained, so I wrote the engine in Rust and ship it to npm as WebAssembly.",
     seoDescription:
-      "Fast WebAssembly JSON diff engine for JavaScript and TypeScript. Returns real JSON Pointer paths (RFC 6901) and decoded values, emits standard RFC 6902 JSON Patch, and ships applyPatch / revertPatch for state sync, undo/redo, and optimistic UI. Includes a React useDiff hook, a CLI, and a streaming engine for multi-GB files. Benchmarks 2.3–3.0× faster than fast-json-patch and 4–8× faster than jsondiffpatch in head-to-head tests (390–650 MB/s sustained throughput).",
+      "Fast WebAssembly JSON diff engine for JavaScript and TypeScript. Returns real JSON Pointer paths (RFC 6901) and decoded values, emits standard RFC 6902 JSON Patch, and ships applyPatch / revertPatch for state sync, undo/redo, and optimistic UI. Includes a React useDiff hook, a CLI, and a streaming engine for multi-GB files. Benchmarks 2.3-3.0× faster than fast-json-patch and 4-8× faster than jsondiffpatch in head-to-head tests (390-650 MB/s sustained throughput).",
     keywords: [
       "json diff",
       "fast json diff",
@@ -174,17 +174,17 @@ export const projects: Project[] = [
     id: "whatbroke",
     name: "whatbroke",
     tier: "product",
-    tagline: "git-anchored crash capture for AI coding agents",
+    tagline: "git-anchored crash context and verified fixes for AI coding agents",
     links: {
       npm: "https://www.npmjs.com/package/@whatbroke/whatbroke",
       github: "https://github.com/DibbayajyotiRoy/whatbroke",
     },
     primaryUrl: "https://www.npmjs.com/package/@whatbroke/whatbroke",
-    version: "0.1.1",
+    version: "0.3.0",
     oneLiner:
-      "When a test or server dies in my terminal I kept losing the context — what changed since it last worked, which file is to blame — so I built a CLI that wraps the command, captures a redacted, git-anchored crash bundle, and hands a ranked suspect to my coding agent over MCP.",
+      "When a test or server dies in my terminal I kept losing the context (what changed since it last worked, which file is to blame), so I built a zero-config, local-only CLI and read-only MCP server that wraps the command, writes a redacted, git-anchored crash bundle, ranks the suspect files with no LLM, and then verifies the agent's fix by re-running the exact captured command.",
     seoDescription:
-      "whatbroke is an open-source (Apache-2.0) terminal capture layer for local Node/TypeScript crashes by Dibbayajyoti Roy. It wraps a dev command, and when it crashes packages the error, the diff since the last green commit, and a deterministically-ranked guess at the responsible file — secrets scrubbed by a mandatory redaction gate — then serves it to a coding agent (Claude Code, Cursor) over a read-only MCP server. Ranking is deterministic with no LLM: it intersects the crash stack with files changed since the last passing run.",
+      "whatbroke is an open-source (Apache-2.0) zero-config, local-only CLI and read-only MCP server by Dibbayajyoti Roy that turns a local crash into grounded, secret-free, git-anchored context for an AI coding agent, then verifies the fix. Wrap any dev command (npx @whatbroke/whatbroke run -- npm test): on a passing run it is invisible and records the commit as green, and on a crash it writes a redacted, git-anchored bundle automatically. It ranks suspect files with no LLM by intersecting the green-commit journal with the stack trace (files on the crash path and changed since the last green commit rank highest, each with explicit reasons, extended by a one-hop import signal), scoring top-1 suspect accuracy 90.3% and top-3 accuracy 100% over 31 scored cases from 35 real regression scenarios replayed on every PR. The verify_fix MCP tool re-runs the exact captured command and reports fixed, same-failure, or different-failure. Node/TypeScript is first-class, with Python (pytest) and Go (go test) via an adapter layer, and a mandatory fail-closed redaction gate scrubs secrets so only redacted bundles ever touch disk. Delivered over a read-only MCP server (get_suspects, get_diff_vs_green, get_logs, get_history, verify_fix), a prefilled GitHub issue, the terminal, and a CI GitHub Action. Requires Node >= 20.",
     keywords: [
       "whatbroke",
       "local dev crash",
@@ -214,9 +214,9 @@ export const projects: Project[] = [
     primaryUrl: "https://roy-ui-docs.vercel.app",
     version: "0.0.12",
     oneLiner:
-      "Every dashboard I built started by re-wiring TanStack Table or copy-pasting shadcn and bolting on filters, so I built one React component library that ships a batteries-included DataTable, a no-dependency date range picker, and an analog/digital time picker — installed, not copy-pasted, with zero config.",
+      "Every dashboard I built started by re-wiring TanStack Table or copy-pasting shadcn and bolting on filters, so I built one React component library that ships a batteries-included DataTable, a no-dependency date range picker, and an analog/digital time picker, installed, not copy-pasted, with zero config.",
     seoDescription:
-      "Roy UI (@roy-ui/ui) is an open-source (MIT) React component library by Dibbayajyoti Roy for dashboards, admin panels, and internal tools. It ships a fully-featured DataTable (search, date-range and time filters, sort, pagination, drag-to-reorder and resize columns, CSV/JSON import-export), a custom date range picker with no date-fns dependency, an analog/digital time picker, and animated primitives. TypeScript-first, RSC-safe, tree-shakable ESM, sub-12 KB, zero config — a batteries-included shadcn/ui and TanStack Table alternative for Next.js 15, Vite, Remix, and TanStack Start.",
+      "Roy UI (@roy-ui/ui) is an open-source (MIT) React component library by Dibbayajyoti Roy for dashboards, admin panels, and internal tools. It ships a fully-featured DataTable (search, date-range and time filters, sort, pagination, drag-to-reorder and resize columns, CSV/JSON import-export), a custom date range picker with no date-fns dependency, an analog/digital time picker, and animated primitives. TypeScript-first, RSC-safe, tree-shakable ESM, sub-12 KB, zero config: a batteries-included shadcn/ui and TanStack Table alternative for Next.js 15, Vite, Remix, and TanStack Start.",
     keywords: [
       "react component library",
       "react data table",
@@ -246,7 +246,7 @@ export const projects: Project[] = [
     primaryUrl: "https://github.com/DibbayajyotiRoy/Fresco",
     version: "0.0.3",
     oneLiner:
-      "Windows has Wallpaper Engine and macOS has Lively, but every Linux option was terminal-only or abandoned, so I built a proper GTK4 desktop app that sets any video, GIF, or image as a hardware-accelerated live wallpaper — install a .deb, pick media, done.",
+      "Windows has Wallpaper Engine and macOS has Lively, but every Linux option was terminal-only or abandoned, so I built a proper GTK4 desktop app that sets any video, GIF, or image as a hardware-accelerated live wallpaper: install a .deb, pick media, done.",
     seoDescription:
       "Fresco is an open-source (GPL-3.0) live-wallpaper app for Linux by Dibbayajyoti Roy, written in Rust with GTK4/libadwaita. It sets looping videos (mp4/webm/mkv), animated GIFs, images, slideshows, and multi-video playlists as your desktop wallpaper on Pop!_OS, Ubuntu, Linux Mint, Debian, and elementary OS (X11), with GPU hardware-accelerated playback (VA-API / NVDEC), a drag-to-crop editor, a searchable wallpaper library, multi-monitor support, and battery-aware pausing. A simple GUI alternative to Wallpaper Engine and Lively for Linux.",
     keywords: [
@@ -270,7 +270,7 @@ export const projects: Project[] = [
     links: { demo: "https://ai-for-bharat.vercel.app" },
     primaryUrl: "https://ai-for-bharat.vercel.app",
     oneLiner:
-      "An AWS Bedrock-powered learning assistant with level-adaptive explanations, auto-generated diagrams, and multi-model fallback — selected top 500 in the AI for Bharat hackathon.",
+      "An AWS Bedrock-powered learning assistant with level-adaptive explanations, auto-generated diagrams, and multi-model fallback, selected top 500 in the AI for Bharat hackathon.",
     seoDescription:
       "AWS Bedrock-powered AI learning assistant with Nova Pro / Nova Lite multi-model fallback, structured level-adaptive explanations, auto-generated D2 diagrams, and real-time streaming responses. Top 500 in AI for Bharat hackathon.",
     keywords: [
@@ -289,5 +289,5 @@ export const getProject = (id: string): Project => {
   return project;
 };
 
-/** Public products only — the three things that anchor /about. */
+/** Public products only: the three things that anchor /about. */
 export const coreProducts = projects.filter((p) => p.tier === "product");

@@ -5,19 +5,19 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Writing — Dibbayajyoti Roy | Engineering Notes on Rust, Next.js, AI",
+  title: "Writing: Dibbayajyoti Roy | Engineering Notes on Rust, Next.js, AI",
   description:
-    "Long-form engineering articles by Dibbayajyoti Roy — production incidents, AI engineering with AWS Bedrock, Next.js SEO in 2026, and Rust + WebAssembly performance work.",
+    "Long-form engineering articles by Dibbayajyoti Roy: production incidents, AI engineering with AWS Bedrock, Next.js SEO in 2026, and Rust + WebAssembly performance work.",
   alternates: { canonical: "/writing" },
   openGraph: {
-    title: "Writing — Dibbayajyoti Roy",
+    title: "Writing: Dibbayajyoti Roy",
     description:
       "Engineering articles by Dibbayajyoti Roy. Production debugging, AI engineering, Next.js SEO, Rust + WASM performance.",
     url: `${baseUrl}/writing`,
     type: "website",
   },
   twitter: {
-    title: "Writing — Dibbayajyoti Roy",
+    title: "Writing: Dibbayajyoti Roy",
     description:
       "Engineering articles by Dibbayajyoti Roy. Production debugging, AI engineering, Next.js SEO, Rust + WASM.",
   },
@@ -27,7 +27,7 @@ const collectionPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "@id": "https://dibbayajyoti.com/writing#collection",
-  "name": "Writing — Dibbayajyoti Roy",
+  "name": "Writing: Dibbayajyoti Roy",
   "url": "https://dibbayajyoti.com/writing",
   "description":
     "Engineering articles by Dibbayajyoti Roy on production incidents, AI engineering, Next.js SEO, and Rust + WebAssembly performance.",

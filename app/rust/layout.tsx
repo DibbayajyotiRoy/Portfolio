@@ -5,9 +5,9 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Rust Engineering — Dibbayajyoti Roy | Backend, WebAssembly, Systems",
+  title: "Rust Engineering: Dibbayajyoti Roy | Backend, WebAssembly, Systems",
   description:
-    "Rust backend engineering by Dibbayajyoti Roy — Rust + WebAssembly libraries on npm, workers-rs on Cloudflare Workers, async API development, Rust microservices, and high-performance systems programming.",
+    "Rust backend engineering by Dibbayajyoti Roy: Rust + WebAssembly libraries on npm, workers-rs on Cloudflare Workers, async API development, Rust microservices, and high-performance systems programming.",
   keywords: [
     "rust backend engineer",
     "rust developer india",
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/rust" },
   openGraph: {
-    title: "Rust Engineering — Dibbayajyoti Roy",
+    title: "Rust Engineering: Dibbayajyoti Roy",
     description:
-      "Rust backend engineering — Rust + WebAssembly on npm, workers-rs edge runtimes, async API development, and systems programming.",
+      "Rust backend engineering: Rust + WebAssembly on npm, workers-rs edge runtimes, async API development, and systems programming.",
     url: `${baseUrl}/rust`,
     type: "profile",
   },
   twitter: {
-    title: "Rust Engineering — Dibbayajyoti Roy",
+    title: "Rust Engineering: Dibbayajyoti Roy",
     description:
-      "Rust backend engineer — Rust + WebAssembly, workers-rs, async APIs, systems programming.",
+      "Rust backend engineer: Rust + WebAssembly, workers-rs, async APIs, systems programming.",
   },
 };
 
@@ -40,7 +40,7 @@ const collectionPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "@id": "https://dibbayajyoti.com/rust#collection",
-  "name": "Rust Engineering — Dibbayajyoti Roy",
+  "name": "Rust Engineering: Dibbayajyoti Roy",
   "url": "https://dibbayajyoti.com/rust",
   "description":
     "Rust backend engineering, Rust + WebAssembly, workers-rs on Cloudflare Workers, async API development, and systems programming by Dibbayajyoti Roy.",

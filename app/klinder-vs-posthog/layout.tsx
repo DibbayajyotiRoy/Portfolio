@@ -5,12 +5,12 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Klinder-OSS vs PostHog — Open-Source Analytics + Session + Email SDK",
+  title: "Klinder-OSS vs PostHog: Open-Source Analytics + Session + Email SDK",
   description:
-    "Klinder-OSS vs PostHog in 2026. One open-source SDK that unifies typed event tracking, error-based session recording, and email trigger workflows — replacing PostHog + LogRocket + Customer.io.",
+    "Klinder-OSS vs PostHog in 2026. One open-source SDK that unifies typed event tracking, error-based session recording, and email trigger workflows, replacing PostHog + LogRocket + Customer.io.",
   alternates: { canonical: "/klinder-vs-posthog" },
   openGraph: {
-    title: "Klinder-OSS vs PostHog — Unified analytics + session + email SDK",
+    title: "Klinder-OSS vs PostHog: Unified analytics + session + email SDK",
     description:
       "One install replaces PostHog + LogRocket + Customer.io: typed events with Zod, error-triggered session recording, and behavior-driven email workflows.",
     url: `${baseUrl}/klinder-vs-posthog`,

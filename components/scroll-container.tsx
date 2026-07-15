@@ -24,7 +24,7 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
     <div className="relative w-full md:mb-[200px] max-w-screen flex flex-col items-center">
       <div className="relative">
         <div className="sticky z-20 top-[33vh] left-0 pl-4 md:pl-0 translate-x-0 lg:translate-x-[100px] md:translate-x-[130px] max-w-[792px] w-full flex justify-center">
-          <h1 className="sr-only">Dibbayajyoti Roy — Full Stack &amp; Rust Backend Engineer</h1>
+          <h1 className="sr-only">Dibbayajyoti Roy: Full Stack &amp; Rust Backend Engineer</h1>
           <div className="flex gap-1.5 md:gap-4 relative md:-translate-x-[230px] w-full text-[22px] md:text-[32px] font-semibold items-baseline left-0 ">
             <div className="flex md:gap-4 gap-1.5 items-baseline">
               Dibbayajyoti{" "}
@@ -160,8 +160,8 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                   I shipped{" "}
                   <span className="dark:text-zinc-100 text-blackout whitespace-nowrap">
                     AHTML
-                  </span>{" "}
-                  — a sixteen-package @ahtmljs npm scope plus a Python SDK so any
+                  </span>
+                  : a sixteen-package @ahtmljs npm scope plus a Python SDK so any
                   site can serve AI agents cheaply. Snapshot schema, Next.js +
                   Astro + SvelteKit + Vite + Hono adapters, agent SDK, LangChain
                   loaders, and a CLI that turns any URL into MCP tools.

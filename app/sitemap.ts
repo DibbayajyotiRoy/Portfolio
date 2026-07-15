@@ -3,13 +3,13 @@ import { coreProducts } from '@/lib/content/projects'
 import articles from '@/lib/content/articles'
 
 // IMPORTANT: do NOT use `new Date()` here. A fresh `lastmod` on every build tells
-// Google every page changed every deploy — it learns to distrust the signal and
+// Google every page changed every deploy. It learns to distrust the signal and
 // deprioritizes crawling. Use honest, stable per-page dates and only bump a
 // page's date when its content actually changes.
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://dibbayajyoti.com'
 
-  // Product hub pages — one per public product, kept in sync with projects.ts.
+  // Product hub pages: one per public product, kept in sync with projects.ts.
   const hubPages = [
     { path: '/projects', lastModified: '2026-06-04', changeFrequency: 'monthly' as const, priority: 0.9 },
     ...coreProducts.map((p) => ({
@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]
 
-  // Article detail pages — derived from the articles module so the sitemap
+  // Article detail pages: derived from the articles module so the sitemap
   // can't drift out of sync when an article is added or its date changes.
   const articlePages = articles.map((a) => ({
     path: `/writing/${a.slug}`,

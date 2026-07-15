@@ -1,5 +1,5 @@
 /**
- * Brand system — one maker, six products, one neutral base, one accent each.
+ * Brand system: one maker, six products, one neutral base, one accent each.
  *
  * The umbrella brand is monochrome (whiteout #F7F7F7 / blackout #080808) with
  * Geist Sans + Geist Mono. `pink-400` is reserved for portfolio chrome only, so
@@ -11,7 +11,7 @@
  */
 
 export interface ProductAccent {
-  /** Primary accent hex — the one color this product is allowed. */
+  /** Primary accent hex: the one color this product is allowed. */
   accent: string;
   /** A short mark glyph used in the OG card and hub kicker. */
   glyph: string;

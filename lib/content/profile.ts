@@ -45,7 +45,7 @@ export const profile = {
       year: 2025,
     },
     {
-      name: "NITA–ISRO Space Hackathon",
+      name: "NITA-ISRO Space Hackathon",
       result: "1st Runner-Up",
       year: 2024,
     },

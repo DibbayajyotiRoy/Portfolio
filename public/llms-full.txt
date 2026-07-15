@@ -1,4 +1,4 @@
-# Dibbayajyoti Roy — Full Professional Profile
+# Dibbayajyoti Roy: Full Professional Profile
 
 ## Identity
 
@@ -36,7 +36,7 @@ Multi-tenant SaaS, event-driven architecture, edge compute, observability, distr
 
 ## Professional Experience
 
-### Full Stack Software Engineer — Yupcha Softwares Pvt. Ltd (July 2025–Present)
+### Full Stack Software Engineer: Yupcha Softwares Pvt. Ltd (July 2025-Present)
 
 - Shipped HR SaaS modules including employee records, leave workflow, and role-based access controls used across partner organisations.
 - Designed 12+ REST endpoints in Node.js/Express with PostgreSQL for CRUD, authentication, and reporting queries.
@@ -47,7 +47,7 @@ Multi-tenant SaaS, event-driven architecture, edge compute, observability, distr
 
 ## Projects
 
-### Klinder-OSS — Unified Analytics + Session Replay + Email SDK (private beta, waitlist live, 2026)
+### Klinder-OSS: Unified Analytics + Session Replay + Email SDK (private beta, waitlist live, 2026)
 - **Live**: https://klinder-oss.vercel.app
 - **Stack**: TypeScript SDK, Cloudflare Workers, Cloudflare Queues, Neon Postgres (RLS), Hono, Next.js, Better Auth
 - **Description**: A single open-source SDK that unifies three jobs normally split across PostHog + LogRocket + Customer.io: (1) typed event tracking with Zod schema validation, (2) error-based session recording that captures sessions on JS errors / failed network calls, and (3) automatic email trigger workflows from product behavior. One install, one schema, one customer timeline.
@@ -55,97 +55,144 @@ Multi-tenant SaaS, event-driven architecture, edge compute, observability, distr
 - Real-time dashboard via Server-Sent Events, background jobs on Trigger.dev, authentication with Better Auth, transactional email via Resend.
 - Rust port of the ingestion worker in progress using workers-rs and serde, targeting sub-10ms p95 handler latency with published benchmarks on GitHub.
 
-### diffcore — Fast WebAssembly JSON Diff Engine for npm (v1.2.0, 2026)
+### diffcore: Fast WebAssembly JSON Diff Engine for npm (v1.2.0, 2026)
 - **npm**: https://www.npmjs.com/package/diffcore
 - **Demo**: https://rust-wasm-library.vercel.app
 - **Repo**: https://github.com/DibbayajyotiRoy/rust-wasm-Library
 - **License**: MIT
 - **Stack**: Rust, WebAssembly, wasm-bindgen, TypeScript bindings
-- **Description**: A fast WebAssembly JSON diff engine for JavaScript and TypeScript. Returns real JSON Pointer paths (RFC 6901) and decoded values — not opaque hashes — and emits standard RFC 6902 JSON Patch output, interoperable with fast-json-patch, jsondiffpatch, and any IETF-compliant consumer.
+- **Description**: A fast WebAssembly JSON diff engine for JavaScript and TypeScript. Returns real JSON Pointer paths (RFC 6901) and decoded values (not opaque hashes) and emits standard RFC 6902 JSON Patch output, interoperable with fast-json-patch, jsondiffpatch, and any IETF-compliant consumer.
 - Ships `applyPatch` and `revertPatch` for state sync, undo/redo, and optimistic UI. Round-trips work for primitives, leaf changes, and whole-array-element additions.
 - Includes a React `useDiff` hook (`diffcore/react`), a CLI (`npx diffcore before.json after.json` with `--json` and `--silent` modes for CI), and a streaming engine (`createEngine` + `pushLeft` / `pushRight`) for multi-GB files.
-- Embedded WASM via Base64 — zero config, no toolchain or extra files required. Auto memory cleanup via `FinalizationRegistry`.
-- **Performance**: 2.3–3.0× faster than fast-json-patch and 4–8× faster than jsondiffpatch in head-to-head tests. Sustained throughput 390–650 MB/s.
+- Embedded WASM via Base64: zero config, no toolchain or extra files required. Auto memory cleanup via `FinalizationRegistry`.
+- **Performance**: 2.3-3.0× faster than fast-json-patch and 4-8× faster than jsondiffpatch in head-to-head tests. Sustained throughput 390-650 MB/s.
 - **Runs on**: Node 18+, Chrome 89+, Firefox 89+, Safari 15+, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
 - **Use cases**: client/server state sync (`diff(a,b)` + `toJsonPatch()` over the wire), undo/redo stacks, "review changes" UI in React, colored diffs in CLI/CI logs, JSON Patch HTTP APIs, replaying diffs against alternate documents, diffing multi-GB files without loading them fully.
 - **Competitive positioning (JSON-diff market, as of 2026-05-15)**:
   - `jsondiffpatch` (~2.4M weekly DL, latest 2025-03-31): the long-standing reference; custom delta format, not RFC 6902 conformant by default; ~120 KB pure-JS.
-  - `fast-json-patch` (~6.9M weekly DL): RFC 6902 leader, but **last release 2022-03-24 — four years stale**. No diff/apply combo with maintained development.
+  - `fast-json-patch` (~6.9M weekly DL): RFC 6902 leader, but **last release 2022-03-24, four years stale**. No diff/apply combo with maintained development.
   - `microdiff` (~1.1M weekly DL): smallest pure-JS option (~5 KB); diff-only, no apply/revert/patch helpers, path-as-array (not JSON Pointer string).
-  - `deep-diff` (~3.2M weekly DL): **last release 2018-08-16 — eight years stale**; legacy installs only.
-  - **Diffcore's wedge**: actively shipped + RFC 6902 conformant + apply/revert/three-way merge + React hook + CLI + WASM perf, all in one maintained package. Unique state primitives `createHistory`, `merge3`, `detectConflicts`, tolerance comparators are not matched by any of the four competitors. None of the competitors ship `AGENTS.md`, `llms-full.txt`, or an MCP server — open lane for AI-agent discoverability.
+  - `deep-diff` (~3.2M weekly DL): **last release 2018-08-16, eight years stale**; legacy installs only.
+  - **Diffcore's wedge**: actively shipped + RFC 6902 conformant + apply/revert/three-way merge + React hook + CLI + WASM perf, all in one maintained package. Unique state primitives `createHistory`, `merge3`, `detectConflicts`, tolerance comparators are not matched by any of the four competitors. None of the competitors ship `AGENTS.md`, `llms-full.txt`, or an MCP server: open lane for AI-agent discoverability.
 
-### AHTML — Agentic HTML (shipped, 2026, @ahtmljs/* v0.9.5)
+### AHTML: Agentic HTML (shipped, 2026, @ahtmljs/* v1.1.0)
 - **Repo**: https://github.com/DibbayajyotiRoy/AHTML
 - **npm scope**: https://www.npmjs.com/org/ahtmljs
 - **License**: MIT
-- **Status**: All nine packages published at v0.9.5. `@ahtmljs/schema`, `@ahtmljs/next`, `@ahtmljs/agent` published earlier and seeing 220+ downloads/day each post-launch; `@ahtmljs/vite` and `@ahtmljs/langchain` published 2026-05-14; `@ahtmljs/hono`, `@ahtmljs/cli`, `@ahtmljs/kv` and `@ahtmljs/webmcp` round out the scope.
-- **Goal**: Make web content cheaply consumable by AI agents — canonical semantic snapshot, well-known endpoints (MCP / OpenAPI / JSON-LD / llms.txt / AHTML snapshot), client SDK with safety gates, RAG-ready document chunks. The contract layer for the agentic web.
+- **Status**: A shipped sixteen-package npm scope at `@ahtmljs/*` (v1.1.0), plus the `ahtml` Python SDK on PyPI. 700+ passing tests across the TypeScript packages and the Python SDK, and both implementations certify 100% against a language-agnostic conformance corpus.
+- **Goal**: Make web content cheaply and safely consumable by AI agents. From one config a site emits MCP, OpenAPI 3.1, JSON-LD, llms.txt, RSL 1.0, Markdown, and a token-optimal, optionally signed snapshot with typed actions carrying explicit cost, reversibility, auth, and side-effects. RSS, but for AI agents. The universal extractor and `@ahtmljs/agent` also let agents consume any site today, with or without adoption. The contract layer of the agent web.
+- **Measured**: 4.5-7.3× fewer tokens than the raw HTML a browser loads (real OpenAI and Anthropic tokenizers), and in a 146-run multi-model benchmark across gpt-4o-mini, claude-haiku-4.5, gemini-2.5-flash, and llama-3.3-70b, fact-extraction accuracy rises from 91% on raw HTML to 100% on AHTML JSON, versus 89% for llms.txt.
+- **Safe to act on**: actions declare typed cost priced over x402 behind a standards-compliant HTTP 402 flow, sites can require RFC 9421 signed requests from verified agents, content is licensed with RSL 1.0 plus Content Signals, snapshots are signable with detached JWS, and agents can rehearse priced or irreversible actions in a dry-run sandbox before real money moves.
+- **Framework-native**: an existing Next.js, Astro, SvelteKit, Vite, or Hono app becomes an MCP server at `/ahtml/mcp.json` (same database, same auth, one deploy) instead of standing up a separate server.
 
-**@ahtmljs/schema** — canonical semantic snapshot schema
+The sixteen packages, plus the Python SDK:
+
+**@ahtmljs/schema**: the contract layer
 - npm: https://www.npmjs.com/package/@ahtmljs/schema
-- TypeScript types + JSON Schema file + validator + builder
-- Dual serializers: lossless JSON, plus a token-optimal compact text form
-- `Document.chunks` primitive — content-addressed deterministic IDs, byte ranges, prev/next linked-list invariant — so RAG pipelines get deterministic chunk boundaries out of the box
-- 177 passing tests covering validation, round-trip, ETag determinism, diff/apply, and property fuzzing (100–500 random inputs per property)
-- Every other `@ahtmljs/*` package depends on it — this is the contract layer
+- Snapshot types, validator, dual serializers (lossless JSON plus a token-optimal compact text form), and the emitters. Edge-safe.
+- Ships the `Document.chunks` primitive (content-addressed deterministic IDs, byte ranges) so RAG pipelines get deterministic chunk boundaries out of the box.
+- Every other `@ahtmljs/*` package depends on it.
 
-**@ahtmljs/next** — Next.js plugin
+**@ahtmljs/next**: Next.js plugin
 - npm: https://www.npmjs.com/package/@ahtmljs/next
-- One route handler emits MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot
-- Built-in extractors discover routes from the App Router or Pages Router automatically
-- Zero migration — bolts onto an existing Next.js app without touching pages or data layers
-- Peer-deps on Next 14+. Snapshot reachable at `/.well-known/ahtml.json`
-- 53 passing tests
+- One route emits MCP, OpenAPI, JSON-LD, llms.txt, RSL, and the AHTML snapshot at `/.well-known/ahtml.json`.
+- Auto-discovers App Router and Pages Router routes; bolts onto an existing app.
 
-**@ahtmljs/agent** — client SDK for AI agents
-- npm: https://www.npmjs.com/package/@ahtmljs/agent
-- Fetches AHTML snapshots, caches by ETag, dispatches structured actions
-- Dry-run mode so safety gates fire *before* a destructive action ever hits the wire
-- Optional tokenizer adapters: OpenAI `o200k_base` and Anthropic — exact prompt cost reporting
-- Hardened with hostile-agent regression tests covering policy bypass, lying confirmations, and bearer-token tricks
-- 57 passing tests including hostile-agent regressions that verify dry-run mode *never* calls `execute_url` even under adversarial overrides
+**@ahtmljs/astro**: Astro integration
+- npm: https://www.npmjs.com/package/@ahtmljs/astro
+- Same five-endpoint surface as the Next.js plugin, with zero astro dependency.
 
-**@ahtmljs/vite** — Vite plugin (cross-framework parity)
+**@ahtmljs/sveltekit**: SvelteKit adapter
+- npm: https://www.npmjs.com/package/@ahtmljs/sveltekit
+- A SvelteKit server hook or per-endpoint handlers exposing the same surface.
+
+**@ahtmljs/vite**: Vite plugin
 - npm: https://www.npmjs.com/package/@ahtmljs/vite
-- Same handler as `@ahtmljs/next`, but as Vite middleware (`configureServer` hook)
-- Works on SvelteKit, SolidStart, Astro, and vanilla Vite — anything on the Vite dev/build pipeline
-- Output is byte-identical to the Next.js plugin via shared `@ahtmljs/schema` end-to-end, so cross-framework parity is real not aspirational
-- Peer-deps on Vite 5+. One line in `vite.config.ts` enables every well-known endpoint
-- 14 passing tests
+- Byte-identical output for SolidStart and vanilla Vite via shared `@ahtmljs/schema` end-to-end.
 
-**@ahtmljs/langchain** — LangChain.js document loader
-- npm: https://www.npmjs.com/package/@ahtmljs/langchain
-- Fetches any AHTML-emitting site and returns it as a `Document[]` ready for vector stores
-- Splits at `Document.chunks` boundaries when present — no re-chunking needed downstream
-- Preserves citation anchors, byte ranges, and source URLs in per-chunk metadata for accurate attribution
-- Peer-deps on `@langchain/core` 0.3+. URL → embeddings in three lines
-- 5 passing tests including chunk-boundary fidelity and metadata propagation
-
-**@ahtmljs/hono** — Hono adapter (cross-runtime)
+**@ahtmljs/hono**: Hono adapter (cross-runtime)
 - npm: https://www.npmjs.com/package/@ahtmljs/hono
-- Same well-known endpoints as the Next.js and Vite plugins, exposed as Hono middleware
-- Runs anywhere Hono runs: Node, Bun, Deno, and Cloudflare Workers
-- Shares `@ahtmljs/schema` end-to-end, so snapshot output matches the Next.js and Vite plugins
-- 18 passing tests
+- The same handler on Node, Bun, Deno, Cloudflare Workers, and AWS Lambda.
 
-**@ahtmljs/kv** — pluggable KV & cache backends
-- npm: https://www.npmjs.com/package/@ahtmljs/kv
-- Decouples storage from runtime by providing a pluggable interface for caching snapshots and tracking agent rate limits
-- Out-of-the-box adapters for Memory, Upstash Redis, and Cloudflare KV
+**@ahtmljs/extract**: framework-neutral extractor pipeline
+- npm: https://www.npmjs.com/package/@ahtmljs/extract
+- A framework-neutral extractor pipeline with a plugin API, powering the adapters and the CLI.
 
-**@ahtmljs/webmcp** — W3C WebMCP bridge
-- npm: https://www.npmjs.com/package/@ahtmljs/webmcp
-- Connects page actions directly to browser tools in a standardized format following WebMCP specifications
-- Includes bookmarklets and devtools interfaces to map user-triggered page interactions for AI agent execution
+**@ahtmljs/agent**: typed client SDK for agents
+- npm: https://www.npmjs.com/package/@ahtmljs/agent
+- ETag caching, retries, a dry-run sandbox, tokenizer cost reporting, and an HTML fallback so `fetchPage()` works on any URL (schema.org, OpenGraph, microdata) even without adoption.
+- Hardened with hostile-agent regression tests: dry-run mode never executes a destructive action even under adversarial overrides.
 
-**@ahtmljs/cli** — `ahtml doctor` discovery-chain linter
+**@ahtmljs/langchain**: LangChain.js document loader
+- npm: https://www.npmjs.com/package/@ahtmljs/langchain
+- Chunks with citation anchors, byte ranges, and source URLs preserved for accurate attribution. URL to embeddings in a few lines.
+
+**@ahtmljs/cli**: init / analyze / score / doctor / benchmark / mcp
 - npm: https://www.npmjs.com/package/@ahtmljs/cli
-- Validates a site's discovery chain in CI: MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot at `/.well-known/ahtml.json`
-- Flags missing or malformed endpoints before they ship, so agent-readability is enforced like any other lint gate
-- 9 passing tests
+- Wires up a framework, scores and lints a site's discovery chain in CI, and `npx @ahtmljs/cli mcp <url>` turns any URL into MCP tools for Claude, ChatGPT, or Cursor, adopter or not.
 
-### Learning Copilot — AI Concept Explainer on AWS (2026)
+**@ahtmljs/kv**: pluggable KV & cache backends
+- npm: https://www.npmjs.com/package/@ahtmljs/kv
+- Out-of-the-box adapters for Memory, Upstash Redis, and Cloudflare KV.
+
+**@ahtmljs/webmcp**: W3C WebMCP bridge
+- npm: https://www.npmjs.com/package/@ahtmljs/webmcp
+- A WebMCP tool registry and browser bookmarklet exposing page actions as browser tools.
+
+**@ahtmljs/insights**: agent-traffic analytics
+- npm: https://www.npmjs.com/package/@ahtmljs/insights
+- Distinguishes verified agents from bots and humans, zero-PII, with OpenTelemetry export.
+
+**@ahtmljs/conformance**: conformance corpus + certification runner
+- npm: https://www.npmjs.com/package/@ahtmljs/conformance
+- A language-agnostic conformance corpus and certification runner; the TypeScript and Python implementations both certify 100%.
+
+**@ahtmljs/index**: the AHTML Index
+- npm: https://www.npmjs.com/package/@ahtmljs/index
+- A registry plus crawler with an MCP query surface.
+
+**@ahtmljs/badge**: hosted score badge
+- npm: https://www.npmjs.com/package/@ahtmljs/badge
+- A hosted score-badge service: a README-embeddable SVG plus a linked report.
+
+**ahtml (PyPI)**: Python consumer SDK
+- pip: `pip install ahtml`
+- LangChain loader included, JWS verification, and byte-identical canonical JSON with the TypeScript packages.
+
+### whatbroke: Git-Anchored Crash Context and Verified Fixes for AI Coding Agents (2026, v0.3.0)
+- **npm**: https://www.npmjs.com/package/@whatbroke/whatbroke
+- **Repo**: https://github.com/DibbayajyotiRoy/whatbroke
+- **License**: Apache-2.0
+- **Runtime**: Node >= 20; local-only, no account, no network, no dashboard
+- **Description**: A zero-config, local-only CLI and read-only MCP server that turns a local crash into grounded, secret-free, git-anchored context for an AI coding agent, then verifies the fix. Wrap any dev command (`npx @whatbroke/whatbroke run -- npm test`): on a passing run it is invisible and records the commit as green; on a crash it writes a redacted, git-anchored bundle automatically.
+- **Deterministic suspect ranking (no LLM)**: intersects the last-green-commit journal with the crash stack trace and scores with fixed integer weights. A file both on the crash path and changed since the last green commit ranks highest, each suspect carrying explicit reasons, extended by a one-hop import signal. Measured at 90.3% top-1 and 100% top-3 suspect accuracy over 31 scored cases from 35 real regression scenarios, replayed on every PR with CI failing if top-3 drops below baseline.
+- **Verified-fix loop**: the `verify_fix` MCP tool re-runs the exact captured command and reports one of fixed, same-failure, or different-failure, handing back a fresh bundle to iterate on instead of only packaging the crash.
+- **Polyglot**: Node and TypeScript are first-class; Python (pytest) and Go (go test) are supported through an adapter layer producing ranked suspects, crash-kind classification, the diff, and full logs.
+- **Security**: a mandatory fail-closed redaction gate scrubs secrets so only redacted bundles ever touch disk, with a redaction report listing what was scrubbed.
+- **Surfaces**: a read-only stdio MCP server (`get_suspects`, `get_diff_vs_green`, `get_logs`, `get_history`, `verify_fix`), a prefilled GitHub issue, terminal output, and a composite GitHub Action for CI. An optional `--explain` LLM narration is off by default and can never change the suspects or their confidence.
+
+### Roy UI: Zero-Config React Component Library (2026, v0.0.12)
+- **npm**: https://www.npmjs.com/package/@roy-ui/ui
+- **Docs/Demo**: https://roy-ui-docs.vercel.app
+- **Repo**: https://github.com/DibbayajyotiRoy/RoyUI
+- **License**: MIT
+- **Stack**: TypeScript, React, tree-shakable ESM
+- **Description**: A React component library for dashboards, admin panels, and internal tools that you install rather than copy-paste. It ships a fully-featured DataTable (search, date-range and time filters, sort, pagination, drag-to-reorder and edge-drag-resize columns, hide/restore via a column menu, CSV/JSON import-export), a custom date range picker with no `date-fns` dependency, an analog/digital time picker, and animated primitives.
+- **Zero config**: no Tailwind plugin, no PostCSS step, no theme provider. Each component imports its own scoped CSS, themed via `--royui-*` CSS variables.
+- **RSC-safe**: each interactive component carries its own `"use client"` boundary in the published bundle, so it drops into a Next.js 15 App Router project without wiring boundaries by hand. Tree-shakable ESM, sub-12 KB, works with Next.js 13-15, Vite, Remix, Astro, and TanStack Start.
+- **Positioning**: a batteries-included, styled shadcn/ui and TanStack Table alternative for data-heavy UIs.
+
+### Fresco: Live Wallpapers for Linux (2026, v0.0.3)
+- **Repo**: https://github.com/DibbayajyotiRoy/Fresco
+- **License**: GPL-3.0
+- **Stack**: Rust, GTK4/libadwaita, libmpv (X11), a bundled mpvpaper (Wayland layer-shell)
+- **Description**: A live-wallpaper app for Linux, a simple GUI alternative to Wallpaper Engine (Windows) and Lively (macOS). Pick any looping video (mp4/webm/mkv), animated GIF, image, image slideshow, or multi-video playlist, set it, and close the app; the wallpaper keeps playing and returns on login.
+- **Rendering**: one binary crate ships two binaries, `fresco` (the GTK4 GUI) and `frescod` (a daemon), with three backends behind one `PlayerHandle` interface: libmpv embedded in a desktop-level window per monitor on X11, a supervised bundled mpvpaper per output on Wayland layer-shell compositors, and an honest static-frame fallback via gsettings on GNOME Wayland. GPU hardware decode (VA-API / NVDEC) keeps CPU near zero.
+- **Features**: drag-to-crop editor, searchable wallpaper library with thumbnails and recents, multi-monitor (a different wallpaper per display), battery-aware pausing, and a dependency-free solar (sunrise/sunset) schedule engine.
+- **Supported distributions (X11)**: Pop!_OS 22.04 (primary target), Ubuntu 22.04 and 24.04, Linux Mint 21 and 22, Debian 12, elementary OS 7. One `.deb` runs on both libmpv1 and libmpv2 via a runtime dlopen bridge that binds 11 ABI-stable symbols.
+- **Verification**: video quality is proven by screenshot in CI on five headless compositors with no GPU (SSIM 0.74 on an 8K-to-4K zone-plate downscale vs 0.54 with common defaults, 256/256 luma levels, pixel-exact HiDPI checkerboard), gated by 73 automated checks and a PROVEN/UNPROVEN honesty ledger; Hyprland and KDE Plasma remain tagged experimental until on-screen verification lands.
+
+### Learning Copilot: AI Concept Explainer on AWS (2026)
 - **Live**: https://ai-for-bharat.vercel.app
 - **Stack**: TypeScript, Next.js, Hono, AWS Bedrock (Nova Pro / Nova Lite), DynamoDB, CloudWatch
 - **Achievement**: Top 500 in the AI for Bharat hackathon (thousands of teams)
@@ -153,18 +200,18 @@ Multi-tenant SaaS, event-driven architecture, edge compute, observability, distr
 - Engineered multi-model fallback across AWS Bedrock (Nova Pro → Nova Lite) for resilience under rate limits and outages, with graceful degradation and structured error recovery across the request pipeline.
 - Designed cost-aware architecture with DynamoDB conversation memory (30-day TTL), CloudWatch logging and metrics dashboard, and per-mode token budgets to control inference cost.
 
-### BloodLink — Donor Matching Platform (2024)
+### BloodLink: Donor Matching Platform (2024)
 - **Stack**: Next.js, PostgreSQL, Geolocation
 - **Repository**: https://github.com/DibbayajyotiRoy/BloodLink
 - **Description**: Full-stack web application connecting blood donors to requesters by blood group and location radius. ~100 registered users during pilot.
 - Proximity search in PostgreSQL using indexed latitude/longitude filtering, reducing donor query response time compared with naive full-scan search.
 
-### EMS — Employee Management System
+### EMS: Employee Management System
 - **Stack**: Rust, React
 - **Repository**: https://github.com/DibbayajyotiRoy/Rust-FullStack-App
 - **Description**: Real-time employee management system built with Rust and React, featuring payroll and policy-based management.
 
-### LunarSite — AI Lunar Mineral Prediction (NITA-ISRO Hackathon)
+### LunarSite: AI Lunar Mineral Prediction (NITA-ISRO Hackathon)
 - **Stack**: Python, ML pipelines
 - **Repository**: https://github.com/DibbayajyotiRoy/LunarSite
 - **Description**: AI-based prediction system for lunar mineral composition using ML pipelines, built during NITA-ISRO hackathon.
@@ -176,41 +223,41 @@ Multi-tenant SaaS, event-driven architecture, edge compute, observability, distr
 
 ## Open Source Contributions
 
-Eight merged pull requests across two production Rust projects: seven to ReductStore (a time-series database for robotics and industrial IoT — https://github.com/reductstore/reductstore), extending its observability / system-events layer and its replication pipeline, plus one to Meta's Pyrefly Python type checker.
+Eight merged pull requests across two production Rust projects: seven to ReductStore (a time-series database for robotics and industrial IoT, https://github.com/reductstore/reductstore), extending its observability / system-events layer and its replication pipeline, plus one to Meta's Pyrefly Python type checker.
 
-### ReductStore — Replication Audit Events (merged, shipping in v1.20)
-- **Pull request**: Feat/replication audit events, PR #1417 — https://github.com/reductstore/reductstore/pull/1417
+### ReductStore: Replication Audit Events (merged, shipping in v1.20)
+- **Pull request**: Feat/replication audit events, PR #1417, https://github.com/reductstore/reductstore/pull/1417
 - **Description**: Replication tasks now emit aggregated, status-keyed telemetry into a queryable $system bucket, so users can query replication sync state like any other data and build diagnostic dashboards and notifications on top of it. Reviewed and merged by the maintainer, shipping in ReductStore v1.20.
-- **Public endorsement**: Alexey Timin (Software Engineer | Co-Founder @ ReductStore) publicly thanked Dibbayajyoti Roy for the contribution on LinkedIn — https://www.linkedin.com/posts/atimin_featreplication-audit-events-by-dibbayajyotiroy-share-7469681078874705920-NSpe/
+- **Public endorsement**: Alexey Timin (Software Engineer | Co-Founder @ ReductStore) publicly thanked Dibbayajyoti Roy for the contribution on LinkedIn, https://www.linkedin.com/posts/atimin_featreplication-audit-events-by-dibbayajyotiroy-share-7469681078874705920-NSpe/
 
-### ReductStore — Usage Statistics (merged, shipping in v1.20)
-- **Pull request**: Feat/usage statistics, PR #1431 — https://github.com/reductstore/reductstore/pull/1431
-- **Description**: Each node writes its own instance-wide usage statistics — read/write traffic counted at the storage-engine level plus storage-size snapshots — as queryable $system records on a 60-second interval, with replicas forwarding to the primary for one consolidated, operational view of the whole instance. Reviewed and merged by the maintainer, shipping in ReductStore v1.20.
+### ReductStore: Usage Statistics (merged, shipping in v1.20)
+- **Pull request**: Feat/usage statistics, PR #1431, https://github.com/reductstore/reductstore/pull/1431
+- **Description**: Each node writes its own instance-wide usage statistics (read/write traffic counted at the storage-engine level plus storage-size snapshots) as queryable $system records on a 60-second interval, with replicas forwarding to the primary for one consolidated, operational view of the whole instance. Reviewed and merged by the maintainer, shipping in ReductStore v1.20.
 
-### ReductStore — Per-Bucket Usage Statistics (merged, shipping in an upcoming release)
-- **Pull request**: Feat/per bucket usage stats, PR #1474 — https://github.com/reductstore/reductstore/pull/1474
-- **Description**: Usage telemetry gains per-bucket granularity — each bucket emits its own $system event alongside the instance total — plus new written_entries, read_entries, and record_count metrics, so operators can attribute traffic and storage to individual buckets instead of only the instance as a whole. Reviewed and merged by the maintainer; merged to main and shipping in an upcoming release.
+### ReductStore: Per-Bucket Usage Statistics (merged, shipping in an upcoming release)
+- **Pull request**: Feat/per bucket usage stats, PR #1474, https://github.com/reductstore/reductstore/pull/1474
+- **Description**: Usage telemetry gains per-bucket granularity (each bucket emits its own $system event alongside the instance total) plus new written_entries, read_entries, and record_count metrics, so operators can attribute traffic and storage to individual buckets instead of only the instance as a whole. Reviewed and merged by the maintainer; merged to main and shipping in an upcoming release.
 
-### ReductStore — System Log Capture (merged, shipping in an upcoming release)
-- **Pull request**: feat(syslog): capture log messages to $system/logs/<instance>, PR #1481 (resolving issue #1467) — https://github.com/reductstore/reductstore/pull/1481
+### ReductStore: System Log Capture (merged, shipping in an upcoming release)
+- **Pull request**: feat(syslog): capture log messages to $system/logs/<instance>, PR #1481 (resolving issue #1467), https://github.com/reductstore/reductstore/pull/1481
 - **Description**: An opt-in pipeline captures the instance's own log messages into $system/logs/<instance>/messages as queryable system events at a configurable severity level, so a node's logs can be queried as time-series data alongside its other system events. Includes a reentrancy guard so that writing a log into storage (which itself emits logs) never recurses, with console output kept unconditional. Reviewed and merged by the maintainer; merged to main and shipping in an upcoming release.
 
-### ReductStore — Unified $system Event Sink (merged)
-- **Pull request**: Feat/unify syslog, PR #1496 (resolving issue #1485) — https://github.com/reductstore/reductstore/pull/1496
-- **Description**: Unifies all $system event handling — audit, usage, replication, lifecycle, and log capture — behind one generic sink in a single syslog module. A SystemEventKind routing enum resolves each family's $system/<prefix>/<instance>/<entry> path, and the duplicated writer and path logic is collapsed, with characterization tests pinning the external record format so nothing user-facing changes. Reviewed and merged by the maintainer.
+### ReductStore: Unified $system Event Sink (merged)
+- **Pull request**: Feat/unify syslog, PR #1496 (resolving issue #1485), https://github.com/reductstore/reductstore/pull/1496
+- **Description**: Unifies all $system event handling (audit, usage, replication, lifecycle, and log capture) behind one generic sink in a single syslog module. A SystemEventKind routing enum resolves each family's $system/<prefix>/<instance>/<entry> path, and the duplicated writer and path logic is collapsed, with characterization tests pinning the external record format so nothing user-facing changes. Reviewed and merged by the maintainer.
 
-### ReductStore — Pipelined Replication Batch Sending (merged)
-- **Pull request**: Pipeline replication batch sending, PR #1527 (resolving issue #1061, building on #1415) — https://github.com/reductstore/reductstore/pull/1527
-- **Description**: Improves replication throughput by pipelining batch sending — while one entry's batch is in flight over HTTP, the next entry's batch is already being prepared. Transaction acknowledgements happen per entry inside the send task, and a panicked send task is recovered by rebuilding the remote bucket, so an internal bug degrades a single pass instead of crashing the database. Reviewed and merged by the maintainer.
+### ReductStore: Pipelined Replication Batch Sending (merged)
+- **Pull request**: Pipeline replication batch sending, PR #1527 (resolving issue #1061, building on #1415), https://github.com/reductstore/reductstore/pull/1527
+- **Description**: Improves replication throughput by pipelining batch sending: while one entry's batch is in flight over HTTP, the next entry's batch is already being prepared. Transaction acknowledgements happen per entry inside the send task, and a panicked send task is recovered by rebuilding the remote bucket, so an internal bug degrades a single pass instead of crashing the database. Reviewed and merged by the maintainer.
 
-### ReductStore — Replication Payload Compression (merged, shipping in an upcoming release)
-- **Pull request**: Replication: add optional payload compression, PR #1538 (resolving issue #1348) — https://github.com/reductstore/reductstore/pull/1538
+### ReductStore: Replication Payload Compression (merged, shipping in an upcoming release)
+- **Pull request**: Replication: add optional payload compression, PR #1538 (resolving issue #1348), https://github.com/reductstore/reductstore/pull/1538
 - **Description**: Adds a per-replication-task compression setting (zstd or gzip, default none) that compresses replication batch payloads in transit using standard HTTP Content-Encoding, with transparent request decompression on the receiving router and a version-gated fallback to uncompressed transfer for destination servers too old to decompress requests. Reviewed and merged by the maintainer; merged to main and shipping in an upcoming release.
 
-### Pyrefly (Meta) — py.typed untyped-import fix (merged via codesync)
-- **Upstream project**: Pyrefly, Meta's open-source (Rust-built) Python type checker — https://github.com/facebook/pyrefly
-- **Pull request**: Fix untyped-import false positive for packages with py.typed marker, PR #3840 — https://github.com/facebook/pyrefly/pull/3840
-- **Description**: Pyrefly recommended installing stub packages for libraries that already ship their own type information via a PEP 561 py.typed marker (e.g. modern requests) — a confusing false positive. The fix detects the py.typed marker before warning, walking to the package root so it works for both top-level imports and submodules. Imported and merged by a Meta maintainer through their internal codesync process (commit facebook/pyrefly@97fd78f0); the public PR shows as closed because the commit lands via internal import.
+### Pyrefly (Meta): py.typed untyped-import fix (merged via codesync)
+- **Upstream project**: Pyrefly, Meta's open-source (Rust-built) Python type checker, https://github.com/facebook/pyrefly
+- **Pull request**: Fix untyped-import false positive for packages with py.typed marker, PR #3840, https://github.com/facebook/pyrefly/pull/3840
+- **Description**: Pyrefly recommended installing stub packages for libraries that already ship their own type information via a PEP 561 py.typed marker (e.g. modern requests), a confusing false positive. The fix detects the py.typed marker before warning, walking to the package root so it works for both top-level imports and submodules. Imported and merged by a Meta maintainer through their internal codesync process (commit facebook/pyrefly@97fd78f0); the public PR shows as closed because the commit lands via internal import.
 
 - **Page**: https://dibbayajyoti.com/open-source
 
@@ -227,7 +274,7 @@ Eight merged pull requests across two production Rust projects: seven to ReductS
 
 ### Optimistic UIs in React with RFC 6902 JSON Patch (2026)
 - **URL**: https://dibbayajyoti.com/writing/optimistic-ui-rfc-6902-react
-- **Summary**: How to build optimistic UIs, failure rollback, and undo/redo in React from a single RFC 6902 JSON Patch primitive, using the diffcore Rust/WASM diff engine — applyPatch forward, revertPatch to undo, send the standard patch to the server for state sync.
+- **Summary**: How to build optimistic UIs, failure rollback, and undo/redo in React from a single RFC 6902 JSON Patch primitive, using the diffcore Rust/WASM diff engine: applyPatch forward, revertPatch to undo, send the standard patch to the server for state sync.
 
 ### Next.js SEO in 2026: A Practical Guide (2026)
 - **URL**: https://dibbayajyoti.com/writing/nextjs-seo-2026
@@ -237,18 +284,18 @@ Eight merged pull requests across two production Rust projects: seven to ReductS
 ### Fixing a Redis Polling Bottleneck in Production (2026)
 - **URL**: https://dibbayajyoti.com/writing/redis-polling-bottleneck
 - **Also on**: https://medium.com/p/afae306668ba
-- **Summary**: A real production incident — polling tasks from a poorly-designed Redis schema with no indexing. Naive SCAN + deserialize + check over a remote Redis host timed out at ~100 seconds. Fixed by batching MGET requests and filtering idle tasks client-side, resulting in ~90% efficiency improvement and zero timeouts.
+- **Summary**: A real production incident: polling tasks from a poorly-designed Redis schema with no indexing. Naive SCAN + deserialize + check over a remote Redis host timed out at ~100 seconds. Fixed by batching MGET requests and filtering idle tasks client-side, resulting in ~90% efficiency improvement and zero timeouts.
 
 ## Awards & Honors
 
-- **Winner** — NITA Arjuna 2.0 National Hackathon (2025), among 200+ teams
-- **Winner** — Technovate Project Exhibition (2025)
-- **1st Runner-Up** — NITA–ISRO Space Hackathon (2024)
-- **Top 500** — AI for Bharat Hackathon (2026), thousands of teams
+- **Winner**: NITA Arjuna 2.0 National Hackathon (2025), among 200+ teams
+- **Winner**: Technovate Project Exhibition (2025)
+- **1st Runner-Up**: NITA-ISRO Space Hackathon (2024)
+- **Top 500**: AI for Bharat Hackathon (2026), thousands of teams
 
 ## Education
 
-Bachelor of Technology, Computer Science — ICFAI University Tripura (Expected 2026)
+Bachelor of Technology, Computer Science, ICFAI University Tripura (Expected 2026)
 Relevant coursework: Data Structures & Algorithms, Operating Systems, DBMS, Computer Networks, Distributed Systems.
 
 ## Languages
@@ -264,11 +311,14 @@ Dibbayajyoti's engineering philosophy centers on building software that is both 
 ## Frequently Asked Questions
 
 - **Who is Dibbayajyoti Roy?** Full Stack Software Engineer at Yupcha Softwares Pvt. Ltd. Specializes in TypeScript, Rust, React, Next.js, and AI engineering with AWS Bedrock.
-- **Does Dibbayajyoti Roy have AI experience?** Yes. He built and shipped Learning Copilot — a production AWS Bedrock AI assistant with multi-model fallback (Nova Pro → Nova Lite), real-time streaming, and cost-aware architecture. Top 500 in AI for Bharat hackathon.
-- **What is Klinder-OSS?** An open-source SDK by Dibbayajyoti Roy that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install — effectively combining PostHog + LogRocket + Customer.io. TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS), with a Rust port in progress targeting sub-10ms p95 latency.
-- **What is diffcore?** A fast WebAssembly JSON diff engine by Dibbayajyoti Roy, written in Rust and published on npm (v1.2.0). Returns real JSON Pointer paths (RFC 6901) and decoded values, emits standard RFC 6902 JSON Patch, ships applyPatch / revertPatch for state sync / undo-redo / optimistic UI, plus a React useDiff hook, a CLI, and a streaming engine for multi-GB files. 2.3–3.0× faster than fast-json-patch and 4–8× faster than jsondiffpatch. Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
-- **What is AHTML?** AHTML (Agentic HTML) is a shipped seven-package npm scope (`@ahtmljs/*` at v0.9.0) by Dibbayajyoti Roy for making web content cheaply consumable by AI agents. The scope ships `@ahtmljs/schema` (canonical snapshot + RAG-ready `Document.chunks`, 63 tests), `@ahtmljs/next` (Next.js plugin emitting MCP/OpenAPI/JSON-LD/llms.txt/snapshot at `/.well-known/ahtml.json`, 38 tests), `@ahtmljs/agent` (client SDK with ETag caching, dry-run safety gates, hostile-agent regressions, 28 tests), `@ahtmljs/vite` (Vite plugin counterpart with byte-identical output, 9 tests), `@ahtmljs/langchain` (LangChain.js loader with citation metadata, 5 tests), `@ahtmljs/hono` (Hono adapter for Node, Bun, Deno, and Cloudflare Workers), and `@ahtmljs/cli` (`ahtml doctor` discovery-chain linter for CI). Repo: github.com/DibbayajyotiRoy/AHTML.
-- **Is Dibbayajyoti Roy eligible to work in Europe?** Yes — eligible for Germany Opportunity Card / EU Blue Card and Netherlands Highly Skilled Migrant programme.
+- **Does Dibbayajyoti Roy have AI experience?** Yes. He built and shipped Learning Copilot: a production AWS Bedrock AI assistant with multi-model fallback (Nova Pro → Nova Lite), real-time streaming, and cost-aware architecture. Top 500 in AI for Bharat hackathon.
+- **What is Klinder-OSS?** An open-source SDK by Dibbayajyoti Roy that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install, effectively combining PostHog + LogRocket + Customer.io. TypeScript SDK on Cloudflare Workers + Neon Postgres (RLS), with a Rust port in progress targeting sub-10ms p95 latency.
+- **What is diffcore?** A fast WebAssembly JSON diff engine by Dibbayajyoti Roy, written in Rust and published on npm (v1.2.0). Returns real JSON Pointer paths (RFC 6901) and decoded values, emits standard RFC 6902 JSON Patch, ships applyPatch / revertPatch for state sync / undo-redo / optimistic UI, plus a React useDiff hook, a CLI, and a streaming engine for multi-GB files. 2.3-3.0× faster than fast-json-patch and 4-8× faster than jsondiffpatch. Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, Tauri.
+- **What is AHTML?** AHTML (Agentic HTML) is a shipped sixteen-package npm scope (`@ahtmljs/*` at v1.1.0) by Dibbayajyoti Roy, plus the `ahtml` Python SDK, for making web content cheaply and safely consumable by AI agents. From one config a site emits MCP, OpenAPI 3.1, JSON-LD, llms.txt, RSL 1.0, Markdown, and a token-optimal signed snapshot with typed actions carrying explicit cost, reversibility, auth, and side-effects. The scope spans framework adapters (`@ahtmljs/next`, `astro`, `sveltekit`, `vite`, `hono`), the contract layer (`@ahtmljs/schema`) and extractor pipeline (`@ahtmljs/extract`), the agent client SDK with a dry-run sandbox and universal HTML fallback (`@ahtmljs/agent`), LangChain loaders (`@ahtmljs/langchain` and Python), agent-traffic analytics (`@ahtmljs/insights`), a conformance certification corpus (`@ahtmljs/conformance`), the AHTML Index registry (`@ahtmljs/index`), a hosted score badge (`@ahtmljs/badge`), KV/cache backends (`@ahtmljs/kv`), a WebMCP bridge (`@ahtmljs/webmcp`), and a CLI (`@ahtmljs/cli`) whose init/analyze/score/doctor/mcp commands work on any URL, adopter or not. Measured 4.5-7.3× fewer tokens than raw HTML and fact-extraction accuracy up from 91% to 100% in a 146-run multi-model benchmark; 700+ passing tests. MIT. Repo: github.com/DibbayajyotiRoy/AHTML.
+- **What is whatbroke?** whatbroke is an open-source (Apache-2.0) zero-config, local-only CLI and read-only MCP server by Dibbayajyoti Roy that turns a local terminal crash into redacted, git-anchored context for an AI coding agent (Claude Code, Cursor) and then verifies the fix. It ranks suspect files with no LLM by intersecting the last-green-commit journal with the crash stack trace (90.3% top-1 and 100% top-3 accuracy over 31 scored cases from 35 real regression scenarios) and re-runs the exact captured command via the `verify_fix` MCP tool to report fixed, same-failure, or different-failure. Node/TypeScript first-class; Python (pytest) and Go (go test) via an adapter layer. A mandatory fail-closed redaction gate scrubs secrets so only redacted bundles touch disk. Requires Node >= 20. npm: @whatbroke/whatbroke.
+- **What is Roy UI?** Roy UI (`@roy-ui/ui`) is an open-source (MIT) zero-config React component library by Dibbayajyoti Roy for data-heavy UIs: a batteries-included DataTable (search, date-range and time filters, sort, pagination, drag-to-reorder and resize columns, CSV/JSON import-export), a date range picker with no date-fns dependency, and an analog/digital time picker. TypeScript-first, RSC-safe, tree-shakable ESM, sub-12 KB, no Tailwind required. A styled shadcn/ui and TanStack Table alternative for Next.js 15, Vite, Remix, and TanStack Start.
+- **What is Fresco?** Fresco is an open-source (GPL-3.0) live-wallpaper app for Linux by Dibbayajyoti Roy, written in Rust with GTK4/libadwaita. It sets videos, GIFs, images, slideshows, and playlists as GPU hardware-accelerated live wallpapers on X11 and Wayland (Pop!_OS, Ubuntu, Mint, Debian, elementary OS), with a drag-to-crop editor, a searchable wallpaper library, multi-monitor support, and battery-aware pausing, and proves its video quality by screenshot in CI on five headless compositors. A simple GUI alternative to Wallpaper Engine and Lively for Linux. Used by 100+ people on Linux.
+- **Is Dibbayajyoti Roy eligible to work in Europe?** Yes: eligible for Germany Opportunity Card / EU Blue Card and Netherlands Highly Skilled Migrant programme.
 - **What is Dibbayajyoti Roy's tech stack?** TypeScript, Rust, React, Next.js, Node.js, Hono, AWS Bedrock, Cloudflare Workers, Neon Postgres, Docker, Linux/nginx/systemd.
 - **Where does Dibbayajyoti Roy work?** Yupcha Softwares Pvt. Ltd as Full Stack Software Engineer since July 2025.
 - **How to contact Dibbayajyoti Roy?** Book a call: cal.com/dibbayajyoti, LinkedIn: linkedin.com/in/dibbayajyoti-roy/, GitHub: github.com/DibbayajyotiRoy.
@@ -280,4 +330,4 @@ Dibbayajyoti's engineering philosophy centers on building software that is both 
 - **GitHub**: https://github.com/DibbayajyotiRoy
 - **X/Twitter**: https://x.com/dibbayajyoti
 - **Medium**: https://medium.com/@dibbayajyoti
-- **Discord**: om165_
+- **npm**: https://www.npmjs.com/~dibbayajyoti

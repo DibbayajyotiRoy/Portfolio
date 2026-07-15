@@ -5,21 +5,21 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Diffcore vs jsondiffpatch — Fast WASM JSON Diff with RFC 6902 Patch",
+  title: "Diffcore vs jsondiffpatch: Fast WASM JSON Diff with RFC 6902 Patch",
   description:
-    "Diffcore vs jsondiffpatch in 2026. Real RFC 6901 paths, RFC 6902 Patch output, applyPatch / revertPatch, React useDiff hook, CLI, and a streaming engine — 3.3 to 4.1× faster than optimized pure-JS diff.",
+    "Diffcore vs jsondiffpatch in 2026. Real RFC 6901 paths, RFC 6902 Patch output, applyPatch / revertPatch, React useDiff hook, CLI, and a streaming engine. 3.3 to 4.1× faster than optimized pure-JS diff.",
   alternates: { canonical: "/diffcore-vs-jsondiffpatch" },
   openGraph: {
-    title: "Diffcore vs jsondiffpatch — Fast WASM JSON Diff",
+    title: "Diffcore vs jsondiffpatch: Fast WASM JSON Diff",
     description:
-      "Side-by-side: real JSON Pointer paths, RFC 6902 JSON Patch output, applyPatch / revertPatch, React hook, CLI, streaming engine. 3.3–4.1× faster.",
+      "Side-by-side: real JSON Pointer paths, RFC 6902 JSON Patch output, applyPatch / revertPatch, React hook, CLI, streaming engine. 3.3-4.1× faster.",
     url: `${baseUrl}/diffcore-vs-jsondiffpatch`,
     type: "article",
   },
   twitter: {
     title: "Diffcore vs jsondiffpatch",
     description:
-      "Real RFC 6901 paths, RFC 6902 Patch, React hook, CLI, streaming. 3.3–4.1× faster than pure-JS diff.",
+      "Real RFC 6901 paths, RFC 6902 Patch, React hook, CLI, streaming. 3.3-4.1× faster than pure-JS diff.",
   },
 };
 
@@ -33,7 +33,7 @@ const articleJsonLd = {
   "dateModified": "2026-05-15",
   "inLanguage": "en",
   "description":
-    "Side-by-side comparison of Diffcore (Rust + WebAssembly JSON diff engine on npm) vs jsondiffpatch — RFC compliance, performance, React hook, CLI, streaming engine.",
+    "Side-by-side comparison of Diffcore (Rust + WebAssembly JSON diff engine on npm) vs jsondiffpatch: RFC compliance, performance, React hook, CLI, streaming engine.",
   "keywords": [
     "diffcore vs jsondiffpatch",
     "fast json diff",

@@ -18,9 +18,9 @@ export interface Article {
   title: string;
   /** Second-line tagline rendered next to the H1. */
   subtitle: string;
-  /** <title> — keep the primary keyword inside the first ~60 chars. */
+  /** <title>: keep the primary keyword inside the first ~60 chars. */
   metaTitle: string;
-  /** Meta description — ~150–160 chars, primary keyword + benefit. */
+  /** Meta description: ~150-160 chars, primary keyword + benefit. */
   metaDescription: string;
   /** One-line summary for the /writing index list. */
   excerpt: string;
@@ -539,7 +539,7 @@ lon = 91.7
     metaDescription:
       "How I landed merged Rust contributions in Meta's Pyrefly type checker and ReductStore: reproduce before claiming, pick deterministic bugs, and work with maintainers.",
     excerpt:
-      "Merged Rust contributions in two production projects — Meta's Pyrefly type checker and ReductStore. The mechanics nobody tells you: reproduce before you claim, pick deterministic bugs, and treat maintainers as colleagues.",
+      "Merged Rust contributions in two production projects: Meta's Pyrefly type checker and ReductStore. The mechanics nobody tells you: reproduce before you claim, pick deterministic bugs, and treat maintainers as colleagues.",
     datePublished: "2026-06-21",
     readingTime: "6 min read",
     schemaType: "BlogPosting",
@@ -560,7 +560,7 @@ lon = 91.7
         <p>
           When I started contributing to open source, I had the same vague advice
           everyone has: "just contribute to open source." Nobody tells you the
-          actual mechanics — how to pick an issue that won't evaporate, how to
+          actual mechanics: how to pick an issue that won't evaporate, how to
           talk to maintainers, what to do when your first attempt goes nowhere.
           This is the write-up I wish I'd had.
         </p>
@@ -628,8 +628,8 @@ lon = 91.7
             <strong>Avoid issues that might get fixed out from under you.</strong>{" "}
             Flaky, environment-dependent crashes can vanish as a side effect of
             unrelated work, which is exactly what happened to my first attempt. A
-            deterministic logic bug — something that is wrong every single time for
-            a clear reason — won't disappear on you.
+            deterministic logic bug, something that is wrong every single time for
+            a clear reason, won't disappear on you.
           </li>
           <li>
             <strong>
@@ -639,7 +639,7 @@ lon = 91.7
             the type checker told users to install stub packages for libraries
             that already shipped their own type information. A maintainer had
             already commented agreeing with the fix approach. That meant I wasn't
-            guessing at what they wanted — I was implementing something they'd
+            guessing at what they wanted. I was implementing something they'd
             already blessed. That is the lowest-risk kind of issue to take.
           </li>
         </ul>
@@ -652,13 +652,13 @@ lon = 91.7
         <ol>
           <li>Reproduce the issue locally on current main.</li>
           <li>
-            Investigate read-only — find exactly where the bug lives and what the
+            Investigate read-only: find exactly where the bug lives and what the
             fix needs to touch, before writing anything.
           </li>
           <li>Align with the maintainer on approach and any genuine design questions.</li>
           <li>Implement the minimal change plus a regression test.</li>
           <li>
-            Verify end-to-end yourself — don't trust that "tests pass" means it
+            Verify end-to-end yourself: don't trust that "tests pass" means it
             works.
           </li>
         </ol>
@@ -683,14 +683,14 @@ lon = 91.7
           A claim comment that says "I'd like to take this" is fine. A claim
           comment that says "I reproduced this, here's the trigger condition,
           here's the function responsible, and here's the fix direction the
-          maintainer already suggested — assigning to me?" gets a fast yes,
+          maintainer already suggested. Assigning to me?" gets a fast yes,
           because it shows you've already done the investigation.
         </p>
         <p>
           When there's a genuine design decision, surface it before you build,
           with your own recommendation attached. "Should this go at the call sites
           or inside the helper? I lean toward the call sites because the resolved
-          path is available there — open to your preference" is far better than
+          path is available there. Open to your preference" is far better than
           either guessing silently or asking an open-ended "how should I do this?"
           You're making it a one-line decision for a busy person, while showing
           you understand the tradeoff.
@@ -736,8 +736,8 @@ lon = 91.7
           >
             PR #1431
           </Link>
-          ) built usage-statistics reporting: each node emits its own metrics —
-          traffic, record counts, storage size — as queryable records on an
+          ) built usage-statistics reporting: each node emits its own metrics
+          (traffic, record counts, storage size) as queryable records on an
           interval, with replicas forwarding to the primary for a consolidated
           view. Both shipped and were credited by the maintainer, who{" "}
           <Link
@@ -787,7 +787,7 @@ lon = 91.7
           One detail I'll admit felt good: the ReductStore maintainer announced
           the first contribution publicly, on his own channels, thanking me by
           name. I mention it not to boast but because it's the clearest signal
-          that contributing well — rather than asking for recognition — is what
+          that contributing well, rather than asking for recognition, is what
           earns it. You don't get credited for showing up. You get credited for
           being useful.
         </p>
@@ -859,8 +859,8 @@ lon = 91.7
           An optimistic UI updates the screen <em>before</em> the server
           confirms the change. It feels instant, but it owes the user a promise:
           if the request fails, the UI has to put everything back exactly the way
-          it was. Most React codebases keep that promise with ad-hoc snapshots —
-          a deep clone here, a <code>useRef</code> of the old value there — and
+          it was. Most React codebases keep that promise with ad-hoc snapshots
+          (a deep clone here, a <code>useRef</code> of the old value there) and
           the bookkeeping rots as the state shape grows.
         </p>
         <p>
@@ -868,7 +868,7 @@ lon = 91.7
           <strong>RFC 6902 JSON Patch</strong>. A patch is a tiny, standard,
           reversible description of <em>what changed</em>. If you compute one
           patch per mutation, you get optimistic apply, failure rollback, and
-          undo/redo from the same object — no bespoke snapshot logic.
+          undo/redo from the same object. No bespoke snapshot logic.
         </p>
 
         <h2>What a JSON Patch actually is</h2>
@@ -895,7 +895,7 @@ lon = 91.7
           Because the format is standard, the same patch is understood by any
           IETF-compliant consumer on the server, in a queue, or in another
           service. And because every operation has an inverse, a patch can be
-          turned around to undo itself — which is the whole trick.
+          turned around to undo itself, which is the whole trick.
         </p>
 
         <h2>The three jobs, one patch</h2>
@@ -921,16 +921,16 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
         </pre>
         <ul>
           <li>
-            <strong>Optimistic apply</strong> — compute the next state, render it
+            <strong>Optimistic apply</strong>: compute the next state, render it
             immediately, fire the request.
           </li>
           <li>
-            <strong>Rollback</strong> — if the request rejects,{" "}
+            <strong>Rollback</strong>: if the request rejects,{" "}
             <code>revertPatch</code> puts the document back, byte for byte. No
             stale clone to trust.
           </li>
           <li>
-            <strong>Undo/redo</strong> — push each patch onto a stack. Undo is{" "}
+            <strong>Undo/redo</strong>: push each patch onto a stack. Undo is{" "}
             <code>revertPatch</code>; redo is <code>applyPatch</code>. The stack
             holds tiny diffs, not full document copies.
           </li>
@@ -976,7 +976,7 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
         <h2>Why send the patch, not the whole object</h2>
         <p>
           Two clients editing the same record will clobber each other if each
-          PUTs a full object — last write wins, silently. A patch carries only
+          PUTs a full object: last write wins, silently. A patch carries only
           the intent (<code>add /user/roles/1</code>), so the server can apply
           changes that do not touch the same path concurrently, and you can
           detect the ones that do. It is also smaller on the wire, which matters
@@ -990,12 +990,12 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
           Reach for the patch primitive when you have optimistic mutations,
           undo/redo, collaborative or multi-tab editing, or a "review changes"
           screen. For a form that saves once and navigates away, a single
-          snapshot is simpler — don't over-build it. The win shows up exactly
+          snapshot is simpler. Don't over-build it. The win shows up exactly
           when the hand-rolled snapshot bookkeeping starts to hurt.
         </p>
         <p>
           The diff engine I used is{" "}
-          <Link href="/projects/diffcore">diffcore</Link> — Rust compiled to
+          <Link href="/projects/diffcore">diffcore</Link>: Rust compiled to
           WebAssembly, RFC 6902 in and out, with <code>applyPatch</code> /{" "}
           <code>revertPatch</code> and a <code>useDiff</code> hook. If you are
           weighing options, I wrote a{" "}
@@ -1015,7 +1015,7 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
     metaDescription:
       "A practical Next.js SEO guide for 2026: the Metadata API, JSON-LD structured data, llms.txt for AI crawlers, honest sitemaps, and Core Web Vitals (INP).",
     excerpt:
-      "What actually moves the needle for Next.js SEO in 2026: the Metadata API, JSON-LD, llms.txt for AI crawlers, honest sitemaps, and INP — with the App Router specifics.",
+      "What actually moves the needle for Next.js SEO in 2026: the Metadata API, JSON-LD, llms.txt for AI crawlers, honest sitemaps, and INP, with the App Router specifics.",
     datePublished: "2026-03-01",
     dateModified: "2026-06-15",
     readingTime: "10 min read",
@@ -1037,7 +1037,7 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
         <p>
           Next.js gives you everything you need to rank, but the defaults are not
           enough and the surface area is wide. This is the short list of what
-          actually moves the needle in 2026, with the App Router specifics — not
+          actually moves the needle in 2026, with the App Router specifics. Not
           generic SEO advice you have read a hundred times.
         </p>
 
@@ -1053,7 +1053,7 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
           <code>{`export const metadata: Metadata = {
   metadataBase: new URL("https://example.com"),
   title: "Page title with the primary keyword up front",
-  description: "150–160 chars, primary keyword + the benefit.",
+  description: "150-160 chars, primary keyword + the benefit.",
   alternates: { canonical: "/the-page" },
   openGraph: { type: "article", images: ["/opengraph-image.png"] },
 };`}</code>
@@ -1095,7 +1095,7 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
           Claude, and they reward a clean, plain-text summary of your site. Serve{" "}
           <code>/llms.txt</code> (a concise map) and optionally{" "}
           <code>/llms-full.txt</code> (the long version). Keep the facts in these
-          files identical to what your pages and JSON-LD say — contradictory
+          files identical to what your pages and JSON-LD say: contradictory
           numbers across your own surfaces erode citation confidence. This is its
           own discipline; I treat it as part of{" "}
           <Link href="/ai-engineering">AI-search optimization</Link>, and the{" "}
@@ -1123,7 +1123,7 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
         <h2>6. Optimize for INP, not FID</h2>
         <p>
           Core Web Vitals in 2026 means <strong>INP</strong> (Interaction to Next
-          Paint), LCP, and CLS — FID is gone. Next.js helps with LCP via the{" "}
+          Paint), LCP, and CLS. FID is gone. Next.js helps with LCP via the{" "}
           <code>next/image</code> component and font optimization, but INP is
           about your own JavaScript: break up long tasks, defer non-critical
           hydration, and keep the main thread free on interaction. Measure field
@@ -1132,7 +1132,7 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
 
         <h2>7. Render content server-side, then verify it</h2>
         <p>
-          With the App Router this is mostly free — Server Components render HTML
+          With the App Router this is mostly free: Server Components render HTML
           crawlers can read without executing your JS. Verify it: fetch your page
           with JavaScript disabled and confirm the headings and copy are present.
           If your content only appears after hydration, you are betting on the
@@ -1144,7 +1144,7 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
           Metadata API on every route, a connected JSON-LD entity graph, llms.txt
           that agrees with your pages, an explicit robots.txt, an honest sitemap,
           INP discipline, and server-rendered content you actually verified. This
-          site is built on exactly these rules — see the{" "}
+          site is built on exactly these rules. See the{" "}
           <Link href="/nextjs-seo">Next.js SEO hub</Link> for the deeper dive, or{" "}
           <Link href="/work">the projects</Link> for where it is applied.
         </p>
@@ -1189,7 +1189,7 @@ const back = revertPatch(next, patch);   // inverse: exactly the old state`}</co
           deserialize it, and check whether the task was idle.
         </p>
         <pre>
-          <code>{`// one network round trip per key — the problem
+          <code>{`// one network round trip per key (the problem)
 for await (const key of redis.scanIterator({ MATCH: "task:*" })) {
   const raw = await redis.get(key);
   const task = JSON.parse(raw);
@@ -1198,7 +1198,7 @@ for await (const key of redis.scanIterator({ MATCH: "task:*" })) {
         </pre>
         <p>
           Two things make this slow, and they compound. First,{" "}
-          <code>SCAN</code> walks the entire keyspace in cursor-sized chunks — it
+          <code>SCAN</code> walks the entire keyspace in cursor-sized chunks: it
           is O(N) over every key in the database, not just the ones you want.
           Second, the per-key <code>GET</code> means one network round trip per
           task. Against a <em>remote</em> Redis, latency, not Redis itself, is the
@@ -1228,21 +1228,21 @@ for (const batch of chunk(keys, BATCH)) {
         <p>
           One round trip per 500 keys instead of one per key collapses the network
           cost by roughly the batch factor. Moving the idle check to the client
-          meant Redis only ever did cheap bulk reads — no per-item logic on the
+          meant Redis only ever did cheap bulk reads: no per-item logic on the
           server, no extra commands. Total work dropped about 90%, and the
           timeouts stopped.
         </p>
 
         <h2>Why this works, and the trade-off</h2>
         <p>
-          The lesson is not "MGET is faster than GET" — it is that{" "}
+          The lesson is not "MGET is faster than GET": it is that{" "}
           <strong>over a network, round trips dominate</strong>. Batching trades a
           little memory (you hold a batch of values at once) for a large cut in
           latency. <code>MGET</code> is the simplest tool; a pipeline or Lua
           script does the same when your reads are not uniform. The real fix for
           the underlying problem is to stop scanning the whole keyspace at all:
-          maintain an index — a <code>SET</code> or sorted set of the keys you
-          care about — so you read a known, bounded list instead of discovering it
+          maintain an index, a <code>SET</code> or sorted set of the keys you
+          care about, so you read a known, bounded list instead of discovering it
           every cycle.
         </p>
 
@@ -1254,7 +1254,7 @@ for (const batch of chunk(keys, BATCH)) {
           </li>
           <li>
             <code>SCAN</code> is O(keyspace). If you scan on a hot path, you have
-            already lost — keep an index of the keys you need.
+            already lost. Keep an index of the keys you need.
           </li>
           <li>
             Batch remote reads (<code>MGET</code>, pipelines) and do filtering in

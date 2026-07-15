@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ThemeToggle from "./theme-toggle";
+import SoundToggle from "./sound-toggle";
 import Image from "next/image";
 import { coreProducts } from "@/lib/content/projects";
 
@@ -284,6 +285,9 @@ const Footer = ({}: FooterProps) => {
           <h2 className="font-semibold mb-2">Theme</h2>
           <div>
             <ThemeToggle />
+          </div>
+          <div className="mt-3">
+            <SoundToggle />
           </div>
         </div>
 

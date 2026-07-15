@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";
+import NavSound from "@/components/nav-sound";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -18,8 +19,8 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Dibbayajyoti Roy – Full Stack & Rust Backend Engineer",
-  description: "Dibbayajyoti Roy — hackathon winner and Full Stack Engineer at Yupcha Softwares. Rust backend, WebAssembly, React, and Next.js. Explore projects and experience.",
+  title: "Dibbayajyoti Roy: Full Stack & Rust Backend Engineer",
+  description: "Dibbayajyoti Roy: hackathon winner and Full Stack Engineer at Yupcha Softwares. Rust backend, WebAssembly, React, and Next.js. Explore projects and experience.",
   metadataBase: new URL(baseUrl),
   alternates: {
     canonical: "/",
@@ -42,20 +43,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseUrl,
     siteName: "Dibbayajyoti Roy",
-    title: "Dibbayajyoti Roy – Full Stack & Rust Backend Engineer",
+    title: "Dibbayajyoti Roy: Full Stack & Rust Backend Engineer",
     description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, WebAssembly, React, and Next.js.",
     images: [
       {
         url: `/opengraph-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Dibbayajyoti Roy – Full Stack & Rust Backend Engineer",
+        width: 1536,
+        height: 1024,
+        alt: "Dibbayajyoti Roy: Full Stack & Rust Backend Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dibbayajyoti Roy – Full Stack & Rust Backend Engineer",
+    title: "Dibbayajyoti Roy: Full Stack & Rust Backend Engineer",
     description: "Hackathon-winning Full Stack Engineer building production-grade systems with Rust, WebAssembly, React, and Next.js.",
     creator: "@DibbayajyotiRoy",
     images: [`/opengraph-image.png`],
@@ -131,9 +132,9 @@ const personJsonLd = {
     "Agentic Web", "AI Crawler Optimization", "llms.txt", "SEO for AI Search"
   ],
   "award": [
-    "Winner — NITA Arjuna 2.0 National Hackathon (2025)",
-    "Winner — Technovate Project Exhibition",
-    "1st Runner-Up — NITA–ISRO Space Hackathon (2024)"
+    "Winner: NITA Arjuna 2.0 National Hackathon (2025)",
+    "Winner: Technovate Project Exhibition",
+    "1st Runner-Up: NITA-ISRO Space Hackathon (2024)"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
@@ -148,7 +149,7 @@ const websiteJsonLd = {
   "@id": "https://dibbayajyoti.com/#website",
   "name": "Dibbayajyoti Roy",
   "url": "https://dibbayajyoti.com",
-  "description": "Personal portfolio of Dibbayajyoti Roy — Full Stack & Rust backend engineer specializing in WebAssembly, Next.js, and AI engineering.",
+  "description": "Personal portfolio of Dibbayajyoti Roy: Full Stack & Rust backend engineer specializing in WebAssembly, Next.js, and AI engineering.",
   "publisher": {
     "@id": "https://dibbayajyoti.com/#person"
   },
@@ -164,8 +165,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — AI-friendly site summary" />
-        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="llms-full.txt — extended professional profile" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt: AI-friendly site summary" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="llms-full.txt: extended professional profile" />
+        <link rel="alternate" type="application/ahtml+json" href="/.well-known/ahtml.json" title="AHTML agent snapshot discovery" />
         <link rel="me" href="https://github.com/DibbayajyotiRoy" />
         <link rel="me" href="https://linkedin.com/in/dibbayajyoti-roy/" />
         <link rel="me" href="https://x.com/dibbayajyoti" />
@@ -185,27 +187,28 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class">
           <Nav/>
+          <NavSound />
           <noscript>
               <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-                <h1>Dibbayajyoti Roy — Full Stack &amp; Rust Backend Engineer</h1>
+                <h1>Dibbayajyoti Roy: Full Stack &amp; Rust Backend Engineer</h1>
                 <p>Full Stack Software Engineer and Rust backend engineer, currently at Yupcha Softwares Pvt. Ltd. Specializing in Rust, WebAssembly, TypeScript, React, and Next.js for building high-performance systems and production-grade SaaS platforms.</p>
                 <h2>Key Skills</h2>
                 <p>Rust, TypeScript, React, Next.js, Node.js, WebAssembly, Hono, REST APIs, Cloudflare Workers, AWS Bedrock, Neon Postgres, Docker, Linux infrastructure, Systems Programming.</p>
                 <h2>Flagship Projects</h2>
                 <ul>
-                  <li><strong>Klinder-OSS</strong> — Open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install. PostHog + LogRocket + Customer.io combined. <a href="https://klinder-oss.vercel.app">klinder-oss.vercel.app</a></li>
-                  <li><strong>diffcore</strong> — Rust + WebAssembly diff library on npm, built for fast and compact diffs in production JavaScript bundles. <a href="https://www.npmjs.com/package/diffcore">npmjs.com/package/diffcore</a></li>
-                  <li><strong>AHTML (Agentic HTML)</strong> — Shipped sixteen-package npm scope (@ahtmljs/*, v1.1.0) plus the <code>ahtml</code> Python SDK that makes web content cheaply and safely consumable by AI agents: a canonical agent snapshot with typed, priced actions, Next.js / Astro / SvelteKit / Vite / Hono adapters, an agent SDK with a dry-run sandbox, LangChain loaders, agent-traffic insights, a conformance corpus, the AHTML Index, and a CLI that scores and converts any URL into MCP tools. Measured 4.5–7.3× fewer tokens than raw HTML; 91%→100% fact-extraction accuracy. <a href="https://www.npmjs.com/org/ahtmljs">npmjs.com/org/ahtmljs</a></li>
-                  <li><strong>Learning Copilot</strong> — AWS Bedrock AI learning assistant (Nova Pro / Nova Lite multi-model fallback). Top 500 AI for Bharat hackathon. <a href="https://ai-for-bharat.vercel.app">ai-for-bharat.vercel.app</a></li>
-                  <li>EMS — Real-time Employee Management System in Rust and React.</li>
-                  <li>BloodLink — Blood donor-seeker matching platform; ~100 pilot users.</li>
+                  <li><strong>Klinder-OSS</strong>: Open-source SDK that unifies event tracking, error-based session recording, and automatic email trigger workflows in one install. PostHog + LogRocket + Customer.io combined. <a href="https://klinder-oss.vercel.app">klinder-oss.vercel.app</a></li>
+                  <li><strong>diffcore</strong>: Rust + WebAssembly diff library on npm, built for fast and compact diffs in production JavaScript bundles. <a href="https://www.npmjs.com/package/diffcore">npmjs.com/package/diffcore</a></li>
+                  <li><strong>AHTML (Agentic HTML)</strong>: Shipped sixteen-package npm scope (@ahtmljs/*, v1.1.0) plus the <code>ahtml</code> Python SDK that makes web content cheaply and safely consumable by AI agents: a canonical agent snapshot with typed, priced actions, Next.js / Astro / SvelteKit / Vite / Hono adapters, an agent SDK with a dry-run sandbox, LangChain loaders, agent-traffic insights, a conformance corpus, the AHTML Index, and a CLI that scores and converts any URL into MCP tools. Measured 4.5-7.3× fewer tokens than raw HTML; 91%→100% fact-extraction accuracy. <a href="https://www.npmjs.com/org/ahtmljs">npmjs.com/org/ahtmljs</a></li>
+                  <li><strong>Learning Copilot</strong>: AWS Bedrock AI learning assistant (Nova Pro / Nova Lite multi-model fallback). Top 500 AI for Bharat hackathon. <a href="https://ai-for-bharat.vercel.app">ai-for-bharat.vercel.app</a></li>
+                  <li>EMS: Real-time Employee Management System in Rust and React.</li>
+                  <li>BloodLink: Blood donor-seeker matching platform; ~100 pilot users.</li>
                 </ul>
                 <h2>Awards</h2>
                 <ul>
-                  <li>Winner — NITA Arjuna 2.0 National Hackathon (2025), 200+ teams</li>
-                  <li>Winner — Technovate Project Exhibition (2025)</li>
-                  <li>1st Runner-Up — NITA–ISRO Space Hackathon (2024)</li>
-                  <li>Top 500 — AI for Bharat Hackathon (2026)</li>
+                  <li>Winner: NITA Arjuna 2.0 National Hackathon (2025), 200+ teams</li>
+                  <li>Winner: Technovate Project Exhibition (2025)</li>
+                  <li>1st Runner-Up: NITA-ISRO Space Hackathon (2024)</li>
+                  <li>Top 500: AI for Bharat Hackathon (2026)</li>
                 </ul>
                 <h2>Writing</h2>
                 <p>See <a href="/writing">/writing</a> for engineering articles on Next.js SEO, Redis production debugging, and AI engineering with AWS Bedrock.</p>

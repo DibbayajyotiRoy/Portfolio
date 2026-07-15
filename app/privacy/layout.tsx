@@ -5,14 +5,14 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Privacy — Dibbayajyoti Roy",
+  title: "Privacy: Dibbayajyoti Roy",
   description:
-    "Privacy notice for dibbayajyoti.com. What is collected, by whom, and how to opt out. Vercel Analytics + Speed Insights only — no cookies, no tracking pixels.",
+    "Privacy notice for dibbayajyoti.com. What is collected, by whom, and how to opt out. Vercel Analytics + Speed Insights only: no cookies, no tracking pixels.",
   alternates: { canonical: "/privacy" },
   openGraph: {
-    title: "Privacy — Dibbayajyoti Roy",
+    title: "Privacy: Dibbayajyoti Roy",
     description:
-      "Privacy notice for dibbayajyoti.com. Anonymous Vercel analytics only — no cookies, no tracking pixels.",
+      "Privacy notice for dibbayajyoti.com. Anonymous Vercel analytics only: no cookies, no tracking pixels.",
     url: `${baseUrl}/privacy`,
     type: "website",
   },
@@ -26,7 +26,7 @@ const privacyJsonLd = {
   "name": "Privacy Notice",
   "url": "https://dibbayajyoti.com/privacy",
   "description":
-    "Privacy notice for dibbayajyoti.com. Vercel Analytics and Speed Insights collect anonymous request metadata only — no cookies, no tracking pixels.",
+    "Privacy notice for dibbayajyoti.com. Vercel Analytics and Speed Insights collect anonymous request metadata only: no cookies, no tracking pixels.",
   "isPartOf": { "@id": "https://dibbayajyoti.com/#website" },
   "breadcrumb": {
     "@type": "BreadcrumbList",

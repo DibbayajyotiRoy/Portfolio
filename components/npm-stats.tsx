@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { NpmPackage } from "@/lib/content/projects";
 
 // Live npm stats are revalidated periodically (ISR) rather than fetched on every
-// request — that keeps the product hub pages statically cached and fast while the
+// request. That keeps the product hub pages statically cached and fast while the
 // download counts still refresh a few times a day.
 const REVALIDATE_SECONDS = 60 * 60 * 6; // 6 hours
 
@@ -73,7 +73,7 @@ export default async function NpmStats({
     <div className="flex flex-col gap-5">
       <div className="flex items-baseline justify-between gap-4 flex-wrap">
         <p className="text-sm sm:text-base opacity-70">
-          Live npm stats — refreshed a few times a day.
+          Live npm stats: refreshed a few times a day.
         </p>
         <p className="text-sm sm:text-base font-mono">
           <span className="font-semibold">{fmtNum(grandTotal)}</span>
@@ -111,7 +111,7 @@ export default async function NpmStats({
                   {pkg.blurb}
                 </div>
                 <div className="text-[11px] sm:text-xs opacity-40 font-mono mt-0.5">
-                  {s.version ? `v${s.version}` : "—"}
+                  {s.version ? `v${s.version}` : "-"}
                   {date ? ` · since ${date}` : ""}
                 </div>
               </div>

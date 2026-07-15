@@ -5,19 +5,19 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "About — Dibbayajyoti Roy | Full Stack Engineer & Rust Builder",
+  title: "About: Dibbayajyoti Roy | Full Stack Engineer & Rust Builder",
   description:
-    "About Dibbayajyoti Roy — Full Stack Software Engineer and a core team member building Yupcha's AI Video Interviewer. Builder behind Klinder-OSS, Diffcore (npm), and the @ahtmljs scope. Rust, Next.js, AWS Bedrock.",
+    "About Dibbayajyoti Roy: Full Stack Software Engineer and a core team member building Yupcha's AI Video Interviewer. Builder behind Klinder-OSS, Diffcore (npm), and the @ahtmljs scope. Rust, Next.js, AWS Bedrock.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About — Dibbayajyoti Roy",
+    title: "About: Dibbayajyoti Roy",
     description:
       "Full Stack Software Engineer and core team member building Yupcha's AI Video Interviewer. Creator of Klinder-OSS, Diffcore, and AHTML in Rust and TypeScript.",
     url: `${baseUrl}/about`,
     type: "profile",
   },
   twitter: {
-    title: "About — Dibbayajyoti Roy",
+    title: "About: Dibbayajyoti Roy",
     description:
       "Full Stack Engineer & Rust builder. Klinder-OSS, Diffcore, AHTML.",
   },
@@ -30,7 +30,7 @@ const aboutPageJsonLd = {
   "name": "About Dibbayajyoti Roy",
   "url": "https://dibbayajyoti.com/about",
   "description":
-    "About page for Dibbayajyoti Roy — Full Stack Software Engineer, creator of Klinder-OSS, Diffcore, and the @ahtmljs npm scope.",
+    "About page for Dibbayajyoti Roy: Full Stack Software Engineer, creator of Klinder-OSS, Diffcore, and the @ahtmljs npm scope.",
   "mainEntity": { "@id": "https://dibbayajyoti.com/#person" },
   "breadcrumb": {
     "@type": "BreadcrumbList",

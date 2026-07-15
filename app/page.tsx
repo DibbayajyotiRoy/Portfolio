@@ -30,7 +30,7 @@ const faqJsonLd = {
       "name": "What hackathons has Dibbayajyoti Roy won?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Winner of NITA Arjuna 2.0 National Hackathon (2025, among 200+ teams), Winner of Technovate Project Exhibition (2025), 1st Runner-Up at NITA–ISRO Space Hackathon (2024), and top 500 in the AI for Bharat hackathon (2026)."
+        "text": "Winner of NITA Arjuna 2.0 National Hackathon (2025, among 200+ teams), Winner of Technovate Project Exhibition (2025), 1st Runner-Up at NITA-ISRO Space Hackathon (2024), and top 500 in the AI for Bharat hackathon (2026)."
       }
     },
     {
@@ -46,7 +46,7 @@ const faqJsonLd = {
       "name": "What is diffcore?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "diffcore is a fast WebAssembly JSON diff engine for JavaScript and TypeScript, built by Dibbayajyoti Roy in Rust and published on npm. It returns real JSON Pointer paths (RFC 6901) and decoded values — not opaque hashes — and emits standard RFC 6902 JSON Patch output, interoperable with fast-json-patch, jsondiffpatch, and any IETF-compliant consumer. It ships applyPatch and revertPatch for state sync, undo/redo, and optimistic UI, includes a React useDiff hook and a CLI, plus a streaming engine for multi-GB files. Benchmarks at 3.3 to 4.1 times optimized pure-JS diff (360–490 MB/s sustained). Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, and Tauri. Install: npm install diffcore. Live demo: rust-wasm-library.vercel.app."
+        "text": "diffcore is a fast WebAssembly JSON diff engine for JavaScript and TypeScript, built by Dibbayajyoti Roy in Rust and published on npm. It returns real JSON Pointer paths (RFC 6901) and decoded values, not opaque hashes, and emits standard RFC 6902 JSON Patch output, interoperable with fast-json-patch, jsondiffpatch, and any IETF-compliant consumer. It ships applyPatch and revertPatch for state sync, undo/redo, and optimistic UI, includes a React useDiff hook and a CLI, plus a streaming engine for multi-GB files. Benchmarks at 3.3 to 4.1 times optimized pure-JS diff (360-490 MB/s sustained). Runs on Node, browsers, Bun, Deno, Cloudflare Workers, Vercel Edge, Electron, and Tauri. Install: npm install diffcore. Live demo: rust-wasm-library.vercel.app."
       }
     },
     {
@@ -54,7 +54,7 @@ const faqJsonLd = {
       "name": "What is AHTML (Agentic HTML)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AHTML (Agentic HTML) is a shipped sixteen-package npm scope built by Dibbayajyoti Roy at @ahtmljs/* (v1.1.0), plus the ahtml Python SDK, for making web content cheaply and safely consumable by AI agents. From one config a site emits MCP, OpenAPI 3.1, JSON-LD, llms.txt, RSL 1.0, Markdown, and a token-optimal signed snapshot with typed actions carrying explicit cost, reversibility, auth, and side-effects. The scope spans framework adapters (@ahtmljs/next, astro, sveltekit, vite, hono), the contract layer (@ahtmljs/schema) and extractor pipeline (@ahtmljs/extract), the agent client SDK with a dry-run sandbox and universal HTML fallback (@ahtmljs/agent), LangChain loaders (@ahtmljs/langchain and Python), agent-traffic analytics (@ahtmljs/insights), a conformance certification corpus (@ahtmljs/conformance), the AHTML Index registry (@ahtmljs/index), a hosted score badge (@ahtmljs/badge), KV/cache backends (@ahtmljs/kv), a WebMCP bridge (@ahtmljs/webmcp), and a CLI (@ahtmljs/cli) whose init/analyze/score/doctor/mcp commands work on any URL, adopter or not. Measured 4.5–7.3× fewer tokens than raw HTML and fact-extraction accuracy up from 91% to 100% in a 146-run multi-model benchmark; 700+ passing tests. MIT. Repo: github.com/DibbayajyotiRoy/AHTML."
+        "text": "AHTML (Agentic HTML) is a shipped sixteen-package npm scope built by Dibbayajyoti Roy at @ahtmljs/* (v1.1.0), plus the ahtml Python SDK, for making web content cheaply and safely consumable by AI agents. From one config a site emits MCP, OpenAPI 3.1, JSON-LD, llms.txt, RSL 1.0, Markdown, and a token-optimal signed snapshot with typed actions carrying explicit cost, reversibility, auth, and side-effects. The scope spans framework adapters (@ahtmljs/next, astro, sveltekit, vite, hono), the contract layer (@ahtmljs/schema) and extractor pipeline (@ahtmljs/extract), the agent client SDK with a dry-run sandbox and universal HTML fallback (@ahtmljs/agent), LangChain loaders (@ahtmljs/langchain and Python), agent-traffic analytics (@ahtmljs/insights), a conformance certification corpus (@ahtmljs/conformance), the AHTML Index registry (@ahtmljs/index), a hosted score badge (@ahtmljs/badge), KV/cache backends (@ahtmljs/kv), a WebMCP bridge (@ahtmljs/webmcp), and a CLI (@ahtmljs/cli) whose init/analyze/score/doctor/mcp commands work on any URL, adopter or not. Measured 4.5-7.3× fewer tokens than raw HTML and fact-extraction accuracy up from 91% to 100% in a 146-run multi-model benchmark; 700+ passing tests. MIT. Repo: github.com/DibbayajyotiRoy/AHTML."
       }
     },
     {

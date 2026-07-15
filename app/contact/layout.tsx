@@ -5,19 +5,19 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "https://dibbayajyoti.com";
 
 export const metadata: Metadata = {
-  title: "Contact — Dibbayajyoti Roy | Hire, Collaborate, Ask",
+  title: "Contact: Dibbayajyoti Roy | Hire, Collaborate, Ask",
   description:
-    "Get in touch with Dibbayajyoti Roy — Full Stack Engineer. Email, LinkedIn, X, GitHub. Open to roles, contracts, and OSS questions.",
+    "Get in touch with Dibbayajyoti Roy, Full Stack Engineer. Email, LinkedIn, X, GitHub. Open to roles, contracts, and OSS questions.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact — Dibbayajyoti Roy",
+    title: "Contact: Dibbayajyoti Roy",
     description:
       "Email, LinkedIn, X, GitHub. Open to engineering roles, contract work, and open-source questions.",
     url: `${baseUrl}/contact`,
     type: "website",
   },
   twitter: {
-    title: "Contact — Dibbayajyoti Roy",
+    title: "Contact: Dibbayajyoti Roy",
     description:
       "Email, LinkedIn, X, GitHub. Open to engineering roles and OSS questions.",
   },
@@ -30,7 +30,7 @@ const contactPageJsonLd = {
   "name": "Contact Dibbayajyoti Roy",
   "url": "https://dibbayajyoti.com/contact",
   "description":
-    "Contact channels for Dibbayajyoti Roy — email, LinkedIn, X, GitHub, Discord.",
+    "Contact channels for Dibbayajyoti Roy: email, LinkedIn, X, GitHub, Discord.",
   "mainEntity": { "@id": "https://dibbayajyoti.com/#person" },
   "breadcrumb": {
     "@type": "BreadcrumbList",

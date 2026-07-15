@@ -13,21 +13,21 @@ const learningCopilot = getProject("learning-copilot");
 const ahtml = getProject("ahtml");
 
 export const metadata: Metadata = {
-  title: "Projects & Experience — Dibbayajyoti Roy | Rust, Next.js, AI",
+  title: "Projects & Experience: Dibbayajyoti Roy | Rust, Next.js, AI",
   description:
     "Klinder-OSS (unified analytics + session replay + email SDK), Diffcore (Rust/WASM JSON diff with RFC 6902 Patch, React hook, CLI), Learning Copilot (AWS Bedrock). Hackathon wins, production engineering at Yupcha.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Projects & Experience — Dibbayajyoti Roy",
+    title: "Projects & Experience: Dibbayajyoti Roy",
     description:
       "Klinder-OSS, Diffcore, Learning Copilot, AHTML proposal. Full Stack Engineer shipping Rust, Next.js, and AWS Bedrock systems.",
     url: `${baseUrl}/work`,
     type: "profile",
   },
   twitter: {
-    title: "Projects & Experience — Dibbayajyoti Roy",
+    title: "Projects & Experience: Dibbayajyoti Roy",
     description:
-      "Klinder-OSS, Diffcore, Learning Copilot, AHTML. Rust, Next.js, AWS Bedrock — hackathon-winning Full Stack Engineer.",
+      "Klinder-OSS, Diffcore, Learning Copilot, AHTML. Rust, Next.js, AWS Bedrock. Hackathon-winning Full Stack Engineer.",
   },
 };
 
@@ -35,10 +35,10 @@ const workPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   "@id": "https://dibbayajyoti.com/work#profilepage",
-  "name": "Dibbayajyoti Roy — Projects, Skills & Experience",
+  "name": "Dibbayajyoti Roy: Projects, Skills & Experience",
   "url": "https://dibbayajyoti.com/work",
   "description":
-    "Professional profile of Dibbayajyoti Roy — projects (Klinder-OSS, diffcore, Learning Copilot, AHTML), skills, experience, and hackathon achievements.",
+    "Professional profile of Dibbayajyoti Roy: projects (Klinder-OSS, diffcore, Learning Copilot, AHTML), skills, experience, and hackathon achievements.",
   "mainEntity": { "@id": "https://dibbayajyoti.com/#person" },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -149,7 +149,7 @@ const ahtmlScopeJsonLd = {
   "@context": "https://schema.org",
   "@type": "CreativeWorkSeries",
   "@id": "https://dibbayajyoti.com/work#ahtml-scope",
-  "name": "AHTML — Agentic HTML (@ahtmljs scope)",
+  "name": "AHTML: Agentic HTML (@ahtmljs scope)",
   "alternateName": ["Agentic HTML", "AHTML", "@ahtmljs", "@ahtmljs npm scope"],
   "url": ahtml.primaryUrl,
   "sameAs": [
@@ -224,7 +224,7 @@ const ahtmlHonoJsonLd = {
   "url": "https://www.npmjs.com/package/@ahtmljs/hono",
   "runtimePlatform": ["Hono 4+", "Node.js", "Bun", "Deno", "Cloudflare Workers", "AWS Lambda"],
   "description":
-    "Hono.js adapter for AHTML. The same emitter handler mounts on any Hono app, so a single config line exposes MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot across every Hono runtime — Node, Bun, Deno, Cloudflare Workers, and AWS Lambda — with byte-identical output to the Next.js and Vite plugins.",
+    "Hono.js adapter for AHTML. The same emitter handler mounts on any Hono app, so a single config line exposes MCP, OpenAPI, JSON-LD, llms.txt, and the AHTML snapshot across every Hono runtime (Node, Bun, Deno, Cloudflare Workers, and AWS Lambda) with byte-identical output to the Next.js and Vite plugins.",
   "keywords": ["@ahtmljs/hono", "AHTML Hono plugin", "MCP server Hono", "edge agent endpoint", "Cloudflare Workers agent", "Bun Deno agent"],
 };
 
@@ -235,7 +235,7 @@ const ahtmlKvJsonLd = {
   "url": "https://www.npmjs.com/package/@ahtmljs/kv",
   "runtimePlatform": ["Node.js", "Upstash Redis", "Cloudflare KV"],
   "description":
-    "Pluggable KV and cache backends for AHTML — in-memory, Upstash Redis, and Cloudflare KV. Drop-in replacements for the AHTMLClient cache and rate-limiting surfaces, so snapshot caching and token-bucket policy work the same on a single server or across an edge fleet.",
+    "Pluggable KV and cache backends for AHTML: in-memory, Upstash Redis, and Cloudflare KV. Drop-in replacements for the AHTMLClient cache and rate-limiting surfaces, so snapshot caching and token-bucket policy work the same on a single server or across an edge fleet.",
   "keywords": ["@ahtmljs/kv", "AHTML cache backend", "Upstash Redis cache", "Cloudflare KV", "agent rate limiting", "pluggable kv store"],
 };
 
@@ -246,7 +246,7 @@ const ahtmlWebmcpJsonLd = {
   "url": "https://www.npmjs.com/package/@ahtmljs/webmcp",
   "runtimePlatform": ["Browser", "WebMCP"],
   "description":
-    "Registers AHTML page actions as WebMCP browser tools — the bridge between AHTML's structured action contracts and the W3C WebML CG WebMCP API, so an in-page agent can discover and invoke a site's typed actions as native browser tools.",
+    "Registers AHTML page actions as WebMCP browser tools: the bridge between AHTML's structured action contracts and the W3C WebML CG WebMCP API, so an in-page agent can discover and invoke a site's typed actions as native browser tools.",
   "keywords": ["@ahtmljs/webmcp", "WebMCP", "browser agent tools", "page actions", "W3C WebMCP", "in-page agent"],
 };
 
@@ -257,7 +257,7 @@ const ahtmlCliJsonLd = {
   "url": "https://www.npmjs.com/package/@ahtmljs/cli",
   "applicationCategory": "DeveloperApplication",
   "description":
-    "Command-line doctor for AHTML. `ahtml doctor` walks a site's discovery chain end to end — /.well-known/ahtml.json, the snapshot, MCP, OpenAPI, and llms.txt — validates each against the AHTML lint rules, and exits non-zero on failure so it can be wired straight into CI.",
+    "Command-line doctor for AHTML. `ahtml doctor` walks a site's discovery chain end to end (/.well-known/ahtml.json, the snapshot, MCP, OpenAPI, and llms.txt), validates each against the AHTML lint rules, and exits non-zero on failure so it can be wired straight into CI.",
   "keywords": ["@ahtmljs/cli", "ahtml doctor", "AHTML validator", "agent endpoint linter", "CI agent check"],
 };
 
@@ -277,7 +277,7 @@ const projectsItemListJsonLd = {
     {
       "@type": "ListItem",
       "position": 2,
-      "item": { "@id": "https://dibbayajyoti.com/work#ahtml-scope", "name": "AHTML — @ahtmljs npm scope", "url": ahtml.primaryUrl },
+      "item": { "@id": "https://dibbayajyoti.com/work#ahtml-scope", "name": "AHTML: @ahtmljs npm scope", "url": ahtml.primaryUrl },
     },
     {
       "@type": "ListItem",

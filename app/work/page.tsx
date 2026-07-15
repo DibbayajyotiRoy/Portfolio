@@ -1,10 +1,10 @@
 import WorkContent from "@/components/work-content";
 
-// Metadata for this route lives in app/work/layout.tsx — a single definition,
+// Metadata for this route lives in app/work/layout.tsx: a single definition,
 // so the title and description cannot diverge between the page and its layout.
 //
 // Live npm download stats moved to each product's own hub page
-// (/projects/<slug>) — see components/npm-stats.tsx, now per-product.
+// (/projects/<slug>). See components/npm-stats.tsx, now per-product.
 
 export default function WorkPage() {
   return (

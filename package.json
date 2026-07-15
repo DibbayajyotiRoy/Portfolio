@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ahtmljs/cli": "^1.1.0",
+    "@ahtmljs/next": "^1.1.0",
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@rive-app/canvas": "2.12.0",
@@ -18,9 +20,12 @@
     "@vercel/speed-insights": "^2.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "d3-scale": "^4.0.2",
+    "d3-shape": "^3.2.0",
     "framer-motion": "^11.0.20",
     "geist": "^1.2.2",
     "lucide-react": "^0.363.0",
+    "motion": "^12.42.2",
     "next": "14.1.4",
     "next-themes": "^0.3.0",
     "react": "^18",
@@ -29,6 +34,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/d3-scale": "^4.0.9",
+    "@types/d3-shape": "^3.1.8",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

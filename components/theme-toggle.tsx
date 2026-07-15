@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import { sound } from "@/lib/sound";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
@@ -46,7 +47,7 @@ export default function ThemeToggle() {
         <div className="h-10 w-32 px-4 flex justify-between relative items-center  ">
           <button
             className="h-full w-[24%] flex items-center justify-center relative "
-            onClick={() => setTheme("light")}
+            onClick={() => { setTheme("light"); sound.themeToggle(); }}
             title={"Light Mode"}
           >
             <svg
@@ -73,7 +74,7 @@ export default function ThemeToggle() {
 
           <button
           className="h-full w-[52%] flex items-center justify-center relative "
-            onClick={() => setTheme("system")}
+            onClick={() => { setTheme("system"); sound.themeToggle(); }}
             title={
               "System Preference"
             }
@@ -94,7 +95,7 @@ export default function ThemeToggle() {
 
           <button
           className="h-full w-[24%] flex items-center justify-center relative "
-            onClick={() => setTheme("dark")}
+            onClick={() => { setTheme("dark"); sound.themeToggle(); }}
             title={"Dark Mode"}
           >
             <svg

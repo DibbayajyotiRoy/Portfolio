@@ -1,12 +1,14 @@
 import Link from "next/link";
 import TitledParagraph from "@/components/titled-paragraph";
+import Reveal from "@/components/reveal";
+import ChapterClose from "@/components/chapter-close";
 
 type FaqItem = { q: string; a: string };
 
 const faq: FaqItem[] = [
   {
     q: "Does Dibbayajyoti Roy have AI engineering experience?",
-    a: "Yes. He built and shipped Learning Copilot on AWS Bedrock — multi-model fallback across Nova Pro and Nova Lite, streaming inference, and cost-aware token budgets — which placed top 500 in the AI for Bharat hackathon.",
+    a: "Yes. He built and shipped Learning Copilot on AWS Bedrock (multi-model fallback across Nova Pro and Nova Lite, streaming inference, and cost-aware token budgets), which placed top 500 in the AI for Bharat hackathon.",
   },
   {
     q: "What is multi-model fallback?",
@@ -18,7 +20,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "Does he work on AI search and crawler optimization?",
-    a: "Yes. AHTML emits MCP, OpenAPI, JSON-LD, and llms.txt so AI crawlers and agents can read a site cheaply — work that overlaps directly with AI search optimization and generative-engine visibility.",
+    a: "Yes. AHTML emits MCP, OpenAPI, JSON-LD, and llms.txt so AI crawlers and agents can read a site cheaply, work that overlaps directly with AI search optimization and generative-engine visibility.",
   },
 ];
 
@@ -37,128 +39,138 @@ export default function AiEngineeringPage() {
         </h1>
 
         <div className="flex flex-col gap-6 sm:gap-8 mt-10 text-blackout/90 dark:text-whiteout/90">
-          <TitledParagraph title="overview">
-            <p>
-              I&apos;m Dibbayajyoti Roy, and AI engineering is the half of my
-              work that runs on models instead of CPUs: AWS Bedrock
-              applications, RAG architecture, multi-model orchestration, and
-              infrastructure that makes the web readable to AI agents. This page
-              collects the AI systems I&apos;ve shipped and the patterns behind
-              them.
-            </p>
-          </TitledParagraph>
+          <Reveal>
+            <TitledParagraph title="overview">
+              <p>
+                I&apos;m Dibbayajyoti Roy, and AI engineering is the half of my
+                work that runs on models instead of CPUs: AWS Bedrock
+                applications, RAG architecture, multi-model orchestration, and
+                infrastructure that makes the web readable to AI agents. This page
+                collects the AI systems I&apos;ve shipped and the patterns behind
+                them.
+              </p>
+            </TitledParagraph>
+          </Reveal>
 
-          <TitledParagraph title="Learning Copilot — AWS Bedrock in production">
-            <p>
-              <Link
-                href="https://ai-for-bharat.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold underline"
-              >
-                Learning Copilot
-              </Link>{" "}
-              is an AWS Bedrock-powered learning assistant. It uses multi-model
-              fallback across Nova Pro and Nova Lite for resilience under rate
-              limits, real-time streaming inference, structured level-adaptive
-              explanations, and auto-generated D2 diagrams. The architecture is
-              cost-aware — DynamoDB conversation memory with a 30-day TTL and
-              per-mode token budgets. It placed top 500 in the AI for Bharat
-              hackathon.
-            </p>
-          </TitledParagraph>
+          <Reveal>
+            <TitledParagraph title="Learning Copilot: AWS Bedrock in production">
+              <p>
+                <Link
+                  href="https://ai-for-bharat.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline"
+                >
+                  Learning Copilot
+                </Link>{" "}
+                is an AWS Bedrock-powered learning assistant. It uses multi-model
+                fallback across Nova Pro and Nova Lite for resilience under rate
+                limits, real-time streaming inference, structured level-adaptive
+                explanations, and auto-generated D2 diagrams. The architecture is
+                cost-aware: DynamoDB conversation memory with a 30-day TTL and
+                per-mode token budgets. It placed top 500 in the AI for Bharat
+                hackathon.
+              </p>
+            </TitledParagraph>
+          </Reveal>
 
-          <TitledParagraph title="AHTML — agentic web & RAG infrastructure">
-            <p>
-              <Link
-                href="https://www.npmjs.com/org/ahtmljs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold underline"
-              >
-                AHTML (Agentic HTML)
-              </Link>{" "}
-              is a shipped sixteen-package npm scope, plus the ahtml Python SDK,
-              for making web content cheaply consumable by AI agents. It defines
-              a canonical semantic snapshot with RAG-ready document chunks, emits
-              MCP, OpenAPI, JSON-LD, llms.txt, RSL, and Markdown from a single
-              pipeline, ships a typed agent client SDK with a dry-run sandbox,
-              Next.js / Astro / SvelteKit / Vite / Hono adapters, KV caching
-              backends, a WebMCP bridge, agent-traffic insights, LangChain
-              loaders that preserve citation anchors and byte ranges, and a CLI
-              that scores any site and turns any URL into MCP tools. See{" "}
-              <Link href="/ahtml-vs-llms-txt" className="underline">
-                AHTML vs llms.txt
-              </Link>{" "}
-              for how it compares.
-            </p>
-          </TitledParagraph>
+          <Reveal>
+            <TitledParagraph title="AHTML: agentic web & RAG infrastructure">
+              <p>
+                <Link
+                  href="https://www.npmjs.com/org/ahtmljs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline"
+                >
+                  AHTML (Agentic HTML)
+                </Link>{" "}
+                is a shipped sixteen-package npm scope, plus the ahtml Python SDK,
+                for making web content cheaply consumable by AI agents. It defines
+                a canonical semantic snapshot with RAG-ready document chunks, emits
+                MCP, OpenAPI, JSON-LD, llms.txt, RSL, and Markdown from a single
+                pipeline, ships a typed agent client SDK with a dry-run sandbox,
+                Next.js / Astro / SvelteKit / Vite / Hono adapters, KV caching
+                backends, a WebMCP bridge, agent-traffic insights, LangChain
+                loaders that preserve citation anchors and byte ranges, and a CLI
+                that scores any site and turns any URL into MCP tools. See{" "}
+                <Link href="/ahtml-vs-llms-txt" className="underline">
+                  AHTML vs llms.txt
+                </Link>{" "}
+                for how it compares.
+              </p>
+            </TitledParagraph>
+          </Reveal>
 
-          <TitledParagraph title="the AI stack">
-            <p>
-              AWS Bedrock (Nova Pro, Nova Lite), multi-model orchestration with
-              graceful degradation, streaming inference, prompt engineering, and
-              cost-aware design with per-mode token budgets. On the agent side:
-              RAG architecture, the MCP protocol, LangChain.js loaders, and AI
-              crawler optimization so sites stay visible to AI search.
-            </p>
-          </TitledParagraph>
+          <Reveal>
+            <TitledParagraph title="the AI stack">
+              <p>
+                AWS Bedrock (Nova Pro, Nova Lite), multi-model orchestration with
+                graceful degradation, streaming inference, prompt engineering, and
+                cost-aware design with per-mode token budgets. On the agent side:
+                RAG architecture, the MCP protocol, LangChain.js loaders, and AI
+                crawler optimization so sites stay visible to AI search.
+              </p>
+            </TitledParagraph>
+          </Reveal>
 
-          <TitledParagraph title="writing">
-            <p>
-              Long-form notes on AI engineering — including AWS Bedrock
-              streaming patterns — are collected on the{" "}
-              <Link href="/writing" className="font-semibold underline">
-                writing page
-              </Link>
-              .
-            </p>
-          </TitledParagraph>
+          <Reveal>
+            <TitledParagraph title="writing">
+              <p>
+                Long-form notes on AI engineering, including AWS Bedrock
+                streaming patterns, are collected on the{" "}
+                <Link href="/writing" className="font-semibold underline">
+                  writing page
+                </Link>
+                .
+              </p>
+            </TitledParagraph>
+          </Reveal>
 
-          <TitledParagraph title="faq">
-            <ul className="flex flex-col gap-4">
-              {faq.map((item) => (
-                <li key={item.q} className="flex flex-col gap-1">
-                  <h3 className="font-semibold">{item.q}</h3>
-                  <p>{item.a}</p>
-                </li>
-              ))}
-            </ul>
-          </TitledParagraph>
+          <Reveal>
+            <TitledParagraph title="faq">
+              <ul className="flex flex-col gap-4">
+                {faq.map((item) => (
+                  <li key={item.q} className="flex flex-col gap-1">
+                    <h3 className="font-semibold">{item.q}</h3>
+                    <p>{item.a}</p>
+                  </li>
+                ))}
+              </ul>
+            </TitledParagraph>
+          </Reveal>
 
-          <TitledParagraph title="related">
-            <p className="text-sm opacity-80">
-              Keep reading:{" "}
-              <Link href="/projects/ahtml" className="underline">
-                AHTML
-              </Link>
-              {" · "}
-              <Link href="/projects/whatbroke" className="underline">
-                whatbroke
-              </Link>
-              {" · "}
-              <Link href="/ahtml-vs-llms-txt" className="underline">
-                AHTML vs llms.txt
-              </Link>
-              {" · "}
-              <Link href="/nextjs-seo" className="underline">
-                Next.js SEO
-              </Link>
-              {" · "}
-              <Link href="/work" className="underline">
-                projects &amp; experience
-              </Link>
-              {" · "}
-              <Link href="/contact" className="underline">
-                get in touch
-              </Link>
-            </p>
-          </TitledParagraph>
+          <Reveal>
+            <TitledParagraph title="related">
+              <p className="text-sm opacity-80">
+                Keep reading:{" "}
+                <Link href="/projects/ahtml" className="underline">
+                  AHTML
+                </Link>
+                {" · "}
+                <Link href="/projects/whatbroke" className="underline">
+                  whatbroke
+                </Link>
+                {" · "}
+                <Link href="/ahtml-vs-llms-txt" className="underline">
+                  AHTML vs llms.txt
+                </Link>
+                {" · "}
+                <Link href="/nextjs-seo" className="underline">
+                  Next.js SEO
+                </Link>
+                {" · "}
+                <Link href="/work" className="underline">
+                  projects &amp; experience
+                </Link>
+              </p>
+            </TitledParagraph>
+          </Reveal>
         </div>
 
-        <p className="text-base sm:text-lg my-10 sm:my-20">
-          Thanks for reading. Love your work, keep it up!
-        </p>
+        <Reveal>
+          <ChapterClose line="Building with LLMs and want a second set of hands? Let's talk." />
+        </Reveal>
       </section>
     </main>
   );

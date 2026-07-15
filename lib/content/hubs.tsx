@@ -6,7 +6,7 @@ import { FrescoInstall } from "@/components/fresco-install";
  * Per-product hub content for /projects/<slug>.
  *
  * projects.ts owns the *facts* (name, links, version, keywords, SEO
- * description). This module owns the *prose* of each canonical product hub —
+ * description). This module owns the *prose* of each canonical product hub:
  * the inverted-pyramid answer, how-it-works, a comparison table, and FAQ
  * rendered as visible prose (NOT FAQPage schema, which Google retired
  * 2026-05-07). Keyed by Project.id.
@@ -156,7 +156,7 @@ const Faq = ({ items }: { items: { q: string; a: string }[] }) => (
 export const hubs: Record<string, HubContent> = {
   fresco: {
     metaTitle:
-      "Fresco — live wallpapers for Linux (a Wallpaper Engine alternative)",
+      "Fresco: live wallpapers for Linux (a Wallpaper Engine alternative)",
     metaDescription:
       "Fresco is a free, open-source GTK4 app that sets videos, GIFs, images, slideshows, and playlists as hardware-accelerated live wallpapers on Pop!_OS, Ubuntu, Mint, and Debian (X11). A simple GUI alternative to Wallpaper Engine and Lively for Linux.",
     kicker: "open-source product · Rust + GTK4 · GPL-3.0",
@@ -173,8 +173,8 @@ export const hubs: Record<string, HubContent> = {
             <strong>Fresco</strong> is a live-wallpaper app for Linux. Pick any
             looping video (mp4/webm/mkv), animated GIF, image, image{" "}
             <em>slideshow</em>, or multi-video <em>playlist</em>, click{" "}
-            <span className="font-mono text-sm">Set</span>, and close the app —
-            your wallpaper keeps playing and comes back on login. It runs as a
+            <span className="font-mono text-sm">Set</span>, and close the app.
+            Your wallpaper keeps playing and comes back on login. It runs as a
             proper GTK4/libadwaita desktop app you install from a{" "}
             <span className="font-mono text-sm">.deb</span>, with GPU
             hardware-accelerated playback so CPU stays near zero. Windows has
@@ -187,13 +187,13 @@ export const hubs: Record<string, HubContent> = {
         title: "what it does",
         body: (
           <ul className="list-disc pl-5 flex flex-col gap-1">
-            <li><strong>Any media</strong> — looping video, animated GIF, static image, image slideshow, or a multi-video playlist.</li>
-            <li><strong>Hardware-accelerated</strong> — GPU video decode (VA-API / NVDEC) keeps CPU near zero without degrading quality.</li>
-            <li><strong>Drag-to-crop editor</strong> — frame exactly the region you want.</li>
-            <li><strong>Wallpaper library</strong> — saved thumbnails, recently-used, and search.</li>
-            <li><strong>Set &amp; forget</strong> — close the app and the wallpaper keeps playing; it&apos;s restored automatically on login.</li>
-            <li><strong>Battery-aware</strong> — pause on battery, or pause and resume any time.</li>
-            <li><strong>Multi-monitor</strong> — a different wallpaper per display.</li>
+            <li><strong>Any media</strong>: looping video, animated GIF, static image, image slideshow, or a multi-video playlist.</li>
+            <li><strong>Hardware-accelerated</strong>: GPU video decode (VA-API / NVDEC) keeps CPU near zero without degrading quality.</li>
+            <li><strong>Drag-to-crop editor</strong>: frame exactly the region you want.</li>
+            <li><strong>Wallpaper library</strong>: saved thumbnails, recently-used, and search.</li>
+            <li><strong>Set &amp; forget</strong>: close the app and the wallpaper keeps playing; it&apos;s restored automatically on login.</li>
+            <li><strong>Battery-aware</strong>: pause on battery, or pause and resume any time.</li>
+            <li><strong>Multi-monitor</strong>: a different wallpaper per display.</li>
           </ul>
         ),
       },
@@ -268,7 +268,7 @@ export const hubs: Record<string, HubContent> = {
             items={[
               {
                 q: "Is there a Wallpaper Engine for Linux?",
-                a: "Yes — Fresco is a free, open-source live-wallpaper app for Linux that works like Wallpaper Engine: pick a video and set it as your animated desktop background.",
+                a: "Yes. Fresco is a free, open-source live-wallpaper app for Linux that works like Wallpaper Engine: pick a video and set it as your animated desktop background.",
               },
               {
                 q: "How do I set a video as my wallpaper on Ubuntu, Pop!_OS, or Debian?",
@@ -294,40 +294,42 @@ export const hubs: Record<string, HubContent> = {
   },
   whatbroke: {
     metaTitle:
-      "whatbroke — git-anchored crash capture for AI coding agents (CLI + MCP)",
+      "whatbroke: git-anchored crash capture for AI coding agents (CLI + MCP)",
     metaDescription:
       "whatbroke wraps your dev command, captures local Node/TypeScript crashes as a redacted, git-anchored bug bundle with deterministic file ranking, and serves it to Claude Code or Cursor over MCP. Open source, Apache-2.0, no LLM in the ranking.",
     kicker: "open-source product · CLI + MCP · Apache-2.0",
-    subtitle: "git-anchored crash capture for AI coding agents",
+    subtitle: "git-anchored crash context and verified fixes for AI coding agents",
     jsonLdType: "SoftwareApplication",
     applicationCategory: "DeveloperApplication",
-    operatingSystem: "Linux, macOS, Windows (Node.js 18+)",
+    operatingSystem: "Linux, macOS, Windows (Node.js 20+)",
     programmingLanguage: ["TypeScript"],
     sections: [
       {
         title: "tldr",
         body: (
           <p>
-            <strong>whatbroke</strong> is a terminal-side capture layer for local
-            Node and TypeScript crashes. You wrap a command you already run —{" "}
-            <span className="font-mono text-sm">whatbroke run npm test</span> —
-            and when it dies, whatbroke packages the error, the diff since the
-            code last worked, and a deterministically-ranked guess at the
-            responsible file, with secrets scrubbed, then serves it to your
-            coding agent over a read-only MCP server. It diagnoses; it does not
-            fix. The ranking uses no LLM and makes no network call.
+            <strong>whatbroke</strong> is a zero-config, local-only capture layer
+            for local crashes. You wrap a command you already run (
+            <span className="font-mono text-sm">npx @whatbroke/whatbroke run -- npm test</span>
+            ). On a passing run it is invisible and records the commit as{" "}
+            &ldquo;green&rdquo;; on a crash it writes a redacted, git-anchored
+            bundle, ranks the suspect files with no LLM, and serves them to your
+            coding agent over a read-only MCP server. After the agent edits, the{" "}
+            <span className="font-mono text-sm">verify_fix</span> tool re-runs the
+            exact captured command and reports fixed, same-failure, or
+            different-failure, so it closes the loop instead of only packaging
+            the crash. No account, no network, no dashboard.
           </p>
         ),
       },
       {
         title: "install",
         body: codeBlock(
-          `npm install -g @whatbroke/whatbroke
-
-whatbroke run npm test     # wrap any dev command
-whatbroke mcp              # start the read-only MCP server for your agent
-whatbroke show             # print the latest redacted bundle
-whatbroke doctor           # check your setup`
+          `npx @whatbroke/whatbroke run -- npm test   # wrap any dev command
+npx @whatbroke/whatbroke verify            # re-run the captured command: fixed / same-failure / different-failure
+npx @whatbroke/whatbroke mcp               # start the read-only MCP server for your agent
+npx @whatbroke/whatbroke show              # print the latest redacted bundle
+npx @whatbroke/whatbroke doctor            # check your setup`
         ),
       },
       {
@@ -338,7 +340,7 @@ whatbroke doctor           # check your setup`
               The pipeline is{" "}
               <span className="font-mono text-sm">
                 crash → capture → git-anchored context → deterministic suspect
-                ranking → redaction gate → MCP
+                ranking → redaction gate → MCP → verified fix
               </span>
               .
             </p>
@@ -348,19 +350,48 @@ whatbroke doctor           # check your setup`
               keyed by the normalized command and branch. When the command{" "}
               <em>fails</em>, it intersects the files on the crash stack trace
               with the files changed since that last green commit and scores
-              them with fixed integer weights — a file both on the stack and
-              changed since green ranks highest. That is the moat: accumulated
-              local ground truth a SaaS monitor cannot see and an LLM cannot
-              reproduce from a prompt.
+              them with fixed integer weights, no LLM: a file both on the crash
+              path and changed since green ranks highest, each suspect carrying
+              explicit reasons, and a one-hop import signal extends the set to
+              close neighbors. That is the moat: accumulated local ground truth
+              a SaaS monitor cannot see and an LLM cannot reproduce from a
+              prompt.
             </p>
             <p>
-              Before anything leaves the process, a mandatory redaction gate
-              scrubs secrets — the bundle type is branded so it is a
-              compile-time error to route an unredacted bundle to any output.
-              The MCP server is read-only and stdio-only, exposing tools like{" "}
+              The ranking is measured, not asserted: top-1 suspect accuracy is
+              90.3% and top-3 accuracy is 100% over 31 scored cases drawn from
+              35 real regression scenarios, replayed on every PR with{" "}
+              <span className="font-mono text-sm">npm run bench</span> and CI
+              failing if top-3 drops below baseline.
+            </p>
+            <p>
+              After your agent edits, the{" "}
+              <span className="font-mono text-sm">verify_fix</span> tool re-runs
+              the exact captured command and reports one of fixed, same-failure,
+              or different-failure, handing back a fresh bundle to iterate on, so
+              whatbroke closes the loop rather than only packaging the crash.
+            </p>
+            <p>
+              Before anything leaves the process, a mandatory fail-closed
+              redaction gate scrubs secrets: only redacted bundles ever touch
+              disk, and a redaction report lists what was scrubbed. Node and
+              TypeScript are first-class, and an adapter layer adds Python (
+              <span className="font-mono text-sm">pytest</span>) and Go (
+              <span className="font-mono text-sm">go test</span>) with ranked
+              suspects, crash-kind classification, the diff, and full logs. The
+              primary surface is a read-only, stdio MCP server exposing{" "}
               <span className="font-mono text-sm">get_suspects</span>,{" "}
-              <span className="font-mono text-sm">get_diff_vs_green</span>, and{" "}
-              <span className="font-mono text-sm">get_logs</span> to your agent.
+              <span className="font-mono text-sm">get_diff_vs_green</span>,{" "}
+              <span className="font-mono text-sm">get_logs</span>,{" "}
+              <span className="font-mono text-sm">get_history</span>, and{" "}
+              <span className="font-mono text-sm">verify_fix</span>; the same
+              bundle can also open as a prefilled GitHub issue, print in the
+              terminal, or post from a composite GitHub Action (sticky PR
+              comment, uploaded artifact, job summary, cached green baseline).
+              Everything is deterministic: an optional{" "}
+              <span className="font-mono text-sm">--explain</span> LLM narration
+              is off by default and can never change the suspects or their
+              confidence.
             </p>
           </div>
         ),
@@ -374,6 +405,7 @@ whatbroke doctor           # check your setup`
               ["Where it runs", "Local terminal", "Local terminal", "Production", "Local terminal"],
               ["Names the file", "Yes, ranked", "Sometimes", "Yes (prod errors)", "Finds commit, not file"],
               ["Uses git history", "Diff since last green", "No", "Release tags", "Bisects commits"],
+              ["Verifies the fix", "Yes, re-runs the command", "No", "No", "No"],
               ["Agent-ready (MCP)", "Yes", "No", "No", "No"],
               ["Secrets scrubbed", "Mandatory gate", "No", "Configurable", "n/a"],
               ["Deterministic", "Yes, no LLM", "n/a", "n/a", "Yes"],
@@ -388,19 +420,23 @@ whatbroke doctor           # check your setup`
             items={[
               {
                 q: "How does deterministic bug ranking work without an LLM?",
-                a: "whatbroke intersects the files on the crash stack trace with the files changed since the last passing run of the same command, then scores them with fixed integer weights. There is no model call and no randomness — the same crash produces byte-identical output, which a test in the repo asserts.",
+                a: "whatbroke intersects the files on the crash stack trace with the files changed since the last green commit (the last passing run of the same command), scores them with fixed integer weights, and extends the set with a one-hop import signal. Files both on the crash path and changed since green rank highest, each with explicit reasons. There is no model call and no randomness: the same crash produces byte-identical output. It is measured too, at 90.3% top-1 and 100% top-3 suspect accuracy over 31 scored cases from 35 real regression scenarios replayed in CI.",
+              },
+              {
+                q: "What is the verified-fix loop?",
+                a: "After your agent edits the code, whatbroke's verify_fix MCP tool (or the verify command) re-runs the exact command that was captured and reports one of three outcomes: fixed, same-failure, or different-failure. A different failure hands back a fresh bundle to iterate on, so the tool closes the loop instead of only packaging the original crash.",
               },
               {
                 q: "Does it work with Claude Code and Cursor?",
-                a: "Yes. whatbroke runs a local read-only MCP server, so any MCP-aware coding agent — Claude Code, Cursor, and others — can pull the ranked suspects, the diff since the last green commit, and the redacted logs directly into context.",
-              },
-              {
-                q: "Is whatbroke a replacement for Sentry?",
-                a: "No. Sentry monitors production; whatbroke captures the local terminal crash — the test or server that died in your shell before anything shipped. They are complementary and fill different gaps.",
+                a: "Yes. whatbroke runs a local read-only MCP server, so any MCP-aware coding agent (Claude Code, Cursor, and others) can pull the ranked suspects, the diff since the last green commit, the redacted logs, the history, and verify_fix directly into context. The same bundle can also open as a prefilled GitHub issue, print in the terminal, or post from a GitHub Action in CI.",
               },
               {
                 q: "What languages does it support?",
-                a: "Node and TypeScript projects in v1, with parsers for the major test runners. Source-map resolution and non-Node languages are on the roadmap.",
+                a: "Node and TypeScript are first-class. Python (pytest) and Go (go test) are supported through an adapter layer that produces ranked suspects, crash-kind classification, the diff, and full logs, with stack frames parsed from stderr tracebacks and panics for commands like python app.py or go run. More adapters can extend it further.",
+              },
+              {
+                q: "Is whatbroke a replacement for Sentry?",
+                a: "No. Sentry monitors production; whatbroke captures the local terminal crash: the test or server that died in your shell before anything shipped. They are complementary and fill different gaps.",
               },
             ]}
           />
@@ -411,14 +447,14 @@ whatbroke doctor           # check your setup`
 
   "roy-ui": {
     metaTitle:
-      "Roy UI — React component library (data table, time picker, shadcn alternative)",
+      "Roy UI: React component library (data table, time picker, shadcn alternative)",
     metaDescription:
       "Roy UI is a zero-config React + Next.js 15 component library: a batteries-included DataTable, a no-dependency date range picker, and an analog/digital time picker. TypeScript-first, RSC-safe, tree-shakable ESM, sub-12 KB. A styled shadcn/ui and TanStack Table alternative.",
     kicker: "open-source product · React library · MIT",
     subtitle: "zero-config React components for data-heavy UIs",
     jsonLdType: "SoftwareApplication",
     applicationCategory: "DeveloperApplication",
-    operatingSystem: "Web (React 18+, Next.js 13–15, Vite, Remix, Astro)",
+    operatingSystem: "Web (React 18+, Next.js 13-15, Vite, Remix, Astro)",
     programmingLanguage: ["TypeScript", "React"],
     sections: [
       {
@@ -428,9 +464,9 @@ whatbroke doctor           # check your setup`
             <strong>Roy UI</strong> (
             <span className="font-mono text-sm">@roy-ui/ui</span>) is a React
             component library for dashboards, admin panels, and internal tools.
-            It ships a fully-featured DataTable — search, date-range and time
+            It ships a fully-featured DataTable (search, date-range and time
             filters, sort, pagination, drag-to-reorder and edge-drag-resize
-            columns, hide/restore, CSV/JSON import-export — plus a custom date
+            columns, hide/restore, CSV/JSON import-export) plus a custom date
             range picker with no <span className="font-mono text-sm">date-fns</span>{" "}
             dependency and an analog/digital time picker. You{" "}
             <span className="italic">install</span> it; you don&rsquo;t copy-paste
@@ -446,7 +482,7 @@ whatbroke doctor           # check your setup`
 
 import { DataTable, DateRangePicker, TimePicker } from "@roy-ui/ui";
 
-// no Tailwind plugin, no theme provider, no design-token boilerplate —
+// no Tailwind plugin, no theme provider, no design-token boilerplate:
 // each component imports its own scoped CSS as a side effect.`
         ),
       },
@@ -457,12 +493,12 @@ import { DataTable, DateRangePicker, TimePicker } from "@roy-ui/ui";
             <p>
               Most React data UIs start the same way: pull in TanStack Table for
               the headless engine, then hand-build the styling, the date filter,
-              the column menu, and the CSV export — or copy-paste a shadcn table
+              the column menu, and the CSV export, or copy-paste a shadcn table
               and maintain it forever. Roy UI ships that whole surface as one
               styled, typed component.
             </p>
             <p>
-              It is React Server Components-safe out of the box — each
+              It is React Server Components-safe out of the box: each
               interactive component carries its own{" "}
               <span className="font-mono text-sm">&quot;use client&quot;</span>{" "}
               boundary in the published bundle, so it drops into a Next.js 15 App
@@ -497,15 +533,15 @@ import { DataTable, DateRangePicker, TimePicker } from "@roy-ui/ui";
             items={[
               {
                 q: "Is Roy UI a shadcn/ui alternative?",
-                a: "Yes, for data-heavy UIs. Where shadcn gives you copy-paste Tailwind components you own and maintain, Roy UI is a single npm install that ships a full DataTable, date range picker, and time picker with their styles included — no Tailwind, no per-component copy-paste.",
+                a: "Yes, for data-heavy UIs. Where shadcn gives you copy-paste Tailwind components you own and maintain, Roy UI is a single npm install that ships a full DataTable, date range picker, and time picker with their styles included. No Tailwind, no per-component copy-paste.",
               },
               {
                 q: "Does it have a React data table with filters and export?",
-                a: "Yes. The DataTable includes search, date-range and time filtering, sort, pagination, drag-to-reorder and resize columns, hide/restore via a column menu, and CSV/JSON import-export — all in one component.",
+                a: "Yes. The DataTable includes search, date-range and time filtering, sort, pagination, drag-to-reorder and resize columns, hide/restore via a column menu, and CSV/JSON import-export, all in one component.",
               },
               {
                 q: "Does it work with Next.js 15 and the App Router?",
-                a: "Yes. Components are RSC-safe with their own client boundaries baked into the published bundle, and the library is ESM, tree-shakable, and works with Next.js 13–15, Vite, Remix, Astro, and TanStack Start.",
+                a: "Yes. Components are RSC-safe with their own client boundaries baked into the published bundle, and the library is ESM, tree-shakable, and works with Next.js 13-15, Vite, Remix, Astro, and TanStack Start.",
               },
               {
                 q: "Do I need Tailwind or a theme provider?",
@@ -520,9 +556,9 @@ import { DataTable, DateRangePicker, TimePicker } from "@roy-ui/ui";
 
   ahtml: {
     metaTitle:
-      "AHTML — make your site readable by AI agents (MCP, OpenAPI, llms.txt from one config)",
+      "AHTML: make your site readable by AI agents (MCP, OpenAPI, llms.txt from one config)",
     metaDescription:
-      "AHTML is the contract layer of the agent web — sixteen @ahtmljs packages plus a Python SDK (Next.js, Astro, SvelteKit, Vite, Hono adapters, agent SDK with dry-run sandbox, LangChain loaders, insights, conformance corpus, Index, badge, CLI) that emit MCP, OpenAPI 3.1, JSON-LD, llms.txt, RSL, Markdown, and a token-optimal signed snapshot from one config line. MIT.",
+      "AHTML is the contract layer of the agent web: sixteen @ahtmljs packages plus a Python SDK (Next.js, Astro, SvelteKit, Vite, Hono adapters, agent SDK with dry-run sandbox, LangChain loaders, insights, conformance corpus, Index, badge, CLI) that emit MCP, OpenAPI 3.1, JSON-LD, llms.txt, RSL, Markdown, and a token-optimal signed snapshot from one config line. MIT.",
     kicker: "open-source product · 16 npm packages + Python SDK · MIT",
     subtitle: "the contract layer of the agent web",
     jsonLdType: "SoftwareSourceCode",
@@ -537,11 +573,11 @@ import { DataTable, DateRangePicker, TimePicker } from "@roy-ui/ui";
             protocol an AI agent might want: an MCP tool manifest, an OpenAPI 3.1
             document, JSON-LD, an llms.txt shim, an RSL 1.0 license, a Markdown
             view, and a token-optimal, optionally signed snapshot with typed,
-            priced actions. One config in, every agent-readable protocol out —
+            priced actions. One config in, every agent-readable protocol out.
             RSS, but for AI agents. It is a sixteen-package npm scope (
             <span className="font-mono text-sm">@ahtmljs/*</span>) at v1.1.0,
-            plus the <span className="font-mono text-sm">ahtml</span> Python SDK
-            — and its universal extractor lets agents consume any site today,
+            plus the <span className="font-mono text-sm">ahtml</span> Python SDK,
+            and its universal extractor lets agents consume any site today,
             with or without adoption.
           </p>
         ),
@@ -557,8 +593,8 @@ npm install @ahtmljs/vite       # Vite / SolidStart / vanilla Vite
 npm install @ahtmljs/hono       # Hono · Node · Bun · Deno · Workers · Lambda
 npm install @ahtmljs/agent      # typed client SDK for agents (dry-run sandbox)
 npm install @ahtmljs/langchain  # RAG document loader
-pip install ahtml               # Python SDK — LangChain loader included
-npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools — no adoption needed`
+pip install ahtml               # Python SDK, LangChain loader included
+npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools, no adoption needed`
         ),
       },
       {
@@ -567,23 +603,23 @@ npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools — no adoption n
           <Table
             headers={["Package", "What it does"]}
             rows={[
-              ["@ahtmljs/schema", "The contract layer — snapshot types, validator, dual serializers, emitters. Edge-safe."],
-              ["@ahtmljs/next", "Next.js plugin — one route emits MCP, OpenAPI, JSON-LD, llms.txt, RSL, snapshot."],
-              ["@ahtmljs/astro", "Astro integration — same five-endpoint surface, zero astro dependency."],
+              ["@ahtmljs/schema", "The contract layer: snapshot types, validator, dual serializers, emitters. Edge-safe."],
+              ["@ahtmljs/next", "Next.js plugin: one route emits MCP, OpenAPI, JSON-LD, llms.txt, RSL, snapshot."],
+              ["@ahtmljs/astro", "Astro integration: same five-endpoint surface, zero astro dependency."],
               ["@ahtmljs/sveltekit", "SvelteKit server hook or per-endpoint handlers, same surface."],
-              ["@ahtmljs/vite", "Vite plugin — byte-identical output for SolidStart and vanilla Vite."],
-              ["@ahtmljs/hono", "Hono adapter — same handler on Node, Bun, Deno, Workers, Lambda."],
+              ["@ahtmljs/vite", "Vite plugin: byte-identical output for SolidStart and vanilla Vite."],
+              ["@ahtmljs/hono", "Hono adapter: same handler on Node, Bun, Deno, Workers, Lambda."],
               ["@ahtmljs/extract", "Framework-neutral extractor pipeline with a plugin API."],
-              ["@ahtmljs/agent", "Typed client SDK — ETag caching, retries, dry-run sandbox, tokenizer cost, HTML fallback."],
-              ["ahtml (PyPI)", "Python consumer SDK — LangChain loader, JWS verification, byte-identical canonical JSON."],
-              ["@ahtmljs/langchain", "LangChain.js loader — chunks with citation anchors preserved."],
-              ["@ahtmljs/cli", "init · analyze · score · doctor · benchmark · mcp proxy — works on any URL."],
-              ["@ahtmljs/kv", "Pluggable KV/cache backends — Memory, Upstash Redis, Cloudflare KV."],
+              ["@ahtmljs/agent", "Typed client SDK: ETag caching, retries, dry-run sandbox, tokenizer cost, HTML fallback."],
+              ["ahtml (PyPI)", "Python consumer SDK: LangChain loader, JWS verification, byte-identical canonical JSON."],
+              ["@ahtmljs/langchain", "LangChain.js loader: chunks with citation anchors preserved."],
+              ["@ahtmljs/cli", "init · analyze · score · doctor · benchmark · mcp proxy. Works on any URL."],
+              ["@ahtmljs/kv", "Pluggable KV/cache backends: Memory, Upstash Redis, Cloudflare KV."],
               ["@ahtmljs/webmcp", "WebMCP tool registry & browser bookmarklet for page actions."],
-              ["@ahtmljs/insights", "Agent-traffic analytics — verified agents vs bots vs humans, zero-PII."],
+              ["@ahtmljs/insights", "Agent-traffic analytics: verified agents vs bots vs humans, zero-PII."],
               ["@ahtmljs/conformance", "Language-agnostic conformance corpus + certification runner."],
-              ["@ahtmljs/index", "The AHTML Index — registry + crawler with an MCP query surface."],
-              ["@ahtmljs/badge", "Hosted score-badge service — README-embeddable SVG + linked report."],
+              ["@ahtmljs/index", "The AHTML Index: registry + crawler with an MCP query surface."],
+              ["@ahtmljs/badge", "Hosted score-badge service: README-embeddable SVG + linked report."],
             ]}
           />
         ),
@@ -593,28 +629,28 @@ npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools — no adoption n
         body: (
           <div className="flex flex-col gap-3">
             <p>
-              The moat is not being best at any one protocol — it is being the
+              The moat is not being best at any one protocol: it is being the
               only thing that emits all of them from one source of truth. And it
               is measured, not estimated: 5.6× fewer tokens than the HTML a
-              browser loads on the flagship benchmark page (4.5–7.3× across the
+              browser loads on the flagship benchmark page (4.5-7.3× across the
               corpus, real OpenAI and Anthropic tokenizers), and in a 146-run
               multi-model benchmark across gpt-4o-mini, claude-haiku-4.5,
               gemini-2.5-flash, and llama-3.3-70b, fact-extraction accuracy
-              rises from 91% on raw HTML to 100% on AHTML JSON — versus 89% for
+              rises from 91% on raw HTML to 100% on AHTML JSON, versus 89% for
               llms.txt.
             </p>
             <p>
               It is framework-native and additive: your existing Next.js, Astro,
               SvelteKit, Vite, or Hono app becomes an MCP server at{" "}
-              <span className="font-mono text-sm">/ahtml/mcp.json</span> — same
-              database, same auth, one deploy — instead of you standing up a
+              <span className="font-mono text-sm">/ahtml/mcp.json</span> (same
+              database, same auth, one deploy) instead of you standing up a
               separate server.
             </p>
             <p>
               And it is safe to act on, not just read: actions carry typed cost,
               reversibility, auth, and side-effects; sites can require verified
               agents (RFC 9421 signed requests), price actions over x402, and
-              license content with RSL 1.0 — and agents can rehearse priced or
+              license content with RSL 1.0, and agents can rehearse priced or
               irreversible actions in the SPEC §4.7 dry-run sandbox before real
               money moves. Snapshots are signable with detached JWS. 700+ tests
               pass across the sixteen packages and the Python SDK, and both
@@ -631,15 +667,15 @@ npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools — no adoption n
             items={[
               {
                 q: "How do I add MCP to a Next.js app?",
-                a: "Install @ahtmljs/next and wrap your config. The plugin auto-discovers routes and emits an MCP tool manifest at /ahtml/mcp.json from the same snapshot it uses for OpenAPI, JSON-LD, and llms.txt — no separate MCP server to write or deploy.",
+                a: "Install @ahtmljs/next and wrap your config. The plugin auto-discovers routes and emits an MCP tool manifest at /ahtml/mcp.json from the same snapshot it uses for OpenAPI, JSON-LD, and llms.txt. No separate MCP server to write or deploy.",
               },
               {
                 q: "Is AHTML a replacement for llms.txt or JSON-LD?",
-                a: "No — it emits both, plus MCP and OpenAPI, from one config. llms.txt is a human-readable index and JSON-LD targets search engines; AHTML adds typed actions, cost and reversibility metadata, freshness, and a signed snapshot on top, and generates the others for you.",
+                a: "No. It emits both, plus MCP and OpenAPI, from one config. llms.txt is a human-readable index and JSON-LD targets search engines; AHTML adds typed actions, cost and reversibility metadata, freshness, and a signed snapshot on top, and generates the others for you.",
               },
               {
                 q: "Does it work outside Next.js?",
-                a: "Yes. Dedicated adapters cover Astro (@ahtmljs/astro), SvelteKit (@ahtmljs/sveltekit), and other Vite-based apps like SolidStart (@ahtmljs/vite), and @ahtmljs/hono covers Node, Bun, Deno, Cloudflare Workers, and AWS Lambda — all with byte-identical output. `npx @ahtmljs/cli init` detects your framework and wires everything.",
+                a: "Yes. Dedicated adapters cover Astro (@ahtmljs/astro), SvelteKit (@ahtmljs/sveltekit), and other Vite-based apps like SolidStart (@ahtmljs/vite), and @ahtmljs/hono covers Node, Bun, Deno, Cloudflare Workers, and AWS Lambda, all with byte-identical output. `npx @ahtmljs/cli init` detects your framework and wires everything.",
               },
               {
                 q: "Do the sites my agent reads need AHTML installed?",
@@ -647,7 +683,7 @@ npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools — no adoption n
               },
               {
                 q: "Can a site charge AI agents or verify who is calling?",
-                a: "Yes. Actions declare typed cost with x402 payment rails behind a standards-compliant HTTP 402 flow, sites can require RFC 9421-signed requests from verified agents, and content licensing ships via an RSL 1.0 file plus Content Signals — with a dry-run sandbox so agents rehearse priced or irreversible actions before paying.",
+                a: "Yes. Actions declare typed cost with x402 payment rails behind a standards-compliant HTTP 402 flow, sites can require RFC 9421-signed requests from verified agents, and content licensing ships via an RSL 1.0 file plus Content Signals, with a dry-run sandbox so agents rehearse priced or irreversible actions before paying.",
               },
             ]}
           />
@@ -658,7 +694,7 @@ npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools — no adoption n
 
   "klinder-oss": {
     metaTitle:
-      "Klinder-OSS — open-source analytics + session replay + email SDK in one install",
+      "Klinder-OSS: open-source analytics + session replay + email SDK in one install",
     metaDescription:
       "Klinder-OSS unifies event tracking, error-based session replay, and email trigger workflows in a single SDK. Edge ingestion on Cloudflare Workers + Queues, Neon Postgres with RLS, Hono API, with a Rust workers-rs port in progress. An open-source PostHog + LogRocket alternative.",
     kicker: "open-source product · unified SDK",
@@ -673,7 +709,7 @@ npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools — no adoption n
         body: (
           <p>
             <strong>Klinder-OSS</strong> is one SDK that unifies event tracking,
-            error-based session recording, and email trigger workflows — the
+            error-based session recording, and email trigger workflows: the
             three things teams usually stitch together from PostHog, LogRocket,
             and Customer.io. Edge ingestion runs on Cloudflare Workers and Queues
             with Neon Postgres (row-level security for multi-tenant isolation)
@@ -698,9 +734,9 @@ npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools — no adoption n
 
   diffcore: {
     metaTitle:
-      "Diffcore — fast Rust/WASM JSON diff engine for JavaScript (RFC 6902 JSON Patch)",
+      "Diffcore: fast Rust/WASM JSON diff engine for JavaScript (RFC 6902 JSON Patch)",
     metaDescription:
-      "Diffcore is a WebAssembly JSON diff engine for JS/TS: real JSON Pointer paths (RFC 6901), standard RFC 6902 JSON Patch output, applyPatch/revertPatch, a React useDiff hook, a CLI, and a streaming engine for multi-GB files. 2.3–3.0× faster than fast-json-patch.",
+      "Diffcore is a WebAssembly JSON diff engine for JS/TS: real JSON Pointer paths (RFC 6901), standard RFC 6902 JSON Patch output, applyPatch/revertPatch, a React useDiff hook, a CLI, and a streaming engine for multi-GB files. 2.3-3.0× faster than fast-json-patch.",
     kicker: "open-source product · Rust + WASM on npm",
     subtitle: "fast Rust/WASM JSON diff engine",
     jsonLdType: "SoftwareSourceCode",
@@ -717,7 +753,7 @@ npx @ahtmljs/cli mcp <url>      # turn ANY site into MCP tools — no adoption n
             RFC 6902 JSON Patch, and ships{" "}
             <span className="font-mono text-sm">applyPatch</span> /{" "}
             <span className="font-mono text-sm">revertPatch</span> for state
-            sync, undo/redo, and optimistic UI — plus a React{" "}
+            sync, undo/redo, and optimistic UI, plus a React{" "}
             <span className="font-mono text-sm">useDiff</span> hook, a CLI, and a
             streaming engine for multi-GB files.
           </p>
@@ -739,9 +775,9 @@ const next = applyPatch(a, patch);`
           <p>
             The engine is Rust compiled with wasm-bindgen, so there is no native
             addon to build and no separate <span className="font-mono text-sm">.wasm</span>{" "}
-            file to host. In head-to-head benchmarks it runs 2.3–3.0× faster than
-            fast-json-patch and 4–8× faster than jsondiffpatch, sustaining
-            390–650&nbsp;MB/s.
+            file to host. In head-to-head benchmarks it runs 2.3-3.0× faster than
+            fast-json-patch and 4-8× faster than jsondiffpatch, sustaining
+            390-650&nbsp;MB/s.
           </p>
         ),
       },

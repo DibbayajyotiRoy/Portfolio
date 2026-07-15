@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { base } from "@/lib/content/brand";
 
 /**
- * Shared OpenGraph card renderer — one code path for every product hub.
+ * Shared OpenGraph card renderer: one code path for every product hub.
  *
  * Brand rule made mechanical: blackout background, monochrome type, exactly one
  * accent per card, mono for the machine-readable lines (kicker + domain). Only
