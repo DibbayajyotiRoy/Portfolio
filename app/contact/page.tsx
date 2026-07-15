@@ -11,10 +11,11 @@ type Channel = {
 
 const channels: Channel[] = [
   {
-    label: "Email",
-    href: "mailto:dibbayajyoti@gmail.com",
-    handle: "dibbayajyoti@gmail.com",
-    best_for: "Hiring, contracts, OSS questions, sponsorships. Fastest reply.",
+    label: "Book a call",
+    href: "https://cal.com/dibbayajyoti",
+    handle: "cal.com/dibbayajyoti",
+    best_for: "Hiring, contracts, OSS questions, sponsorships. Fastest way to reach me.",
+    external: true,
   },
   {
     label: "LinkedIn",
@@ -51,12 +52,6 @@ const channels: Channel[] = [
     best_for: "Casual chat, OSS hand-offs.",
     external: true,
   },
-  {
-    label: "Phone",
-    href: "tel:+918731953807",
-    handle: "+91 87319 53807",
-    best_for: "Time-sensitive only — please email first.",
-  },
 ];
 
 export default function ContactPage() {
@@ -69,7 +64,7 @@ export default function ContactPage() {
         <h1 className="flex items-baseline flex-wrap sm:gap-3 my-2 sm:my-4 text-3xl sm:text-[32px] font-semibold">
           <span className="sm:w-auto w-full">Get in touch</span>
           <span className="opacity-50 w-full sm:w-auto text-[18px] sm:text-[22px]">
-            email is fastest
+            book a call — it&apos;s fastest
           </span>
         </h1>
 
@@ -104,19 +99,19 @@ export default function ContactPage() {
             </ul>
           </TitledParagraph>
 
-          <TitledParagraph title="based in">
+          <TitledParagraph title="availability">
             <p>
-              Dashamighat, Agartala, West Tripura, India (UTC+5:30). Available
-              for remote work globally and open to relocation in the EU
-              (Germany Opportunity Card / Blue Card / Netherlands HSM eligible).
+              Available for remote work globally and open to relocation in the
+              EU (Germany Opportunity Card / Blue Card / Netherlands HSM
+              eligible).
             </p>
           </TitledParagraph>
 
           <TitledParagraph title="response time">
             <p>
-              Email and X DMs typically within 24 hours on weekdays. GitHub
-              issues on my repos within 48 hours. For anything time-sensitive,
-              start a thread on email and ping me on X.
+              X DMs typically within 24 hours on weekdays. GitHub issues on my
+              repos within 48 hours. For anything time-sensitive, book a slot
+              on cal.com/dibbayajyoti and ping me on X.
             </p>
           </TitledParagraph>
         </div>

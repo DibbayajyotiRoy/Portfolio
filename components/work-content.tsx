@@ -38,7 +38,7 @@ const WorkContent = () => {
           <TitledParagraph title="TLDR">
             <div className="flex flex-col gap-2 sm:gap-3">
               <p>
-                I&apos;m {profile.firstName}, a {profile.title} based in {profile.location}. (
+                I&apos;m {profile.firstName}, a {profile.title}. (
                 <Link href={profile.links.linkedin} target="_blank" className="underline font-semibold">LinkedIn</Link>
                 {" / "}
                 <Link href={profile.links.github} target="_blank" className="underline font-semibold">GitHub</Link>
@@ -70,7 +70,7 @@ const WorkContent = () => {
         ) : (
           <>
             <TitledParagraph title="what I do">
-              <p>Hi, I&apos;m <Link href={profile.links.linkedin} target="_blank" className="underline font-semibold">{profile.firstName}</Link>! I&apos;m a {profile.title} based in {profile.location}, currently working at{" "}
+              <p>Hi, I&apos;m <Link href={profile.links.linkedin} target="_blank" className="underline font-semibold">{profile.firstName}</Link>! I&apos;m a {profile.title}, currently working at{" "}
                 <span className="font-semibold">{profile.employer.name}</span>.
                 I focus on shipping production-grade SaaS platforms, integrating REST APIs, and building cutting-edge user-facing dashboards in Next.js.
                 Beyond engineering, I have a deep interest in Next.js performance optimization, Core Web Vitals, Rust backend development, and modern design systems.
@@ -208,7 +208,7 @@ const WorkContent = () => {
             <TitledParagraph title="open source">
               <div className="flex flex-col gap-2">
                 <p>
-                  I contribute upstream to tools I use — four merged PRs to the observability layer of <Link href="/open-source" className="font-semibold underline">ReductStore</Link>, a Rust time-series database for robotics and industrial IoT (replication diagnostics, instance-wide usage statistics, per-bucket usage metrics, and system-log capture, all emitting queryable $system events), plus a false-positive diagnostic fix merged into Meta&apos;s Pyrefly type checker. Reviewed and merged by the maintainers; the first ReductStore PR shipped in v1.20 with a public endorsement.
+                  I contribute upstream to tools I use — seven merged PRs to the observability and replication layers of <Link href="/open-source" className="font-semibold underline">ReductStore</Link>, a Rust time-series database for robotics and industrial IoT (replication diagnostics, instance-wide usage statistics, per-bucket usage metrics, system-log capture, a unified $system event sink, pipelined replication batch sending, and replication payload compression), plus a false-positive diagnostic fix merged into Meta&apos;s Pyrefly type checker. Reviewed and merged by the maintainers; the first ReductStore PR shipped in v1.20 with a public endorsement.
                 </p>
                 <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
                   <Link href="/open-source" className="font-semibold underline">Contributions + maintainer endorsement →</Link>

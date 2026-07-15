@@ -84,10 +84,9 @@ const Nav = () => {
               <Link href="/contact" className="underline">all channels</Link>
             </li>
             <li>
-              <Link href="mailto:dibbayajyoti@gmail.com">email</Link>
-            </li>
-            <li>
-              <Link href="tel:+918731953807">phone</Link>
+              <Link href="https://cal.com/dibbayajyoti" target="_blank" rel="noopener noreferrer">
+                book a call
+              </Link>
             </li>
             <li>
               <Link href="https://www.linkedin.com/in/dibbayajyoti-roy/">

@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="flex flex-col gap-6 sm:gap-8 mt-10 text-blackout/90 dark:text-whiteout/90">
           <TitledParagraph title="who">
             <p>
-              I&apos;m a {profile.title} and Rust developer from {profile.location}.
+              I&apos;m a {profile.title} and Rust developer.
               I currently ship production SaaS at{" "}
               <span className="font-semibold">{profile.employer.name}</span>{" "}
               and run a parallel track building open-source developer tools.
@@ -104,12 +104,14 @@ export default function AboutPage() {
 
           <TitledParagraph title="reach out">
             <p>
-              The fastest way to reach me is{" "}
+              The fastest way to reach me is to{" "}
               <Link
-                href={`mailto:${profile.links.email}`}
+                href={profile.links.cal}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-semibold underline"
               >
-                email
+                book a call
               </Link>
               {" "}or{" "}
               <Link

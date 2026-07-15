@@ -101,6 +101,45 @@ export const contributions: Contribution[] = [
       "Merged contribution to ReductStore (Rust time-series database) by Dibbayajyoti Roy: an opt-in pipeline that captures the instance's own log messages into $system/logs/<instance>/messages as queryable system events at a configurable severity level, with a reentrancy guard so writing a log never recurses into itself. PR #1481 (resolving issue #1467), reviewed and merged by the maintainer; merged to main and shipping in an upcoming release.",
   },
   {
+    id: "reductstore-unify-syslog",
+    project: "ReductStore",
+    projectBlurb: "Rust time-series database",
+    repoUrl: "https://github.com/reductstore/reductstore",
+    prTitle: "Feat/unify syslog",
+    prNumber: 1496,
+    prUrl: "https://github.com/reductstore/reductstore/pull/1496",
+    summary:
+      "all $system event families — audit, usage, replication, lifecycle, and log capture — are now routed through one generic sink in a unified syslog module, with a routing enum resolving each family's $system path and the duplicated writer and path logic collapsed, while characterization tests pin the external record format so nothing user-facing changes",
+    seoDescription:
+      "Merged contribution to ReductStore (Rust time-series database) by Dibbayajyoti Roy: unifies all $system event handling — audit, usage, replication, lifecycle, and log capture — behind one generic sink in a single syslog module, with a SystemEventKind routing enum and characterization tests pinning the external record format. PR #1496 (resolving issue #1485), reviewed and merged by the maintainer.",
+  },
+  {
+    id: "reductstore-pipelined-replication",
+    project: "ReductStore",
+    projectBlurb: "Rust time-series database",
+    repoUrl: "https://github.com/reductstore/reductstore",
+    prTitle: "Pipeline replication batch sending (#1061, supersedes #1415)",
+    prNumber: 1527,
+    prUrl: "https://github.com/reductstore/reductstore/pull/1527",
+    summary:
+      "replication throughput improves by pipelining batch sending — while one entry's batch is in flight over HTTP, the next entry's batch is already being prepared — with transaction acks moved into the send task and panic recovery that rebuilds the remote bucket, so an internal bug degrades a single pass instead of crashing the database",
+    seoDescription:
+      "Merged contribution to ReductStore (Rust time-series database) by Dibbayajyoti Roy: pipelines replication batch sending so preparing the next entry's batch overlaps with the in-flight HTTP send, with per-entry transaction acknowledgement inside the send task and panic recovery that rebuilds the remote bucket instead of crashing the database. PR #1527 (resolving issue #1061, building on #1415), reviewed and merged by the maintainer.",
+  },
+  {
+    id: "reductstore-replication-compression",
+    project: "ReductStore",
+    projectBlurb: "Rust time-series database",
+    repoUrl: "https://github.com/reductstore/reductstore",
+    prTitle: "Replication: add optional payload compression (#1348)",
+    prNumber: 1538,
+    prUrl: "https://github.com/reductstore/reductstore/pull/1538",
+    summary:
+      "replication batches can now be compressed in transit — a per-task compression setting (zstd or gzip, default none) compresses the batch body using standard HTTP Content-Encoding, with transparent decompression on the receiving router and automatic fallback to uncompressed transfer for destination servers too old to decompress requests",
+    seoDescription:
+      "Merged contribution to ReductStore (Rust time-series database) by Dibbayajyoti Roy: optional per-replication-task payload compression (zstd or gzip) using standard HTTP Content-Encoding, with transparent request decompression on the receiver and version-gated fallback to uncompressed transfer for older destination servers. PR #1538 (resolving issue #1348), reviewed and merged by the maintainer; merged to main and shipping in an upcoming release.",
+  },
+  {
     id: "pyrefly-pytyped-untyped-import",
     project: "Pyrefly",
     projectBlurb: "Meta's Python type checker",
