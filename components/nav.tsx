@@ -1,14 +1,8 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const Nav = () => {
-  // Mobile nav slots are scarce: on the home page keep "writing"; everywhere
-  // else surface "résumé" instead (both always visible from sm up).
-  const isHome = usePathname() === "/";
   return (
     <nav className="fixed pointer-events-none top-0 md:px-12 p-4 md:p-6 flex w-screen items-center justify-between z-50">
       <svg
@@ -68,7 +62,7 @@ const Nav = () => {
         </Link>
         <Link
           href="/writing"
-          className={`pointer-events-auto ${isHome ? "" : "hidden sm:inline"} underline underline-offset-[3px] opacity-100 decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base`}
+          className="pointer-events-auto hidden sm:inline underline underline-offset-[3px] opacity-100 decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base"
         >
           writing
         </Link>
@@ -80,7 +74,7 @@ const Nav = () => {
         </Link>
         <Link
           href="/work"
-          className={`pointer-events-auto ${isHome ? "hidden sm:inline" : ""} underline underline-offset-[3px] opacity-100 decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base`}
+          className="pointer-events-auto underline underline-offset-[3px] opacity-100 decoration-[1.5px] decoration-blackout/50 dark:decoration-whiteout/50 font-medium text-sm md:text-base"
         >
           résumé
         </Link>
