@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import TitledParagraph from "@/components/titled-paragraph";
 import Reveal from "@/components/reveal";
+import StatLine from "@/components/stat-line";
 import ChapterClose from "@/components/chapter-close";
 import { contributions } from "@/lib/content/contributions";
 
@@ -63,6 +64,16 @@ const collectionJsonLd = {
 };
 
 export default function OpenSourcePage() {
+  const endorsement = contributions.find((c) => c.endorsement)?.endorsement;
+  const projects = contributions.reduce<
+    { project: string; items: typeof contributions }[]
+  >((groups, c) => {
+    const group = groups.find((g) => g.project === c.project);
+    if (group) group.items.push(c);
+    else groups.push({ project: c.project, items: [c] });
+    return groups;
+  }, []);
+
   return (
     <main className="flex my-[140px] sm:my-[200px] justify-end sm:justify-center">
       <script
@@ -85,69 +96,103 @@ export default function OpenSourcePage() {
         </h1>
 
         <div className="flex flex-col gap-6 sm:gap-8 mt-10 text-blackout/90 dark:text-whiteout/90">
-          {contributions.map((c) => (
-            <Reveal key={c.id}>
-            <article className="flex flex-col gap-6 sm:gap-8">
-              <TitledParagraph title="contribution">
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-semibold flex items-baseline gap-3 flex-wrap">
-                    {c.project}
-                    <span className="text-sm font-normal opacity-50">
-                      {c.projectBlurb}
-                    </span>
-                  </h3>
-                  <p>
-                    <span className="font-mono text-sm">PR #{c.prNumber}</span>{" "}
-                    <span className="font-semibold">{c.prTitle}</span>:{" "}
-                    {c.summary}. Reviewed and merged by the maintainer
-                    {c.shippedIn
-                      ? `, shipping in ${c.project} ${c.shippedIn}.`
-                      : ", shipping in an upcoming release."}
-                  </p>
-                  <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
+          <Reveal>
+            <TitledParagraph title="at a glance">
+              <div className="flex flex-col gap-3">
+                <StatLine
+                  value={String(contributions.length)}
+                  context="merged upstream pull requests"
+                />
+                <StatLine
+                  value={String(projects.length)}
+                  context="production Rust codebases (ReductStore, Meta's Pyrefly)"
+                />
+                <StatLine
+                  value={String(
+                    contributions.filter((c) => c.endorsement).length,
+                  )}
+                  context="public maintainer endorsement"
+                />
+              </div>
+            </TitledParagraph>
+          </Reveal>
+
+          {endorsement && (
+            <Reveal>
+              <TitledParagraph title="from the maintainer">
+                <figure className="border-l-2 border-blackout/30 dark:border-whiteout/30 pl-5 flex flex-col gap-3">
+                  <blockquote className="flex flex-col gap-3 italic">
+                    {endorsement.quote.map((line) => (
+                      <p key={line}>&ldquo;{line}&rdquo;</p>
+                    ))}
+                  </blockquote>
+                  <figcaption className="text-sm opacity-70 not-italic">
+                    - {endorsement.author}, {endorsement.authorTitle} ·{" "}
                     <Link
-                      href={c.prUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold underline"
-                    >
-                      Read the PR on GitHub →
-                    </Link>
-                    <Link
-                      href={c.repoUrl}
+                      href={endorsement.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="underline"
                     >
-                      {c.project} repo →
+                      on LinkedIn →
+                    </Link>
+                  </figcaption>
+                </figure>
+              </TitledParagraph>
+            </Reveal>
+          )}
+
+          {projects.map(({ project, items }) => (
+            <Reveal key={project}>
+              <TitledParagraph
+                title={`${project} — ${items.length} PR${
+                  items.length > 1 ? "s" : ""
+                }`}
+              >
+                <div className="flex flex-col gap-6">
+                  <p className="text-sm opacity-50">
+                    {items[0].projectBlurb} ·{" "}
+                    <Link
+                      href={items[0].repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      {project} repo →
                     </Link>
                   </p>
+                  {items.map((c) => (
+                    <article key={c.id} className="flex flex-col gap-2">
+                      <p>
+                        <span className="font-mono text-sm">
+                          PR #{c.prNumber}
+                        </span>{" "}
+                        <span className="font-semibold">{c.prTitle}</span>:{" "}
+                        {c.summary}. Reviewed and merged by the maintainer
+                        {c.shippedIn
+                          ? `, shipping in ${project} ${c.shippedIn}.`
+                          : ", shipping in an upcoming release."}
+                        {c.endorsement && (
+                          <span className="text-sm opacity-70">
+                            {" "}
+                            Endorsed by the co-founder ↑
+                          </span>
+                        )}
+                      </p>
+                      <p className="text-sm">
+                        <Link
+                          href={c.prUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold underline"
+                        >
+                          Read the PR on GitHub →
+                        </Link>
+                      </p>
+                    </article>
+                  ))}
                 </div>
               </TitledParagraph>
-
-              {c.endorsement && (
-                <TitledParagraph title="from the maintainer">
-                  <figure className="border-l-2 border-blackout/30 dark:border-whiteout/30 pl-5 flex flex-col gap-3">
-                    <blockquote className="flex flex-col gap-3 italic">
-                      {c.endorsement.quote.map((line) => (
-                        <p key={line}>&ldquo;{line}&rdquo;</p>
-                      ))}
-                    </blockquote>
-                    <figcaption className="text-sm opacity-70 not-italic">
-                      - {c.endorsement.author}, {c.endorsement.authorTitle} ·{" "}
-                      <Link
-                        href={c.endorsement.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline"
-                      >
-                        on LinkedIn →
-                      </Link>
-                    </figcaption>
-                  </figure>
-                </TitledParagraph>
-              )}
-            </article>
             </Reveal>
           ))}
         </div>

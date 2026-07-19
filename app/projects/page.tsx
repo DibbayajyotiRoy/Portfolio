@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { coreProducts } from "@/lib/content/projects";
+import Image from "next/image";
+import { coreProducts, getProject } from "@/lib/content/projects";
 import { hubs } from "@/lib/content/hubs";
 import { getAccent } from "@/lib/content/brand";
 import Reveal from "@/components/reveal";
@@ -105,6 +106,13 @@ const stories: Record<
   },
 };
 
+// Terminal demos keyed by project id; rendered unoptimized so GIFs animate.
+const demos: Record<string, string> = {
+  whatbroke: "/demos/whatbroke.gif",
+};
+
+const learningCopilot = getProject("learning-copilot");
+
 export default function ProjectsIndexPage() {
   return (
     <main className="flex my-[140px] sm:my-[200px] justify-end sm:justify-center">
@@ -183,7 +191,16 @@ export default function ProjectsIndexPage() {
                           <WhatbrokeBenchmark />
                         </div>
                       ) : null}
-                      {/* TODO: real screenshot of {p.name} demo */}
+                      {demos[p.id] ? (
+                        <Image
+                          src={demos[p.id]}
+                          alt={`${p.name} demo: crash captured, suspect ranked, fix verified`}
+                          width={960}
+                          height={600}
+                          unoptimized
+                          className="mt-4 w-full h-auto rounded-md border border-blackout/10 dark:border-whiteout/10"
+                        />
+                      ) : null}
                       <span className="mt-3 inline-block text-sm underline opacity-70 group-hover:opacity-100 transition-opacity">
                         Read about {p.name} →
                       </span>
@@ -194,6 +211,50 @@ export default function ProjectsIndexPage() {
             );
           })}
         </ul>
+
+        <div className="mt-16">
+          <h2 className="font-mono uppercase text-sm font-semibold opacity-25">
+            hackathon build
+          </h2>
+          <Reveal>
+            <div className="border-l-2 border-blackout/30 dark:border-whiteout/30 pl-5 py-1 mt-4 rounded-r-md">
+              <div className="pr-4 py-3">
+                <p className="font-mono text-xs uppercase tracking-wide mb-2 opacity-60">
+                  AI for Bharat hackathon · top 500
+                </p>
+                <h3 className="text-xl font-semibold flex items-center gap-3 flex-wrap">
+                  <DitherAvatar name={learningCopilot.id} size={28} className="rounded-md overflow-hidden shrink-0" />
+                  {learningCopilot.name}
+                  <span className="text-sm font-normal opacity-50">
+                    {learningCopilot.tagline}
+                  </span>
+                </h3>
+                <p className="mt-2 text-base opacity-80">
+                  {learningCopilot.oneLiner}
+                </p>
+                <div className="mt-4 aspect-video w-full overflow-hidden rounded-md border border-blackout/10 dark:border-whiteout/10">
+                  <iframe
+                    src="https://www.youtube-nocookie.com/embed/k5raPQ3rxmg"
+                    title="Learning Copilot demo"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="h-full w-full"
+                  />
+                </div>
+                <Link
+                  href={learningCopilot.primaryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-sm underline opacity-70 hover:opacity-100 transition-opacity"
+                >
+                  Try {learningCopilot.name} →
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+        </div>
 
         <p className="text-sm opacity-70 mt-14">
           More context lives on{" "}

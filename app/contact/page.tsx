@@ -1,6 +1,7 @@
 import Link from "next/link";
 import TitledParagraph from "@/components/titled-paragraph";
 import Reveal from "@/components/reveal";
+import { profile } from "@/lib/content/profile";
 
 type Channel = {
   label: string;
@@ -19,6 +20,12 @@ const primaryChannel: Channel = {
 };
 
 const channels: Channel[] = [
+  {
+    label: "Email",
+    href: `mailto:${profile.email}`,
+    handle: profile.email,
+    best_for: "Recruiters, contracts, anything formal.",
+  },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/dibbayajyoti-roy/",
@@ -124,9 +131,28 @@ export default function ContactPage() {
           <Reveal delay={0.1}>
             <TitledParagraph title="availability">
               <p>
-                Available for remote work globally and open to relocation in the
-                EU (Germany Opportunity Card / Blue Card / Netherlands HSM
-                eligible).
+                Based in {profile.location}. Available for remote work globally
+                and open to relocation in the EU (Germany Opportunity Card /
+                Blue Card / Netherlands HSM eligible).
+              </p>
+            </TitledParagraph>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <TitledParagraph title="résumé">
+              <p>
+                Rendered inline on{" "}
+                <Link href="/work" className="font-semibold underline">/work</Link>. Two
+                role-targeted PDFs:{" "}
+                {profile.resumes.map((r, i) => (
+                  <span key={r.path}>
+                    {i > 0 && " · "}
+                    <Link href={r.path} download className="font-semibold underline">
+                      {r.label}
+                    </Link>
+                  </span>
+                ))}
+                .
               </p>
             </TitledParagraph>
           </Reveal>

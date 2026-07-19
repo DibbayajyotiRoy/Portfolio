@@ -1,10 +1,16 @@
 import Link from "next/link";
 import TitledParagraph from "@/components/titled-paragraph";
 import Reveal from "@/components/reveal";
+import StatLine from "@/components/stat-line";
 import ChapterClose from "@/components/chapter-close";
 import Timeline from "@/components/timeline";
 import { profile } from "@/lib/content/profile";
 import { coreProducts } from "@/lib/content/projects";
+import { contributions } from "@/lib/content/contributions";
+
+const endorsement = contributions.find(
+  (c) => c.id === "reductstore-replication-audit"
+)?.endorsement;
 
 // Chronological journey, built only from real profile facts (no invented
 // dates). sort keys place "July 2025" between the 2025 awards and 2026, and the
@@ -46,6 +52,60 @@ export default function AboutPage() {
         </h1>
 
         <div className="flex flex-col gap-6 sm:gap-8 mt-10 text-blackout/90 dark:text-whiteout/90">
+          <Reveal>
+            <TitledParagraph title="in 10 seconds">
+              <div className="flex flex-col gap-3">
+                <StatLine
+                  value="7"
+                  context="shipped products (npm packages, CLIs, a Linux app)"
+                />
+                <StatLine
+                  value="8"
+                  context="merged upstream PRs: 7 to ReductStore, 1 to Meta's Pyrefly"
+                />
+                <StatLine
+                  value="2.3-3.0×"
+                  context="Diffcore vs fast-json-patch in head-to-head benchmarks"
+                />
+                <StatLine
+                  value={`${profile.honors[0].result}`}
+                  context={`${profile.honors[0].name} (${profile.honors[0].year}), ${profile.honors[0].note}`}
+                />
+                <p className="text-sm opacity-60">
+                  Based in {profile.location}. Remote-friendly, EU
+                  relocation-eligible.
+                </p>
+              </div>
+            </TitledParagraph>
+          </Reveal>
+
+          {endorsement && (
+            <Reveal>
+              <TitledParagraph title="from a maintainer">
+                <figure className="border-l-2 border-blackout/30 dark:border-whiteout/30 pl-5 flex flex-col gap-3">
+                  <blockquote className="italic">
+                    <p>&ldquo;{endorsement.quote[endorsement.quote.length - 1]}&rdquo;</p>
+                  </blockquote>
+                  <figcaption className="text-sm opacity-70 not-italic">
+                    - {endorsement.author}, {endorsement.authorTitle} ·{" "}
+                    <Link
+                      href={endorsement.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      on LinkedIn →
+                    </Link>{" "}
+                    · full story on{" "}
+                    <Link href="/open-source" className="underline">
+                      /open-source
+                    </Link>
+                  </figcaption>
+                </figure>
+              </TitledParagraph>
+            </Reveal>
+          )}
+
           <Reveal>
             <TitledParagraph title="who">
               <p>

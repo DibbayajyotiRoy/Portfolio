@@ -8,6 +8,27 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : "https://dibbayajyoti.com";
 
+// Per-article related project/topic link, rendered after the article body.
+const relatedLinks: Record<string, { href: string; label: string }> = {
+  "redis-polling-bottleneck": {
+    href: "/distributed-systems",
+    label: "Distributed systems",
+  },
+  "merged-into-pyrefly-and-reductstore": {
+    href: "/open-source",
+    label: "Open source work",
+  },
+  "nextjs-seo-2026": { href: "/nextjs-seo", label: "Next.js SEO" },
+  "optimistic-ui-rfc-6902-react": {
+    href: "/projects/diffcore",
+    label: "diffcore",
+  },
+  "fresco-linux-live-wallpaper-engine": {
+    href: "/projects/fresco",
+    label: "Fresco",
+  },
+};
+
 export function generateStaticParams() {
   return articleSlugs.map((slug) => ({ slug }));
 }
@@ -153,6 +174,15 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             </>
           )}
         </div>
+
+        {relatedLinks[article.slug] && (
+          <p className="text-sm opacity-80 mt-10">
+            Related:{" "}
+            <Link href={relatedLinks[article.slug].href} className="underline">
+              {relatedLinks[article.slug].label} →
+            </Link>
+          </p>
+        )}
 
         {article.mediumUrl && (
           <p className="text-sm opacity-60 mt-12">

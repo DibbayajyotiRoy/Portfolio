@@ -21,7 +21,7 @@ const fresco = getProject("fresco");
 const learningCopilot = getProject("learning-copilot");
 
 const WorkContent = () => {
-  const [isTLDRShown, setIsTLDRShown] = useState(false);
+  const [isTLDRShown, setIsTLDRShown] = useState(true);
 
   return (
     <>
@@ -33,9 +33,7 @@ const WorkContent = () => {
         }}
         className="text-base sm:sticky mt-6 sm:mt-0 sm:top-9 z-10 bg-white dark:bg-blackout border dark:border-whiteout/50 rounded-md px-2 py-0.5 border-blackout transition-transform duration-150 ease-out active:scale-[0.97]"
       >
-        {!isTLDRShown
-          ? "Too much text? show TLDR"
-          : "More details? show everything"}
+        {isTLDRShown ? "reading the TLDR — show everything ↓" : "back to the TLDR ↑"}
       </button>
 
       <div className="flex flex-col gap-6 sm:gap-8 mt-10 text-blackout/90 dark:text-whiteout/90">
@@ -191,18 +189,6 @@ const WorkContent = () => {
             </Reveal>
 
             <Reveal>
-              <TitledParagraph title="npm">
-                <p className="text-sm sm:text-base opacity-80">
-                  Each product&apos;s live npm download counts are on its own page:{" "}
-                  <Link href="/projects/whatbroke" className="underline">whatbroke</Link>,{" "}
-                  <Link href="/projects/ahtml" className="underline">AHTML</Link>,{" "}
-                  <Link href="/projects/roy-ui" className="underline">Roy UI</Link>,{" "}
-                  <Link href="/projects/diffcore" className="underline">Diffcore</Link>.
-                </p>
-              </TitledParagraph>
-            </Reveal>
-
-            <Reveal>
               <TitledParagraph title="older work">
                 <p className="text-sm sm:text-base opacity-80">
                   <Link href="https://github.com/DibbayajyotiRoy/BloodLink" target="_blank" rel="noopener noreferrer" className="underline">BloodLink</Link>: blood donor / seeker matching platform with PostgreSQL geolocation, ~100 pilot users (2024).{" "}
@@ -215,22 +201,29 @@ const WorkContent = () => {
 
             <Reveal>
               <TitledParagraph title="skills">
-                <p>
-                  TypeScript, JavaScript, Rust, and Python. Frontend: React, Next.js, Tailwind CSS, TanStack Query.
-                  Backend: Node.js, Hono, Express, REST APIs, Server-Sent Events, Zod, OAuth, JWT.
-                  Infrastructure: Linux, Proxmox VE, nginx, systemd, Docker, Cloudflare Workers, AWS (Bedrock, DynamoDB, CloudWatch).
-                  Databases: PostgreSQL (Neon, RLS, partitioning), DynamoDB, MongoDB, Redis.
-                  AI/ML: AWS Bedrock, multi-model orchestration with fallback, streaming inference, prompt engineering, agent design.
-                </p>
+                <div className="grid grid-cols-[90px_1fr] gap-x-4 gap-y-2">
+                  <span className="font-mono text-sm opacity-50">Languages</span>
+                  <span>TypeScript, JavaScript, Rust, Python</span>
+                  <span className="font-mono text-sm opacity-50">Frontend</span>
+                  <span>React, Next.js, Tailwind CSS, TanStack Query</span>
+                  <span className="font-mono text-sm opacity-50">Infra</span>
+                  <span>Node.js, Hono, Express, REST APIs, PostgreSQL, DynamoDB, MongoDB, Redis, Linux, Proxmox VE, nginx, systemd, Docker, Cloudflare Workers, AWS</span>
+                  <span className="font-mono text-sm opacity-50">AI</span>
+                  <span>AWS Bedrock, multi-model orchestration with fallback, streaming inference, prompt engineering, agent design</span>
+                </div>
               </TitledParagraph>
             </Reveal>
 
             <Reveal>
               <TitledParagraph title="honors">
-                <p>
-                  Hackathon wins including the {profile.honors[0].name} ({profile.honors[0].year}) and the {profile.honors[1].name}. The full list of awards and recognition is on{" "}
-                  <Link href="/about" className="font-semibold underline">/about</Link>.
-                </p>
+                <ul className="flex flex-col gap-1.5 text-sm sm:text-base">
+                  {profile.honors.map((honor) => (
+                    <li key={honor.name}>
+                      <span className="font-semibold">{honor.result}</span> — {honor.name} ({honor.year})
+                      {honor.note && <span className="opacity-50"> · {honor.note}</span>}
+                    </li>
+                  ))}
+                </ul>
               </TitledParagraph>
             </Reveal>
 
@@ -239,19 +232,6 @@ const WorkContent = () => {
                 <p>
                   Long-form engineering notes on production incidents, AI engineering with AWS Bedrock, Next.js SEO, and Rust + WebAssembly performance. Read at{" "}
                   <Link href="/writing" className="font-semibold underline">/writing</Link>.
-                </p>
-              </TitledParagraph>
-            </Reveal>
-
-            <Reveal>
-              <TitledParagraph title="topics">
-                <p>
-                  Deep dives by area:{" "}
-                  <Link href="/rust" className="underline">Rust engineering</Link>,{" "}
-                  <Link href="/webassembly" className="underline">WebAssembly</Link>,{" "}
-                  <Link href="/ai-engineering" className="underline">AI engineering</Link>,{" "}
-                  <Link href="/nextjs-seo" className="underline">Next.js SEO</Link>, and{" "}
-                  <Link href="/distributed-systems" className="underline">distributed systems</Link>.
                 </p>
               </TitledParagraph>
             </Reveal>

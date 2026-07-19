@@ -20,6 +20,26 @@ export const profile = {
     name: "Yupcha Softwares Pvt. Ltd",
     since: "July 2025",
   },
+  email: "dibbayajyoti@gmail.com",
+  /**
+   * Role-targeted résumé PDFs (files live in public/). First one is the
+   * default. `preview` is a PNG render of the page, regenerated with:
+   * pdftoppm -png -r 150 -singlefile <pdf> <preview-name>
+   */
+  resumes: [
+    {
+      label: "Full-Stack Engineer",
+      path: "/demos/Dibbayajyoti_Roy_FullStack.pdf",
+      preview: "/demos/resume-fullstack.png",
+    },
+    {
+      label: "Voice AI & Backend Systems",
+      path: "/demos/Dibbayajyoti_Roy_VoiceAI.pdf",
+      preview: "/demos/resume-voiceai.png",
+    },
+  ],
+  /** Shown on /contact; timezone is Asia/Kolkata. */
+  location: "India · IST (UTC+5:30)",
   education: {
     degree: "B.Tech in Computer Science",
     institution: "ICFAI University Tripura",

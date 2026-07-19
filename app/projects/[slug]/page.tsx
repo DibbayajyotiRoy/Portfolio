@@ -43,6 +43,13 @@ export function generateMetadata({
   };
 }
 
+// Terminal demos keyed by project id. GIFs live in /public/demos and render
+// unoptimized so the animation survives. Add one entry per product as the
+// recording exists.
+const demos: Record<string, string> = {
+  whatbroke: "/demos/whatbroke.gif",
+};
+
 const externalLinks = (p: Project) => {
   const out: { label: string; href: string }[] = [];
   if (p.links.demo) out.push({ label: "Live site / docs →", href: p.links.demo });
@@ -137,6 +144,17 @@ export default function ProjectHubPage({
           </span>
         </h1>
 
+        {demos[params.slug] ? (
+          <Image
+            src={demos[params.slug]}
+            alt={`${project.name} in use: a failing test is captured, the suspect file is ranked, and the fix is verified`}
+            width={960}
+            height={600}
+            unoptimized
+            className="mt-6 w-full h-auto rounded-md border border-blackout/10 dark:border-whiteout/10"
+          />
+        ) : null}
+
         <div className="flex flex-col gap-6 sm:gap-8 mt-10 text-blackout/90 dark:text-whiteout/90">
           {hub.sections.map((s) => (
             <TitledParagraph key={s.title} title={s.title}>
@@ -166,17 +184,18 @@ export default function ProjectHubPage({
             </p>
           </TitledParagraph>
 
-          <TitledParagraph title="related">
+          {project.comparison && (
+            <TitledParagraph title="compare">
+              <p className="text-sm opacity-80">
+                <Link href={project.comparison.slug} className="underline">
+                  {project.comparison.label}
+                </Link>
+              </p>
+            </TitledParagraph>
+          )}
+
+          <TitledParagraph title="more projects">
             <p className="text-sm opacity-80">
-              {project.comparison && (
-                <>
-                  <Link href={project.comparison.slug} className="underline">
-                    {project.comparison.label}
-                  </Link>
-                  {" · "}
-                </>
-              )}
-              Other projects:{" "}
               {otherProducts.map((p, i) => (
                 <span key={p.id}>
                   <Link href={`/projects/${p.id}`} className="underline">
