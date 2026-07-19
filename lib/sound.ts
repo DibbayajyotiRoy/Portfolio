@@ -1,5 +1,6 @@
 // Runtime-synthesized WebAudio sound layer. Zero assets, CSP-safe.
-// Exactly three semantic events: page navigation, theme toggle, view switch.
+// Five semantic events: page navigation, theme toggle, view switch,
+// success toast, error toast.
 // Gated on a persisted user toggle and prefers-reduced-motion.
 
 const STORAGE_KEY = "portfolio.sound";
@@ -83,5 +84,13 @@ export const sound = {
   /** View switch (e.g. the TLDR toggle on /work): two-note blip. */
   viewSwitch() {
     playNotes([659.25, 783.99], { spacing: 0.05, decay: 0.16 });
+  },
+  /** Success toast (e.g. résumé download started): rising major arpeggio. */
+  success() {
+    playNotes([523.25, 659.25, 783.99, 1046.5], { spacing: 0.06, decay: 0.32 });
+  },
+  /** Error toast: low falling minor second. */
+  error() {
+    playNotes([311.13, 233.08], { spacing: 0.12, decay: 0.35 });
   },
 };
