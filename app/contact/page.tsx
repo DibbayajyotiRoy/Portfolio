@@ -142,16 +142,10 @@ export default function ContactPage() {
             <TitledParagraph title="résumé">
               <p>
                 Rendered inline on{" "}
-                <Link href="/work" className="font-semibold underline">/work</Link>. Two
-                role-targeted PDFs:{" "}
-                {profile.resumes.map((r, i) => (
-                  <span key={r.path}>
-                    {i > 0 && " · "}
-                    <Link href={r.path} download className="font-semibold underline">
-                      {r.label}
-                    </Link>
-                  </span>
-                ))}
+                <Link href="/work" className="font-semibold underline">/work</Link>, or{" "}
+                <Link href={profile.resume.path} download className="font-semibold underline">
+                  download the PDF
+                </Link>
                 .
               </p>
             </TitledParagraph>

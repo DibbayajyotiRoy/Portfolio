@@ -22,22 +22,13 @@ export const profile = {
   },
   email: "dibbayajyoti@gmail.com",
   /**
-   * Role-targeted résumé PDFs (files live in public/). First one is the
-   * default. `preview` is a PNG render of the page, regenerated with:
-   * pdftoppm -png -r 150 -singlefile <pdf> <preview-name>
+   * Résumé PDF (file lives in public/). `previews` are PNG renders of its
+   * pages, regenerated with: pdftoppm -png -r 150 <pdf> resume-page
    */
-  resumes: [
-    {
-      label: "Full-Stack Engineer",
-      path: "/demos/Dibbayajyoti_Roy_FullStack.pdf",
-      preview: "/demos/resume-fullstack.png",
-    },
-    {
-      label: "Voice AI & Backend Systems",
-      path: "/demos/Dibbayajyoti_Roy_VoiceAI.pdf",
-      preview: "/demos/resume-voiceai.png",
-    },
-  ],
+  resume: {
+    path: "/demos/DibbayajyotiRoy.pdf",
+    previews: ["/demos/resume-page-1.png", "/demos/resume-page-2.png"],
+  },
   /** Shown on /contact; timezone is Asia/Kolkata. */
   location: "India · IST (UTC+5:30)",
   education: {
