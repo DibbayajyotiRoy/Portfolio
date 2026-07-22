@@ -109,13 +109,17 @@ export default function AboutPage() {
           <Reveal>
             <TitledParagraph title="who">
               <p>
-                I&apos;m a {profile.title} and Rust developer.
-                I currently ship production SaaS at{" "}
-                <span className="font-semibold">{profile.employer.name}</span>{" "}
-                and run a parallel track building open-source developer tools.
-                My day job is HR SaaS: REST APIs, PostgreSQL, Next.js performance
-                optimization, and Linux infrastructure. My night job is Rust backend
-                engineering, Rust + WebAssembly, and RAG / AI agent infrastructure.
+                I&apos;m a {profile.title} and Rust developer at{" "}
+                <span className="font-semibold">{profile.employer.name}</span>,
+                where I architected and rebuilt a production{" "}
+                <span className="font-semibold">AI Video Interviewer</span> from
+                the ground up: migrating a high-latency STT → LLM → TTS pipeline
+                to a real-time speech-to-speech architecture on AWS Bedrock Nova
+                Sonic, LiveKit, Pipecat, and WebRTC. In parallel I build
+                open-source developer tools: Rust backend engineering, Rust +
+                WebAssembly, and RAG / AI agent infrastructure. I also ship the
+                HR SaaS modules around the interviewer: REST APIs, PostgreSQL,
+                Next.js performance, and Linux infrastructure.
               </p>
             </TitledParagraph>
           </Reveal>
@@ -123,13 +127,13 @@ export default function AboutPage() {
           <Reveal>
             <TitledParagraph title="now">
               <p>
-                I&apos;m a core team member at{" "}
-                <span className="font-semibold">{profile.employer.name}</span>{" "}
-                building the{" "}
-                <span className="font-semibold">AI Video Interviewer</span>, an
-                AI agent that conducts candidate interviews end to end. Right now
-                my focus is making the agent better and getting it ready for
-                public use.
+                My focus is making the AI Video Interviewer — an agent that
+                conducts candidate interviews end to end — better and ready for
+                public use. Recent production work around it: cutting Redis
+                polling latency by ~90% with batched MGET operations, resolving
+                LiveKit and FFmpeg audio-video sync issues, and reducing page
+                load time by 44% through N+1 query elimination, PostgreSQL
+                indexing, and route splitting.
               </p>
             </TitledParagraph>
           </Reveal>
